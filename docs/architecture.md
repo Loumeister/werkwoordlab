@@ -1,10 +1,10 @@
 # Architectuur
 
 ## Startpunt en stack
-Repository is effectief greenfield (alleen minimale README bij start). Vastgestelde stack:
+Vastgestelde stack:
 - Next.js (App Router) + TypeScript
 - Tailwind CSS
-- Prisma + SQLite (dev)
+- Prisma + SQLite (dev) — *gepland; huidig MVP gebruikt localStorage voor attempt-opslag*
 - Vitest
 - Playwright
 
@@ -20,7 +20,7 @@ Repository is effectief greenfield (alleen minimale README bij start). Vastgeste
 - **Teacher UI (Next.js)**: geaggregeerde inzichten per klascode/periode.
 - **Domain/evaluator (TS)**: functiebepaling, regeltoepassing, misconceptiemapping.
 - **Content layer**: JSON loader + schema validatie.
-- **Persistence (Prisma/SQLite)**: sessies, attempts, progressie, docentaggregaties.
+- **Persistence (Prisma/SQLite)**: sessies, attempts, progressie, docentaggregaties — *huidig MVP gebruikt `lib/attempt-store.ts` (localStorage); Prisma-migratie is Fase 3-werk*.
 
 ## Runtime contract
 ### Leerlingflow
