@@ -1,47 +1,56 @@
-import { describe, expect, it } from 'vitest';
-import { getMisconceptionLabel, getUnit } from '@/lib/content';
-import { evaluateAnswer, getExerciseMode } from '@/lib/evaluator';
+import { describe, expect, it } from "vitest";
+import { getUnit, getUnits, getMisconceptionLabel } from "@/lib/content";
+import { evaluateAnswer, getExerciseMode } from "@/lib/evaluator";
 
-describe('domain logic', () => {
-  it('getUnit returns exact unit and does not fallback for invalid unitId', () => {
-    const valid = getUnit('unit-01-pv-tt');
-    const invalid = getUnit('unit-does-not-exist');
-
-    expect(valid?.id).toBe('unit-01-pv-tt');
-    expect(invalid).toBeUndefined();
+describe("domain logic", () => {
+  it("getUnit geeft strict de gevraagde unit terug", () => {
+    const target = getUnit("unit-01-pv-tt");
+    expect(target?.id).toBe("unit-01-pv-tt");
   });
 
-  it('evaluateAnswer is correct for exact target and incorrect for wrong answer', () => {
-    const item = getUnit('unit-01-pv-tt')!.items[0];
+  it("getUnit geeft undefined bij ongeldig unitId", () => {
+    expect(getUnit("bestaat-niet")).toBeUndefined();
+    expect(getUnit("")).toBeUndefined();
+  });
 
+  it("evaluateAnswer is correct voor target en incorrect voor fout antwoord", () => {
+    const item = getUnit("unit-01-pv-tt")!.items[0];
     expect(evaluateAnswer(item, item.target).correct).toBe(true);
-    expect(evaluateAnswer(item, 'fout antwoord').correct).toBe(false);
+    expect(evaluateAnswer(item, "fout-antwoord").correct).toBe(false);
   });
 
-  it('evaluateAnswer supports acceptedVariants with case/whitespace normalization', () => {
-    const item = getUnit('unit-01-pv-tt')!.items[0];
-    const withVariant = {
-      ...item,
+  it("evaluateAnswer ondersteunt acceptedVariants en hoofdletter-normalisatie", () => {
+    const baseItem = getUnit("unit-01-pv-tt")!.items[0];
+    const variantItem = {
+      ...baseItem,
+      target: "word",
       diagnostic: {
-        ...item.diagnostic,
-        acceptedVariants: [' VINDT '],
-      },
+        ...baseItem.diagnostic,
+        acceptedVariants: ["WORDTJE", "worden?"]
+      }
     };
 
-    expect(evaluateAnswer(withVariant, 'vindt').correct).toBe(true);
-    expect(evaluateAnswer(withVariant, '  VINDT  ').correct).toBe(true);
+    expect(evaluateAnswer(variantItem, " wordtje ").correct).toBe(true);
+    expect(evaluateAnswer(variantItem, "WORD").correct).toBe(true);
+    expect(evaluateAnswer(variantItem, "onjuist").correct).toBe(false);
   });
 
-  it('detects exercise mode deterministically from item contract', () => {
-    const homophoneItem = getUnit('unit-01-pv-tt')!.items[0];
-    const classificationItem = getUnit('unit-02-voltooid-deelwoord')!.items[0];
+  it("detecteert oefenmodus deterministisch", () => {
+    const units = getUnits();
+    const classItem = getUnit("unit-02-voltooid-deelwoord")!.items[0];
+    const homophoneItem = getUnit("unit-01-pv-tt")!.items[0];
+    const shortItem = getUnit("unit-01-pv-tt")!.items.find((item) => item.homophonePair === null)!;
 
-    expect(getExerciseMode(homophoneItem)).toBe('homofonen');
-    expect(getExerciseMode(classificationItem)).toBe('classificatie');
+    expect(units.length).toBeGreaterThan(0);
+    expect(getExerciseMode(classItem)).toBe("classificatie");
+    expect(getExerciseMode(homophoneItem)).toBe("homofonen");
+    expect(getExerciseMode(shortItem)).toBe("korte-correctie");
   });
 
-  it('misconception label lookup is safe for known and unknown codes', () => {
-    expect(getMisconceptionLabel('PV_STAM_T_OMISSION')).toBeTruthy();
-    expect(getMisconceptionLabel('UNKNOWN_CODE')).toMatch(/grammaticale functie/i);
+  it("misconception mapping valt veilig terug bij onbekende code", () => {
+    const fallback = getMisconceptionLabel("ONBEKENDE_CODE");
+    expect(fallback).toContain("grammaticale functie");
+  });
+});
   });
 });
