@@ -76,7 +76,7 @@
         "step3": "Bij inversie met jij valt -t soms weg."
       },
       "diagnostic": {
-        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "primaryMisconception": "PV_FALSE_T_ADD",
         "acceptedVariants": []
       },
       "feedback": {
