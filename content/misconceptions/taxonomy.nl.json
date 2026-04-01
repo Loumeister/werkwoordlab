@@ -33,6 +33,16 @@
       ]
     },
     {
+      "code": "PV_JIJ_INVERSION_FALSE_T",
+      "title": "Onterechte +t bij inversie met jij",
+      "learnerDescription": "Bij een vraagzin met 'jij' na de persoonsvorm vervalt de -t, maar jij schreef toch 'wordt' of 'snapt'.",
+      "teacherDescription": "Leerling past het normale jij/derde-persoon +t-patroon toe ook al verandert inversie met jij de spelling van de persoonsvorm (wordt → word, snapt → snap).",
+      "remediation": [
+        "Herleid de vraagzin naar normale volgorde en controleer of het onderwerp 'jij' is.",
+        "Onthoud de regel: staat 'jij' ná de persoonsvorm, dan vervalt de -t."
+      ]
+    },
+    {
       "code": "HOMOPHONE_FUNCTION_CONFUSION",
       "title": "Homofone vorm verward door functiefout",
       "learnerDescription": "De vorm klinkt goed, maar past niet bij de grammaticale functie.",

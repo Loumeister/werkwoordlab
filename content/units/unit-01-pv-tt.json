@@ -76,7 +76,7 @@
         "step3": "Bij inversie met jij valt -t soms weg."
       },
       "diagnostic": {
-        "primaryMisconception": "PV_FALSE_T_ADD",
+        "primaryMisconception": "PV_JIJ_INVERSION_FALSE_T",
         "acceptedVariants": []
       },
       "feedback": {
@@ -176,7 +176,7 @@
         "step3": "Bij inversie met jij vervalt de -t vaak."
       },
       "diagnostic": {
-        "primaryMisconception": "PV_FALSE_T_ADD",
+        "primaryMisconception": "PV_JIJ_INVERSION_FALSE_T",
         "acceptedVariants": ["snap"]
       },
       "feedback": {
