@@ -55,6 +55,10 @@ export function getUnit(unitId: string): Unit | undefined {
   return units.find((unit) => unit.id === unitId);
 }
 
+export function getUnitOrDefault(unitId: string): Unit {
+  return getUnit(unitId) ?? units[0];
+}
+
 export function getMisconceptionLabel(code: string) {
   const misconception = taxonomy.misconceptions.find((item) => item.code === code);
   return misconception?.learnerDescription ?? "Controleer eerst de grammaticale functie en pas dan de spellingregel toe.";

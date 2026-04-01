@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import { AppShell } from "@/components/app-shell";
-import { getUnits } from "@/lib/content";
+import { getUnitOrDefault } from "@/lib/content";
 
 export default function SchrijvenPage() {
-  const units = getUnits();
   const [text, setText] = useState("");
   const [reflectie, setReflectie] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const transfer = units[0].transferTask;
+  const transfer = getUnitOrDefault("unit-01-pv-tt").transferTask;
 
   const hasRuleWords = /persoonsvorm|stam|werkwoord/i.test(`${text} ${reflectie}`);
 
