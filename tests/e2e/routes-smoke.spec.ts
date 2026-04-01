@@ -30,5 +30,6 @@ test("route smoke: invalid unit route toont not-found", async ({ page }) => {
   const response = await page.goto("/oefenen/unit-bestaat-niet");
   expect(response?.status()).toBe(404);
   await expect(page.getByRole("heading", { name: /404/i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /scaffold/i })).toHaveCount(0);
+  await expect(page.getByText(/this page could not be found/i)).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: /persoonsvorm tegenwoordige tijd/i })).toHaveCount(0);
 });
