@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "@fontsource/atkinson-hyperlegible-next/400.css";
+@import "@fontsource/atkinson-hyperlegible-next/600.css";
+@import "@fontsource/atkinson-hyperlegible-next/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+
+:root {
+  --bg-shell: #d8e4ec;
+  --bg-surface: #f7f7f5;
+  --sidebar: #1f1f22;
+  --text-main: #121212;
+  --warm-primary: #ff6f3d;
+  --warm-soft: #ffd36a;
+  --focus-blue: #bee3ff;
+  --ok: #176b3e;
+  --warn: #915b00;
+  --error: #8b1f1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-shell);
+  color: var(--text-main);
+  font-family: "Atkinson Hyperlegible Next", "Inter", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 3px solid #1f5da0;
+  outline-offset: 2px;
+}

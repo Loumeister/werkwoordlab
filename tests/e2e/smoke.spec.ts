@@ -2,8 +2,8 @@ import { expect, test } from '@playwright/test';
 
 const VALID_UNIT_ROUTE = '/oefenen/unit-01-pv-tt';
 const INVALID_UNIT_ROUTE = '/oefenen/nonexistent-unit';
-const TEACHER_INSIGHTS_ROUTE = '/docent/inzichten';
-const CONTENT_LIBRARY_ROUTE = '/inhoud';
+const TEACHER_INSIGHTS_ROUTE = '/inzichten';
+const CONTENT_LIBRARY_ROUTE = '/content';
 
 const notFoundPatterns = [
   /404/i,
@@ -24,12 +24,10 @@ test('learner can open a real unit route and sees core exercise elements', async
 
   expect(response?.ok()).toBeTruthy();
 
-  await expect(page.getByRole('heading').first()).toBeVisible();
-  await expect(page.getByRole('list').first()).toBeVisible();
+  await expect(page.getByText(/opdracht 1 van/i)).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Scaffold' })).toBeVisible();
   await expect(page.getByRole('textbox').first()).toBeVisible();
-  await expect(
-    page.getByRole('button', { name: /controleer|nakijken|verzend|verstuur|submit|check/i }).first(),
-  ).toBeVisible();
+  await expect(page.getByRole('button', { name: /controleer antwoord/i })).toBeVisible();
 });
 
 test('invalid unit route returns not-found behavior and does not silently load a default unit', async ({ page }) => {

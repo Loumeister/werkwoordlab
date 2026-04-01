@@ -3,14 +3,17 @@ import { expect, test } from '@playwright/test';
 test('learner completes one full interaction from unit selection to diagnostic feedback', async ({ page }) => {
   await page.goto('/oefenen');
 
-  const unitLink = page
-    .getByRole('link', { name: /persoonsvorm tegenwoordige tijd|unit-01-pv-tt/i })
-    .first();
+  await expect(page.getByRole('heading', { name: 'Oefenen' })).toBeVisible();
+
+  const unitCard = page.getByRole('article').filter({ hasText: /persoonsvorm tegenwoordige tijd/i }).first();
+  const unitLink = unitCard.getByRole('link', { name: 'Start' });
 
   await expect(unitLink).toBeVisible();
   await unitLink.click();
 
   await expect(page).toHaveURL(/\/oefenen\/unit-01-pv-tt/);
+  await expect(page.getByText(/opdracht 1 van/i)).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Scaffold' })).toBeVisible();
 
   const answerInput = page.getByRole('textbox').first();
   await expect(answerInput).toBeVisible();
@@ -23,10 +26,7 @@ test('learner completes one full interaction from unit selection to diagnostic f
   await expect(submitButton).toBeEnabled();
   await submitButton.click();
 
-  const diagnosticFeedback = page
-    .locator('[role="status"], [role="alert"]')
-    .filter({ hasText: /misconcept|hint|feedback|goed|juist|correct|fout/i })
-    .first();
-
-  await expect(diagnosticFeedback).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Diagnostische feedback' })).toBeVisible();
+  await expect(page.getByText(/misconceptiecode/i)).toBeVisible();
+  await expect(page.getByText(/hint/i)).toBeVisible();
 });
