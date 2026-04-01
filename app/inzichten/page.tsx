@@ -1,11 +1,11 @@
 "use client";
 
 import { AppShell } from "@/components/app-shell";
-import { readAttempts } from "@/lib/attempt-store";
+import { useAttempts } from "@/lib/use-attempts";
 import { getUnits } from "@/lib/content";
 
 export default function InzichtenPage() {
-  const attempts = readAttempts();
+  const attempts = useAttempts();
   const units = getUnits();
 
   const misconceptionCounts = attempts.reduce<Record<string, number>>((acc, item) => {

@@ -2,15 +2,15 @@
 
 import { useState } from "react";
 import { AppShell } from "@/components/app-shell";
-import { getUnits } from "@/lib/content";
+import { getUnitOrDefault } from "@/lib/content";
 
 export default function SchrijvenPage() {
-  const units = getUnits();
   const [text, setText] = useState("");
+  const [reflectie, setReflectie] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const transfer = units[0].transferTask;
+  const transfer = getUnitOrDefault("unit-01-pv-tt").transferTask;
 
-  const hasRuleWords = /persoonsvorm|stam|werkwoord/i.test(text);
+  const hasRuleWords = /persoonsvorm|stam|werkwoord/i.test(`${text} ${reflectie}`);
 
   return (
     <AppShell>
@@ -38,6 +38,17 @@ export default function SchrijvenPage() {
             className="min-h-52 w-full rounded-2xl border-2 border-neutral-500 p-4 text-lg"
             required
           />
+
+          <label htmlFor="reflectie" className="block text-lg font-semibold">
+            Reflectie (optioneel): Welke regel gebruikte je het vaakst?
+          </label>
+          <textarea
+            id="reflectie"
+            value={reflectie}
+            onChange={(event) => setReflectie(event.target.value)}
+            className="min-h-28 w-full rounded-2xl border-2 border-neutral-300 p-4 text-lg"
+          />
+
           <button className="rounded-xl bg-[var(--warm-primary)] px-5 py-3 font-semibold text-white">Nakijken</button>
         </form>
 
@@ -46,7 +57,7 @@ export default function SchrijvenPage() {
             <h2 className="text-xl font-semibold">Rubric-feedback</h2>
             <ul className="space-y-2 text-lg">
               <li>Helderheid: {text.length > 180 ? "voldoende" : "voeg meer uitleg toe"}</li>
-              <li>Correctheid: {/[dt] /i.test(text) ? "controleer eindletters zorgvuldig" : "basiscontrole uitgevoerd"}</li>
+              <li>Correctheid: {/[dt]\b/i.test(text) ? "controleer eindletters zorgvuldig" : "basiscontrole uitgevoerd"}</li>
               <li>Toepassing regel: {hasRuleWords ? "regel benoemd" : "noem expliciet de gebruikte werkwoordregel"}</li>
             </ul>
           </section>

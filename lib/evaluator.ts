@@ -30,12 +30,12 @@ export function getFunctionOptions(): GrammaticalFunction[] {
 
 export function evaluateAnswer(item: ExerciseItem, answer: string): EvaluationResult {
   const mode = getExerciseMode(item);
-  const normalized = answer.trim().toLowerCase();
   const expected = mode === "classificatie" ? item.grammaticalFunction : item.target;
   const acceptedVariants = item.diagnostic?.acceptedVariants ?? [];
-  const normalizedExpectedValues = [expected, ...acceptedVariants].map((value) =>
-    value.trim().toLowerCase()
-  );
+  const normalizedExpectedValues = [expected, ...acceptedVariants]
+    .filter((value): value is string => typeof value === "string")
+    .map((value) => value.trim().toLowerCase());
+  const normalized = answer.trim().toLowerCase();
 
   return {
     mode,

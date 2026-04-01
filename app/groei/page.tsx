@@ -1,12 +1,12 @@
 "use client";
 
 import { AppShell } from "@/components/app-shell";
-import { readAttempts } from "@/lib/attempt-store";
+import { useAttempts } from "@/lib/use-attempts";
 import { getUnits } from "@/lib/content";
 
 export default function GroeiPage() {
   const units = getUnits();
-  const attempts = readAttempts();
+  const attempts = useAttempts();
 
   const byMisconception = attempts.reduce<Record<string, number>>((acc, attempt) => {
     acc[attempt.misconception] = (acc[attempt.misconception] ?? 0) + 1;
@@ -47,6 +47,18 @@ export default function GroeiPage() {
               </li>
             ))}
             {attempts.length === 0 && <li>Nog geen pogingen opgeslagen.</li>}
+          </ul>
+        </section>
+
+        <section className="space-y-3 rounded-3xl border border-black/15 bg-white p-6">
+          <h2 className="text-2xl font-semibold">Recente pogingen</h2>
+          <ul className="space-y-2 text-base">
+            {attempts.slice(0, 6).map((attempt) => (
+              <li key={`${attempt.timestamp}-${attempt.itemId}`} className="rounded-xl border border-neutral-200 px-4 py-3">
+                {attempt.itemId} · {attempt.correct ? "correct" : "fout"} · {new Date(attempt.timestamp).toLocaleString("nl-NL")}
+              </li>
+            ))}
+            {attempts.length === 0 && <li>Nog geen recente pogingen.</li>}
           </ul>
         </section>
       </div>
