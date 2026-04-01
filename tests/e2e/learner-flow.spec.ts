@@ -19,9 +19,7 @@ test('learner completes one full interaction from unit selection to diagnostic f
   await expect(answerInput).toBeVisible();
   await answerInput.fill('vind');
 
-  const submitButton = page
-    .getByRole('button', { name: /controleer|nakijken|verzend|verstuur|submit|check/i })
-    .first();
+  const submitButton = page.getByRole('button', { name: /controleer antwoord/i });
 
   await expect(submitButton).toBeEnabled();
   await submitButton.click();

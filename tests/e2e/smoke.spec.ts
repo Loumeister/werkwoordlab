@@ -2,6 +2,8 @@ import { expect, test } from '@playwright/test';
 
 const VALID_UNIT_ROUTE = '/oefenen/unit-01-pv-tt';
 const INVALID_UNIT_ROUTE = '/oefenen/nonexistent-unit';
+const WRITING_ROUTE = '/schrijven';
+const GROWTH_ROUTE = '/groei';
 const TEACHER_INSIGHTS_ROUTE = '/inzichten';
 const CONTENT_LIBRARY_ROUTE = '/content';
 
@@ -47,6 +49,20 @@ test('invalid unit route returns not-found behavior and does not silently load a
   expect(has404Status || hasNotFoundUi).toBeTruthy();
   await expect(page).toHaveURL(/\/oefenen\/nonexistent-unit/);
   await expect(page).not.toHaveURL(/\/oefenen\/unit-01-pv-tt/);
+});
+
+test('writing route renders without crashing', async ({ page }) => {
+  const response = await page.goto(WRITING_ROUTE);
+
+  expect(response).toBeTruthy();
+  expect(response!.status()).toBeLessThan(500);
+});
+
+test('growth route renders without crashing', async ({ page }) => {
+  const response = await page.goto(GROWTH_ROUTE);
+
+  expect(response).toBeTruthy();
+  expect(response!.status()).toBeLessThan(500);
 });
 
 test('teacher insights route renders without crashing', async ({ page }) => {

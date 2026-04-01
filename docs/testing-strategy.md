@@ -19,8 +19,10 @@ Borgen dat evaluatorlogica, contentcontracten en kernflows deterministisch en st
 2. Leerling kan een echte unitroute openen (minimaal `unit-01-pv-tt`).
 3. Oefenscherm toont kernonderdelen: prompt, scaffold, antwoordinvoer en verzendactie.
 4. Ongeldige unitroute (`/oefenen/nonexistent-unit`) geeft not-found gedrag en valt niet stil terug op een default-unit.
-5. Docentinzichten-route (`/inzichten`) rendert zonder crash.
-6. Content/bibliotheek-route (`/content`) rendert zonder crash.
+5. Schrijfroute (`/schrijven`) rendert zonder crash.
+6. Groeiroute (`/groei`) rendert zonder crash.
+7. Docentinzichten-route (`/inzichten`) rendert zonder crash.
+8. Content/bibliotheek-route (`/content`) rendert zonder crash.
 
 ## Verdiepende flowtest
 - Eén end-to-end learner-flow van unitselectie naar feedback als stabiliteitsanker voor MVP.
