@@ -42,9 +42,26 @@
 ```
 
 ## Enums
-- `grammaticalFunction`: `persoonsvorm | infinitief | voltooid-deelwoord`
+- `grammaticalFunction`: `persoonsvorm | infinitief | voltooid-deelwoord | bijvoeglijk-deelwoord | onvoltooid-deelwoord`
 - `type`: `fill-in | multiple-choice | classify`
 - `transferTask.type`: `revision | short-writing`
+
+### Toelichting nieuwe grammaticalFunction-waarden
+| Waarde | Wanneer gebruiken |
+|---|---|
+| `bijvoeglijk-deelwoord` | Voltooid deelwoord gebruikt als bijvoeglijke bepaling (attributief of predicatief), niet als onderdeel van de werkwoordstijdsvorm. Gebruik dit voor items in `unit-05-bijvoeglijk-vd` die het bijvoeglijk gebruik modelleren. |
+| `onvoltooid-deelwoord` | Tegenwoordig deelwoord (`-end`-vorm), functionerend als bijvoeglijke bepaling of in een deelwoordgroep. Gebruik dit voor items in `unit-06-onvoltooid-deelwoord`. |
+
+### classify-itemtype voor bijvoeglijk/werkwoordelijk contrast
+Items van `type: classify` kunnen leerlingen laten kiezen tussen twee grammaticale functies (bijv. `werkwoordelijk` vs `bijvoeglijk`). Schema-vereiste:
+```json
+{
+  "type": "classify",
+  "classifyOptions": ["werkwoordelijk", "bijvoeglijk"],
+  "target": "bijvoeglijk"
+}
+```
+Het veld `classifyOptions` is **verplicht** bij `type: classify`; de evaluator valideert dat `target` één van de opties is.
 
 ## Taxonomie contract
 ```json

@@ -45,9 +45,9 @@ Voeg in deze volgorde nieuwe kernunits toe:
 1. `verleden tijd persoonsvorm`
 2. `infinitief`
 3. `bijvoeglijk gebruikt voltooid deelwoord`
+4. `onvoltooid deelwoord`
 
 ### Nog niet prioriteren
-- `onvoltooid deelwoord` als aparte hoofdeenheid
 - brede analytics-uitbreidingen
 - extra UI-modules buiten de bestaande learner/docent-structuur
 
@@ -193,14 +193,22 @@ Dit domein is didactisch waardevol omdat het functiedenken verder aanscherpt.
 #### Voorlopige unittitel
 `unit-05-bijvoeglijk-vd`
 
+#### Schemavereisten — verplicht bij implementatie
+Het huidige schema kent alleen `voltooid-deelwoord` als `grammaticalFunction`-waarde voor werkwoordelijke functies. Voor items in deze unit is een uitbreiding nodig:
+
+- Voeg `bijvoeglijk-deelwoord` toe als toegestane waarde voor `grammaticalFunction` (zie `docs/content-schema.md`).
+- Gebruik `type: classify` voor items die leerlingen laten kiezen tussen `werkwoordelijk` en `bijvoeglijk` gebruik; voeg dan het verplichte veld `classifyOptions: ["werkwoordelijk", "bijvoeglijk"]` toe.
+- Werk de evaluator bij zodat `grammaticalFunction: "bijvoeglijk-deelwoord"` en `type: classify` correct worden geïnterpreteerd voordat content wordt toegevoegd.
+- Voeg bijbehorende taxonomiecodes toe (bijv. `VD_ADJ_FUNCTION_CONFUSION`) voor de misconceptie dat leerlingen bijvoeglijk en werkwoordelijk gebruik verwarren.
+
 #### Leerdoelen
 - ik herken wanneer een voltooid deelwoord bijvoeglijk gebruikt is
 - ik onderscheid bijvoeglijk gebruikt voltooid deelwoord van voltooid deelwoord in werkwoordelijke functie
 - ik kies de juiste spelling in context
 
 #### Itemcategorieën
-- attributief gebruikte vormen
-- contrast tussen werkwoordelijk en bijvoeglijk gebruik
+- attributief gebruikte vormen (`type: fill-in`, `grammaticalFunction: bijvoeglijk-deelwoord`)
+- contrast tussen werkwoordelijk en bijvoeglijk gebruik (`type: classify`, `classifyOptions: ["werkwoordelijk", "bijvoeglijk"]`)
 - contextzinnen met homofone of bijna-homofone druk
 - revisie-items in korte tekst
 
@@ -209,20 +217,40 @@ Deze unit moet expliciet laten zien dat **dezelfde of bijna dezelfde vorm gramma
 
 ---
 
+### B4. Nieuwe unit: Onvoltooid deelwoord
+
+#### Waarom
+Het onvoltooid deelwoord (`-end`-vorm) verschijnt als bijvoeglijke bepaling en in deelwoordgroepen. Leerlingen verwarren het regelmatig met persoonsvorm of voltooid deelwoord.
+
+#### Voorlopige unittitel
+`unit-06-onvoltooid-deelwoord`
+
+#### Schemavereisten — verplicht bij implementatie
+- Voeg `onvoltooid-deelwoord` toe als toegestane waarde voor `grammaticalFunction` (zie `docs/content-schema.md`).
+- Gebruik `type: classify` voor items die leerlingen laten kiezen tussen `persoonsvorm`, `voltooid-deelwoord` en `onvoltooid-deelwoord`.
+- Werk de evaluator bij zodat `grammaticalFunction: "onvoltooid-deelwoord"` correct wordt geïnterpreteerd voordat content wordt toegevoegd.
+- Voeg bijbehorende taxonomiecodes toe voor verwisseling met persoonsvorm of voltooid deelwoord.
+
+#### Leerdoelen
+- ik herken de `-end`-vorm als onvoltooid deelwoord
+- ik onderscheid onvoltooid deelwoord van persoonsvorm en voltooid deelwoord
+- ik gebruik de juiste vorm in attributieve en deelwoordgroep-context
+
+#### Itemcategorieën
+- attributief gebruik van onvoltooid deelwoord (`type: fill-in`, `grammaticalFunction: onvoltooid-deelwoord`)
+- contrast met persoonsvorm (`type: classify`)
+- contrast met voltooid deelwoord (`type: classify`)
+- deelwoordgroepen in context
+- revisie-items
+
+#### Didactische eis
+Focus op **functiebepaling**: leerlingen moeten beredeneren waarom een vorm een onvoltooid deelwoord is en niet een persoonsvorm.
+
+---
+
 ## Fase C — voorlopig niet oppakken
 
-### Onvoltooid deelwoord
-Nog niet als aparte kernunit uitwerken.
-
-#### Reden
-- lagere didactische opbrengst op dit moment
-- minder centraal in onderbouwproblemen rond werkwoordspelling
-- verhoogt complexiteit van taxonomie en evaluator sneller dan nodig
-
-Later pas toevoegen als:
-- kernunits stabiel zijn
-- contentbank voldoende breed is
-- evaluatielogica voor de hoofdcategorieën betrouwbaar staat
+Zie de sectie **Nog niet prioriteren** in [Prioriteitenvolgorde](#prioriteitenvolgorde) hierboven.
 
 ---
 
@@ -306,9 +334,22 @@ Bij elke uitbreidingsslag moeten tests worden bijgewerkt.
 - [ ] voeg evaluator/tests toe waar nodig
 
 ### Taakgroep 4 — nieuwe unit bijvoeglijk gebruikt voltooid deelwoord
+- [ ] voeg `bijvoeglijk-deelwoord` toe aan `grammaticalFunction`-enum in `docs/content-schema.md`
+- [ ] voeg `classifyOptions`-veld toe aan schema voor `type: classify`-items
+- [ ] voeg taxonomiecode(s) toe voor bijvoeglijk/werkwoordelijk verwarring
+- [ ] werk evaluatorlogica bij voor nieuwe `grammaticalFunction`-waarde en `classify`-type
 - [ ] ontwerp leerdoelen en misconceptiecategorieën
 - [ ] maak eerste versie van `unit-05-bijvoeglijk-vd`
 - [ ] voeg contrastitems toe met werkwoordelijke functie
+- [ ] voeg evaluator/tests toe waar nodig
+
+### Taakgroep 5 — nieuwe unit onvoltooid deelwoord
+- [ ] voeg `onvoltooid-deelwoord` toe aan `grammaticalFunction`-enum in `docs/content-schema.md`
+- [ ] voeg taxonomiecode(s) toe voor verwarring met persoonsvorm/voltooid deelwoord
+- [ ] werk evaluatorlogica bij voor nieuwe `grammaticalFunction`-waarde
+- [ ] ontwerp leerdoelen en misconceptiecategorieën
+- [ ] maak eerste versie van `unit-06-onvoltooid-deelwoord`
+- [ ] voeg classify-contrastitems toe (persoonsvorm/voltooid-deelwoord/onvoltooid-deelwoord)
 - [ ] voeg evaluator/tests toe waar nodig
 
 ---
