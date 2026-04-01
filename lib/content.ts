@@ -51,8 +51,8 @@ export function getUnits() {
   return units;
 }
 
-export function getUnit(unitId: string) {
-  return units.find((unit) => unit.id === unitId) ?? units[0];
+export function getUnit(unitId: string): Unit | undefined {
+  return units.find((unit) => unit.id === unitId);
 }
 
 export function getMisconceptionLabel(code: string) {
