@@ -35,6 +35,20 @@ describe("domain logic", () => {
     expect(evaluateAnswer(variantItem, "onjuist").correct).toBe(false);
   });
 
+  it("evaluateAnswer ondersteunt acceptedVariants voor classificatie-modus", () => {
+    const classItem = getUnit("unit-02-voltooid-deelwoord")!.items[0];
+    const variantItem = {
+      ...classItem,
+      diagnostic: {
+        ...classItem.diagnostic,
+        acceptedVariants: ["Voltooid-Deelwoord"]
+      }
+    };
+
+    expect(evaluateAnswer(variantItem, " voltooid-deelwoord ").correct).toBe(true);
+    expect(evaluateAnswer(variantItem, "infinitief").correct).toBe(false);
+  });
+
   it("detecteert oefenmodus deterministisch", () => {
     const units = getUnits();
     const classItem = getUnit("unit-02-voltooid-deelwoord")!.items[0];
@@ -50,7 +64,5 @@ describe("domain logic", () => {
   it("misconception mapping valt veilig terug bij onbekende code", () => {
     const fallback = getMisconceptionLabel("ONBEKENDE_CODE");
     expect(fallback).toContain("grammaticale functie");
-  });
-});
   });
 });

@@ -92,5 +92,3 @@ describe("attempt persistence", () => {
     expect(attempts[199].itemId).toBe("u1-i6");
   });
 });
-  });
-});
