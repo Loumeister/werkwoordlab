@@ -140,7 +140,7 @@ Voeg geen nieuwe code toe als:
 - het verschil alleen op zinsoppervlak zit
 
 ### Praktische vuistregel
-Lievere taxonomie:
+Liever taxonomie:
 - klein maar scherp
 
 Dan:
