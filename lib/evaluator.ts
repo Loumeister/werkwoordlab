@@ -32,10 +32,14 @@ export function evaluateAnswer(item: ExerciseItem, answer: string): EvaluationRe
   const mode = getExerciseMode(item);
   const normalized = answer.trim().toLowerCase();
   const expected = mode === "classificatie" ? item.grammaticalFunction : item.target;
+  const acceptedVariants = item.diagnostic?.acceptedVariants ?? [];
+  const normalizedExpectedValues = [expected, ...acceptedVariants].map((value) =>
+    value.trim().toLowerCase()
+  );
 
   return {
     mode,
     expected,
-    correct: normalized === expected.trim().toLowerCase()
+    correct: normalizedExpectedValues.includes(normalized)
   };
 }
