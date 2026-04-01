@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "language": "nl",
+  "misconceptions": [
+    {
+      "code": "PV_STAM_T_OMISSION",
+      "title": "Stam+t weggelaten",
+      "learnerDescription": "Je vergat de -t bij hij/zij/het.",
+      "teacherDescription": "Leerling laat in de tegenwoordige tijd bij derde persoon enkelvoud de +t weg.",
+      "remediation": [
+        "Laat leerling onderwerp en persoonsvorm markeren.",
+        "Herhaal beslisregel: ik-vorm is stam, hij/zij/het meestal stam+t."
+      ]
+    },
+    {
+      "code": "PV_FALSE_T_ADD",
+      "title": "Onterechte +t toegevoegd",
+      "learnerDescription": "Je zette een -t waar die niet hoort.",
+      "teacherDescription": "Leerling overgeneraliseert stam+t-regel, vaak bij ik-vorm of inversie.",
+      "remediation": [
+        "Laat de zin herschrijven zonder inversie om de persoonsvorm te controleren.",
+        "Controleer expliciet of onderwerp 'ik' is."
+      ]
+    },
+    {
+      "code": "VD_KOFSCHIP_MISAPPLIED",
+      "title": "'t kofschip-regel fout toegepast",
+      "learnerDescription": "Je koos -d/-t verkeerd in het voltooid deelwoord.",
+      "teacherDescription": "Leerling bepaalt stemloze/stemhebbende eindklank van de stam onjuist.",
+      "remediation": [
+        "Laat leerling stam noteren en laatste klank benoemen.",
+        "Oefen met minimale paren op eindklank."
+      ]
+    },
+    {
+      "code": "HOMOPHONE_FUNCTION_CONFUSION",
+      "title": "Homofone vorm verward door functiefout",
+      "learnerDescription": "De vorm klinkt goed, maar past niet bij de grammaticale functie.",
+      "teacherDescription": "Leerling baseert spellingkeuze op klank in plaats van grammaticale functie.",
+      "remediation": [
+        "Start altijd met functiebepaling vóór spellingkeuze.",
+        "Gebruik contrasterende voorbeeldzinnen met dezelfde klank."
+      ]
+    }
+  ]
+}

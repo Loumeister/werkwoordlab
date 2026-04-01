@@ -1,0 +1,223 @@
+{
+  "id": "unit-01-pv-tt",
+  "title": "Persoonsvorm tegenwoordige tijd",
+  "level": "onderbouw-vo",
+  "language": "nl",
+  "learningGoals": [
+    "Ik bepaal eerst de persoonsvorm.",
+    "Ik pas de stam(+t)-regel correct toe in de tegenwoordige tijd.",
+    "Ik onderscheid homofone vormen zoals vind/vindt en word/wordt."
+  ],
+  "items": [
+    {
+      "id": "u1-i1",
+      "type": "fill-in",
+      "prompt": "Ik ___ het antwoord meteen. (vinden)",
+      "context": "Klassituatie",
+      "lemma": "vinden",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ik",
+      "target": "vind",
+      "homophonePair": "vind/vindt",
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm in de zin.",
+        "step2": "Bepaal het onderwerp.",
+        "step3": "Bij ik-vorm gebruik je de stam zonder +t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_FALSE_T_ADD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: bij ik in de tegenwoordige tijd schrijf je de stam.",
+        "hint": "Controleer eerst het onderwerp; bij ik meestal geen +t."
+      }
+    },
+    {
+      "id": "u1-i2",
+      "type": "fill-in",
+      "prompt": "Zij ___ de oefening lastig. (vinden)",
+      "context": "Leservaring",
+      "lemma": "vinden",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "zij",
+      "target": "vindt",
+      "homophonePair": "vind/vindt",
+      "scaffold": {
+        "step1": "Bepaal de persoonsvorm.",
+        "step2": "Bepaal persoon en getal van het onderwerp.",
+        "step3": "Derde persoon enkelvoud krijgt stam+t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: zij (enkelvoud) vraagt om stam+t.",
+        "hint": "Kijk of het onderwerp ik is; zo niet in enkelvoud vaak +t."
+      }
+    },
+    {
+      "id": "u1-i3",
+      "type": "fill-in",
+      "prompt": "Word ___ jij morgen dertien? (worden)",
+      "context": "Verjaardag",
+      "lemma": "worden",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "word",
+      "homophonePair": "word/wordt",
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm in vraagvorm.",
+        "step2": "Herleid de zin: Jij wordt morgen dertien.",
+        "step3": "Bij inversie met jij valt -t soms weg."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed gezien: in deze vraagvorm schrijf je 'word'.",
+        "hint": "Zet de zin terug naar normale volgorde om de vorm te controleren."
+      }
+    },
+    {
+      "id": "u1-i4",
+      "type": "fill-in",
+      "prompt": "Jij ___ morgen dertien. (worden)",
+      "context": "Verjaardag",
+      "lemma": "worden",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "wordt",
+      "homophonePair": "word/wordt",
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm en onderwerp.",
+        "step2": "Geen inversie: onderwerp staat voor persoonsvorm.",
+        "step3": "Gebruik stam+t bij jij/hij/zij/het in enkelvoud."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Correct: hier hoort 'wordt'.",
+        "hint": "Vergelijk met de vraagvorm en let op woordvolgorde."
+      }
+    },
+    {
+      "id": "u1-i5",
+      "type": "fill-in",
+      "prompt": "Elke middag ___ hij op het plein. (rennen)",
+      "context": "Dagelijkse routine",
+      "lemma": "rennen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "rent",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Markeer de persoonsvorm.",
+        "step2": "Bepaal onderwerp: hij (3e persoon enkelvoud).",
+        "step3": "Stam + t toepassen."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: hij + tegenwoordige tijd geeft stam+t.",
+        "hint": "Controleer altijd eerst onderwerp en tijd."
+      }
+    },
+    {
+      "id": "u1-i6",
+      "type": "fill-in",
+      "prompt": "In de pauze ___ ik vaak met Noor. (praten)",
+      "context": "Schoolpauze",
+      "lemma": "praten",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ik",
+      "target": "praat",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm.",
+        "step2": "Bepaal onderwerp: ik.",
+        "step3": "Gebruik stam zonder extra -t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_FALSE_T_ADD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: bij ik blijft het de stam.",
+        "hint": "Voeg geen extra t toe bij ik-vorm."
+      }
+    },
+    {
+      "id": "u1-i7",
+      "type": "fill-in",
+      "prompt": "___ jij het verschil tussen vind en vindt? (snappen)",
+      "context": "Klassikale vraag",
+      "lemma": "snappen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "snap",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Vraagzin: persoonsvorm staat vooraan.",
+        "step2": "Herleid: Jij snapt het verschil.",
+        "step3": "Bij inversie met jij vervalt de -t vaak."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_FALSE_T_ADD",
+        "acceptedVariants": ["snap"]
+      },
+      "feedback": {
+        "correct": "Goed: in deze vraagvorm schrijf je 'snap'.",
+        "hint": "Controleer of de persoonsvorm vóór 'jij' staat."
+      }
+    },
+    {
+      "id": "u1-i8",
+      "type": "fill-in",
+      "prompt": "Morgen ___ ik de opdracht af. (maken)",
+      "context": "Huiswerkplanning",
+      "lemma": "maken",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ik",
+      "target": "maak",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm.",
+        "step2": "Bepaal onderwerp: ik.",
+        "step3": "Gebruik de stam als ik-vorm."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_FALSE_T_ADD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Correct: 'ik maak' krijgt geen extra -t.",
+        "hint": "Gebruik eerst de ik-vorm als controlevraag."
+      }
+    }
+  ],
+  "transferTask": {
+    "id": "u1-transfer-1",
+    "type": "revision",
+    "prompt": "Verbeter in dit korte dagboekfragment alle persoonsvormen in de tegenwoordige tijd en leg bij twee verbeteringen je regel uit.",
+    "rubric": [
+      "Persoonsvormen correct herkend",
+      "Stam(+t)-regel correct toegepast",
+      "Uitleg gebruikt grammaticale termen"
+    ]
+  }
+}
