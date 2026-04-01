@@ -177,7 +177,7 @@
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
-        "acceptedVariants": ["snap"]
+        "acceptedVariants": []
       },
       "feedback": {
         "correct": "Goed: in deze vraagvorm schrijf je 'snap'.",

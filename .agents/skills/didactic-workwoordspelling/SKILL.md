@@ -17,3 +17,8 @@
 4. Map each handled error path to a taxonomy code + remediation hint.
 5. Add/adjust evaluator tests (unit + integration where mapping is involved).
 6. If rule contracts changed, update `docs/content-schema.md` or `docs/architecture.md`.
+
+## Evaluator contract: case normalization
+- Content stores `target` in canonical **lowercase** form (e.g. `"snap"`, not `"Snap"`).
+- `acceptedVariants` must not duplicate `target`; keep it empty (`[]`) unless there are genuinely distinct acceptable spellings.
+- The evaluator **must** lowercase the learner's input before comparing it to `target` and `acceptedVariants`, so sentence-initial capitals are accepted without encoding them in content.
