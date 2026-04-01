@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { AlertCircle, CheckCircle2, Lightbulb } from "lucide-react";
 import { type Unit, getMisconceptionLabel } from "@/lib/content";
 import { evaluateAnswer, getExerciseMode, getFunctionOptions, getHomophoneOptions } from "@/lib/evaluator";
@@ -17,12 +17,15 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
   const evaluation = submitted ? evaluateAnswer(item, answer) : null;
   const progress = Math.round(((index + 1) / unit.items.length) * 100);
 
-  const instruction =
-    mode === "classificatie"
-      ? "Bepaal eerst de grammaticale functie van het onderstreepte werkwoord."
-      : mode === "homofonen"
-        ? "Kies de juiste homofone vorm op basis van grammaticale functie."
-        : "Vul de correcte werkwoordsvorm in.";
+  const instruction = useMemo(() => {
+    if (mode === "classificatie") {
+      return "Bepaal eerst de grammaticale functie van het onderstreepte werkwoord.";
+    }
+    if (mode === "homofonen") {
+      return "Kies de juiste homofone vorm op basis van grammaticale functie.";
+    }
+    return "Vul de correcte werkwoordsvorm in.";
+  }, [mode]);
 
   const functionOptions = getFunctionOptions();
   const homophoneOptions = getHomophoneOptions(item);
@@ -53,7 +56,14 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
     <div className="mx-auto max-w-4xl space-y-6">
       <h1 className="text-4xl font-semibold tracking-tight">{unit.title}</h1>
 
-      <div className="h-4 w-full overflow-hidden rounded-full bg-neutral-200" aria-label="Voortgang">
+      <div
+        className="h-4 w-full overflow-hidden rounded-full bg-neutral-200"
+        aria-label="Voortgang"
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={progress}
+      >
         <div className="h-full rounded-full bg-[var(--warm-primary)]" style={{ width: `${progress}%` }} />
       </div>
 

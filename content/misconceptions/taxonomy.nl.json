@@ -16,10 +16,10 @@
       "code": "PV_FALSE_T_ADD",
       "title": "Onterechte +t toegevoegd",
       "learnerDescription": "Je zette een -t waar die niet hoort.",
-      "teacherDescription": "Leerling overgeneraliseert stam+t-regel, vaak bij ik-vorm of inversie.",
+      "teacherDescription": "Leerling voegt ten onrechte een +t toe waar die niet hoort, vooral bij de ik-vorm in de tegenwoordige tijd.",
       "remediation": [
-        "Laat de zin herschrijven zonder inversie om de persoonsvorm te controleren.",
-        "Controleer expliciet of onderwerp 'ik' is."
+        "Controleer expliciet of het onderwerp 'ik' is; gebruik dan de stam zonder +t.",
+        "Laat leerling persoonsvorm en onderwerp markeren vóór de spellingkeuze."
       ]
     },
     {
@@ -45,21 +45,21 @@
     {
       "code": "PV_JIJ_INVERSION_FALSE_T",
       "title": "Onterechte +t bij inversie met jij",
-      "learnerDescription": "Je zette een -t terwijl bij inversie met jij vaak geen -t staat.",
-      "teacherDescription": "Leerling past stam+t toe bij vraagvolgorde met jij (inversie), waar de persoonsvorm meestal zonder -t wordt geschreven.",
+      "learnerDescription": "Bij een vraagzin met 'je/jij' na de persoonsvorm vervalt de -t, maar jij schreef toch 'wordt' of 'snapt'.",
+      "teacherDescription": "Leerling past ten onrechte de gewone jij-/derde persoon enkelvoud--t toe, terwijl bij inversie met 'jij' de persoonsvorm geen -t krijgt (bijv. word jij, snap jij).",
       "remediation": [
-        "Laat de leerling de vraagzin terugzetten naar mededelende volgorde.",
-        "Controleer expliciet of de persoonsvorm vóór jij staat."
+        "Controleer of het onderwerp 'jij' is. Als er 'je' staat, bedenk dat of je het kunt vervangen door 'jij'",
+        "Onthoud de regel:v staat 'je/jij' ná de persoonsvorm en kan er echt alleen 'jij' staan, dan vervalt de -t."
       ]
     },
     {
       "code": "VD_IRREGULAR_PP_REGULARIZED",
       "title": "Onregelmatig voltooid deelwoord geregulariseerd",
-      "learnerDescription": "Je maakte een onregelmatig voltooid deelwoord ten onrechte regelmatig.",
-      "teacherDescription": "Leerling buigt een onregelmatig voltooid deelwoord om naar een regelmatige -d/-t-vorm.",
+      "learnerDescription": "Je behandelde een onregelmatig voltooid deelwoord alsof het regelmatig was.",
+      "teacherDescription": "Leerling herkent een onregelmatig voltooid deelwoord niet en past ten onrechte een regelmatige vormingsstrategie toe.",
       "remediation": [
-        "Markeer het werkwoord als onregelmatig en oefen met een vaste vormenlijst.",
-        "Vergelijk de correcte onregelmatige vorm met de fout geregulariseerde vorm."
+        "Controleer of het werkwoord een bekende onregelmatige vorm heeft.",
+        "Vergelijk de vorm met de infinitief en kijk of de gewone -d/-t-regel hier echt past."
       ]
     }
   ]

@@ -198,7 +198,7 @@
       "scaffold": {
         "step1": "Herken voltooid deelwoord na 'is'.",
         "step2": "Bij een scheidbaar werkwoord komt het voorvoegsel niet tussen ge- en de stam.",
-        "step3": "ge + stel → uitgesteld"
+        "step3": "voorvoegsel + ge + stel → uitgesteld"
       },
       "diagnostic": {
         "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
