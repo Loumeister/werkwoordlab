@@ -14,10 +14,18 @@ Borgen dat evaluatorlogica, contentcontracten en kernflows deterministisch en st
 - Learner UI flow wijziging: Playwright flowtest voor aangepast pad.
 - Teacher insights wijziging: aggregatie-integratietest + teacher e2e smoke.
 
-## Minimale smoke suite
-1. Leerling doorloopt unit inclusief transfer.
-2. Leerling ziet diagnostische feedback met misconception.
-3. Docent ziet misconceptieverdeling en accuratesse.
+## Minimale smoke suite (Playwright)
+1. Leerling kan `/oefenen` openen.
+2. Leerling kan een echte unitroute openen (minimaal `unit-01-pv-tt`).
+3. Oefenscherm toont kernonderdelen: prompt, scaffold, antwoordinvoer en verzendactie.
+4. Leerling kan een antwoord insturen en diagnostische feedback zien.
+5. Ongeldige unitroute (`/oefenen/nonexistent-unit`) geeft not-found gedrag en valt niet stil terug op een default-unit.
+6. Docentinzichten-route rendert zonder crash.
+7. Content/bibliotheek-route rendert zonder crash.
+
+## Verdiepende flowtest
+- Eén end-to-end learner-flow van unitselectie naar feedback als stabiliteitsanker voor MVP.
+- Geen brede matrix van edge-cases in deze fase; focus op deterministische kernpaden.
 
 ## Release gate
 Een release candidate is geblokkeerd bij:
