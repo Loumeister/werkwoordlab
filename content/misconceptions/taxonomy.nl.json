@@ -41,6 +41,26 @@
         "Start altijd met functiebepaling vóór spellingkeuze.",
         "Gebruik contrasterende voorbeeldzinnen met dezelfde klank."
       ]
+    },
+    {
+      "code": "PV_JIJ_INVERSION_FALSE_T",
+      "title": "Onterechte +t bij inversie met jij",
+      "learnerDescription": "Je zette een -t terwijl bij inversie met jij vaak geen -t staat.",
+      "teacherDescription": "Leerling past stam+t toe bij vraagvolgorde met jij (inversie), waar de persoonsvorm meestal zonder -t wordt geschreven.",
+      "remediation": [
+        "Laat de leerling de vraagzin terugzetten naar mededelende volgorde.",
+        "Controleer expliciet of de persoonsvorm vóór jij staat."
+      ]
+    },
+    {
+      "code": "VD_IRREGULAR_PP_REGULARIZED",
+      "title": "Onregelmatig voltooid deelwoord geregulariseerd",
+      "learnerDescription": "Je maakte een onregelmatig voltooid deelwoord ten onrechte regelmatig.",
+      "teacherDescription": "Leerling buigt een onregelmatig voltooid deelwoord om naar een regelmatige -d/-t-vorm.",
+      "remediation": [
+        "Markeer het werkwoord als onregelmatig en oefen met een vaste vormenlijst.",
+        "Vergelijk de correcte onregelmatige vorm met de fout geregulariseerde vorm."
+      ]
     }
   ]
 }

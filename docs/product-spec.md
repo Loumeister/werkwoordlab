@@ -25,7 +25,7 @@ Webapp voor onderbouw VO om werkwoordspelling correct toe te passen via explicie
 ## Functionele eisen
 - Item bevat minimaal: prompt, lemma, grammaticale functie, target, scaffold, diagnostic, feedback.
 - Engine onderscheidt homofone probleemparen op basis van functie (o.a. word/wordt, vind/vindt, gebeurt/gebeurd).
-- Feedback geeft altijd: correct/incorrect + misconceptiecode + herstelhint.
+- De UI toont feedback op basis van evaluator-correctheid, diagnostic.primaryMisconception en feedback.hint.
 - Elke unit eindigt met transferopdracht.
 
 ## Niet-functionele eisen

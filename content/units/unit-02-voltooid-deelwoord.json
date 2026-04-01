@@ -151,7 +151,7 @@
         "step3": "Gebruik bekende onregelmatige vorm."
       },
       "diagnostic": {
-        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "primaryMisconception": "VD_IRREGULAR_PP_REGULARIZED",
         "acceptedVariants": []
       },
       "feedback": {
@@ -173,7 +173,7 @@
       "scaffold": {
         "step1": "Bepaal functie: voltooid deelwoord.",
         "step2": "Stam: eindig.",
-        "step3": "Stemhebbende eindklank => -d."
+        "step3": "Laatste letter van de stam niet in 't kofschip(x) => -d."
       },
       "diagnostic": {
         "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
@@ -197,8 +197,8 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Herken voltooid deelwoord na 'is'.",
-        "step2": "Bepaal stam van 'stellen' in samenstelling.",
-        "step3": "Gebruik correcte onregelmatige vorm."
+        "step2": "Bij een scheidbaar werkwoord komt het voorvoegsel niet tussen ge- en de stam.",
+        "step3": "ge + stel → uitgesteld"
       },
       "diagnostic": {
         "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
