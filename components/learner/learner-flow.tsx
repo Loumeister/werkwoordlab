@@ -56,7 +56,14 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
     <div className="mx-auto max-w-4xl space-y-6">
       <h1 className="text-4xl font-semibold tracking-tight">{unit.title}</h1>
 
-      <div className="h-4 w-full overflow-hidden rounded-full bg-neutral-200" aria-label="Voortgang">
+      <div
+        className="h-4 w-full overflow-hidden rounded-full bg-neutral-200"
+        aria-label="Voortgang"
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={progress}
+      >
         <div className="h-full rounded-full bg-[var(--warm-primary)]" style={{ width: `${progress}%` }} />
       </div>
 
