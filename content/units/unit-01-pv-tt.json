@@ -62,7 +62,7 @@
     {
       "id": "u1-i3",
       "type": "fill-in",
-      "prompt": "Word ___ jij morgen dertien? (worden)",
+      "prompt": "___ jij morgen dertien? (worden)",
       "context": "Verjaardag",
       "lemma": "worden",
       "grammaticalFunction": "persoonsvorm",
@@ -76,7 +76,7 @@
         "step3": "Bij inversie met jij valt -t soms weg."
       },
       "diagnostic": {
-        "primaryMisconception": "PV_FALSE_T_ADD",
+        "primaryMisconception": "PV_JIJ_INVERSION_FALSE_T",
         "acceptedVariants": []
       },
       "feedback": {
@@ -176,7 +176,7 @@
         "step3": "Bij inversie met jij vervalt de -t vaak."
       },
       "diagnostic": {
-        "primaryMisconception": "PV_FALSE_T_ADD",
+        "primaryMisconception": "PV_JIJ_INVERSION_FALSE_T",
         "acceptedVariants": []
       },
       "feedback": {
