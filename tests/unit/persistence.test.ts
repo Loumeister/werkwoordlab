@@ -25,6 +25,16 @@ describe("attempt persistence", () => {
     delete (globalThis as { window?: unknown }).window;
   });
 
+  function makeAttempt(index: number): AttemptRecord {
+    return {
+      unitId: "unit-01-pv-tt",
+      itemId: `u1-i${index}`,
+      correct: index % 2 === 0,
+      misconception: "PV_STAM_T_OMISSION",
+      timestamp: `2026-01-01T00:00:${String(index).padStart(2, "0")}Z`
+    };
+  }
+
   it("slaat pogingen op en leest ze terug", () => {
     (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
 
@@ -67,5 +77,20 @@ describe("attempt persistence", () => {
 
     storage.setItem("werkwoordlab-attempts", JSON.stringify([valid, { nope: true }, 123]));
     expect(readAttempts()).toEqual([valid]);
+  });
+
+  it("caps persisted attempt history to 200 records", () => {
+    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+
+    for (let i = 1; i <= 205; i += 1) {
+      saveAttempt(makeAttempt(i));
+    }
+
+    const attempts = readAttempts();
+    expect(attempts.length).toBe(200);
+    expect(attempts[0].itemId).toBe("u1-i205");
+    expect(attempts[199].itemId).toBe("u1-i6");
+  });
+});
   });
 });

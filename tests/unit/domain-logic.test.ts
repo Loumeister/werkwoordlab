@@ -52,3 +52,5 @@ describe("domain logic", () => {
     expect(fallback).toContain("grammaticale functie");
   });
 });
+  });
+});
