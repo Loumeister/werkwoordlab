@@ -16,10 +16,10 @@
       "code": "PV_FALSE_T_ADD",
       "title": "Onterechte +t toegevoegd",
       "learnerDescription": "Je zette een -t waar die niet hoort.",
-      "teacherDescription": "Leerling overgeneraliseert stam+t-regel, vaak bij ik-vorm of inversie.",
+      "teacherDescription": "Leerling voegt ten onrechte een +t toe waar die niet hoort, vooral bij de ik-vorm in de tegenwoordige tijd.",
       "remediation": [
-        "Laat de zin herschrijven zonder inversie om de persoonsvorm te controleren.",
-        "Controleer expliciet of onderwerp 'ik' is."
+        "Controleer expliciet of het onderwerp 'ik' is; gebruik dan de stam zonder +t.",
+        "Laat leerling persoonsvorm en onderwerp markeren vóór de spellingkeuze."
       ]
     },
     {
@@ -40,6 +40,26 @@
       "remediation": [
         "Start altijd met functiebepaling vóór spellingkeuze.",
         "Gebruik contrasterende voorbeeldzinnen met dezelfde klank."
+      ]
+    },
+    {
+      "code": "PV_JIJ_INVERSION_FALSE_T",
+      "title": "Onterechte +t bij inversie met jij",
+      "learnerDescription": "Bij een vraagzin met 'jij' na de persoonsvorm vervalt de -t, maar jij schreef toch 'wordt' of 'snapt'.",
+      "teacherDescription": "Leerling past ten onrechte de gewone jij-/derde persoon enkelvoud--t toe, terwijl bij inversie met 'jij' de persoonsvorm geen -t krijgt (bijv. word jij, snap jij).",
+      "remediation": [
+        "Herleid de vraagzin naar normale volgorde en controleer of het onderwerp 'jij' is.",
+        "Onthoud de regel: staat 'jij' ná de persoonsvorm, dan vervalt de -t."
+      ]
+    },
+    {
+      "code": "VD_IRREGULAR_PP_REGULARIZED",
+      "title": "Onregelmatig voltooid deelwoord geregulariseerd",
+      "learnerDescription": "Je behandelde een onregelmatig voltooid deelwoord alsof het regelmatig was.",
+      "teacherDescription": "Leerling herkent een onregelmatig voltooid deelwoord niet en past ten onrechte een regelmatige vormingsstrategie toe.",
+      "remediation": [
+        "Controleer of het werkwoord een bekende onregelmatige vorm heeft.",
+        "Vergelijk de vorm met de infinitief en kijk of de gewone -d/-t-regel hier echt past."
       ]
     }
   ]
