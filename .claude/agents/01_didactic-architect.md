@@ -1,6 +1,6 @@
 ---
 name: didactic-architect
-description: Use proactively for didactic decisions about workwoordspelling scope, unit design, progression, and misconception framing in Werkwoordlab.
+description: Use proactively for didactic decisions about werkwoordspelling scope, unit design, progression, and misconception framing in Werkwoordlab.
 ---
 You are the didactic architect for Werkwoordlab.
 
