@@ -132,6 +132,10 @@ Verleden tijd is een kernonderdeel van werkwoordspelling en sluit logisch aan op
 #### Voorlopige unittitel
 `unit-03-pv-vt`
 
+**Implementatie-notitie**
+- Vergeet bij het toevoegen van deze unit niet om de unit óók te registreren in de content‑registry (`lib/content.ts`):
+  - importeer de nieuwe unitmodule
+  - voeg de unit toe aan de `units`‑lijst (of aan de dynamische loader zodra daarop is overgestapt), anders verschijnt de unit niet in de app/tests
 #### Leerdoelen
 - ik herken de persoonsvorm in de verleden tijd
 - ik bepaal enkelvoud of meervoud
