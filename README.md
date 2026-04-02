@@ -85,10 +85,14 @@ werkwoordlab/
 ├── tests/
 │   ├── unit/                   # Vitest unit- en integratietests
 │   └── e2e/                    # Playwright e2e-tests
-└── docs/                       # Volledige documentatie (zie index)
+├── docs/                       # Volledige documentatie (zie index)
+└── shared/
+    └── grammar-core/           # Beoogde lokale subtree-locatie voor gedeelde grammatica-kern (kan lokaal nog ontbreken vóór sync)
 ```
 
 > **Nieuwe unit toevoegen?** Maak `content/units/<unit-id>.json` aan en registreer de unit in `lib/content.ts`. Zie [`docs/content-schema.md`](docs/content-schema.md) voor het verplichte schema.
+>
+> **Shared-core voorbereiding:** de beoogde lokale locatie voor gedeelde kerninhoud is `shared/grammar-core/`. In deze stap is alleen structurele/documentaire voorbereiding gedaan; er is geen runtime-koppeling of gefingeerde mirror toegevoegd.
 
 ---
 
