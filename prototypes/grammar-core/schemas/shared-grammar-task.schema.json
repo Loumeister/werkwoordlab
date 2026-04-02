@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SharedGrammarTask",
+  "type": "object",
+  "required": ["id", "sentenceId", "sentence"],
+  "properties": {
+    "id": { "type": "string" },
+    "sentenceId": { "type": "string" },
+    "sentence": { "$ref": "./shared-sentence.schema.json" },
+    "parsing": {
+      "type": ["object", "null"],
+      "properties": {
+        "persoonsvorm": { "type": ["string", "null"] },
+        "onderwerp": { "type": ["string", "null"] },
+        "inversion": { "type": ["boolean", "null"] },
+        "grammaticalFunctionTargets": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "spelling": {
+      "type": ["object", "null"],
+      "properties": {
+        "lemma": { "type": ["string", "null"] },
+        "target": { "type": ["string", "null"] },
+        "grammaticalFunction": { "type": ["string", "null"] },
+        "homophonePair": { "type": ["string", "null"] },
+        "primaryMisconception": { "type": ["string", "null"] },
+        "acceptedVariants": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": ["object", "null"],
+      "properties": {
+        "didacticRationale": { "type": ["string", "null"] },
+        "recoveryPath": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
