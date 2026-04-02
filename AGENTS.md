@@ -35,6 +35,8 @@ Effectively greenfield. Use this fixed stack unless explicitly changed:
 - System boundaries/data flow: `docs/architecture.md`
 - Test obligations: `docs/testing-strategy.md`
 - Release gate: `docs/release-checklist.md`
+- Shared canon (wanneer lokaal aanwezig): `shared/grammar-core/README.md` en `shared/grammar-core/docs/repo-sync-strategy.md`
+- Anti-stille canonisering: lokale runtime- en productcontracten blijven leidend totdat een document uitdrukkelijk als shared canon is gemarkeerd.
 
 ## When to use repo skills
 Use exactly the skill matching your workstream in `.agents/skills/`:

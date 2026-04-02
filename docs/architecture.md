@@ -22,6 +22,11 @@ Vastgestelde stack:
 - **Content layer**: JSON loader + schema validatie.
 - **Persistence (Prisma/SQLite)**: sessies, attempts, progressie, docentaggregaties — *huidig MVP gebruikt `lib/attempt-store.ts` (localStorage); Prisma-migratie is Fase 3-werk*.
 
+## Shared-core locatie (voorbereiding)
+- De beoogde lokale locatie voor gedeelde grammatica-canon is `shared/grammar-core/`.
+- Deze repository blijft leidend voor lokale Ontleedlab-runtimecontracten totdat een echte subtree-sync en expliciete integratiestappen zijn uitgevoerd.
+- Deze voorbereiding verandert geen routes, evaluatorpad, parsing-uitkomsten of UI-gedrag.
+
 ## Runtime contract
 ### Leerlingflow
 1. Laad item uit JSON-unit.
