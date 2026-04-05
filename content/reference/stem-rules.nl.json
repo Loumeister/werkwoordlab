@@ -1,0 +1,74 @@
+{
+  "id": "stem-rules-nl",
+  "title": "Stamafleiding Nederlands",
+  "language": "nl",
+  "version": "1.0.0",
+  "scope": "lokale-implementatielaag-werkwoordlab",
+  "sharedCanon": {
+    "sourceDoc": "shared/grammar-core/docs/werkwoordspellingsalgoritme.md",
+    "status": "must-conform"
+  },
+  "steps": [
+    {
+      "code": "REMOVE_EN",
+      "order": 1,
+      "description": "Trek bij gewone infinitieven -en af om de ruwe stam te krijgen."
+    },
+    {
+      "code": "LONG_VOWEL_PRESERVE",
+      "order": 2,
+      "description": "Behoud een lange klinker in de orthografische stam."
+    },
+    {
+      "code": "DROP_DOUBLE_CONSONANT",
+      "order": 3,
+      "description": "Laat één medeklinker weg als de ruwe stam op twee gelijke medeklinkers eindigt."
+    },
+    {
+      "code": "FINAL_V_TO_F",
+      "order": 4,
+      "description": "Vervang eind-v door f in de orthografische stam."
+    },
+    {
+      "code": "FINAL_Z_TO_S",
+      "order": 5,
+      "description": "Vervang eind-z door s in de orthografische stam."
+    },
+    {
+      "code": "IEN_TO_IE",
+      "order": 6,
+      "description": "Bij -iën-werkwoorden trek je alleen -n af en eindigt de orthografische stam op ie."
+    }
+  ],
+  "examples": [
+    {
+      "lemma": "maken",
+      "roughStem": "mak",
+      "orthographicStem": "maak"
+    },
+    {
+      "lemma": "pakken",
+      "roughStem": "pakk",
+      "orthographicStem": "pak"
+    },
+    {
+      "lemma": "leven",
+      "roughStem": "lev",
+      "orthographicStem": "leef"
+    },
+    {
+      "lemma": "lozen",
+      "roughStem": "loz",
+      "orthographicStem": "loos"
+    },
+    {
+      "lemma": "ruziën",
+      "roughStem": "ruzië",
+      "orthographicStem": "ruzie"
+    }
+  ],
+  "notes": [
+    "Gebruik roughStem voor d/t-beslissingen.",
+    "Gebruik orthographicStem voor zichtbare spelling."
+  ]
+}

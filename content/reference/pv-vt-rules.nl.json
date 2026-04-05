@@ -1,0 +1,74 @@
+{
+  "id": "pv-vt-rules-nl",
+  "title": "Persoonsvorm verleden tijd",
+  "language": "nl",
+  "version": "1.0.0",
+  "scope": "lokale-implementatielaag-werkwoordlab",
+  "sharedCanon": {
+    "sourceDoc": "shared/grammar-core/docs/werkwoordspellingsalgoritme.md",
+    "status": "must-conform"
+  },
+  "decisionOrder": [
+    "deriveRoughStem",
+    "deriveOrthographicStem",
+    "classifyWeakVerbByRoughStem",
+    "determineNumber",
+    "applyPastTenseEnding",
+    "applyLexicalOverride"
+  ],
+  "weakVerbClassification": {
+    "tVerbLetters": [
+      "c",
+      "f",
+      "h",
+      "k",
+      "p",
+      "s",
+      "t",
+      "x"
+    ],
+    "decisionBasis": "roughStem"
+  },
+  "forms": [
+    {
+      "verbClass": "t-verb",
+      "singular": "orthographicStem+te",
+      "plural": "orthographicStem+ten"
+    },
+    {
+      "verbClass": "d-verb",
+      "singular": "orthographicStem+de",
+      "plural": "orthographicStem+den"
+    }
+  ],
+  "warnings": [
+    "Werkwoorden met roughStem op v of z blijven d-werkwoorden, ook als de orthografische stam op f of s eindigt.",
+    "Bij stem op t of d mag de zichtbare vorm dubbel t of d krijgen door suffixaanhechting."
+  ],
+  "examples": [
+    {
+      "lemma": "werken",
+      "roughStem": "werk",
+      "orthographicStem": "werk",
+      "class": "t-verb",
+      "singular": "werkte",
+      "plural": "werkten"
+    },
+    {
+      "lemma": "leven",
+      "roughStem": "lev",
+      "orthographicStem": "leef",
+      "class": "d-verb",
+      "singular": "leefde",
+      "plural": "leefden"
+    },
+    {
+      "lemma": "rusten",
+      "roughStem": "rust",
+      "orthographicStem": "rust",
+      "class": "t-verb",
+      "singular": "rustte",
+      "plural": "rustten"
+    }
+  ]
+}

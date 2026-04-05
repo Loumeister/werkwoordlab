@@ -1,0 +1,69 @@
+{
+  "id": "voltooid-deelwoord-rules-nl",
+  "title": "Voltooid deelwoord",
+  "language": "nl",
+  "version": "1.0.0",
+  "scope": "lokale-implementatielaag-werkwoordlab",
+  "sharedCanon": {
+    "sourceDoc": "shared/grammar-core/docs/werkwoordspellingsalgoritme.md",
+    "status": "must-conform"
+  },
+  "decisionOrder": [
+    "checkIrregularOverride",
+    "classifyPrefixBehaviour",
+    "determineGePrefixBehaviour",
+    "deriveRoughAndOrthographicStem",
+    "chooseDTByRoughStem",
+    "suppressDoubleFinalLetter"
+  ],
+  "regularPattern": "ge+orthographicStem+d/t",
+  "noGePrefixes": [
+    "be",
+    "er",
+    "ge",
+    "her",
+    "ont",
+    "ver"
+  ],
+  "rules": [
+    {
+      "code": "NO_DOUBLE_DT",
+      "description": "Een voltooid deelwoord eindigt nooit op dubbel d of dubbel t."
+    },
+    {
+      "code": "DT_FROM_ROUGH_STEM",
+      "description": "Kies d of t op basis van de roughStem, niet op basis van de zichtbare orthografische stam."
+    }
+  ],
+  "herExceptionsMayTakeGe": [
+    "herbergen",
+    "herhuisvesten",
+    "herstructureren"
+  ],
+  "examples": [
+    {
+      "lemma": "maken",
+      "result": "gemaakt"
+    },
+    {
+      "lemma": "rusten",
+      "result": "gerust"
+    },
+    {
+      "lemma": "bloeden",
+      "result": "gebloed"
+    },
+    {
+      "lemma": "betalen",
+      "result": "betaald"
+    },
+    {
+      "lemma": "ontdekken",
+      "result": "ontdekt"
+    },
+    {
+      "lemma": "uitstellen",
+      "result": "uitgesteld"
+    }
+  ]
+}

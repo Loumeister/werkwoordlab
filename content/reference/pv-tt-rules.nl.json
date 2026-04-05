@@ -1,0 +1,62 @@
+{
+  "id": "pv-tt-rules-nl",
+  "title": "Persoonsvorm tegenwoordige tijd",
+  "language": "nl",
+  "version": "1.0.0",
+  "scope": "lokale-implementatielaag-werkwoordlab",
+  "sharedCanon": {
+    "sourceDoc": "shared/grammar-core/docs/werkwoordspellingsalgoritme.md",
+    "status": "must-conform"
+  },
+  "decisionOrder": [
+    "deriveOrthographicStem",
+    "determinePersonAndNumber",
+    "applyPresentTenseEnding",
+    "applyLexicalOverride"
+  ],
+  "forms": [
+    {
+      "subjectClass": "ik",
+      "output": "stem"
+    },
+    {
+      "subjectClass": "je-jij-second-person-singular",
+      "output": "stem+t",
+      "exceptions": [
+        "ifStemEndsWithT",
+        "inversionWithJijDropsT"
+      ]
+    },
+    {
+      "subjectClass": "hij-zij-het-third-person-singular",
+      "output": "stem+t",
+      "exceptions": [
+        "ifStemEndsWithT"
+      ]
+    },
+    {
+      "subjectClass": "plural",
+      "output": "infinitive"
+    }
+  ],
+  "exceptions": [
+    {
+      "code": "STEM_ENDS_WITH_T",
+      "description": "Als de orthografische stam al op t eindigt, voeg je geen extra t toe."
+    },
+    {
+      "code": "JIJ_INVERSION_NO_T",
+      "description": "Bij inversie met jij vervalt de t.",
+      "examples": [
+        "word jij",
+        "snap jij"
+      ]
+    }
+  ],
+  "homophonePairs": [
+    "word/wordt",
+    "vind/vindt",
+    "bedoel/bedoelt",
+    "antwoord/antwoordt"
+  ]
+}
