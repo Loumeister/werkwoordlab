@@ -1,0 +1,68 @@
+{
+  "id": "auxiliary-patterns-nl",
+  "title": "Hulpwerkwoordpatronen perfectum",
+  "language": "nl",
+  "version": "1.0.0",
+  "scope": "lokale-implementatielaag-werkwoordlab",
+  "sharedCanon": {
+    "sourceDoc": "shared/grammar-core/docs/werkwoordspellingsalgoritme.md",
+    "status": "must-conform"
+  },
+  "defaultAuxiliary": "hebben",
+  "patternFamilies": [
+    {
+      "code": "MOTION_OR_CHANGE",
+      "auxiliary": "zijn",
+      "description": "Werkwoorden van beweging, ontwikkeling of verandering nemen vaak zijn."
+    },
+    {
+      "code": "LINKVERB_LIKE",
+      "auxiliary": "zijn",
+      "description": "Koppelwerkwoordachtig gebruik neemt vaak zijn."
+    },
+    {
+      "code": "DIRECTION_SENSITIVE",
+      "auxiliary": "hebben|zijn",
+      "description": "Bij richting of verandering eerder zijn, zonder richting eerder hebben."
+    },
+    {
+      "code": "TRANSITIVE_OVERRIDE",
+      "auxiliary": "hebben",
+      "description": "Transitive en reflexieve werkwoorden nemen hebben, ook als het lemma anders vaak zijn neemt."
+    }
+  ],
+  "examples": [
+    {
+      "lemma": "komen",
+      "auxiliaries": [
+        "zijn"
+      ]
+    },
+    {
+      "lemma": "blijven",
+      "auxiliaries": [
+        "zijn"
+      ]
+    },
+    {
+      "lemma": "lopen",
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ]
+    },
+    {
+      "lemma": "veranderen",
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ]
+    },
+    {
+      "lemma": "zich scheren",
+      "auxiliaries": [
+        "hebben"
+      ]
+    }
+  ]
+}
