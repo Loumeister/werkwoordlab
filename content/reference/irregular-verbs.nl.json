@@ -1,0 +1,2347 @@
+{
+  "id": "irregular-verbs-nl",
+  "title": "Onregelmatige werkwoorden",
+  "language": "nl",
+  "version": "1.0.0",
+  "source": {
+    "type": "pdf-extract",
+    "fileName": "lijst_onregelmatige_werkwoorden.pdf",
+    "label": "Lijst onregelmatige werkwoorden",
+    "sourcePages": [
+      304,
+      305,
+      306,
+      307
+    ],
+    "notes": [
+      "Getranscribeerd uit het aangeleverde document.",
+      "Deze dataset is brongetrouw opgezet en nog niet didactisch verrijkt met frequentie, leerlijnprioriteit of foutpatronen."
+    ]
+  },
+  "verbs": [
+    {
+      "lemma": "bakken",
+      "pastSingular": [
+        "bakte"
+      ],
+      "pastPlural": [
+        "bakten"
+      ],
+      "perfectum": [
+        "gebakken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "bederven",
+      "pastSingular": [
+        "bedierf"
+      ],
+      "pastPlural": [
+        "bedierven"
+      ],
+      "perfectum": [
+        "bedorven"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "bedriegen",
+      "pastSingular": [
+        "bedroog"
+      ],
+      "pastPlural": [
+        "bedrogen"
+      ],
+      "perfectum": [
+        "bedrogen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "beginnen",
+      "pastSingular": [
+        "begon"
+      ],
+      "pastPlural": [
+        "begonnen"
+      ],
+      "perfectum": [
+        "begonnen"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "begrijpen",
+      "pastSingular": [
+        "begreep"
+      ],
+      "pastPlural": [
+        "begrepen"
+      ],
+      "perfectum": [
+        "begrepen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "bevallen",
+      "pastSingular": [
+        "beviel"
+      ],
+      "pastPlural": [
+        "bevielen"
+      ],
+      "perfectum": [
+        "bevallen"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "bewegen",
+      "pastSingular": [
+        "bewoog"
+      ],
+      "pastPlural": [
+        "bewogen"
+      ],
+      "perfectum": [
+        "bewogen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "bezoeken",
+      "pastSingular": [
+        "bezocht"
+      ],
+      "pastPlural": [
+        "bezochten"
+      ],
+      "perfectum": [
+        "bezocht"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "bidden",
+      "pastSingular": [
+        "bad"
+      ],
+      "pastPlural": [
+        "baden"
+      ],
+      "perfectum": [
+        "gebeden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "bieden",
+      "pastSingular": [
+        "bood"
+      ],
+      "pastPlural": [
+        "boden"
+      ],
+      "perfectum": [
+        "geboden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "bijten",
+      "pastSingular": [
+        "beet"
+      ],
+      "pastPlural": [
+        "beten"
+      ],
+      "perfectum": [
+        "gebeten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "binden",
+      "pastSingular": [
+        "bond"
+      ],
+      "pastPlural": [
+        "bonden"
+      ],
+      "perfectum": [
+        "gebonden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "blazen",
+      "pastSingular": [
+        "blies"
+      ],
+      "pastPlural": [
+        "bliezen"
+      ],
+      "perfectum": [
+        "geblazen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "blijken",
+      "pastSingular": [
+        "bleek"
+      ],
+      "pastPlural": [
+        "bleken"
+      ],
+      "perfectum": [
+        "gebleken"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "blijven",
+      "pastSingular": [
+        "bleef"
+      ],
+      "pastPlural": [
+        "bleven"
+      ],
+      "perfectum": [
+        "gebleven"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "braden",
+      "pastSingular": [
+        "braadde"
+      ],
+      "pastPlural": [
+        "braadden"
+      ],
+      "perfectum": [
+        "gebraden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "breken",
+      "pastSingular": [
+        "brak"
+      ],
+      "pastPlural": [
+        "braken"
+      ],
+      "perfectum": [
+        "gebroken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "brengen",
+      "pastSingular": [
+        "bracht"
+      ],
+      "pastPlural": [
+        "brachten"
+      ],
+      "perfectum": [
+        "gebracht"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "buigen",
+      "pastSingular": [
+        "boog"
+      ],
+      "pastPlural": [
+        "bogen"
+      ],
+      "perfectum": [
+        "gebogen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "denken",
+      "pastSingular": [
+        "dacht"
+      ],
+      "pastPlural": [
+        "dachten"
+      ],
+      "perfectum": [
+        "gedacht"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "doen",
+      "pastSingular": [
+        "deed"
+      ],
+      "pastPlural": [
+        "deden"
+      ],
+      "perfectum": [
+        "gedaan"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "dragen",
+      "pastSingular": [
+        "droeg"
+      ],
+      "pastPlural": [
+        "droegen"
+      ],
+      "perfectum": [
+        "gedragen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "drijven",
+      "pastSingular": [
+        "dreef"
+      ],
+      "pastPlural": [
+        "dreven"
+      ],
+      "perfectum": [
+        "gedreven"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "drinken",
+      "pastSingular": [
+        "dronk"
+      ],
+      "pastPlural": [
+        "dronken"
+      ],
+      "perfectum": [
+        "gedronken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "duiken",
+      "pastSingular": [
+        "dook"
+      ],
+      "pastPlural": [
+        "doken"
+      ],
+      "perfectum": [
+        "gedoken"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "dwingen",
+      "pastSingular": [
+        "dwong"
+      ],
+      "pastPlural": [
+        "dwongen"
+      ],
+      "perfectum": [
+        "gedwongen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "ervaren",
+      "pastSingular": [
+        "ervoer"
+      ],
+      "pastPlural": [
+        "ervoeren"
+      ],
+      "perfectum": [
+        "ervaren"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "eten",
+      "pastSingular": [
+        "at"
+      ],
+      "pastPlural": [
+        "aten"
+      ],
+      "perfectum": [
+        "gegeten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "fluiten",
+      "pastSingular": [
+        "floot"
+      ],
+      "pastPlural": [
+        "floten"
+      ],
+      "perfectum": [
+        "gefloten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "gaan",
+      "pastSingular": [
+        "ging"
+      ],
+      "pastPlural": [
+        "gingen"
+      ],
+      "perfectum": [
+        "gegaan"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "genezen",
+      "pastSingular": [
+        "genas"
+      ],
+      "pastPlural": [
+        "genazen"
+      ],
+      "perfectum": [
+        "genezen"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "genieten",
+      "pastSingular": [
+        "genoot"
+      ],
+      "pastPlural": [
+        "genoten"
+      ],
+      "perfectum": [
+        "genoten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "geven",
+      "pastSingular": [
+        "gaf"
+      ],
+      "pastPlural": [
+        "gaven"
+      ],
+      "perfectum": [
+        "gegeven"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "gieten",
+      "pastSingular": [
+        "goot"
+      ],
+      "pastPlural": [
+        "goten"
+      ],
+      "perfectum": [
+        "gegoten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "glijden",
+      "pastSingular": [
+        "gleed"
+      ],
+      "pastPlural": [
+        "gleden"
+      ],
+      "perfectum": [
+        "gegl eden"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "glimmen",
+      "pastSingular": [
+        "glom"
+      ],
+      "pastPlural": [
+        "glommen"
+      ],
+      "perfectum": [
+        "geglommen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "graven",
+      "pastSingular": [
+        "groef"
+      ],
+      "pastPlural": [
+        "groeven"
+      ],
+      "perfectum": [
+        "gegraven"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "hangen",
+      "pastSingular": [
+        "hing"
+      ],
+      "pastPlural": [
+        "hingen"
+      ],
+      "perfectum": [
+        "gehangen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "hebben",
+      "pastSingular": [
+        "had"
+      ],
+      "pastPlural": [
+        "hadden"
+      ],
+      "perfectum": [
+        "gehad"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "helpen",
+      "pastSingular": [
+        "hielp"
+      ],
+      "pastPlural": [
+        "hielpen"
+      ],
+      "perfectum": [
+        "geholpen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "heten",
+      "pastSingular": [
+        "heette"
+      ],
+      "pastPlural": [
+        "heetten"
+      ],
+      "perfectum": [
+        "geheten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "houden",
+      "pastSingular": [
+        "hield"
+      ],
+      "pastPlural": [
+        "hielden"
+      ],
+      "perfectum": [
+        "gehouden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "kiezen",
+      "pastSingular": [
+        "koos"
+      ],
+      "pastPlural": [
+        "kozen"
+      ],
+      "perfectum": [
+        "gekozen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "kijken",
+      "pastSingular": [
+        "keek"
+      ],
+      "pastPlural": [
+        "keken"
+      ],
+      "perfectum": [
+        "gekeken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "klimmen",
+      "pastSingular": [
+        "klom"
+      ],
+      "pastPlural": [
+        "klommen"
+      ],
+      "perfectum": [
+        "geklommen"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "klinken",
+      "pastSingular": [
+        "klonk"
+      ],
+      "pastPlural": [
+        "klonken"
+      ],
+      "perfectum": [
+        "geklonken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "knijpen",
+      "pastSingular": [
+        "kneep"
+      ],
+      "pastPlural": [
+        "knepen"
+      ],
+      "perfectum": [
+        "geknepen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "komen",
+      "pastSingular": [
+        "kwam"
+      ],
+      "pastPlural": [
+        "kwamen"
+      ],
+      "perfectum": [
+        "gekomen"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "kopen",
+      "pastSingular": [
+        "kocht"
+      ],
+      "pastPlural": [
+        "kochten"
+      ],
+      "perfectum": [
+        "gekocht"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "krijgen",
+      "pastSingular": [
+        "kreeg"
+      ],
+      "pastPlural": [
+        "kregen"
+      ],
+      "perfectum": [
+        "gekregen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "krimpen",
+      "pastSingular": [
+        "kromp"
+      ],
+      "pastPlural": [
+        "krompen"
+      ],
+      "perfectum": [
+        "gekrompen"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "kruipen",
+      "pastSingular": [
+        "kroop"
+      ],
+      "pastPlural": [
+        "kropen"
+      ],
+      "perfectum": [
+        "gekropen"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "kunnen",
+      "pastSingular": [
+        "kon"
+      ],
+      "pastPlural": [
+        "konden"
+      ],
+      "perfectum": [
+        "gekund"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "lachen",
+      "pastSingular": [
+        "lachte"
+      ],
+      "pastPlural": [
+        "lachten"
+      ],
+      "perfectum": [
+        "gelachen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "laden",
+      "pastSingular": [
+        "laadde"
+      ],
+      "pastPlural": [
+        "laadden"
+      ],
+      "perfectum": [
+        "geladen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "laten",
+      "pastSingular": [
+        "liet"
+      ],
+      "pastPlural": [
+        "lieten"
+      ],
+      "perfectum": [
+        "gelaten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "lezen",
+      "pastSingular": [
+        "las"
+      ],
+      "pastPlural": [
+        "lazen"
+      ],
+      "perfectum": [
+        "gelezen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "liegen",
+      "pastSingular": [
+        "loog"
+      ],
+      "pastPlural": [
+        "logen"
+      ],
+      "perfectum": [
+        "gelogen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "liggen",
+      "pastSingular": [
+        "lag"
+      ],
+      "pastPlural": [
+        "lagen"
+      ],
+      "perfectum": [
+        "gelegen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "lijden",
+      "pastSingular": [
+        "leed"
+      ],
+      "pastPlural": [
+        "leden"
+      ],
+      "perfectum": [
+        "geleden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "lijken",
+      "pastSingular": [
+        "leek"
+      ],
+      "pastPlural": [
+        "leken"
+      ],
+      "perfectum": [
+        "geleken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "lopen",
+      "pastSingular": [
+        "liep"
+      ],
+      "pastPlural": [
+        "liepen"
+      ],
+      "perfectum": [
+        "gelopen"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "meten",
+      "pastSingular": [
+        "mat"
+      ],
+      "pastPlural": [
+        "maten"
+      ],
+      "perfectum": [
+        "gemeten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "moeten",
+      "pastSingular": [
+        "moest"
+      ],
+      "pastPlural": [
+        "moesten"
+      ],
+      "perfectum": [
+        "gemoeten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "mogen",
+      "pastSingular": [
+        "mocht"
+      ],
+      "pastPlural": [
+        "mochten"
+      ],
+      "perfectum": [
+        "gemogen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "nemen",
+      "pastSingular": [
+        "nam"
+      ],
+      "pastPlural": [
+        "namen"
+      ],
+      "perfectum": [
+        "genomen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "ontbijten",
+      "pastSingular": [
+        "ontbeet"
+      ],
+      "pastPlural": [
+        "ontbeten"
+      ],
+      "perfectum": [
+        "ontbeten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "ontwerpen",
+      "pastSingular": [
+        "ontwierp"
+      ],
+      "pastPlural": [
+        "ontwierpen"
+      ],
+      "perfectum": [
+        "ontworpen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "overlijden",
+      "pastSingular": [
+        "overleed"
+      ],
+      "pastPlural": [
+        "overleden"
+      ],
+      "perfectum": [
+        "overleden"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "raden",
+      "pastSingular": [
+        "raadde"
+      ],
+      "pastPlural": [
+        "raadden"
+      ],
+      "perfectum": [
+        "geraden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "rijden",
+      "pastSingular": [
+        "reed"
+      ],
+      "pastPlural": [
+        "reden"
+      ],
+      "perfectum": [
+        "gereden"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "roepen",
+      "pastSingular": [
+        "riep"
+      ],
+      "pastPlural": [
+        "riepen"
+      ],
+      "perfectum": [
+        "geroepen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "ruiken",
+      "pastSingular": [
+        "rook"
+      ],
+      "pastPlural": [
+        "roken"
+      ],
+      "perfectum": [
+        "geroken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "scheiden",
+      "pastSingular": [
+        "scheidde"
+      ],
+      "pastPlural": [
+        "scheidden"
+      ],
+      "perfectum": [
+        "gescheiden"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "schelden",
+      "pastSingular": [
+        "schold"
+      ],
+      "pastPlural": [
+        "scholden"
+      ],
+      "perfectum": [
+        "gescholden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "schenken",
+      "pastSingular": [
+        "schonk"
+      ],
+      "pastPlural": [
+        "schonken"
+      ],
+      "perfectum": [
+        "geschonken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "scheren",
+      "pastSingular": [
+        "schoor"
+      ],
+      "pastPlural": [
+        "schoren"
+      ],
+      "perfectum": [
+        "geschoren"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "schieten",
+      "pastSingular": [
+        "schoot"
+      ],
+      "pastPlural": [
+        "schoten"
+      ],
+      "perfectum": [
+        "geschoten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "schijnen",
+      "pastSingular": [
+        "scheen"
+      ],
+      "pastPlural": [
+        "schenen"
+      ],
+      "perfectum": [
+        "geschenen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "schrijven",
+      "pastSingular": [
+        "schreef"
+      ],
+      "pastPlural": [
+        "schreven"
+      ],
+      "perfectum": [
+        "geschreven"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "schrikken",
+      "pastSingular": [
+        "schrok"
+      ],
+      "pastPlural": [
+        "schrokken"
+      ],
+      "perfectum": [
+        "geschrokken"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "schuiven",
+      "pastSingular": [
+        "schoof"
+      ],
+      "pastPlural": [
+        "schoven"
+      ],
+      "perfectum": [
+        "geschoven"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "slaan",
+      "pastSingular": [
+        "sloeg"
+      ],
+      "pastPlural": [
+        "sloegen"
+      ],
+      "perfectum": [
+        "geslagen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "slapen",
+      "pastSingular": [
+        "sliep"
+      ],
+      "pastPlural": [
+        "sliepen"
+      ],
+      "perfectum": [
+        "geslapen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "slijpen",
+      "pastSingular": [
+        "sleep"
+      ],
+      "pastPlural": [
+        "slepen"
+      ],
+      "perfectum": [
+        "geslepen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "sluipen",
+      "pastSingular": [
+        "sloop"
+      ],
+      "pastPlural": [
+        "slopen"
+      ],
+      "perfectum": [
+        "geslopen"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "sluiten",
+      "pastSingular": [
+        "sloot"
+      ],
+      "pastPlural": [
+        "sloten"
+      ],
+      "perfectum": [
+        "gesloten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "smelten",
+      "pastSingular": [
+        "smolt"
+      ],
+      "pastPlural": [
+        "smolten"
+      ],
+      "perfectum": [
+        "gesmolten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "snijden",
+      "pastSingular": [
+        "sneed"
+      ],
+      "pastPlural": [
+        "sneden"
+      ],
+      "perfectum": [
+        "gesneden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "snuiten",
+      "pastSingular": [
+        "snoot"
+      ],
+      "pastPlural": [
+        "snoten"
+      ],
+      "perfectum": [
+        "gesnoten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "snuiven",
+      "pastSingular": [
+        "snoof"
+      ],
+      "pastPlural": [
+        "snoven"
+      ],
+      "perfectum": [
+        "gesnoven"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "spijten",
+      "pastSingular": [
+        "speet"
+      ],
+      "pastPlural": [],
+      "perfectum": [
+        "gespeten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": [
+        "Bron markeert dit werkwoord als onpersoonlijk met \"het\"."
+      ]
+    },
+    {
+      "lemma": "spreken",
+      "pastSingular": [
+        "sprak"
+      ],
+      "pastPlural": [
+        "spraken"
+      ],
+      "perfectum": [
+        "gesproken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "springen",
+      "pastSingular": [
+        "sprong"
+      ],
+      "pastPlural": [
+        "sprongen"
+      ],
+      "perfectum": [
+        "gesprongen"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "spuiten",
+      "pastSingular": [
+        "spoot"
+      ],
+      "pastPlural": [
+        "spoten"
+      ],
+      "perfectum": [
+        "gespoten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "staan",
+      "pastSingular": [
+        "stond"
+      ],
+      "pastPlural": [
+        "stonden"
+      ],
+      "perfectum": [
+        "gestaan"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "steken",
+      "pastSingular": [
+        "stak"
+      ],
+      "pastPlural": [
+        "staken"
+      ],
+      "perfectum": [
+        "gestoken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "stelen",
+      "pastSingular": [
+        "stal"
+      ],
+      "pastPlural": [
+        "stalen"
+      ],
+      "perfectum": [
+        "gestolen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "sterven",
+      "pastSingular": [
+        "stierf"
+      ],
+      "pastPlural": [
+        "stierven"
+      ],
+      "perfectum": [
+        "gestorven"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "stijgen",
+      "pastSingular": [
+        "steeg"
+      ],
+      "pastPlural": [
+        "stegen"
+      ],
+      "perfectum": [
+        "gestegen"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "stinken",
+      "pastSingular": [
+        "stonk"
+      ],
+      "pastPlural": [
+        "stonken"
+      ],
+      "perfectum": [
+        "gestonken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "strijden",
+      "pastSingular": [
+        "streed"
+      ],
+      "pastPlural": [
+        "streden"
+      ],
+      "perfectum": [
+        "gestreden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "strijken",
+      "pastSingular": [
+        "streek"
+      ],
+      "pastPlural": [
+        "streken"
+      ],
+      "perfectum": [
+        "gestreken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "trekken",
+      "pastSingular": [
+        "trok"
+      ],
+      "pastPlural": [
+        "trokken"
+      ],
+      "perfectum": [
+        "getrokken"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vallen",
+      "pastSingular": [
+        "viel"
+      ],
+      "pastPlural": [
+        "vielen"
+      ],
+      "perfectum": [
+        "gevallen"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vangen",
+      "pastSingular": [
+        "ving"
+      ],
+      "pastPlural": [
+        "vingen"
+      ],
+      "perfectum": [
+        "gevangen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "varen",
+      "pastSingular": [
+        "voer"
+      ],
+      "pastPlural": [
+        "voeren"
+      ],
+      "perfectum": [
+        "gevaren"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vechten",
+      "pastSingular": [
+        "vocht"
+      ],
+      "pastPlural": [
+        "vochten"
+      ],
+      "perfectum": [
+        "gevochten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "verbieden",
+      "pastSingular": [
+        "verbood"
+      ],
+      "pastPlural": [
+        "verboden"
+      ],
+      "perfectum": [
+        "verboden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "verdwijnen",
+      "pastSingular": [
+        "verdween"
+      ],
+      "pastPlural": [
+        "verdwenen"
+      ],
+      "perfectum": [
+        "verdwenen"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vergelijken",
+      "pastSingular": [
+        "vergeleek"
+      ],
+      "pastPlural": [
+        "vergeleken"
+      ],
+      "perfectum": [
+        "vergeleken"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vergeten",
+      "pastSingular": [
+        "vergat"
+      ],
+      "pastPlural": [
+        "vergaten"
+      ],
+      "perfectum": [
+        "vergeten"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "verliezen",
+      "pastSingular": [
+        "verloor"
+      ],
+      "pastPlural": [
+        "verloren"
+      ],
+      "perfectum": [
+        "verloren"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vermijden",
+      "pastSingular": [
+        "vermeed"
+      ],
+      "pastPlural": [
+        "vermeden"
+      ],
+      "perfectum": [
+        "vermeden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "verraden",
+      "pastSingular": [
+        "verraadde"
+      ],
+      "pastPlural": [
+        "verraadden"
+      ],
+      "perfectum": [
+        "verraden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vertrekken",
+      "pastSingular": [
+        "vertrok"
+      ],
+      "pastPlural": [
+        "vertrokken"
+      ],
+      "perfectum": [
+        "vertrokken"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "verwijten",
+      "pastSingular": [
+        "verweet"
+      ],
+      "pastPlural": [
+        "verweten"
+      ],
+      "perfectum": [
+        "verweten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "verzinnen",
+      "pastSingular": [
+        "verzon"
+      ],
+      "pastPlural": [
+        "verzonnen"
+      ],
+      "perfectum": [
+        "verzonnen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vinden",
+      "pastSingular": [
+        "vond"
+      ],
+      "pastPlural": [
+        "vonden"
+      ],
+      "perfectum": [
+        "gevonden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vliegen",
+      "pastSingular": [
+        "vloog"
+      ],
+      "pastPlural": [
+        "vlogen"
+      ],
+      "perfectum": [
+        "gevlogen"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vouwen",
+      "pastSingular": [
+        "vouwde"
+      ],
+      "pastPlural": [
+        "vouwden"
+      ],
+      "perfectum": [
+        "gevouwen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vragen",
+      "pastSingular": [
+        "vroeg"
+      ],
+      "pastPlural": [
+        "vroegen"
+      ],
+      "perfectum": [
+        "gevraagd"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "vriezen",
+      "pastSingular": [
+        "vroor"
+      ],
+      "pastPlural": [],
+      "perfectum": [
+        "gevroren"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": [
+        "Bron markeert dit werkwoord als onpersoonlijk met \"het\"."
+      ]
+    },
+    {
+      "lemma": "wassen",
+      "pastSingular": [
+        "waste"
+      ],
+      "pastPlural": [
+        "wasten"
+      ],
+      "perfectum": [
+        "gewassen"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "wegen",
+      "pastSingular": [
+        "woog"
+      ],
+      "pastPlural": [
+        "wogen"
+      ],
+      "perfectum": [
+        "gewogen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "werpen",
+      "pastSingular": [
+        "wierp"
+      ],
+      "pastPlural": [
+        "wierpen"
+      ],
+      "perfectum": [
+        "geworpen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "weten",
+      "pastSingular": [
+        "wist"
+      ],
+      "pastPlural": [
+        "wisten"
+      ],
+      "perfectum": [
+        "geweten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "wijzen",
+      "pastSingular": [
+        "wees"
+      ],
+      "pastPlural": [
+        "wezen"
+      ],
+      "perfectum": [
+        "gewezen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "willen",
+      "pastSingular": [
+        "wilde",
+        "wou"
+      ],
+      "pastPlural": [
+        "wilden",
+        "wouden"
+      ],
+      "perfectum": [
+        "gewild"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "winnen",
+      "pastSingular": [
+        "won"
+      ],
+      "pastPlural": [
+        "wonnen"
+      ],
+      "perfectum": [
+        "gewonnen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "worden",
+      "pastSingular": [
+        "werd"
+      ],
+      "pastPlural": [
+        "werden"
+      ],
+      "perfectum": [
+        "geworden"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "wrijven",
+      "pastSingular": [
+        "wreef"
+      ],
+      "pastPlural": [
+        "wreven"
+      ],
+      "perfectum": [
+        "gewreven"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zeggen",
+      "pastSingular": [
+        "zei"
+      ],
+      "pastPlural": [
+        "zeiden"
+      ],
+      "perfectum": [
+        "gezegd"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zenden",
+      "pastSingular": [
+        "zond"
+      ],
+      "pastPlural": [
+        "zonden"
+      ],
+      "perfectum": [
+        "gezonden"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zien",
+      "pastSingular": [
+        "zag"
+      ],
+      "pastPlural": [
+        "zagen"
+      ],
+      "perfectum": [
+        "gezien"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zijn",
+      "pastSingular": [
+        "was"
+      ],
+      "pastPlural": [
+        "waren"
+      ],
+      "perfectum": [
+        "geweest"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zingen",
+      "pastSingular": [
+        "zong"
+      ],
+      "pastPlural": [
+        "zongen"
+      ],
+      "perfectum": [
+        "gezongen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zinken",
+      "pastSingular": [
+        "zonk"
+      ],
+      "pastPlural": [
+        "zonken"
+      ],
+      "perfectum": [
+        "gezonken"
+      ],
+      "auxiliaries": [
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zitten",
+      "pastSingular": [
+        "zat"
+      ],
+      "pastPlural": [
+        "zaten"
+      ],
+      "perfectum": [
+        "gezeten"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zoeken",
+      "pastSingular": [
+        "zocht"
+      ],
+      "pastPlural": [
+        "zochten"
+      ],
+      "perfectum": [
+        "gezocht"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zuigen",
+      "pastSingular": [
+        "zoog"
+      ],
+      "pastPlural": [
+        "zogen"
+      ],
+      "perfectum": [
+        "gezogen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zullen",
+      "pastSingular": [
+        "zou"
+      ],
+      "pastPlural": [
+        "zouden"
+      ],
+      "perfectum": [],
+      "auxiliaries": [],
+      "notes": [
+        "Bron vermeldt geen perfectumvorm."
+      ]
+    },
+    {
+      "lemma": "zwemmen",
+      "pastSingular": [
+        "zwom"
+      ],
+      "pastPlural": [
+        "zwommen"
+      ],
+      "perfectum": [
+        "gezwommen"
+      ],
+      "auxiliaries": [
+        "hebben",
+        "zijn"
+      ],
+      "notes": []
+    },
+    {
+      "lemma": "zwijgen",
+      "pastSingular": [
+        "zweeg"
+      ],
+      "pastPlural": [
+        "zwegen"
+      ],
+      "perfectum": [
+        "gezwegen"
+      ],
+      "auxiliaries": [
+        "hebben"
+      ],
+      "notes": []
+    }
+  ]
+}
