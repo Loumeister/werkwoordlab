@@ -87,12 +87,12 @@ werkwoordlab/
 │   └── e2e/                    # Playwright e2e-tests
 ├── docs/                       # Volledige documentatie (zie index)
 └── shared/
-    └── grammar-core/           # Beoogde lokale subtree-locatie voor gedeelde grammatica-kern (kan lokaal nog ontbreken vóór sync)
+    └── grammar-core/           # Lokale snapshot van grammar-core gedeelde canon
 ```
 
 > **Nieuwe unit toevoegen?** Maak `content/units/<unit-id>.json` aan en registreer de unit in `lib/content.ts`. Zie [`docs/content-schema.md`](docs/content-schema.md) voor het verplichte schema.
 >
-> **Shared-core voorbereiding:** de beoogde lokale locatie voor gedeelde kerninhoud is `shared/grammar-core/`. In deze stap is alleen structurele/documentaire voorbereiding gedaan; er is geen runtime-koppeling of gefingeerde mirror toegevoegd.
+> **Shared-core:** `shared/grammar-core/` is aanwezig als handmatig geboostrappede snapshot van `Loumeister/grammar-core` @ `4a4cfeceac2fe4f37cf81eb395446acd977460a7`. Zie [`shared/grammar-core/MIRROR-SOURCE.md`](shared/grammar-core/MIRROR-SOURCE.md) voor sync-instructies en het pad naar een echte git subtree.
 
 ---
 
@@ -168,4 +168,6 @@ Volledige takenlijst en didactische eisen: [`docs/content-expansion-roadmap.md`]
 | [`docs/backlog.md`](docs/backlog.md) | Gefaseerde implementatiebacklog met DoD per fase |
 | [`docs/content-expansion-roadmap.md`](docs/content-expansion-roadmap.md) | Uitvoerbare contentroadmap: units, taxonomie, evaluator |
 | [`docs/release-checklist.md`](docs/release-checklist.md) | Releasechecklist voor MVP |
+| [`docs/product-contract.md`](docs/product-contract.md) | Lokaal productcontract: adoptie shared canon, source-of-truth regel, lokale elementen |
+| [`shared/grammar-core/`](shared/grammar-core/MIRROR-SOURCE.md) | Lokale snapshot van grammar-core gedeelde canon (zie MIRROR-SOURCE.md voor sync) |
 | [`AGENTS.md`](AGENTS.md) | Werkafspraken voor AI-agents die aan dit project werken |

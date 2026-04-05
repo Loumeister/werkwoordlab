@@ -9,6 +9,8 @@ Keep evaluator behavior deterministic, content-aware, and didactically correct.
 
 ## Always read first
 - `AGENTS.md`
+- `shared/grammar-core/docs/taxonomy-governance.md`
+- `docs/product-contract.md`
 - `docs/content-schema.md`
 - `docs/didactic-principles.md`
 - `docs/testing-strategy.md`
