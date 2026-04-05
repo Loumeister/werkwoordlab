@@ -1,0 +1,75 @@
+{
+  "id": "prefix-behaviour-nl",
+  "title": "Prefixgedrag bij werkwoorden",
+  "language": "nl",
+  "version": "1.0.0",
+  "scope": "lokale-implementatielaag-werkwoordlab",
+  "sharedCanon": {
+    "sourceDoc": "shared/grammar-core/docs/werkwoordspellingsalgoritme.md",
+    "status": "must-conform"
+  },
+  "inseparablePrefixes": [
+    {
+      "prefix": "be",
+      "ppGe": "forbidden"
+    },
+    {
+      "prefix": "er",
+      "ppGe": "forbidden"
+    },
+    {
+      "prefix": "ge",
+      "ppGe": "forbidden"
+    },
+    {
+      "prefix": "her",
+      "ppGe": "normally-forbidden"
+    },
+    {
+      "prefix": "ont",
+      "ppGe": "forbidden"
+    },
+    {
+      "prefix": "ver",
+      "ppGe": "forbidden"
+    }
+  ],
+  "dualBehaviourPrefixes": [
+    {
+      "prefix": "door",
+      "note": "kan scheidbaar of onscheidbaar zijn"
+    },
+    {
+      "prefix": "mis",
+      "note": "kan scheidbaar of onscheidbaar zijn"
+    },
+    {
+      "prefix": "om",
+      "note": "kan scheidbaar of onscheidbaar zijn"
+    },
+    {
+      "prefix": "onder",
+      "note": "kan scheidbaar of onscheidbaar zijn"
+    },
+    {
+      "prefix": "over",
+      "note": "kan scheidbaar of onscheidbaar zijn"
+    },
+    {
+      "prefix": "vol",
+      "note": "kan scheidbaar of onscheidbaar zijn"
+    },
+    {
+      "prefix": "voor",
+      "note": "kan scheidbaar of onscheidbaar zijn"
+    }
+  ],
+  "separablePattern": {
+    "description": "Bij scheidbare werkwoorden komt ge- tussen prefix en werkwoordelijk basisdeel.",
+    "template": "prefix+ge+basisdeelwoord"
+  },
+  "notes": [
+    "Prefixgedrag moet vóór generieke vd-vorming worden vastgesteld.",
+    "Lexicale uitzonderingen mogen deze patroonlaag overschrijven."
+  ]
+}
