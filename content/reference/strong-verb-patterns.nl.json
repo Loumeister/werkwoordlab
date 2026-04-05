@@ -1,0 +1,71 @@
+{
+  "id": "strong-verb-patterns-nl",
+  "title": "Sterke werkwoorden per patroon",
+  "language": "nl",
+  "version": "1.0.0",
+  "scope": "lokale-implementatielaag-werkwoordlab",
+  "sharedCanon": {
+    "sourceDoc": "shared/grammar-core/docs/werkwoordspellingsalgoritme.md",
+    "status": "must-conform"
+  },
+  "patternFamilies": [
+    {
+      "code": "IJ_EE_E",
+      "description": "bijten -> beet -> beten -> gebeten",
+      "examples": [
+        "bijten",
+        "lijden",
+        "strijden"
+      ]
+    },
+    {
+      "code": "IE_OO_O",
+      "description": "bieden -> bood -> boden -> geboden",
+      "examples": [
+        "bieden",
+        "genieten",
+        "verbieden"
+      ]
+    },
+    {
+      "code": "I_O_O",
+      "description": "drinken -> dronk -> dronken -> gedronken",
+      "examples": [
+        "drinken",
+        "zingen",
+        "zinken"
+      ]
+    },
+    {
+      "code": "I_EE_E",
+      "description": "blijven -> bleef -> bleven -> gebleven",
+      "examples": [
+        "blijven",
+        "drijven",
+        "schrijven"
+      ]
+    },
+    {
+      "code": "AA_OE_A",
+      "description": "slaan -> sloeg -> sloegen -> geslagen",
+      "examples": [
+        "slaan",
+        "dragen",
+        "vragen"
+      ]
+    },
+    {
+      "code": "A_O_A",
+      "description": "Patroonfamilies zijn leerlijnhulpen en geen volledige generatieve garantie.",
+      "examples": [
+        "vallen",
+        "vangen",
+        "gaan"
+      ]
+    }
+  ],
+  "notes": [
+    "Patroonfamilies zijn bedoeld voor clustering en leerlijnopbouw.",
+    "Niet elk sterk werkwoord valt zonder restcategorie in één nette familie."
+  ]
+}
