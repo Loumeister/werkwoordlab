@@ -62,6 +62,8 @@ De lokale evaluator (`lib/evaluator.ts`) mag de canonieke beslisvolgorde niet te
 3. lexicale of morfologische override controleren
 4. spellingvorm afleiden
 
+> **Openstaande verificatie**: de alignment van `lib/evaluator.ts` met `shared/grammar-core/docs/werkwoordspellingsalgoritme.md` is nog niet formeel geauditeerd. De eis geldt; de verificatie is nog te doen. Wijzig evaluatorgedrag niet op basis van het algoritmedocument zonder eerst te bevestigen wat de huidige evaluator feitelijk doet.
+
 ### Inhoudelijke ontwerpregels
 Geadopteerd van `shared/grammar-core/docs/content-authoring-rules.md`:
 
