@@ -273,10 +273,10 @@ Zie de sectie **Nog niet prioriteren** in [Prioriteitenvolgorde](#prioriteitenvo
 - items die alleen oppervlakkig lijken te verschillen maar inhoudelijk hetzelfde testen
 
 ### Richtlijn per unit
-- streef naar **15–20 items**
+- streef naar **20–25 items** voor de kernunits (unit-01 en unit-02 zijn op april 2026 beide op 25 items)
 - met bewuste mix van:
   - basisitems
-  - contrastitems
+  - contrastitems (homofonen, functiecontrast)
   - revisie-items
   - transfertaak
 
@@ -314,12 +314,22 @@ Bij elke uitbreidingsslag moeten tests worden bijgewerkt.
 
 ## Uitvoerbare takenlijst
 
-### Taakgroep 1 — huidige units verdiepen ✅ (afgerond april 2026)
-- [x] voeg 6–8 sterke nieuwe items toe aan `unit-01-pv-tt` (nu 14 items: +bedoel/bedoelt, +meervoud wij/ze, +het-onderwerp, +jij-zonder-inversie met vind/vindt)
-- [x] voeg 6–8 sterke nieuwe items toe aan `unit-02-voltooid-deelwoord` (nu 14 items: +bedoelt/bedoeld, +gereden, +ingepakt, +gewerkt, +geschreven)
+### Taakgroep 1 — huidige units verdiepen ✅ (afgerond april 2026, beide passes)
+
+**Eerste uitbreidingspass** (naar 14 items elk):
+- [x] voeg 6–8 sterke nieuwe items toe aan `unit-01-pv-tt` (+bedoel/bedoelt, +meervoud wij/ze, +het-onderwerp, +jij-zonder-inversie met vind/vindt)
+- [x] voeg 6–8 sterke nieuwe items toe aan `unit-02-voltooid-deelwoord` (+bedoelt/bedoeld, +gereden, +ingepakt, +gewerkt, +geschreven)
 - [x] controleer of bestaande taxonomiecodes voldoende onderscheid maken
-- [x] voeg alleen waar nodig nieuwe taxonomiecodes toe (`PV_MEERVOUD_T_ADDITION` toegevoegd — dekt meervoud+t fout die PV_FALSE_T_ADD niet dekte)
+- [x] voeg alleen waar nodig nieuwe taxonomiecodes toe (`PV_MEERVOUD_T_ADDITION` toegevoegd)
 - [x] werk contentvalidatietests bij (twee nieuwe tests in `domain-logic.test.ts`)
+
+**Tweede uitbreidingspass** (naar ~25 items elk, ~50 totaal):
+- [x] voeg 11 sterke nieuwe items toe aan `unit-01-pv-tt` (nu 25 items): Tier-1 beloven/vertrouwen, Tier-2 beweren/veranderen/antwoorden, Tier-3 verhuizen/bewonderen, cross-unit werken/studeren
+- [x] voeg 11 sterke nieuwe items toe aan `unit-02-voltooid-deelwoord` (nu 25 items): volledige HOMOPHONE_FUNCTION_CONFUSION-serie voor beloven, vertrouwen, beweren, veranderen, verhuizen, studeren
+- [x] contrast-architectuur versterkt: Tier-1 clusters (beloven, vertrouwen) volledig aanwezig in beide units
+- [x] Tier-2 clusters (beweren, veranderen) volledig aanwezig in beide units
+- [x] cross-unit lexicale paren werkend: werken, studeren, duren, beloven, vertrouwen, beweren, veranderen verschijnen nu in beide units
+- [x] twee nieuwe evaluatortests voor Tier-1 homofoonparen in `domain-logic.test.ts`
 
 ### Taakgroep 2 — nieuwe unit verleden tijd
 - [ ] ontwerp leerdoelen en misconceptiecategorieën
