@@ -51,6 +51,7 @@ Bepaal eerst of de doelvorm is:
 Zonder functiebepaling mag geen spellingbeslissing worden geforceerd.
 
 ## Canonieke stap 2 - kies het juiste regelpad
+
 Na functiebepaling volgt precies één hoofdpad.
 
 ### Pad A - persoonsvorm tegenwoordige tijd

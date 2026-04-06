@@ -1,4 +1,4 @@
-# Product Repo Contract Template
+# Product repo contract template
 
 ## Doel van dit document
 Dit document is een **canonieke template** voor lokale productrepo-contracten.
