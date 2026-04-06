@@ -1,7 +1,9 @@
 # Shared-core alignment voor werkwoordregelbestanden
 
 ## Doel
-Dit document legt vast hoe lokale werkwoordregelbestanden in Werkwoordlab zich verhouden tot `shared/grammar-core/`.
+Dit document legt vast hoe lokale werkwoordregelbestanden en documentatie in Werkwoordlab zich verhouden tot `shared/grammar-core/`.
+
+`shared/grammar-core/` is aanwezig als handmatig geboostrappede snapshot van `Loumeister/grammar-core` @ `4a4cfeceac2fe4f37cf81eb395446acd977460a7`. Zie `shared/grammar-core/MIRROR-SOURCE.md` voor sync-instructies.
 
 ## Leeshierarchie
 Bij inhoudelijke wijzigingen aan werkwoordspellingsregels geldt deze volgorde:
@@ -11,6 +13,8 @@ Bij inhoudelijke wijzigingen aan werkwoordspellingsregels geldt deze volgorde:
 4. `shared/grammar-core/docs/taxonomy-governance.md`
 5. lokale Werkwoordlab-documenten in `docs/`
 6. lokale machineleesbare bestanden in `content/reference/`
+
+Voor agentwerk geldt de bredere leeshiërarchie uit `AGENTS.md`.
 
 ## Afbakening
 De lokale documenten en JSON-bestanden in Werkwoordlab zijn:
@@ -44,7 +48,15 @@ Nieuwe lokale werkwoordregelbestanden zijn alleen toegestaan als ze aan alle voo
 - `docs/*.md` beschrijft de lokale uitleglaag voor mensen.
 - `content/reference/*.json` beschrijft de lokale regellaag voor code en tests.
 - Bij conflict gaat shared canon vóór lokale uitleg.
-- Bij ontbrekende shared canon mag Werkwoordlab lokaal specificeren, maar alleen als implementatielaag.
+- Bij conflict tussen code en documentatie gaat lokale code/runtime-werkelijkheid vóór documentatie (voor feitelijk gedrag van de repo).
+
+## Mirror-sync en onderhoud
+Zie `shared/grammar-core/MIRROR-SOURCE.md` voor:
+- de pinned commit van de huidige snapshot
+- instructies voor het vervangen van de snapshot door een echte git subtree
+- instructies voor toekomstige updates na de echte subtree-koppeling
+
+Intentionele lokale afwijkingen van shared canon worden gedocumenteerd in `docs/product-contract.md`, niet in `shared/grammar-core/`.
 
 ## Relatie met de rest van de repo
 Deze alignment geldt voor:
@@ -54,4 +66,4 @@ Deze alignment geldt voor:
 - toekomstige misconceptiemapping
 - regressietests op randgevallen
 
-Lees dit document samen met `docs/reference-layer-usage.md`.
+Lees dit document samen met `docs/reference-layer-usage.md` en `docs/product-contract.md`.

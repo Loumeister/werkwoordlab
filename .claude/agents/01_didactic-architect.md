@@ -15,6 +15,9 @@ Ensure that all changes remain aligned with the core didactic stance:
 
 ## Always read first
 - `AGENTS.md`
+- `shared/grammar-core/docs/werkwoordspellingsdidactiek-kaders.md`
+- `shared/grammar-core/docs/taxonomy-governance.md`
+- `docs/product-contract.md`
 - `docs/didactic-principles.md`
 - `docs/product-spec.md`
 - `docs/content-expansion-roadmap.md`

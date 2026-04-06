@@ -1,5 +1,18 @@
 # Werkwoordspellingsdidactiek — kaders voor Werkwoordlab
 
+## Relatie met shared canon
+
+De **6 leidende principes** in dit document zijn lokale toepassingen van de gedeelde canonieke versie:
+`shared/grammar-core/docs/werkwoordspellingsdidactiek-kaders.md`
+
+Bij conflict over de gedeelde principes heeft de shared canonieke versie voorrang boven dit document.
+
+De secties **ná** de leidende principes — ontwerpregels voor units en zinnenbank, ontwerpregels voor misconceptietaxonomie, ontwerpregels voor feedback, prioritering van grammaticale domeinen, evidence-based werkafspraak voor Claude en Codex, Niet toegestaan, en Definition of done — zijn **Werkwoordlab-lokale uitbreidingen** die verder gaan dan shared canon. Deze extensies blijven lokaal tenzij ze expliciet naar `grammar-core` worden gepromoveerd.
+
+Dit document vervangt shared canon niet. Het concretiseert en verlengt shared canon voor de Werkwoordlab-context.
+
+---
+
 ## Status van dit document
 Dit document legt de **evidence-informed didactische ontwerpregels** vast voor Werkwoordlab.
 

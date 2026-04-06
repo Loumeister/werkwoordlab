@@ -28,15 +28,38 @@ Effectively greenfield. Use this fixed stack unless explicitly changed:
 - Dutch learner-facing UI/content for MVP.
 - Do not hardcode exercise items in UI code.
 
+## Working read order
+
+For every task, read in this order:
+1. `AGENTS.md` (this file)
+2. Relevant `shared/grammar-core` docs (see list below — read only what is relevant to the task)
+3. `docs/product-contract.md`
+4. Local code/runtime truth (`lib/`, `content/`, `app/`)
+5. Task prompt
+
+**Source-of-truth rule**: for factual repo behavior, local code/runtime truth outranks documentation — both shared and local. If a doc claims something that the code does not do, the code is the truth. Fix the doc, not the code.
+
+Shared canon (`shared/grammar-core/`) informs local behavior at the right boundary level. Local runtime contracts and product logic remain local unless intentionally upstreamed to `grammar-core`.
+
 ## When to consult docs
-- Product boundaries: `docs/product-spec.md`
-- Learning model: `docs/didactic-principles.md`
-- Content contract: `docs/content-schema.md`
-- System boundaries/data flow: `docs/architecture.md`
-- Test obligations: `docs/testing-strategy.md`
-- Release gate: `docs/release-checklist.md`
-- Shared canon (wanneer lokaal aanwezig): `shared/grammar-core/README.md` en `shared/grammar-core/docs/repo-sync-strategy.md`
-- Anti-stille canonisering: lokale runtime- en productcontracten blijven leidend totdat een document uitdrukkelijk als shared canon is gemarkeerd.
+
+| Concern | Read |
+|---|---|
+| Product boundaries | `docs/product-spec.md` |
+| Learning model | `docs/didactic-principles.md` |
+| Content contract | `docs/content-schema.md` |
+| System boundaries / data flow | `docs/architecture.md` |
+| Test obligations | `docs/testing-strategy.md` |
+| Release gate | `docs/release-checklist.md` |
+| Local adoption contract | `docs/product-contract.md` |
+| Shared didactic principles | `shared/grammar-core/docs/werkwoordspellingsdidactiek-kaders.md` |
+| Shared taxonomy governance | `shared/grammar-core/docs/taxonomy-governance.md` |
+| Shared spelling algorithm | `shared/grammar-core/docs/werkwoordspellingsalgoritme.md` |
+| Platform principles / current vs future | `shared/grammar-core/docs/grammar-platform-principles.md` |
+| Shared content authoring rules | `shared/grammar-core/docs/content-authoring-rules.md` |
+| Scope boundaries across repos | `shared/grammar-core/docs/repo-scope-contracts.md` |
+| Shared agent catalog | `shared/grammar-core/docs/agent-catalog.md` |
+| How to sync grammar-core snapshot | `shared/grammar-core/MIRROR-SOURCE.md` |
 
 ## When to use repo skills
 Use exactly the skill matching your workstream in `.agents/skills/`:
