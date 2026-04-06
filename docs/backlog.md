@@ -17,7 +17,7 @@
 **DoD**: volledige learnerflow voor unit-01 werkt met correcte feedback.
 
 ## Fase 2 — Content opschalen
-1. Unit-01 en unit-02 didactisch afronden. ✅ **Afgerond april 2026 (twee passes)** — unit-01: 25 items, unit-02: 25 items (~50 totaal). Tier-1 clusters (beloven, vertrouwen, gebeuren) en Tier-2 clusters (beweren, veranderen) volledig aanwezig in beide units. Cross-unit lexicale paren versterken de contrast-architectuur.
+1. Unit-01 en unit-02 didactisch afronden. ✅ **Afgerond april 2026 (twee passes)** — unit-01: 26 items, unit-02: 25 items (~51 totaal). Tier-1 clusters (beloven, vertrouwen, gebeuren) en Tier-2 clusters (beweren, veranderen) volledig aanwezig in beide units. Cross-unit lexicale paren versterken de contrast-architectuur.
 2. Taxonomiecodes volledig koppelen aan items. ✅ Alle items hebben geldige `primaryMisconception`; 7 codes totaal (nieuw: `PV_MEERVOUD_T_ADDITION`).
 3. Contentkwaliteitsgates automatiseren in tests. ✅ `content-contracts.test.ts` valideert alle invarianten; 4 gerichte evaluatortests in `domain-logic.test.ts`.
 

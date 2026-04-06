@@ -634,6 +634,31 @@
         "correct": "Goed: 'bewondert' is de persoonsvorm. 'Bewonderd' klinkt hetzelfde maar is het voltooid deelwoord.",
         "hint": "Is dit een persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt stam+t."
       }
+    },
+    {
+      "id": "u1-i26",
+      "type": "fill-in",
+      "prompt": "Er ___ altijd iets grappigs na de bel. (gebeuren)",
+      "context": "Na schooltijd",
+      "lemma": "gebeuren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "er",
+      "target": "gebeurt",
+      "homophonePair": "gebeurt/gebeurd",
+      "scaffold": {
+        "step1": "Bepaal de grammaticale functie van het werkwoord.",
+        "step2": "Er is geen hulpwerkwoord: dit is een persoonsvorm.",
+        "step3": "Stam (gebeur) + t = gebeurt."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gebeurt' is hier de persoonsvorm. 'Gebeurd' is het voltooid deelwoord.",
+        "hint": "Is er een hulpwerkwoord? Nee — dus dit is een persoonsvorm."
+      }
     }
   ],
   "transferTask": {
