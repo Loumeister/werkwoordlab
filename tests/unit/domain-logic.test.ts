@@ -65,4 +65,37 @@ describe("domain logic", () => {
     const fallback = getMisconceptionLabel("ONBEKENDE_CODE");
     expect(fallback).toContain("grammaticale functie");
   });
+
+  it("detecteert homofoon-modus voor het nieuwe paar bedoel/bedoelt", () => {
+    const unit01 = getUnit("unit-01-pv-tt")!;
+    const bedoelItem = unit01.items.find((item) => item.homophonePair === "bedoel/bedoelt");
+    expect(bedoelItem).toBeDefined();
+    expect(getExerciseMode(bedoelItem!)).toBe("homofonen");
+  });
+
+  it("PV_MEERVOUD_T_ADDITION geeft een begrijpelijke learner-label terug", () => {
+    const label = getMisconceptionLabel("PV_MEERVOUD_T_ADDITION");
+    expect(label).not.toBe("Controleer eerst de grammaticale functie en pas dan de spellingregel toe.");
+    expect(label.length).toBeGreaterThan(0);
+  });
+
+  it("detecteert homofoon-modus voor Tier-1-paren beloof/belooft en vertrouw/vertrouwt", () => {
+    const unit01 = getUnit("unit-01-pv-tt")!;
+    const beloofItem = unit01.items.find((item) => item.homophonePair === "beloof/belooft");
+    const vertrouwItem = unit01.items.find((item) => item.homophonePair === "vertrouw/vertrouwt");
+    expect(beloofItem).toBeDefined();
+    expect(vertrouwItem).toBeDefined();
+    expect(getExerciseMode(beloofItem!)).toBe("homofonen");
+    expect(getExerciseMode(vertrouwItem!)).toBe("homofonen");
+  });
+
+  it("detecteert classificatie-modus voor Tier-1 contrastparen belooft/beloofd en vertrouwt/vertrouwd in unit-02", () => {
+    const unit02 = getUnit("unit-02-voltooid-deelwoord")!;
+    const belooftItem = unit02.items.find((item) => item.homophonePair === "belooft/beloofd");
+    const vertrouwtItem = unit02.items.find((item) => item.homophonePair === "vertrouwt/vertrouwd");
+    expect(belooftItem).toBeDefined();
+    expect(vertrouwtItem).toBeDefined();
+    expect(getExerciseMode(belooftItem!)).toBe("classificatie");
+    expect(getExerciseMode(vertrouwtItem!)).toBe("classificatie");
+  });
 });

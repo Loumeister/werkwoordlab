@@ -6,7 +6,8 @@
   "learningGoals": [
     "Ik herken het voltooid deelwoord in een zin.",
     "Ik bepaal met stam/eindklank of ik -d of -t schrijf.",
-    "Ik onderscheid gebeurt en gebeurd op basis van grammaticale functie."
+    "Ik onderscheid homofone paren zoals gebeurt/gebeurd, belooft/beloofd, vertrouwt/vertrouwd, beweert/beweerd en verandert/veranderd op basis van grammaticale functie.",
+    "Ik herken onregelmatige voltooid deelwoorden en gebruik de juiste vorm."
   ],
   "items": [
     {
@@ -207,6 +208,431 @@
       "feedback": {
         "correct": "Goed: 'uitgesteld' is de juiste vorm.",
         "hint": "Bij samenstellingen blijft de kernvorm van het werkwoord leidend."
+      }
+    },
+    {
+      "id": "u2-i9",
+      "type": "fill-in",
+      "prompt": "De leraar heeft precies uitgelegd wat hij heeft ___. (bedoelen)",
+      "context": "Na een uitleg",
+      "lemma": "bedoelen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "hij",
+      "target": "bedoeld",
+      "homophonePair": "bedoelt/bedoeld",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: hulpwerkwoord 'heeft' wijst op voltooid deelwoord.",
+        "step2": "Stam van bedoelen: bedoel. Eindklank niet in 't kofschip.",
+        "step3": "Voltooid deelwoord: ge + bedoel + d = bedoeld."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'bedoeld' is het voltooid deelwoord na 'heeft'.",
+        "hint": "Bepaal eerst de functie: persoonsvorm of voltooid deelwoord? Dan pas de spelling."
+      }
+    },
+    {
+      "id": "u2-i10",
+      "type": "fill-in",
+      "prompt": "Wat ___ jij nu eigenlijk? (bedoelen)",
+      "context": "Klasgesprek",
+      "lemma": "bedoelen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "bedoel",
+      "homophonePair": "bedoelt/bedoeld",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: geen hulpwerkwoord → persoonsvorm.",
+        "step2": "Inversie: 'jij' staat ná de persoonsvorm.",
+        "step3": "Bij inversie met jij vervalt de -t: bedoel."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'bedoel' is hier een persoonsvorm met inversie.",
+        "hint": "Kijk eerst of dit een persoonsvorm of voltooid deelwoord is, vóór je de spelling kiest."
+      }
+    },
+    {
+      "id": "u2-i11",
+      "type": "fill-in",
+      "prompt": "We zijn gisteren met de trein naar Amsterdam ___. (rijden)",
+      "context": "Schooluitje",
+      "lemma": "rijden",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "we",
+      "target": "gereden",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Herken het hulpwerkwoord 'zijn' → voltooid deelwoord.",
+        "step2": "Controleer of rijden regelmatig is: ik reed, ik heb gereden.",
+        "step3": "Dit is een onregelmatig werkwoord: gebruik de bekende vorm 'gereden'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_IRREGULAR_PP_REGULARIZED",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'gereden' is de onregelmatige vorm van rijden.",
+        "hint": "Controleer of het werkwoord onregelmatig is; de -d/-t-regel geldt alleen voor regelmatige werkwoorden."
+      }
+    },
+    {
+      "id": "u2-i12",
+      "type": "fill-in",
+      "prompt": "De spullen voor het kamp zijn al ___. (inpakken)",
+      "context": "Schoolkamp voorbereiding",
+      "lemma": "inpakken",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de spullen",
+      "target": "ingepakt",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Herken scheidbaar werkwoord: in + pakken.",
+        "step2": "Voltooid deelwoord: in + ge + stam + uitgang. Stam = pak.",
+        "step3": "Eindklank 'k' zit in 't kofschip → -t: ingepakt."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'ingepakt' eindigt op -t omdat k in 't kofschip zit.",
+        "hint": "Vergelijk met 'uitgesteld': beide scheidbaar, maar pak (k=kofschip→-t) vs stel (l≠kofschip→-d)."
+      }
+    },
+    {
+      "id": "u2-i13",
+      "type": "fill-in",
+      "prompt": "De vrijwilligers hebben de hele ochtend hard ___. (werken)",
+      "context": "Schoolactiviteit",
+      "lemma": "werken",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de vrijwilligers",
+      "target": "gewerkt",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Hulpwerkwoord 'hebben' → voltooid deelwoord.",
+        "step2": "Stam van werken: werk.",
+        "step3": "Eindklank 'k' zit in 't kofschip → -t: gewerkt."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'gewerkt' eindigt op -t.",
+        "hint": "Controleer de stam en of de eindklank in 't kofschip (t, k, f, s, ch, p) staat."
+      }
+    },
+    {
+      "id": "u2-i14",
+      "type": "fill-in",
+      "prompt": "De leerling heeft een mooi verslag ___. (schrijven)",
+      "context": "Schoolopdracht",
+      "lemma": "schrijven",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de leerling",
+      "target": "geschreven",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Herken voltooid deelwoord na 'heeft'.",
+        "step2": "Is schrijven regelmatig? Controleer: ik schreef → onregelmatig.",
+        "step3": "Gebruik de bekende onregelmatige vorm: geschreven."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_IRREGULAR_PP_REGULARIZED",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'geschreven' is de onregelmatige vorm van schrijven.",
+        "hint": "Niet elk werkwoord volgt de -d/-t-regel. Controleer of het werkwoord onregelmatig is."
+      }
+    },
+    {
+      "id": "u2-i15",
+      "type": "fill-in",
+      "prompt": "Ze heeft meer hulp ___ dan ze gaf. (beloven)",
+      "context": "Groepsopdracht evaluatie",
+      "lemma": "beloven",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "ze",
+      "target": "beloofd",
+      "homophonePair": "belooft/beloofd",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: hulpwerkwoord 'heeft' wijst op voltooid deelwoord.",
+        "step2": "Stam van beloven: beloof. Ruwe stam: belov — v is stemhebbend.",
+        "step3": "Stemhebbende eindklank → -d: beloofd."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'beloofd' is het voltooid deelwoord na 'heeft'.",
+        "hint": "Hulpwerkwoord 'heeft' → voltooid deelwoord. Onderscheid 'belooft' (pv) van 'beloofd' (vd)."
+      }
+    },
+    {
+      "id": "u2-i16",
+      "type": "fill-in",
+      "prompt": "Ze ___ altijd meer dan ze waarmaakt. (beloven)",
+      "context": "Gesprek over afspraken",
+      "lemma": "beloven",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "belooft",
+      "homophonePair": "belooft/beloofd",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: geen hulpwerkwoord → persoonsvorm.",
+        "step2": "Derde persoon enkelvoud.",
+        "step3": "Stam (beloof) + t = belooft."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'belooft' is de persoonsvorm. Klinkt als 'beloofd' maar is anders geschreven.",
+        "hint": "Start met functiebepaling: hulpwerkwoord aanwezig? Nee → persoonsvorm → stam+t."
+      }
+    },
+    {
+      "id": "u2-i17",
+      "type": "fill-in",
+      "prompt": "De leerling heeft zijn leraar blindelings ___. (vertrouwen)",
+      "context": "Relatie leerling en mentor",
+      "lemma": "vertrouwen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de leerling",
+      "target": "vertrouwd",
+      "homophonePair": "vertrouwt/vertrouwd",
+      "scaffold": {
+        "step1": "Hulpwerkwoord 'heeft' → voltooid deelwoord.",
+        "step2": "Stam: vertrouw. Ruwe stam eindigt op w — stemhebbend.",
+        "step3": "Stemhebbende eindklank → -d: vertrouwd."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'vertrouwd' is het voltooid deelwoord na 'heeft'.",
+        "hint": "Hulpwerkwoord 'heeft' of 'is' → voltooid deelwoord. Niet persoonsvorm."
+      }
+    },
+    {
+      "id": "u2-i18",
+      "type": "fill-in",
+      "prompt": "Mijn juf ___ ons altijd op ons woord. (vertrouwen)",
+      "context": "Sfeer in de klas",
+      "lemma": "vertrouwen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "mijn juf",
+      "target": "vertrouwt",
+      "homophonePair": "vertrouwt/vertrouwd",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: geen hulpwerkwoord → persoonsvorm.",
+        "step2": "Derde persoon enkelvoud.",
+        "step3": "Stam (vertrouw) + t = vertrouwt."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'vertrouwt' is de persoonsvorm. Klinkt als 'vertrouwd' maar vraagt +t.",
+        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → stam+t."
+      }
+    },
+    {
+      "id": "u2-i19",
+      "type": "fill-in",
+      "prompt": "Hij heeft iets ___ waar ik het niet mee eens ben. (beweren)",
+      "context": "Discussie in de klas",
+      "lemma": "beweren",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "hij",
+      "target": "beweerd",
+      "homophonePair": "beweert/beweerd",
+      "scaffold": {
+        "step1": "Hulpwerkwoord 'heeft' → voltooid deelwoord.",
+        "step2": "Stam: beweer. Eindklank r is niet in 't kofschip.",
+        "step3": "Niet in kofschip → -d: beweerd."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'beweerd' is het voltooid deelwoord: ge + beweer + d.",
+        "hint": "Hulpwerkwoord 'heeft' → voltooid deelwoord. Stam eindigt op r → -d."
+      }
+    },
+    {
+      "id": "u2-i20",
+      "type": "fill-in",
+      "prompt": "De journalist ___ dat het nieuws klopt. (beweren)",
+      "context": "Nieuwsbericht",
+      "lemma": "beweren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "de journalist",
+      "target": "beweert",
+      "homophonePair": "beweert/beweerd",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: geen hulpwerkwoord → persoonsvorm.",
+        "step2": "Stam: beweer. Derde persoon enkelvoud.",
+        "step3": "Stam + t = beweert."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'beweert' is de persoonsvorm. Klinkt als 'beweerd' maar is anders gespeld.",
+        "hint": "Bepaal de functie: geen hulpwerkwoord → persoonsvorm → stam+t."
+      }
+    },
+    {
+      "id": "u2-i21",
+      "type": "fill-in",
+      "prompt": "Alles is de laatste tijd erg ___. (veranderen)",
+      "context": "Gesprek over school",
+      "lemma": "veranderen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "alles",
+      "target": "veranderd",
+      "homophonePair": "verandert/veranderd",
+      "scaffold": {
+        "step1": "Hulpwerkwoord 'is' → voltooid deelwoord.",
+        "step2": "Stam: verander. Eindklank r is niet in 't kofschip.",
+        "step3": "Niet in kofschip → -d: veranderd."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'veranderd' is het voltooid deelwoord na 'is'.",
+        "hint": "Hulpwerkwoord 'is' → voltooid deelwoord. Onderscheid 'verandert' (pv) van 'veranderd' (vd)."
+      }
+    },
+    {
+      "id": "u2-i22",
+      "type": "fill-in",
+      "prompt": "Het klimaat ___ sneller dan verwacht. (veranderen)",
+      "context": "Aardrijkskundeles",
+      "lemma": "veranderen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "het klimaat",
+      "target": "verandert",
+      "homophonePair": "verandert/veranderd",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: geen hulpwerkwoord → persoonsvorm.",
+        "step2": "Stam: verander. Derde persoon enkelvoud.",
+        "step3": "Stam + t = verandert."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'verandert' is de persoonsvorm. 'Veranderd' (vd) klinkt hetzelfde.",
+        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → stam+t."
+      }
+    },
+    {
+      "id": "u2-i23",
+      "type": "fill-in",
+      "prompt": "Ze zijn vorige week naar een nieuwe wijk ___. (verhuizen)",
+      "context": "Nieuws over buren",
+      "lemma": "verhuizen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "ze",
+      "target": "verhuisd",
+      "homophonePair": "verhuist/verhuisd",
+      "scaffold": {
+        "step1": "Hulpwerkwoord 'zijn' → voltooid deelwoord.",
+        "step2": "Ruwe stam: verhuiz — z is stemhebbend.",
+        "step3": "Stemhebbende eindklank → -d: ge + verhuis + d = verhuisd."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'verhuisd' is het voltooid deelwoord na 'zijn'.",
+        "hint": "Is er een hulpwerkwoord? Ja ('zijn') → voltooid deelwoord, niet persoonsvorm."
+      }
+    },
+    {
+      "id": "u2-i24",
+      "type": "fill-in",
+      "prompt": "Mijn broer heeft gisteren de hele dag ___. (studeren)",
+      "context": "Voorbereiding op examen",
+      "lemma": "studeren",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "mijn broer",
+      "target": "gestudeerd",
+      "homophonePair": "studeert/gestudeerd",
+      "scaffold": {
+        "step1": "Hulpwerkwoord 'heeft' → voltooid deelwoord.",
+        "step2": "Stam: studeer. Eindklank r is niet in 't kofschip.",
+        "step3": "ge + studeer + d = gestudeerd."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gestudeerd' is het voltooid deelwoord na 'heeft'. Klinkt als 'studeert' maar heeft ge- vooraan en -d aan het eind.",
+        "hint": "Hulpwerkwoord 'heeft' → voltooid deelwoord → gestudeerd (niet studeert)."
+      }
+    },
+    {
+      "id": "u2-i25",
+      "type": "fill-in",
+      "prompt": "Ze ___ al weken voor het eindexamen. (studeren)",
+      "context": "Examenperiode",
+      "lemma": "studeren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "studeert",
+      "homophonePair": "studeert/gestudeerd",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: geen hulpwerkwoord → persoonsvorm.",
+        "step2": "'Ze' is hier enkelvoud (derde persoon).",
+        "step3": "Stam (studeer) + t = studeert."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'studeert' is de persoonsvorm. 'Gestudeerd' (vd) vraagt een hulpwerkwoord.",
+        "hint": "Hulpwerkwoord aanwezig? Nee → persoonsvorm → studeert (niet gestudeerd)."
       }
     }
   ],

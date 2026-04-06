@@ -6,7 +6,8 @@
   "learningGoals": [
     "Ik bepaal eerst de persoonsvorm.",
     "Ik pas de stam(+t)-regel correct toe in de tegenwoordige tijd.",
-    "Ik onderscheid homofone vormen zoals vind/vindt en word/wordt."
+    "Ik onderscheid homofone vormen zoals vind/vindt, word/wordt, bedoel/bedoelt, beloof/belooft en vertrouw/vertrouwt.",
+    "Ik weet dat meervoud (wij/jullie/zij/ze) geen +t krijgt."
   ],
   "items": [
     {
@@ -207,6 +208,456 @@
       "feedback": {
         "correct": "Correct: 'ik maak' krijgt geen extra -t.",
         "hint": "Gebruik eerst de ik-vorm als controlevraag."
+      }
+    },
+    {
+      "id": "u1-i9",
+      "type": "fill-in",
+      "prompt": "Wat ___ je precies? (bedoelen)",
+      "context": "Klasgesprek",
+      "lemma": "bedoelen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "bedoel",
+      "homophonePair": "bedoel/bedoelt",
+      "scaffold": {
+        "step1": "Vraagzin: persoonsvorm staat vóór het onderwerp.",
+        "step2": "Herleid: Je bedoelt precies ...",
+        "step3": "Bij inversie met je/jij vervalt de -t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_JIJ_INVERSION_FALSE_T",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: in deze vraagvorm schrijf je 'bedoel'.",
+        "hint": "Zet de zin terug naar normale volgorde: je bedoelt ... Staat jij/je ná de persoonsvorm? Dan vervalt de -t."
+      }
+    },
+    {
+      "id": "u1-i10",
+      "type": "fill-in",
+      "prompt": "Hij ___ het vast niet verkeerd. (bedoelen)",
+      "context": "Gesprek over intenties",
+      "lemma": "bedoelen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "bedoelt",
+      "homophonePair": "bedoel/bedoelt",
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm en onderwerp.",
+        "step2": "Onderwerp is 'hij': derde persoon enkelvoud.",
+        "step3": "Geen inversie: gebruik stam+t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'hij bedoelt' krijgt stam+t.",
+        "hint": "Kijk of er inversie is; hier staat het onderwerp vóór de persoonsvorm."
+      }
+    },
+    {
+      "id": "u1-i11",
+      "type": "fill-in",
+      "prompt": "Wij ___ elke week samen aan de schoolkrant. (werken)",
+      "context": "Schoolactiviteit",
+      "lemma": "werken",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "wij",
+      "target": "werken",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal het onderwerp: wij.",
+        "step2": "Meervoud (wij/jullie/zij) krijgt geen +t.",
+        "step3": "Persoonsvorm meervoud is gelijk aan de infinitief."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_MEERVOUD_T_ADDITION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'wij werken' heeft geen +t.",
+        "hint": "Controleer het onderwerp: bij meervoud geen +t toevoegen."
+      }
+    },
+    {
+      "id": "u1-i12",
+      "type": "fill-in",
+      "prompt": "Ze ___ allemaal erg hard voor de toets. (studeren)",
+      "context": "Toetsvoorbereiding",
+      "lemma": "studeren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "studeren",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal of 'ze' hier enkelvoud of meervoud is.",
+        "step2": "'Ze studeren allemaal' → ze is meervoud.",
+        "step3": "Meervoud heeft geen +t: gebruik de infinitief-vorm."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_MEERVOUD_T_ADDITION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'ze studeren' heeft geen +t.",
+        "hint": "Let op: 'ze vindt' (enkelvoud) vs 'ze studeren' (meervoud). Bepaal altijd persoon én getal."
+      }
+    },
+    {
+      "id": "u1-i13",
+      "type": "fill-in",
+      "prompt": "Het ___ mij soms te lang. (duren)",
+      "context": "Schoolervaring",
+      "lemma": "duren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "het",
+      "target": "duurt",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal het onderwerp: het.",
+        "step2": "Derde persoon enkelvoud: het duurt.",
+        "step3": "Gebruik stam+t: duur+t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'het duurt' heeft stam+t.",
+        "hint": "Controleer het onderwerp; 'het' is derde persoon enkelvoud en krijgt +t."
+      }
+    },
+    {
+      "id": "u1-i14",
+      "type": "fill-in",
+      "prompt": "Jij ___ dat altijd zo grappig. (vinden)",
+      "context": "Gesprek tussen leerlingen",
+      "lemma": "vinden",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "vindt",
+      "homophonePair": "vind/vindt",
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm en onderwerp.",
+        "step2": "Geen inversie: 'jij' staat vóór de persoonsvorm.",
+        "step3": "Jij zonder inversie krijgt stam+t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'jij vindt' zonder inversie krijgt +t.",
+        "hint": "Vergelijk: 'Vind jij dit grappig?' (inversie, geen +t) vs 'Jij vindt dit grappig' (geen inversie, +t)."
+      }
+    },
+    {
+      "id": "u1-i15",
+      "type": "fill-in",
+      "prompt": "Ik ___ dat ik morgen op tijd ben. (beloven)",
+      "context": "Afspraak met vriend",
+      "lemma": "beloven",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ik",
+      "target": "beloof",
+      "homophonePair": "beloof/belooft",
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm in de zin.",
+        "step2": "Bepaal het onderwerp: ik.",
+        "step3": "Bij ik-vorm gebruik je de stam zonder +t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_FALSE_T_ADD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'ik beloof' heeft geen +t.",
+        "hint": "Controleer het onderwerp: bij ik geen +t toevoegen."
+      }
+    },
+    {
+      "id": "u1-i16",
+      "type": "fill-in",
+      "prompt": "Ze ___ elke keer beter te doen. (beloven)",
+      "context": "Gesprek over gedrag",
+      "lemma": "beloven",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "belooft",
+      "homophonePair": "beloof/belooft",
+      "scaffold": {
+        "step1": "Bepaal de persoonsvorm.",
+        "step2": "Onderwerp 'ze' is hier derde persoon enkelvoud.",
+        "step3": "Stam (beloof) + t = belooft."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'ze belooft' (enkelvoud) krijgt stam+t.",
+        "hint": "Kijk of 'ze' hier enkelvoud is; dan stam+t."
+      }
+    },
+    {
+      "id": "u1-i17",
+      "type": "fill-in",
+      "prompt": "Ik ___ erop dat we dit samen halen. (vertrouwen)",
+      "context": "Schoolproject",
+      "lemma": "vertrouwen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ik",
+      "target": "vertrouw",
+      "homophonePair": "vertrouw/vertrouwt",
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm.",
+        "step2": "Bepaal het onderwerp: ik.",
+        "step3": "Stam van vertrouwen is 'vertrouw'; bij ik: stam zonder +t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_FALSE_T_ADD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'ik vertrouw' heeft geen +t.",
+        "hint": "Bij de ik-vorm gebruik je de stam; geen extra -t."
+      }
+    },
+    {
+      "id": "u1-i18",
+      "type": "fill-in",
+      "prompt": "De nieuwe leerling ___ zijn mentor meteen. (vertrouwen)",
+      "context": "Introductie op school",
+      "lemma": "vertrouwen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "de nieuwe leerling",
+      "target": "vertrouwt",
+      "homophonePair": "vertrouw/vertrouwt",
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm en onderwerp.",
+        "step2": "'De nieuwe leerling' is derde persoon enkelvoud.",
+        "step3": "Stam (vertrouw) + t = vertrouwt."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: derde persoon enkelvoud krijgt stam+t: 'vertrouwt'.",
+        "hint": "Bepaal het onderwerp en persoon; enkelvoud derde persoon krijgt +t."
+      }
+    },
+    {
+      "id": "u1-i19",
+      "type": "fill-in",
+      "prompt": "Ze ___ dat de toets verschoven is. (beweren)",
+      "context": "Geruchten in de klas",
+      "lemma": "beweren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "beweert",
+      "homophonePair": "beweert/beweerd",
+      "scaffold": {
+        "step1": "Bepaal de persoonsvorm.",
+        "step2": "Onderwerp 'ze' is hier enkelvoud (derde persoon).",
+        "step3": "Stam (beweer) + t = beweert."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'ze beweert' is de persoonsvorm. Klinkt als 'beweerd' maar is anders gespeld.",
+        "hint": "Bepaal de functie: persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt stam+t."
+      }
+    },
+    {
+      "id": "u1-i20",
+      "type": "fill-in",
+      "prompt": "Haar plan ___ elke dag een beetje. (veranderen)",
+      "context": "Schoolproject in ontwikkeling",
+      "lemma": "veranderen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "haar plan",
+      "target": "verandert",
+      "homophonePair": "verandert/veranderd",
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm en onderwerp.",
+        "step2": "'Haar plan' is derde persoon enkelvoud.",
+        "step3": "Stam (verander) + t = verandert."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'verandert' is de persoonsvorm. Klinkt als 'veranderd' maar vraagt +t.",
+        "hint": "Geen hulpwerkwoord → persoonsvorm → stam+t."
+      }
+    },
+    {
+      "id": "u1-i21",
+      "type": "fill-in",
+      "prompt": "De leerling ___ altijd heel precies. (antwoorden)",
+      "context": "Klassikale situatie",
+      "lemma": "antwoorden",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "de leerling",
+      "target": "antwoordt",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm en onderwerp.",
+        "step2": "'De leerling' is derde persoon enkelvoud.",
+        "step3": "Stam van antwoorden is 'antwoord'; stam + t = antwoordt. Let op de -dt!"
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'antwoordt' heeft -dt aan het eind (stam eindigt op d, daarna +t).",
+        "hint": "De stam van antwoorden is 'antwoord'. Derde persoon enkelvoud: antwoord + t = antwoordt."
+      }
+    },
+    {
+      "id": "u1-i22",
+      "type": "fill-in",
+      "prompt": "Ze ___ dit jaar naar een nieuwe wijk. (verhuizen)",
+      "context": "Nieuws over buurmeisje",
+      "lemma": "verhuizen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "verhuist",
+      "homophonePair": "verhuist/verhuisd",
+      "scaffold": {
+        "step1": "Bepaal de persoonsvorm.",
+        "step2": "'Ze' is hier enkelvoud (derde persoon).",
+        "step3": "Stam (verhuis) + t = verhuist."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'ze verhuist' is de persoonsvorm. 'Verhuisd' klinkt hetzelfde maar is het voltooid deelwoord.",
+        "hint": "Bepaal de grammaticale functie; persoonsvorm krijgt stam+t."
+      }
+    },
+    {
+      "id": "u1-i23",
+      "type": "fill-in",
+      "prompt": "De stagiair ___ al drie maanden op onze school. (werken)",
+      "context": "Schoolnieuws",
+      "lemma": "werken",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "de stagiair",
+      "target": "werkt",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm en onderwerp.",
+        "step2": "'De stagiair' is derde persoon enkelvoud.",
+        "step3": "Stam (werk) + t = werkt."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'werkt' is de persoonsvorm voor derde persoon enkelvoud.",
+        "hint": "Bepaal het onderwerp: enkelvoud derde persoon krijgt stam+t."
+      }
+    },
+    {
+      "id": "u1-i24",
+      "type": "fill-in",
+      "prompt": "Mijn zus ___ elke avond voor haar vak. (studeren)",
+      "context": "Thuissituatie",
+      "lemma": "studeren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "mijn zus",
+      "target": "studeert",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal de persoonsvorm.",
+        "step2": "'Mijn zus' is derde persoon enkelvoud.",
+        "step3": "Stam (studeer) + t = studeert."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: derde persoon enkelvoud geeft 'studeert'.",
+        "hint": "Bepaal het onderwerp; enkelvoud derde persoon krijgt stam+t."
+      }
+    },
+    {
+      "id": "u1-i25",
+      "type": "fill-in",
+      "prompt": "Iedereen ___ zijn werk enorm. (bewonderen)",
+      "context": "Kunstexpositie op school",
+      "lemma": "bewonderen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "iedereen",
+      "target": "bewondert",
+      "homophonePair": "bewondert/bewonderd",
+      "scaffold": {
+        "step1": "Bepaal de persoonsvorm.",
+        "step2": "'Iedereen' is derde persoon enkelvoud.",
+        "step3": "Stam (bewonder) + t = bewondert."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'bewondert' is de persoonsvorm. 'Bewonderd' klinkt hetzelfde maar is het voltooid deelwoord.",
+        "hint": "Is dit een persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt stam+t."
+      }
+    },
+    {
+      "id": "u1-i26",
+      "type": "fill-in",
+      "prompt": "Er ___ altijd iets grappigs na de bel. (gebeuren)",
+      "context": "Na schooltijd",
+      "lemma": "gebeuren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "er",
+      "target": "gebeurt",
+      "homophonePair": "gebeurt/gebeurd",
+      "scaffold": {
+        "step1": "Bepaal de grammaticale functie van het werkwoord.",
+        "step2": "Er is geen hulpwerkwoord: dit is een persoonsvorm.",
+        "step3": "Stam (gebeur) + t = gebeurt."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gebeurt' is hier de persoonsvorm. 'Gebeurd' is het voltooid deelwoord.",
+        "hint": "Is er een hulpwerkwoord? Nee — dus dit is een persoonsvorm."
       }
     }
   ],
