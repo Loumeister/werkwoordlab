@@ -10,9 +10,9 @@ This directory is a **manually bootstrapped snapshot** of `Loumeister/grammar-co
 | Field | Value |
 |---|---|
 | Repository | `Loumeister/grammar-core` |
-| Pinned commit | `4a4cfeceac2fe4f37cf81eb395446acd977460a7` |
+| Pinned commit | `73989a083fb7e749c9169441931caedc4bcb32ff` |
 | Bootstrap method | Manual file fetch from GitHub raw content at pinned commit |
-| Bootstrap date | 2026-04-05 |
+| Bootstrap date | 2026-04-06 (refreshed from 4a4cfeceac2fe4f37cf81eb395446acd977460a7) |
 
 ## Replacing this snapshot with a true git subtree
 
