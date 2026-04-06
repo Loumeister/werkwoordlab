@@ -328,7 +328,7 @@ Bij elke uitbreidingsslag moeten tests worden bijgewerkt.
 - [x] voeg 11 sterke nieuwe items toe aan `unit-02-voltooid-deelwoord` (nu 25 items): volledige HOMOPHONE_FUNCTION_CONFUSION-serie voor beloven, vertrouwen, beweren, veranderen, verhuizen, studeren
 - [x] contrast-architectuur versterkt: Tier-1 clusters (beloven, vertrouwen) volledig aanwezig in beide units
 - [x] Tier-2 clusters (beweren, veranderen) volledig aanwezig in beide units
-- [x] cross-unit lexicale paren werkend: werken, studeren, duren, beloven, vertrouwen, beweren, veranderen verschijnen nu in beide units
+- [x] cross-unit lexicale paren werkend: werken, studeren, beloven, vertrouwen, beweren, veranderen verschijnen nu in beide units
 - [x] twee nieuwe evaluatortests voor Tier-1 homofoonparen in `domain-logic.test.ts`
 
 ### Taakgroep 2 — nieuwe unit verleden tijd
