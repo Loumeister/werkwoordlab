@@ -6,7 +6,8 @@
   "learningGoals": [
     "Ik herken het voltooid deelwoord in een zin.",
     "Ik bepaal met stam/eindklank of ik -d of -t schrijf.",
-    "Ik onderscheid gebeurt en gebeurd op basis van grammaticale functie."
+    "Ik onderscheid homofone paren zoals gebeurt/gebeurd en bedoelt/bedoeld op basis van grammaticale functie.",
+    "Ik herken onregelmatige voltooid deelwoorden en gebruik de juiste vorm."
   ],
   "items": [
     {
@@ -207,6 +208,156 @@
       "feedback": {
         "correct": "Goed: 'uitgesteld' is de juiste vorm.",
         "hint": "Bij samenstellingen blijft de kernvorm van het werkwoord leidend."
+      }
+    },
+    {
+      "id": "u2-i9",
+      "type": "fill-in",
+      "prompt": "De leraar heeft precies uitgelegd wat hij heeft ___. (bedoelen)",
+      "context": "Na een uitleg",
+      "lemma": "bedoelen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de leraar",
+      "target": "bedoeld",
+      "homophonePair": "bedoelt/bedoeld",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: hulpwerkwoord 'heeft' wijst op voltooid deelwoord.",
+        "step2": "Stam van bedoelen: bedoel. Eindklank niet in 't kofschip.",
+        "step3": "Voltooid deelwoord: ge + bedoel + d = bedoeld."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'bedoeld' is het voltooid deelwoord na 'heeft'.",
+        "hint": "Bepaal eerst de functie: persoonsvorm of voltooid deelwoord? Dan pas de spelling."
+      }
+    },
+    {
+      "id": "u2-i10",
+      "type": "fill-in",
+      "prompt": "Wat ___ jij nu eigenlijk? (bedoelen)",
+      "context": "Klasgesprek",
+      "lemma": "bedoelen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "bedoel",
+      "homophonePair": "bedoelt/bedoeld",
+      "scaffold": {
+        "step1": "Bepaal grammaticale functie: geen hulpwerkwoord → persoonsvorm.",
+        "step2": "Inversie: 'jij' staat ná de persoonsvorm.",
+        "step3": "Bij inversie met jij vervalt de -t: bedoel."
+      },
+      "diagnostic": {
+        "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'bedoel' is hier een persoonsvorm met inversie.",
+        "hint": "Kijk eerst of dit een persoonsvorm of voltooid deelwoord is, vóór je de spelling kiest."
+      }
+    },
+    {
+      "id": "u2-i11",
+      "type": "fill-in",
+      "prompt": "We zijn gisteren met de trein naar Amsterdam ___. (rijden)",
+      "context": "Schooluitje",
+      "lemma": "rijden",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "we",
+      "target": "gereden",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Herken het hulpwerkwoord 'zijn' → voltooid deelwoord.",
+        "step2": "Controleer of rijden regelmatig is: ik reed, ik heb gereden.",
+        "step3": "Dit is een onregelmatig werkwoord: gebruik de bekende vorm 'gereden'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_IRREGULAR_PP_REGULARIZED",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'gereden' is de onregelmatige vorm van rijden.",
+        "hint": "Controleer of het werkwoord onregelmatig is; de -d/-t-regel geldt alleen voor regelmatige werkwoorden."
+      }
+    },
+    {
+      "id": "u2-i12",
+      "type": "fill-in",
+      "prompt": "De spullen voor het kamp zijn al ___. (inpakken)",
+      "context": "Schoolkamp voorbereiding",
+      "lemma": "inpakken",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de spullen",
+      "target": "ingepakt",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Herken scheidbaar werkwoord: in + pakken.",
+        "step2": "Voltooid deelwoord: in + ge + stam + uitgang. Stam = pak.",
+        "step3": "Eindklank 'k' zit in 't kofschip → -t: ingepakt."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'ingepakt' eindigt op -t omdat k in 't kofschip zit.",
+        "hint": "Vergelijk met 'uitgesteld': beide scheidbaar, maar pak (k=kofschip→-t) vs stel (l≠kofschip→-d)."
+      }
+    },
+    {
+      "id": "u2-i13",
+      "type": "fill-in",
+      "prompt": "De vrijwilligers hebben de hele ochtend hard ___. (werken)",
+      "context": "Schoolactiviteit",
+      "lemma": "werken",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de vrijwilligers",
+      "target": "gewerkt",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Hulpwerkwoord 'hebben' → voltooid deelwoord.",
+        "step2": "Stam van werken: werk.",
+        "step3": "Eindklank 'k' zit in 't kofschip → -t: gewerkt."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'gewerkt' eindigt op -t.",
+        "hint": "Controleer de stam en of de eindklank in 't kofschip (t, k, f, s, ch, p) staat."
+      }
+    },
+    {
+      "id": "u2-i14",
+      "type": "fill-in",
+      "prompt": "De leerling heeft een mooi verslag ___. (schrijven)",
+      "context": "Schoolopdracht",
+      "lemma": "schrijven",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de leerling",
+      "target": "geschreven",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Herken voltooid deelwoord na 'heeft'.",
+        "step2": "Is schrijven regelmatig? Controleer: ik schreef → onregelmatig.",
+        "step3": "Gebruik de bekende onregelmatige vorm: geschreven."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_IRREGULAR_PP_REGULARIZED",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'geschreven' is de onregelmatige vorm van schrijven.",
+        "hint": "Niet elk werkwoord volgt de -d/-t-regel. Controleer of het werkwoord onregelmatig is."
       }
     }
   ],

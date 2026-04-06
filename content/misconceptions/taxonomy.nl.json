@@ -61,6 +61,16 @@
         "Controleer of het werkwoord een bekende onregelmatige vorm heeft.",
         "Vergelijk de vorm met de infinitief en kijk of de gewone -d/-t-regel hier echt past."
       ]
+    },
+    {
+      "code": "PV_MEERVOUD_T_ADDITION",
+      "title": "Onterechte +t bij meervoud",
+      "learnerDescription": "Je zette een -t bij een meervoudige persoonsvorm, maar meervoud (wij/jullie/zij) krijgt geen +t.",
+      "teacherDescription": "Leerling past de enkelvoud-regel (stam+t) ten onrechte toe op een meervoudig onderwerp (wij/jullie/zij/ze).",
+      "remediation": [
+        "Controleer het onderwerp: is het meervoud? Dan geen +t.",
+        "Vervang het onderwerp door 'wij' en controleer of de zin nog klopt zonder -t."
+      ]
     }
   ]
 }

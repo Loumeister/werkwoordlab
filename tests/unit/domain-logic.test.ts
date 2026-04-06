@@ -65,4 +65,17 @@ describe("domain logic", () => {
     const fallback = getMisconceptionLabel("ONBEKENDE_CODE");
     expect(fallback).toContain("grammaticale functie");
   });
+
+  it("detecteert homofoon-modus voor het nieuwe paar bedoel/bedoelt", () => {
+    const unit01 = getUnit("unit-01-pv-tt")!;
+    const bedoelItem = unit01.items.find((item) => item.homophonePair === "bedoel/bedoelt");
+    expect(bedoelItem).toBeDefined();
+    expect(getExerciseMode(bedoelItem!)).toBe("homofonen");
+  });
+
+  it("PV_MEERVOUD_T_ADDITION geeft een begrijpelijke learner-label terug", () => {
+    const label = getMisconceptionLabel("PV_MEERVOUD_T_ADDITION");
+    expect(label).not.toBe("Controleer eerst de grammaticale functie en pas dan de spellingregel toe.");
+    expect(label.length).toBeGreaterThan(0);
+  });
 });

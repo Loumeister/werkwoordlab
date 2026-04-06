@@ -314,12 +314,12 @@ Bij elke uitbreidingsslag moeten tests worden bijgewerkt.
 
 ## Uitvoerbare takenlijst
 
-### Taakgroep 1 — huidige units verdiepen
-- [ ] voeg 6–8 sterke nieuwe items toe aan `unit-01-pv-tt`
-- [ ] voeg 6–8 sterke nieuwe items toe aan `unit-02-voltooid-deelwoord`
-- [ ] controleer of bestaande taxonomiecodes voldoende onderscheid maken
-- [ ] voeg alleen waar nodig nieuwe taxonomiecodes toe
-- [ ] werk contentvalidatietests bij
+### Taakgroep 1 — huidige units verdiepen ✅ (afgerond april 2026)
+- [x] voeg 6–8 sterke nieuwe items toe aan `unit-01-pv-tt` (nu 14 items: +bedoel/bedoelt, +meervoud wij/ze, +het-onderwerp, +jij-zonder-inversie met vind/vindt)
+- [x] voeg 6–8 sterke nieuwe items toe aan `unit-02-voltooid-deelwoord` (nu 14 items: +bedoelt/bedoeld, +gereden, +ingepakt, +gewerkt, +geschreven)
+- [x] controleer of bestaande taxonomiecodes voldoende onderscheid maken
+- [x] voeg alleen waar nodig nieuwe taxonomiecodes toe (`PV_MEERVOUD_T_ADDITION` toegevoegd — dekt meervoud+t fout die PV_FALSE_T_ADD niet dekte)
+- [x] werk contentvalidatietests bij (twee nieuwe tests in `domain-logic.test.ts`)
 
 ### Taakgroep 2 — nieuwe unit verleden tijd
 - [ ] ontwerp leerdoelen en misconceptiecategorieën

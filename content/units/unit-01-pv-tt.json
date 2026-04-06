@@ -6,7 +6,8 @@
   "learningGoals": [
     "Ik bepaal eerst de persoonsvorm.",
     "Ik pas de stam(+t)-regel correct toe in de tegenwoordige tijd.",
-    "Ik onderscheid homofone vormen zoals vind/vindt en word/wordt."
+    "Ik onderscheid homofone vormen zoals vind/vindt, word/wordt en bedoel/bedoelt.",
+    "Ik weet dat meervoud (wij/jullie/zij/ze) geen +t krijgt."
   ],
   "items": [
     {
@@ -207,6 +208,156 @@
       "feedback": {
         "correct": "Correct: 'ik maak' krijgt geen extra -t.",
         "hint": "Gebruik eerst de ik-vorm als controlevraag."
+      }
+    },
+    {
+      "id": "u1-i9",
+      "type": "fill-in",
+      "prompt": "Wat ___ je precies? (bedoelen)",
+      "context": "Klasgesprek",
+      "lemma": "bedoelen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "bedoel",
+      "homophonePair": "bedoel/bedoelt",
+      "scaffold": {
+        "step1": "Vraagzin: persoonsvorm staat vóór het onderwerp.",
+        "step2": "Herleid: Je bedoelt precies ...",
+        "step3": "Bij inversie met je/jij vervalt de -t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_JIJ_INVERSION_FALSE_T",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: in deze vraagvorm schrijf je 'bedoel'.",
+        "hint": "Zet de zin terug naar normale volgorde: je bedoelt ... Staat jij/je ná de persoonsvorm? Dan vervalt de -t."
+      }
+    },
+    {
+      "id": "u1-i10",
+      "type": "fill-in",
+      "prompt": "Hij ___ het vast niet verkeerd. (bedoelen)",
+      "context": "Gesprek over intenties",
+      "lemma": "bedoelen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "bedoelt",
+      "homophonePair": "bedoel/bedoelt",
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm en onderwerp.",
+        "step2": "Onderwerp is 'hij': derde persoon enkelvoud.",
+        "step3": "Geen inversie: gebruik stam+t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'hij bedoelt' krijgt stam+t.",
+        "hint": "Kijk of er inversie is; hier staat het onderwerp vóór de persoonsvorm."
+      }
+    },
+    {
+      "id": "u1-i11",
+      "type": "fill-in",
+      "prompt": "Wij ___ elke week samen aan de schoolkrant. (werken)",
+      "context": "Schoolactiviteit",
+      "lemma": "werken",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "wij",
+      "target": "werken",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal het onderwerp: wij.",
+        "step2": "Meervoud (wij/jullie/zij) krijgt geen +t.",
+        "step3": "Persoonsvorm meervoud is gelijk aan de infinitief."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_MEERVOUD_T_ADDITION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'wij werken' heeft geen +t.",
+        "hint": "Controleer het onderwerp: bij meervoud geen +t toevoegen."
+      }
+    },
+    {
+      "id": "u1-i12",
+      "type": "fill-in",
+      "prompt": "Ze ___ allemaal erg hard voor de toets. (studeren)",
+      "context": "Toetsvoorbereiding",
+      "lemma": "studeren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "studeren",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal of 'ze' hier enkelvoud of meervoud is.",
+        "step2": "'Ze studeren allemaal' → ze is meervoud.",
+        "step3": "Meervoud heeft geen +t: gebruik de infinitief-vorm."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_MEERVOUD_T_ADDITION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'ze studeren' heeft geen +t.",
+        "hint": "Let op: 'ze vindt' (enkelvoud) vs 'ze studeren' (meervoud). Bepaal altijd persoon én getal."
+      }
+    },
+    {
+      "id": "u1-i13",
+      "type": "fill-in",
+      "prompt": "Het ___ mij soms te lang. (duren)",
+      "context": "Schoolervaring",
+      "lemma": "duren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "het",
+      "target": "duurt",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal het onderwerp: het.",
+        "step2": "Derde persoon enkelvoud: het duurt.",
+        "step3": "Gebruik stam+t: duur+t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'het duurt' heeft stam+t.",
+        "hint": "Controleer het onderwerp; 'het' is derde persoon enkelvoud en krijgt +t."
+      }
+    },
+    {
+      "id": "u1-i14",
+      "type": "fill-in",
+      "prompt": "Jij ___ dat altijd zo grappig. (vinden)",
+      "context": "Gesprek tussen leerlingen",
+      "lemma": "vinden",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "vindt",
+      "homophonePair": "vind/vindt",
+      "scaffold": {
+        "step1": "Bepaal persoonsvorm en onderwerp.",
+        "step2": "Geen inversie: 'jij' staat vóór de persoonsvorm.",
+        "step3": "Jij zonder inversie krijgt stam+t."
+      },
+      "diagnostic": {
+        "primaryMisconception": "PV_STAM_T_OMISSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'jij vindt' zonder inversie krijgt +t.",
+        "hint": "Vergelijk: 'Vind jij dit grappig?' (inversie, geen +t) vs 'Jij vindt dit grappig' (geen inversie, +t)."
       }
     }
   ],
