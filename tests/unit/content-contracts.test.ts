@@ -2,13 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import taxonomy from '@/content/misconceptions/taxonomy.nl.json';
-import unit01 from '@/content/units/unit-01-pv-tt.json';
-import unit02 from '@/content/units/unit-02-voltooid-deelwoord.json';
-import unit03 from '@/content/units/unit-03-pv-vt.json';
+import type { Unit } from '@/lib/content';
+import { getUnits } from '@/lib/content';
 
-type UnitLike = typeof unit01;
+// ---------------------------------------------------------------------------
+// Helpers – dynamically discover and load all unit JSON files from disk
+// ---------------------------------------------------------------------------
 
-const units: UnitLike[] = [unit01, unit02, unit03];
+const UNITS_DIR = path.join(process.cwd(), 'content', 'units');
 
 function getJsonFiles(dirPath: string): string[] {
   const entries = fs.readdirSync(dirPath, { withFileTypes: true });
@@ -16,6 +17,20 @@ function getJsonFiles(dirPath: string): string[] {
     .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
     .map((entry) => path.join(dirPath, entry.name));
 }
+
+function readJsonFile<T>(filePath: string): T {
+  const raw = fs.readFileSync(filePath, 'utf-8');
+  return JSON.parse(raw) as T;
+}
+
+function getUnitsFromDisk(): Unit[] {
+  const files = getJsonFiles(UNITS_DIR);
+  return files.map((f) => readJsonFile<Unit>(f));
+}
+
+// ---------------------------------------------------------------------------
+
+const units = getUnitsFromDisk();
 
 describe('content contracts', () => {
   it('all content JSON files parse as valid JSON', () => {
@@ -31,6 +46,10 @@ describe('content contracts', () => {
       const raw = fs.readFileSync(filePath, 'utf-8');
       expect(() => JSON.parse(raw)).not.toThrow();
     }
+  });
+
+  it('at least one unit file exists on disk', () => {
+    expect(units.length).toBeGreaterThan(0);
   });
 
   it('unit and item ids are unique and required fields exist', () => {
@@ -88,7 +107,7 @@ describe('content contracts', () => {
         expect(Array.isArray(variants)).toBe(true);
 
         const normalizedTarget = item.target.trim().toLowerCase();
-        const normalizedVariants = variants.map((value) => value.trim().toLowerCase());
+        const normalizedVariants = variants.map((value: string) => value.trim().toLowerCase());
 
         for (const variant of variants) {
           expect(typeof variant).toBe('string');
@@ -99,5 +118,12 @@ describe('content contracts', () => {
         expect(new Set(normalizedVariants).size).toBe(normalizedVariants.length);
       }
     }
+  });
+
+  it('runtime registry contains exactly the same unit ids as disk files', () => {
+    const diskIds = new Set(units.map((u) => u.id));
+    const registryIds = new Set(getUnits().map((u) => u.id));
+
+    expect(diskIds).toEqual(registryIds);
   });
 });
