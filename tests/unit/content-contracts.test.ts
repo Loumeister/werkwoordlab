@@ -107,7 +107,7 @@ describe('content contracts', () => {
         expect(Array.isArray(variants)).toBe(true);
 
         const normalizedTarget = item.target.trim().toLowerCase();
-        const normalizedVariants = variants.map((value: string) => value.trim().toLowerCase());
+        const normalizedVariants = variants.map((value) => value.trim().toLowerCase());
 
         for (const variant of variants) {
           expect(typeof variant).toBe('string');
