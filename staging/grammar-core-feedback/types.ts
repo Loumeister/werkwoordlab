@@ -27,6 +27,6 @@ export interface RichFeedbackEntry {
   };
 }
 
-export function isRichFeedbackEntry(entry: FeedbackEntry): entry is RichFeedbackEntry {
+export function isRichFeedbackEntry(entry: unknown): entry is RichFeedbackEntry {
   return typeof entry === "object" && entry !== null && "herstelvraag" in entry;
 }
