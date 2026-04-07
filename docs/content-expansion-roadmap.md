@@ -331,11 +331,11 @@ Bij elke uitbreidingsslag moeten tests worden bijgewerkt.
 - [x] cross-unit lexicale paren werkend: werken, studeren, beloven, vertrouwen, beweren, veranderen, gebeuren verschijnen nu in beide units
 - [x] twee nieuwe evaluatortests voor Tier-1 homofoonparen in `domain-logic.test.ts`
 
-### Taakgroep 2 — nieuwe unit verleden tijd
-- [ ] ontwerp leerdoelen en misconceptiecategorieën
-- [ ] maak eerste versie van `unit-03-pv-vt`
-- [ ] voeg evaluator/tests toe waar nodig
-- [ ] voeg transferopdracht toe
+### Taakgroep 2 — nieuwe unit verleden tijd ✅ (afgerond april 2026)
+- [x] ontwerp leerdoelen en misconceptiecategorieën (4 nieuwe codes: VT_DE_TE_CONFUSION, VT_VD_FUNCTION_CONFUSION, VT_ENKELVOUD_MEERVOUD, VT_RUWE_STAM_OVERRIDE)
+- [x] maak eerste versie van `unit-03-pv-vt` (21 items: 7 blokken — -te enkelvoud, -de enkelvoud, -ten meervoud, -den meervoud, VT/VD contrast, ruwe stam override, transfer)
+- [x] voeg evaluator/tests toe: geen evaluatorwijziging nodig (alle items → korte-correctie modus); 4 nieuwe tests in `domain-logic.test.ts`
+- [x] voeg transferopdracht toe (revisietaak met 4 correctieopdrachten incl. ruwe stam en meervoud)
 
 ### Taakgroep 3 — nieuwe unit infinitief
 - [ ] ontwerp leerdoelen en misconceptiecategorieën

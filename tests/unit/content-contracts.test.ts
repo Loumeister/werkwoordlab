@@ -4,10 +4,11 @@ import { describe, expect, it } from 'vitest';
 import taxonomy from '@/content/misconceptions/taxonomy.nl.json';
 import unit01 from '@/content/units/unit-01-pv-tt.json';
 import unit02 from '@/content/units/unit-02-voltooid-deelwoord.json';
+import unit03 from '@/content/units/unit-03-pv-vt.json';
 
 type UnitLike = typeof unit01;
 
-const units: UnitLike[] = [unit01, unit02];
+const units: UnitLike[] = [unit01, unit02, unit03];
 
 function getJsonFiles(dirPath: string): string[] {
   const entries = fs.readdirSync(dirPath, { withFileTypes: true });

@@ -1,6 +1,7 @@
 import taxonomy from "@/content/misconceptions/taxonomy.nl.json";
 import unit01 from "@/content/units/unit-01-pv-tt.json";
 import unit02 from "@/content/units/unit-02-voltooid-deelwoord.json";
+import unit03 from "@/content/units/unit-03-pv-vt.json";
 
 export type GrammaticalFunction = string;
 
@@ -45,7 +46,7 @@ export type Unit = {
   };
 };
 
-const units: Unit[] = [unit01, unit02];
+const units: Unit[] = [unit01, unit02, unit03];
 
 export function getUnits() {
   return units;
