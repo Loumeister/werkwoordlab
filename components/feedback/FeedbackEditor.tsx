@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { ChevronDown, ChevronRight, Download, RotateCcw } from "lucide-react";
 import {
   type FeedbackEntry,
@@ -40,14 +40,17 @@ function Field({
   multiline?: boolean;
   onChange: (v: string) => void;
 }) {
+  const fieldId = useId();
+
   return (
     <div className="space-y-1">
-      <label className="block text-sm font-semibold text-neutral-700">
+      <label htmlFor={fieldId} className="block text-sm font-semibold text-neutral-700">
         {label}
         {hint && <span className="ml-2 font-normal text-neutral-400">{hint}</span>}
       </label>
       {multiline ? (
         <textarea
+          id={fieldId}
           rows={rows}
           value={value}
           onChange={(e) => onChange(e.target.value)}
@@ -55,6 +58,7 @@ function Field({
         />
       ) : (
         <input
+          id={fieldId}
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
@@ -384,6 +388,7 @@ export function FeedbackEditor() {
       {/* Search */}
       <input
         type="search"
+        aria-label="Zoek op code, titel of feedbacktekst"
         placeholder="Zoek op code, titel of feedbacktekst…"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
