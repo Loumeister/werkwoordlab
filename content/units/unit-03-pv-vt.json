@@ -1,0 +1,551 @@
+{
+  "id": "unit-03-pv-vt",
+  "title": "Persoonsvorm verleden tijd",
+  "level": "onderbouw-vo",
+  "language": "nl",
+  "learningGoals": [
+    "Ik herken de persoonsvorm in de verleden tijd.",
+    "Ik bepaal enkelvoud of meervoud en kies de juiste uitgang (-de/-te of -den/-ten).",
+    "Ik controleer de ruwe stam (voor orthografische aanpassing) om de juiste uitgang te kiezen.",
+    "Ik onderscheid de verleden tijdsvorm van het voltooid deelwoord op basis van de grammaticale functie."
+  ],
+  "items": [
+    {
+      "id": "u3-i1",
+      "type": "fill-in",
+      "prompt": "Gisteren ___ hij de hele dag op school. (werken)",
+      "context": "Schooldag",
+      "lemma": "werken",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "hij",
+      "target": "werkte",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Bepaal de grammaticale functie: geen hulpwerkwoord → persoonsvorm verleden tijd.",
+        "step2": "Onderwerp 'hij' is enkelvoud → enkelvoudsvorm: stam + -de of -te.",
+        "step3": "Ruwe stam: werk (k zit in 't kofschip) → stam + -te = werkte."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_DE_TE_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'werkte' is de juiste enkelvoudsvorm — k zit in 't kofschip, dus -te.",
+        "hint": "Haal -en af van de infinitief: werk. Staat de eindletter k in 't kofschip? Dan -te."
+      }
+    },
+    {
+      "id": "u3-i2",
+      "type": "fill-in",
+      "prompt": "De leraar ___ een lastige opdracht voor de klas. (maken)",
+      "context": "Wiskundeles",
+      "lemma": "maken",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "de leraar",
+      "target": "maakte",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd.",
+        "step2": "Onderwerp 'de leraar' is enkelvoud → stam + -de of -te.",
+        "step3": "Ruwe stam: maak (k zit in 't kofschip) → maak + -te = maakte."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_DE_TE_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'maakte' — eindletter k is stemloze kofschip-klank, dus -te.",
+        "hint": "Infinitief maken → stam maak. Staat k in 't kofschip (t-k-f-s-ch-p)? Dan -te."
+      }
+    },
+    {
+      "id": "u3-i3",
+      "type": "fill-in",
+      "prompt": "Ik ___ even voordat ik antwoordde. (wachten)",
+      "context": "Klasgesprek",
+      "lemma": "wachten",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "ik",
+      "target": "wachtte",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; onderwerp 'ik' is enkelvoud.",
+        "step2": "Infinitief wachten → ruwe stam: wacht (t zit in 't kofschip) → -te.",
+        "step3": "Stam eindigt al op -t: wacht + te = wachtte (dubbele t)."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_DE_TE_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'wachtte' — stam wacht eindigt op t, -te erbij geeft dubbele t.",
+        "hint": "Stam wacht + uitgang -te = wachtte. De -t van de stam en de -t van de uitgang schrijf je allebei."
+      }
+    },
+    {
+      "id": "u3-i4",
+      "type": "fill-in",
+      "prompt": "Vorig jaar ___ hij voor zijn eindexamen. (studeren)",
+      "context": "Toetsperiode",
+      "lemma": "studeren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "hij",
+      "target": "studeerde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'hij' is enkelvoud.",
+        "step2": "Infinitief studeren → ruwe stam: studeer (r is niet in 't kofschip) → -de.",
+        "step3": "studeer + de = studeerde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_DE_TE_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'studeerde' — eindletter r is geen kofschip-klank, dus -de.",
+        "hint": "Ruwe stam: studeer. Is r in 't kofschip? Nee → gebruik -de."
+      }
+    },
+    {
+      "id": "u3-i5",
+      "type": "fill-in",
+      "prompt": "Het weer ___ snel nadat de zon verscheen. (veranderen)",
+      "context": "Weerbericht",
+      "lemma": "veranderen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "het weer",
+      "target": "veranderde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'het weer' is enkelvoud.",
+        "step2": "Infinitief veranderen → ruwe stam: verander (r is niet in 't kofschip) → -de.",
+        "step3": "verander + de = veranderde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_DE_TE_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'veranderde' — eindletter r is geen kofschip-klank, dus -de.",
+        "hint": "Ruwe stam: verander. R staat niet in 't kofschip → -de."
+      }
+    },
+    {
+      "id": "u3-i6",
+      "type": "fill-in",
+      "prompt": "Ze ___ dat ze het al wist, maar dat klopte niet. (beweren)",
+      "context": "Klasgesprek",
+      "lemma": "beweren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "ze",
+      "target": "beweerde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'ze' is hier enkelvoud.",
+        "step2": "Infinitief beweren → ruwe stam: beweer (r is niet in 't kofschip) → -de.",
+        "step3": "beweer + de = beweerde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_DE_TE_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'beweerde' — r is geen kofschip-klank, dus -de.",
+        "hint": "Stam beweer: is r in 't kofschip? Nee → -de → beweerde."
+      }
+    },
+    {
+      "id": "u3-i7",
+      "type": "fill-in",
+      "prompt": "Hij ___ rustig op elke vraag. (antwoorden)",
+      "context": "Mondelinge toets",
+      "lemma": "antwoorden",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "hij",
+      "target": "antwoordde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'hij' is enkelvoud.",
+        "step2": "Infinitief antwoorden → ruwe stam: antwoord (d is niet in 't kofschip) → -de.",
+        "step3": "Stam eindigt op -d: antwoord + de = antwoordde (dubbele d)."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_DE_TE_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'antwoordde' — stam antwoord eindigt op d, -de erbij geeft dubbele d.",
+        "hint": "Stam antwoord + uitgang -de = antwoordde. Beide d's schrijf je."
+      }
+    },
+    {
+      "id": "u3-i8",
+      "type": "fill-in",
+      "prompt": "Wij ___ gisteren samen aan een project. (werken)",
+      "context": "Groepsopdracht",
+      "lemma": "werken",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "wij",
+      "target": "werkten",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'wij' is meervoud.",
+        "step2": "Meervoud: stam + -den of -ten. Ruwe stam: werk (k in 't kofschip) → -ten.",
+        "step3": "werk + ten = werkten."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_ENKELVOUD_MEERVOUD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'werkten' is de meervoudsvorm — wij krijgt stam + -ten.",
+        "hint": "Vergelijk: hij werkte (enkelvoud) vs wij werkten (meervoud, voeg -n toe)."
+      }
+    },
+    {
+      "id": "u3-i9",
+      "type": "fill-in",
+      "prompt": "Ze ___ een heerlijk ontbijt klaar voor de hele klas. (maken)",
+      "context": "Schoolontbijt",
+      "lemma": "maken",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "ze",
+      "target": "maakten",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'ze' is hier meervoud.",
+        "step2": "Meervoud: stam + -ten (k in 't kofschip).",
+        "step3": "maak + ten = maakten."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_ENKELVOUD_MEERVOUD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'maakten' — meervoud met -ten omdat k in 't kofschip zit.",
+        "hint": "Onderwerp 'ze' is hier meervoud (ze maakten allemaal). Meervoud: stam + -ten."
+      }
+    },
+    {
+      "id": "u3-i10",
+      "type": "fill-in",
+      "prompt": "Jullie ___ lang voordat jullie aan de beurt waren. (wachten)",
+      "context": "Schoolkantine",
+      "lemma": "wachten",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "jullie",
+      "target": "wachtten",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'jullie' is meervoud.",
+        "step2": "Meervoud: stam + -ten (t in 't kofschip). Stam: wacht.",
+        "step3": "Stam eindigt op -t: wacht + ten = wachtten (dubbele t)."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_ENKELVOUD_MEERVOUD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'wachtten' — meervoud met dubbele t: stam wacht + ten.",
+        "hint": "Stam wacht eindigt al op t. Meervoud: wacht + ten = wachtten."
+      }
+    },
+    {
+      "id": "u3-i11",
+      "type": "fill-in",
+      "prompt": "Wij ___ hard voor de toets de volgende dag. (studeren)",
+      "context": "Toetsvoorbereiding",
+      "lemma": "studeren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "wij",
+      "target": "studeerden",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'wij' is meervoud.",
+        "step2": "Meervoud: stam + -den (r niet in 't kofschip). Stam: studeer.",
+        "step3": "studeer + den = studeerden."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_ENKELVOUD_MEERVOUD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'studeerden' — meervoud met -den omdat r geen kofschip-klank is.",
+        "hint": "Vergelijk: hij studeerde (enkelvoud) vs wij studeerden (meervoud, voeg -n toe)."
+      }
+    },
+    {
+      "id": "u3-i12",
+      "type": "fill-in",
+      "prompt": "De regels ___ elk jaar een beetje. (veranderen)",
+      "context": "Schoolregels",
+      "lemma": "veranderen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "de regels",
+      "target": "veranderden",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'de regels' is meervoud.",
+        "step2": "Meervoud: stam + -den (r niet in 't kofschip). Stam: verander.",
+        "step3": "verander + den = veranderden."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_ENKELVOUD_MEERVOUD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'veranderden' — meervoud met -den.",
+        "hint": "Onderwerp 'de regels' is meervoud → veranderden (met -n)."
+      }
+    },
+    {
+      "id": "u3-i13",
+      "type": "fill-in",
+      "prompt": "Ze ___ allemaal dat ze het antwoord wisten. (antwoorden)",
+      "context": "Quizavond",
+      "lemma": "antwoorden",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "ze",
+      "target": "antwoordden",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'ze' is hier meervoud ('ze allemaal').",
+        "step2": "Meervoud: stam + -den (d niet in 't kofschip). Stam: antwoord.",
+        "step3": "Stam eindigt op -d: antwoord + den = antwoordden (dubbele d)."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_ENKELVOUD_MEERVOUD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'antwoordden' — meervoud met dubbele d: stam antwoord + den.",
+        "hint": "Stam antwoord eindigt al op d. Meervoud: antwoord + den = antwoordden."
+      }
+    },
+    {
+      "id": "u3-i14",
+      "type": "fill-in",
+      "prompt": "Ze ___ hem haar hulp, maar hield zich er niet aan. (beloven)",
+      "context": "Afspraak",
+      "lemma": "beloven",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "ze",
+      "target": "beloofde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord zoals 'heeft' of 'is' → dit is een persoonsvorm verleden tijd, geen voltooid deelwoord.",
+        "step2": "Onderwerp 'ze' is enkelvoud → stam + -de of -te.",
+        "step3": "Ruwe stam: belov (v is niet in 't kofschip) → orthostam: beloof + de = beloofde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_VD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'beloofde' is de persoonsvorm verleden tijd — er is geen hulpwerkwoord.",
+        "hint": "Staat er een hulpwerkwoord (heeft/is)? Nee → persoonsvorm verleden tijd → beloofde, niet beloofd."
+      }
+    },
+    {
+      "id": "u3-i15",
+      "type": "fill-in",
+      "prompt": "Hij ___ haar volledig, maar dat was een vergissing. (vertrouwen)",
+      "context": "Samenwerking",
+      "lemma": "vertrouwen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "hij",
+      "target": "vertrouwde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'hij' is enkelvoud.",
+        "step2": "Ruwe stam: vertrouw (w is niet in 't kofschip) → -de.",
+        "step3": "vertrouw + de = vertrouwde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_VD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'vertrouwde' is de persoonsvorm verleden tijd — geen hulpwerkwoord aanwezig.",
+        "hint": "Vergelijk: 'hij heeft vertrouwd' (VD na heeft) vs 'hij vertrouwde' (VT, geen hulpwerkwoord)."
+      }
+    },
+    {
+      "id": "u3-i16",
+      "type": "fill-in",
+      "prompt": "De student ___ elke dag twee uur voor het tentamen. (studeren)",
+      "context": "Tentamenvoorbereiding",
+      "lemma": "studeren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "de student",
+      "target": "studeerde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'de student' is enkelvoud.",
+        "step2": "Ruwe stam: studeer (r niet in 't kofschip) → -de.",
+        "step3": "studeer + de = studeerde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_VD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'studeerde' — persoonsvorm verleden tijd, geen voltooid deelwoord.",
+        "hint": "Geen 'heeft' of 'is' in de zin → persoonsvorm VT → studeerde (niet: gestudeerd)."
+      }
+    },
+    {
+      "id": "u3-i17",
+      "type": "fill-in",
+      "prompt": "De vrijwilligers ___ de hele zaterdag aan de schooltuin. (werken)",
+      "context": "Schooltuin",
+      "lemma": "werken",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "de vrijwilligers",
+      "target": "werkten",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'de vrijwilligers' is meervoud.",
+        "step2": "Meervoud + kofschip k → stam + -ten.",
+        "step3": "werk + ten = werkten."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_VD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'werkten' — meervoud persoonsvorm verleden tijd (niet: gewerkt).",
+        "hint": "Meervoud + geen hulpwerkwoord → persoonsvorm VT meervoud: werkten."
+      }
+    },
+    {
+      "id": "u3-i18",
+      "type": "fill-in",
+      "prompt": "De oude man ___ al tachtig jaar in hetzelfde dorp. (leven)",
+      "context": "Dorpsgeschiedenis",
+      "lemma": "leven",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "de oude man",
+      "target": "leefde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; enkelvoud → stam + -de of -te.",
+        "step2": "Haal -en af van de infinitief: le-ven → ruwe stam: lev. Eindletter: v.",
+        "step3": "v is stemhebbend en staat niet in 't kofschip → -de. Orthostam leef + de = leefde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_RUWE_STAM_OVERRIDE",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'leefde' — de ruwe stam is lev (v=stemhebbend → -de), niet leef (f=kofschip).",
+        "hint": "Let op: de zichtbare stam is leef, maar de ruwe stam is lev. v staat niet in 't kofschip → -de → leefde."
+      }
+    },
+    {
+      "id": "u3-i19",
+      "type": "fill-in",
+      "prompt": "Het gezin ___ vorig jaar naar een andere stad. (verhuizen)",
+      "context": "Verhuizing",
+      "lemma": "verhuizen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "het gezin",
+      "target": "verhuisde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; enkelvoud → stam + -de of -te.",
+        "step2": "Haal -en af: verhui-zen → ruwe stam: verhuiz. Eindletter: z.",
+        "step3": "z is stemhebbend en staat niet in 't kofschip → -de. Orthostam verhuis + de = verhuisde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_RUWE_STAM_OVERRIDE",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'verhuisde' — ruwe stam verhuiz, z staat niet in 't kofschip → -de.",
+        "hint": "De zichtbare stam verhuis suggereert -te (s=kofschip), maar de ruwe stam is verhuiz → z is stemhebbend → -de."
+      }
+    },
+    {
+      "id": "u3-i20",
+      "type": "fill-in",
+      "prompt": "De leerlingen ___ dat ze de goede antwoorden hadden. (beweren)",
+      "context": "Na de toets",
+      "lemma": "beweren",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "de leerlingen",
+      "target": "beweerden",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'de leerlingen' is meervoud.",
+        "step2": "Meervoud: stam + -den (r niet in 't kofschip). Stam: beweer.",
+        "step3": "beweer + den = beweerden."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_ENKELVOUD_MEERVOUD",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'beweerden' — meervoud met -den.",
+        "hint": "Meervoud onderwerp → voeg -n toe aan de enkelvoudsvorm: beweerde → beweerden."
+      }
+    },
+    {
+      "id": "u3-i21",
+      "type": "fill-in",
+      "prompt": "De leerlingen die de tekst goed hadden gelezen, ___ de vragen snel. (begrijpen)",
+      "context": "Begrijpend lezen",
+      "lemma": "begrijpen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "verleden-tijd",
+      "subject": "de leerlingen",
+      "target": "begrepen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Geen zelfstandig hulpwerkwoord bij de persoonsvorm → persoonsvorm verleden tijd; 'de leerlingen' is meervoud.",
+        "step2": "Begrijpen is een onregelmatig werkwoord: ik begreep, wij begrepen.",
+        "step3": "De regelmatige -den/-ten-regel geldt niet hier. Gebruik de bekende onregelmatige meervoudsvorm: begrepen."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VT_DE_TE_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Goed: 'begrepen' is de onregelmatige meervoudsvorm van begrijpen in de verleden tijd.",
+        "hint": "Niet elk werkwoord volgt de -de/-te-regel. Controleer of het werkwoord onregelmatig is: begrijpen → begreep/begrepen."
+      }
+    }
+  ],
+  "transferTask": {
+    "id": "u3-transfer-1",
+    "type": "revision",
+    "prompt": "Lees de volgende zinnen. Sommige werkwoorden staan in de verkeerde vorm. Verbeter de fouten en leg voor elke correctie uit waarom de vorm verkeerd was.\n\n1. Gisteren werkde hij de hele dag in de bibliotheek.\n2. De leerlingen studerden tot laat in de avond.\n3. Het gezin verhuiste naar Amsterdam.\n4. Ze beloofde hem haar hulp, maar hij had haar steun heeft verlangd.",
+    "rubric": [
+      "Fout 1 herkend: werkde → werkte (k in 't kofschip → -te).",
+      "Fout 2 herkend: studerden → studeerden (stam studeer, meervoud + -den).",
+      "Fout 3 herkend: verhuiste → verhuisde (ruwe stam verhuiz, z niet in 't kofschip → -de).",
+      "Zin 4 geanalyseerd: beloofde is correct (VT persoonsvorm); eventuele VD-fout gesignaleerd.",
+      "Uitleg verwijst expliciet naar grammaticale functie, onderwerp (getal) en ruwe stam."
+    ]
+  }
+}

@@ -18,12 +18,13 @@
 
 ## Fase 2 — Content opschalen
 1. Unit-01 en unit-02 didactisch afronden. ✅ **Afgerond april 2026 (twee passes)** — unit-01: 26 items, unit-02: 25 items (~51 totaal). Tier-1 clusters (beloven, vertrouwen, gebeuren) en Tier-2 clusters (beweren, veranderen) volledig aanwezig in beide units. Cross-unit lexicale paren versterken de contrast-architectuur.
-2. Taxonomiecodes volledig koppelen aan items. ✅ Alle items hebben geldige `primaryMisconception`; 7 codes totaal (nieuw: `PV_MEERVOUD_T_ADDITION`).
-3. Contentkwaliteitsgates automatiseren in tests. ✅ `content-contracts.test.ts` valideert alle invarianten; 4 gerichte evaluatortests in `domain-logic.test.ts`.
+2. Taxonomiecodes volledig koppelen aan items. ✅ Alle items hebben geldige `primaryMisconception`; 11 codes totaal (7 bestaand + 4 nieuw voor VT-domein: `VT_DE_TE_CONFUSION`, `VT_VD_FUNCTION_CONFUSION`, `VT_ENKELVOUD_MEERVOUD`, `VT_RUWE_STAM_OVERRIDE`).
+3. Contentkwaliteitsgates automatiseren in tests. ✅ `content-contracts.test.ts` valideert alle invarianten; 15 gerichte evaluatortests in `domain-logic.test.ts`.
+4. Eerste nieuwe kernunit toevoegen. ✅ **Afgerond april 2026** — `unit-03-pv-vt`: 21 items (7 blokken: -te/-de enkelvoud, -ten/-den meervoud, VT/VD contrast, ruwe stam override, transfer). Totaal 72 oefeningen over 3 units.
 
-**DoD**: beide units schema-geldig en didactisch consistent. ✅
+**DoD**: drie units schema-geldig en didactisch consistent. ✅
 
-**Volgende stap**: `unit-03-pv-vt` ontwerpen (zie `docs/content-expansion-roadmap.md` taakgroep 2).
+**Volgende stap**: `unit-04-infinitief` ontwerpen (zie `docs/content-expansion-roadmap.md` taakgroep 3).
 
 ## Fase 3 — Teacher insights MVP
 1. Attempts/progress opslaan.

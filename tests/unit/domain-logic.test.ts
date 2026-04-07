@@ -98,4 +98,29 @@ describe("domain logic", () => {
     expect(getExerciseMode(belooftItem!)).toBe("classificatie");
     expect(getExerciseMode(vertrouwtItem!)).toBe("classificatie");
   });
+
+  it("getUnit geeft unit-03-pv-vt terug", () => {
+    const unit03 = getUnit("unit-03-pv-vt");
+    expect(unit03?.id).toBe("unit-03-pv-vt");
+    expect(unit03?.items.length).toBeGreaterThanOrEqual(20);
+  });
+
+  it("VT_DE_TE_CONFUSION geeft begrijpelijke learner-label terug", () => {
+    const label = getMisconceptionLabel("VT_DE_TE_CONFUSION");
+    expect(label).not.toContain("Controleer eerst de grammaticale functie");
+    expect(label.length).toBeGreaterThan(0);
+  });
+
+  it("VT_RUWE_STAM_OVERRIDE geeft begrijpelijke learner-label terug", () => {
+    const label = getMisconceptionLabel("VT_RUWE_STAM_OVERRIDE");
+    expect(label).not.toContain("Controleer eerst de grammaticale functie");
+    expect(label.length).toBeGreaterThan(0);
+  });
+
+  it("unit-03 items renderen als korte-correctie modus (geen homofoon/classificatie)", () => {
+    const unit03 = getUnit("unit-03-pv-vt")!;
+    for (const item of unit03.items) {
+      expect(getExerciseMode(item)).toBe("korte-correctie");
+    }
+  });
 });
