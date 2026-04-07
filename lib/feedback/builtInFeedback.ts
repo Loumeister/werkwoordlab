@@ -37,15 +37,15 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
   },
 
   PV_JIJ_INVERSION_FALSE_T: {
-    herstelvraag: "Staat 'je' of 'jij' ná de persoonsvorm?",
-    sleutelwoord: "inversie",
+    herstelvraag: "Staat 'je' of 'jij' achter de persoonsvorm?",
+    sleutelwoord: "persoonsvorm",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de gewone -t-regel toegepast, maar bij inversie met 'je/jij' vervalt de -t.",
+        "Je hebt waarschijnlijk de gewone -t-regel toegepast, maar bij 'je/jij' achter de persoonsvorm vervalt de -t.",
       redenering:
-        "Wanneer 'je' of 'jij' ná de persoonsvorm staat (inversie), krijgt de persoonsvorm geen -t. Schrijf 'Hoe oud word jij?', niet 'wordt jij'.",
+        "Wanneer 'je' of 'jij' achter de persoonsvorm staat, krijgt de persoonsvorm geen -t. Schrijf 'Hoe oud word jij?', niet 'wordt jij'.",
       herprobeer:
-        "Controleer of 'je' of 'jij' ná de persoonsvorm staat. Zo ja: gebruik de stam zonder -t.",
+        "Controleer of 'je' of 'jij' achter de persoonsvorm staat. Zo ja: gebruik de stam zonder -t.",
     },
   },
 
