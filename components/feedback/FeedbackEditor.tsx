@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { ChevronDown, ChevronRight, Download, RotateCcw } from "lucide-react";
 import {
   type FeedbackEntry,
@@ -111,6 +111,15 @@ function MisconceptionCard({
   const isDirty = JSON.stringify(currentDraft) !== JSON.stringify(savedEntry);
 
   const [savedFlash, setSavedFlash] = useState(false);
+  const savedFlashTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (savedFlashTimeoutRef.current !== null) {
+        clearTimeout(savedFlashTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Sync drafts when override changes externally (e.g. after reset-all)
   useEffect(() => {
@@ -129,7 +138,13 @@ function MisconceptionCard({
     const value: FeedbackEntry = mode === "plain" ? plainDraft : richDraft;
     onSave(code, value);
     setSavedFlash(true);
-    setTimeout(() => setSavedFlash(false), 1200);
+    if (savedFlashTimeoutRef.current !== null) {
+      clearTimeout(savedFlashTimeoutRef.current);
+    }
+    savedFlashTimeoutRef.current = setTimeout(() => {
+      setSavedFlash(false);
+      savedFlashTimeoutRef.current = null;
+    }, 1200);
   }
 
   function updateRich(field: keyof RichFeedbackEntry | `uitleg.${keyof RichFeedbackEntry["uitleg"]}`, value: string) {
