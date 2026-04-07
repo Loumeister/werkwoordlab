@@ -107,13 +107,13 @@ describe("domain logic", () => {
 
   it("VT_DE_TE_CONFUSION geeft begrijpelijke learner-label terug", () => {
     const label = getMisconceptionLabel("VT_DE_TE_CONFUSION");
-    expect(label).not.toContain("Controleer eerst de grammaticale functie");
+    expect(label).not.toBe("Controleer eerst de grammaticale functie en pas dan de spellingregel toe.");
     expect(label.length).toBeGreaterThan(0);
   });
 
   it("VT_RUWE_STAM_OVERRIDE geeft begrijpelijke learner-label terug", () => {
     const label = getMisconceptionLabel("VT_RUWE_STAM_OVERRIDE");
-    expect(label).not.toContain("Controleer eerst de grammaticale functie");
+    expect(label).not.toBe("Controleer eerst de grammaticale functie en pas dan de spellingregel toe.");
     expect(label.length).toBeGreaterThan(0);
   });
 

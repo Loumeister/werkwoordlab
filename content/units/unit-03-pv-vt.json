@@ -539,12 +539,12 @@
   "transferTask": {
     "id": "u3-transfer-1",
     "type": "revision",
-    "prompt": "Lees de volgende zinnen. Sommige werkwoorden staan in de verkeerde vorm. Verbeter de fouten en leg voor elke correctie uit waarom de vorm verkeerd was.\n\n1. Gisteren werkde hij de hele dag in de bibliotheek.\n2. De leerlingen studerden tot laat in de avond.\n3. Het gezin verhuiste naar Amsterdam.\n4. Ze beloofde hem haar hulp, maar hij had haar steun heeft verlangd.",
+    "prompt": "Lees de volgende zinnen. Sommige werkwoorden staan in de verkeerde vorm. Verbeter de fouten en leg voor elke correctie uit waarom de vorm verkeerd was.\n\n1. Gisteren werkde hij de hele dag in de bibliotheek.\n2. De leerlingen studerden tot laat in de avond.\n3. Het gezin verhuiste naar Amsterdam.\n4. Ze beloofde hem haar hulp, maar hij heeft haar nooit vertrouwde.",
     "rubric": [
       "Fout 1 herkend: werkde → werkte (k in 't kofschip → -te).",
       "Fout 2 herkend: studerden → studeerden (stam studeer, meervoud + -den).",
       "Fout 3 herkend: verhuiste → verhuisde (ruwe stam verhuiz, z niet in 't kofschip → -de).",
-      "Zin 4 geanalyseerd: beloofde is correct (VT persoonsvorm); eventuele VD-fout gesignaleerd.",
+      "Fout 4 herkend: 'heeft vertrouwde' → 'heeft vertrouwd' (na hulpwerkwoord 'heeft' is een voltooid deelwoord vereist: vertrouwd, niet de verleden tijdsvorm vertrouwde).",
       "Uitleg verwijst expliciet naar grammaticale functie, onderwerp (getal) en ruwe stam."
     ]
   }
