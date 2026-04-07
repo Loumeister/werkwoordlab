@@ -6,12 +6,16 @@
  * but is not staged now because the key and shape are currently werkwoordlab-specific.
  */
 
-import { type FeedbackEntry } from "./types";
+import { type FeedbackEntry, isRichFeedbackEntry } from "./types";
 import { type MisconceptionCode } from "./misconceptions";
 
 const STORAGE_KEY = "werkwoordlab-feedback-overrides";
 
 type FeedbackOverrides = Partial<Record<MisconceptionCode, FeedbackEntry>>;
+
+function isFeedbackEntry(value: unknown): value is FeedbackEntry {
+  return typeof value === "string" || isRichFeedbackEntry(value);
+}
 
 export function getFeedbackOverrides(): FeedbackOverrides {
   if (typeof window === "undefined") {
@@ -20,7 +24,26 @@ export function getFeedbackOverrides(): FeedbackOverrides {
 
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as FeedbackOverrides) : {};
+    if (!raw) {
+      return {};
+    }
+
+    const parsed = JSON.parse(raw);
+
+    if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+      return {};
+    }
+
+    const candidate = parsed as Record<string, unknown>;
+    const result: FeedbackOverrides = {};
+
+    for (const [key, value] of Object.entries(candidate)) {
+      if (isFeedbackEntry(value)) {
+        result[key as MisconceptionCode] = value;
+      }
+    }
+
+    return result;
   } catch {
     return {};
   }

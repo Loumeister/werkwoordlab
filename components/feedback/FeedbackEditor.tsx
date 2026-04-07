@@ -402,12 +402,15 @@ export function FeedbackEditor() {
           if (visibleCodes.length === 0) return null;
           const isExpanded = expandedGroups.has(group.label);
           const groupOverrideCount = group.codes.filter((c) => overrides[c] !== undefined).length;
+          const panelId = `feedback-group-${group.label.toLowerCase().replace(/\s+/g, "-")}`;
 
           return (
             <div key={group.label} className="rounded-2xl border border-neutral-200 bg-[#fafaf9]">
               <button
                 type="button"
                 onClick={() => toggleGroup(group.label)}
+                aria-expanded={isExpanded}
+                aria-controls={panelId}
                 className="flex w-full items-center justify-between px-5 py-4 text-left"
               >
                 <div className="flex items-center gap-3">
@@ -427,7 +430,7 @@ export function FeedbackEditor() {
               </button>
 
               {isExpanded && (
-                <div className="space-y-3 px-5 pb-5">
+                <div id={panelId} className="space-y-3 px-5 pb-5">
                   {visibleCodes.map((code) => (
                     <MisconceptionCard
                       key={code}

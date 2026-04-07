@@ -18,6 +18,7 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
   const [uitlegOpen, setUitlegOpen] = useState(false);
 
   const item = unit.items[index];
+  const uitlegPanelId = `uitleg-${item.id}-${index}`;
   const mode = getExerciseMode(item);
   const evaluation = submitted ? evaluateAnswer(item, answer) : null;
   const progress = Math.round(((index + 1) / unit.items.length) * 100);
@@ -188,12 +189,14 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
                 <button
                   type="button"
                   onClick={() => setUitlegOpen((o) => !o)}
+                  aria-expanded={uitlegOpen}
+                  aria-controls={uitlegPanelId}
                   className="ml-9 text-sm font-semibold text-[#1f5da0] underline underline-offset-2 hover:no-underline"
                 >
                   {uitlegOpen ? "Verberg uitleg" : `Meer uitleg over '${effectiveFeedback.sleutelwoord}'`}
                 </button>
                 {uitlegOpen && (
-                  <div className="ml-9 space-y-2 rounded-xl border border-[#bee3ff] bg-[#f2f9ff] p-4 text-base">
+                  <div id={uitlegPanelId} className="ml-9 space-y-2 rounded-xl border border-[#bee3ff] bg-[#f2f9ff] p-4 text-base">
                     <p><strong>Diagnose:</strong> {effectiveFeedback.uitleg.diagnose}</p>
                     <p><strong>Redenering:</strong> {effectiveFeedback.uitleg.redenering}</p>
                     <p><strong>Herprobeer:</strong> {effectiveFeedback.uitleg.herprobeer}</p>
