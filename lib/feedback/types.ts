@@ -24,5 +24,24 @@ export interface RichFeedbackEntry {
 }
 
 export function isRichFeedbackEntry(entry: unknown): entry is RichFeedbackEntry {
-  return typeof entry === "object" && entry !== null && "herstelvraag" in entry;
+  if (typeof entry !== "object" || entry === null) {
+    return false;
+  }
+
+  const candidate = entry as Record<string, unknown>;
+  const uitleg = candidate.uitleg;
+
+  if (typeof uitleg !== "object" || uitleg === null) {
+    return false;
+  }
+
+  const uitlegCandidate = uitleg as Record<string, unknown>;
+
+  return (
+    typeof candidate.herstelvraag === "string" &&
+    typeof candidate.sleutelwoord === "string" &&
+    typeof uitlegCandidate.diagnose === "string" &&
+    typeof uitlegCandidate.redenering === "string" &&
+    typeof uitlegCandidate.herprobeer === "string"
+  );
 }

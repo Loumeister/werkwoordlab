@@ -70,9 +70,65 @@ describe("isRichFeedbackEntry", () => {
     expect(isRichFeedbackEntry({ sleutelwoord: "test" })).toBe(false);
   });
 
-  it("geeft true voor een object dat alleen herstelvraag bevat (minimale check)", () => {
-    // The guard only checks for the presence of 'herstelvraag' as a discriminator key.
-    expect(isRichFeedbackEntry({ herstelvraag: "?" })).toBe(true);
+  it("geeft false voor een incompleet object dat alleen herstelvraag bevat", () => {
+    expect(isRichFeedbackEntry({ herstelvraag: "?" })).toBe(false);
+  });
+
+  it("geeft false wanneer sleutelwoord ontbreekt", () => {
+    expect(
+      isRichFeedbackEntry({
+        herstelvraag: "?",
+        uitleg: {
+          diagnose: "diagnose",
+          redenering: "redenering",
+          herprobeer: "herprobeer",
+        },
+      }),
+    ).toBe(false);
+  });
+
+  it("geeft false wanneer uitleg ontbreekt", () => {
+    expect(
+      isRichFeedbackEntry({
+        herstelvraag: "?",
+        sleutelwoord: "onderwerp",
+      }),
+    ).toBe(false);
+  });
+
+  it("geeft false wanneer een verplicht uitleg-veld ontbreekt", () => {
+    expect(
+      isRichFeedbackEntry({
+        herstelvraag: "?",
+        sleutelwoord: "onderwerp",
+        uitleg: {
+          diagnose: "diagnose",
+          redenering: "redenering",
+        },
+      }),
+    ).toBe(false);
+
+    expect(
+      isRichFeedbackEntry({
+        herstelvraag: "?",
+        sleutelwoord: "onderwerp",
+        uitleg: {
+          diagnose: "diagnose",
+          herprobeer: "herprobeer",
+        },
+      }),
+    ).toBe(false);
+
+    expect(
+      isRichFeedbackEntry({
+        herstelvraag: "?",
+        sleutelwoord: "onderwerp",
+        uitleg: {
+          redenering: "redenering",
+          herprobeer: "herprobeer",
+        },
+      }),
+    ).toBe(false);
   });
 });
 
