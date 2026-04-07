@@ -1,21 +1,39 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AlertCircle, CheckCircle2, Lightbulb } from "lucide-react";
 import { type Unit, getMisconceptionLabel } from "@/lib/content";
 import { evaluateAnswer, getExerciseMode, getFunctionOptions, getHomophoneOptions } from "@/lib/evaluator";
 import { saveAttempt } from "@/lib/attempt-store";
+import { type FeedbackEntry, isRichFeedbackEntry } from "@/lib/feedback/types";
+import { type MisconceptionCode } from "@/lib/feedback/misconceptions";
+import { getEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
 
 export function LearnerFlow({ unit }: { unit: Unit }) {
   const [index, setIndex] = useState(0);
   const [answer, setAnswer] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [lastCorrect, setLastCorrect] = useState(false);
+  const [effectiveFeedback, setEffectiveFeedback] = useState<FeedbackEntry | undefined>(undefined);
+  const [uitlegOpen, setUitlegOpen] = useState(false);
 
   const item = unit.items[index];
+  const uitlegPanelId = `uitleg-${item.id}-${index}`;
   const mode = getExerciseMode(item);
   const evaluation = submitted ? evaluateAnswer(item, answer) : null;
   const progress = Math.round(((index + 1) / unit.items.length) * 100);
+
+  // Resolve effective feedback from localStorage overrides when item changes.
+  // Only runs client-side (localStorage is browser-only).
+  useEffect(() => {
+    const code = item.diagnostic?.primaryMisconception as MisconceptionCode | undefined;
+    if (code) {
+      setEffectiveFeedback(getEffectiveFeedback(code));
+    } else {
+      setEffectiveFeedback(undefined);
+    }
+    setUitlegOpen(false);
+  }, [item]);
 
   const instruction = useMemo(() => {
     if (mode === "classificatie") {
@@ -158,11 +176,46 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
             </p>
           </div>
 
-          <div className="flex items-start gap-3 rounded-2xl border border-[#7db1d8] bg-white p-4 text-lg">
-            <Lightbulb className="mt-1 text-[#1f5da0]" aria-hidden />
-            <p>
-              <strong>Hint:</strong> {item.feedback.hint} {getMisconceptionLabel(item.diagnostic.primaryMisconception)}
-            </p>
+          <div className="rounded-2xl border border-[#7db1d8] bg-white p-4 text-lg">
+            {isRichFeedbackEntry(effectiveFeedback) ? (
+              // Rich feedback: show herstelvraag + collapsible uitleg
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <Lightbulb className="mt-1 shrink-0 text-[#1f5da0]" aria-hidden />
+                  <p>
+                    <strong>Hint:</strong> {effectiveFeedback.herstelvraag}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setUitlegOpen((o) => !o)}
+                  aria-expanded={uitlegOpen}
+                  aria-controls={uitlegPanelId}
+                  className="ml-9 text-sm font-semibold text-[#1f5da0] underline underline-offset-2 hover:no-underline"
+                >
+                  {uitlegOpen ? "Verberg uitleg" : `Meer uitleg over '${effectiveFeedback.sleutelwoord}'`}
+                </button>
+                {uitlegOpen && (
+                  <div id={uitlegPanelId} className="ml-9 space-y-2 rounded-xl border border-[#bee3ff] bg-[#f2f9ff] p-4 text-base">
+                    <p><strong>Diagnose:</strong> {effectiveFeedback.uitleg.diagnose}</p>
+                    <p><strong>Redenering:</strong> {effectiveFeedback.uitleg.redenering}</p>
+                    <p><strong>Herprobeer:</strong> {effectiveFeedback.uitleg.herprobeer}</p>
+                  </div>
+                )}
+              </div>
+            ) : (
+              // Plain string feedback or safe fallback to item.feedback.hint
+              <div className="flex items-start gap-3">
+                <Lightbulb className="mt-1 text-[#1f5da0]" aria-hidden />
+                <p>
+                  <strong>Hint:</strong>{" "}
+                  {typeof effectiveFeedback === "string"
+                    ? effectiveFeedback
+                    : item.feedback.hint}{" "}
+                  {getMisconceptionLabel(item.diagnostic.primaryMisconception)}
+                </p>
+              </div>
+            )}
           </div>
 
           <button

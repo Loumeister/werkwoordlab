@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { BookOpenText, ChartColumn, PenLine, SquarePen, TrendingUp } from "lucide-react";
+import { BookOpenText, ChartColumn, Pencil, PenLine, SquarePen, TrendingUp } from "lucide-react";
 
 const navItems = [
   { href: "/oefenen", label: "Oefenen", icon: PenLine },
   { href: "/schrijven", label: "Schrijven & nakijken", icon: SquarePen },
   { href: "/groei", label: "Mijn groei", icon: TrendingUp },
   { href: "/inzichten", label: "Inzichten (docent)", icon: ChartColumn },
-  { href: "/content", label: "Content", icon: BookOpenText }
+  { href: "/content", label: "Content", icon: BookOpenText },
+  { href: "/feedback-editor", label: "Feedback editor (docent)", icon: Pencil },
 ];
 
 export function AppShell({ children }: { children: React.ReactNode }) {
