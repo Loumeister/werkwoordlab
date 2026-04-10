@@ -10,7 +10,11 @@ export type MisconceptionCode =
   | "PV_MEERVOUD_T_ADDITION"
   | "VD_KOFSCHIP_MISAPPLIED"
   | "VD_IRREGULAR_PP_REGULARIZED"
-  | "HOMOPHONE_FUNCTION_CONFUSION";
+  | "HOMOPHONE_FUNCTION_CONFUSION"
+  | "VT_DE_TE_CONFUSION"
+  | "VT_VD_FUNCTION_CONFUSION"
+  | "VT_ENKELVOUD_MEERVOUD"
+  | "VT_RUWE_STAM_OVERRIDE";
 
 export const MISCONCEPTION_TITLES: Record<MisconceptionCode, string> = {
   PV_STAM_T_OMISSION: "Stam+t weggelaten",
@@ -20,7 +24,29 @@ export const MISCONCEPTION_TITLES: Record<MisconceptionCode, string> = {
   VD_KOFSCHIP_MISAPPLIED: "'t kofschip-regel fout toegepast",
   VD_IRREGULAR_PP_REGULARIZED: "Onregelmatig voltooid deelwoord geregulariseerd",
   HOMOPHONE_FUNCTION_CONFUSION: "Homofone vorm verward door functiefout",
+  VT_DE_TE_CONFUSION: "Verkeerde uitgang -de of -te (verleden tijd)",
+  VT_VD_FUNCTION_CONFUSION: "Voltooid deelwoord gebruikt als persoonsvorm VT",
+  VT_ENKELVOUD_MEERVOUD: "Enkelvoud/meervoud verwisseld (verleden tijd)",
+  VT_RUWE_STAM_OVERRIDE: "Ruwe stam niet herkend bij -de/-te keuze",
 };
+
+const MISCONCEPTION_CODE_SET = new Set<string>([
+  "PV_STAM_T_OMISSION",
+  "PV_FALSE_T_ADD",
+  "PV_JIJ_INVERSION_FALSE_T",
+  "PV_MEERVOUD_T_ADDITION",
+  "VD_KOFSCHIP_MISAPPLIED",
+  "VD_IRREGULAR_PP_REGULARIZED",
+  "HOMOPHONE_FUNCTION_CONFUSION",
+  "VT_DE_TE_CONFUSION",
+  "VT_VD_FUNCTION_CONFUSION",
+  "VT_ENKELVOUD_MEERVOUD",
+  "VT_RUWE_STAM_OVERRIDE",
+]);
+
+export function isMisconceptionCode(code: string): code is MisconceptionCode {
+  return MISCONCEPTION_CODE_SET.has(code);
+}
 
 // Editor-only grouping config — a plain convenience array, not a shared contract.
 export const FEEDBACK_GROUPS = [
@@ -31,6 +57,15 @@ export const FEEDBACK_GROUPS = [
       "PV_FALSE_T_ADD",
       "PV_JIJ_INVERSION_FALSE_T",
       "PV_MEERVOUD_T_ADDITION",
+    ] as MisconceptionCode[],
+  },
+  {
+    label: "Persoonsvorm (verleden tijd)",
+    codes: [
+      "VT_DE_TE_CONFUSION",
+      "VT_VD_FUNCTION_CONFUSION",
+      "VT_ENKELVOUD_MEERVOUD",
+      "VT_RUWE_STAM_OVERRIDE",
     ] as MisconceptionCode[],
   },
   {

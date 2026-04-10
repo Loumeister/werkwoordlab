@@ -444,19 +444,17 @@ export function FeedbackEditor() {
                 <span className="text-sm text-neutral-400">{visibleCodes.length} items</span>
               </button>
 
-              {isExpanded && (
-                <div id={panelId} className="space-y-3 px-5 pb-5">
-                  {visibleCodes.map((code) => (
-                    <MisconceptionCard
-                      key={code}
-                      code={code}
-                      overrides={overrides}
-                      onSave={handleSave}
-                      onReset={handleReset}
-                    />
-                  ))}
-                </div>
-              )}
+              <div id={panelId} hidden={!isExpanded} className="space-y-3 px-5 pb-5">
+                {isExpanded && visibleCodes.map((code) => (
+                  <MisconceptionCard
+                    key={code}
+                    code={code}
+                    overrides={overrides}
+                    onSave={handleSave}
+                    onReset={handleReset}
+                  />
+                ))}
+              </div>
             </div>
           );
         })}
