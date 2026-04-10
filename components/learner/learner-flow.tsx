@@ -6,7 +6,7 @@ import { type Unit, getMisconceptionLabel } from "@/lib/content";
 import { evaluateAnswer, getExerciseMode, getFunctionOptions, getHomophoneOptions } from "@/lib/evaluator";
 import { saveAttempt } from "@/lib/attempt-store";
 import { type FeedbackEntry, isRichFeedbackEntry } from "@/lib/feedback/types";
-import { type MisconceptionCode } from "@/lib/feedback/misconceptions";
+import { type MisconceptionCode, isMisconceptionCode } from "@/lib/feedback/misconceptions";
 import { getEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
 
 export function LearnerFlow({ unit }: { unit: Unit }) {
@@ -26,12 +26,10 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
   // Resolve effective feedback from localStorage overrides when item changes.
   // Only runs client-side (localStorage is browser-only).
   useEffect(() => {
-    const code = item.diagnostic?.primaryMisconception as MisconceptionCode | undefined;
-    if (code) {
-      setEffectiveFeedback(getEffectiveFeedback(code));
-    } else {
-      setEffectiveFeedback(undefined);
-    }
+    const rawCode = item.diagnostic?.primaryMisconception;
+    const code: MisconceptionCode | undefined =
+      rawCode && isMisconceptionCode(rawCode) ? rawCode : undefined;
+    setEffectiveFeedback(code ? getEffectiveFeedback(code) : undefined);
     setUitlegOpen(false);
   }, [item]);
 
@@ -195,13 +193,15 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
                 >
                   {uitlegOpen ? "Verberg uitleg" : `Meer uitleg over '${effectiveFeedback.sleutelwoord}'`}
                 </button>
-                {uitlegOpen && (
-                  <div id={uitlegPanelId} className="ml-9 space-y-2 rounded-xl border border-[#bee3ff] bg-[#f2f9ff] p-4 text-base">
-                    <p><strong>Diagnose:</strong> {effectiveFeedback.uitleg.diagnose}</p>
-                    <p><strong>Redenering:</strong> {effectiveFeedback.uitleg.redenering}</p>
-                    <p><strong>Herprobeer:</strong> {effectiveFeedback.uitleg.herprobeer}</p>
-                  </div>
-                )}
+                <div
+                  id={uitlegPanelId}
+                  hidden={!uitlegOpen}
+                  className="ml-9 space-y-2 rounded-xl border border-[#bee3ff] bg-[#f2f9ff] p-4 text-base"
+                >
+                  <p><strong>Diagnose:</strong> {effectiveFeedback.uitleg.diagnose}</p>
+                  <p><strong>Redenering:</strong> {effectiveFeedback.uitleg.redenering}</p>
+                  <p><strong>Herprobeer:</strong> {effectiveFeedback.uitleg.herprobeer}</p>
+                </div>
               </div>
             ) : (
               // Plain string feedback or safe fallback to item.feedback.hint

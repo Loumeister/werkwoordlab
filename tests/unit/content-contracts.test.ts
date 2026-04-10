@@ -5,6 +5,7 @@ import taxonomy from '@/content/misconceptions/taxonomy.nl.json';
 import unit01 from '@/content/units/unit-01-pv-tt.json';
 import unit02 from '@/content/units/unit-02-voltooid-deelwoord.json';
 import unit03 from '@/content/units/unit-03-pv-vt.json';
+import { BUILT_IN_FEEDBACK } from '@/lib/feedback/builtInFeedback';
 
 type UnitLike = typeof unit01;
 
@@ -77,6 +78,18 @@ describe('content contracts', () => {
 
       for (const item of unit.items) {
         expect(taxonomyCodes.has(item.diagnostic.primaryMisconception)).toBe(true);
+      }
+    }
+  });
+
+  it('all primaryMisconception codes used in units have a BUILT_IN_FEEDBACK entry', () => {
+    for (const unit of units) {
+      for (const item of unit.items) {
+        const code = item.diagnostic.primaryMisconception;
+        expect(
+          BUILT_IN_FEEDBACK,
+          `No BUILT_IN_FEEDBACK entry for "${code}" (used in ${item.id})`
+        ).toHaveProperty(code);
       }
     }
   });

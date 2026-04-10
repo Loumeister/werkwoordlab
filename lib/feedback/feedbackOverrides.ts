@@ -7,7 +7,7 @@
  */
 
 import { type FeedbackEntry, isRichFeedbackEntry } from "./types";
-import { type MisconceptionCode } from "./misconceptions";
+import { type MisconceptionCode, isMisconceptionCode } from "./misconceptions";
 
 const STORAGE_KEY = "werkwoordlab-feedback-overrides";
 
@@ -38,8 +38,8 @@ export function getFeedbackOverrides(): FeedbackOverrides {
     const result: FeedbackOverrides = {};
 
     for (const [key, value] of Object.entries(candidate)) {
-      if (isFeedbackEntry(value)) {
-        result[key as MisconceptionCode] = value;
+      if (isMisconceptionCode(key) && isFeedbackEntry(value)) {
+        result[key] = value;
       }
     }
 

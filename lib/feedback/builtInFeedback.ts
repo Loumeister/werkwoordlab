@@ -100,4 +100,56 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
         "Verander de zin naar de verleden tijd. Verandert het woord van vorm? Dan is het een persoonsvorm.",
     },
   },
+
+  VT_DE_TE_CONFUSION: {
+    herstelvraag: "Welke eindklank heeft de ruwe stam?",
+    sleutelwoord: "ruwe stam",
+    uitleg: {
+      diagnose:
+        "Je hebt waarschijnlijk de uitgang gekozen op basis van de geschreven stam, maar de kofschip-regel vraagt de eindklank van de ruwe stam.",
+      redenering:
+        "Haal -en af van de infinitief om de stam te krijgen. Controleer of de eindklank van die stam in 't kofschip' (t-k-f-s-ch-p) staat. Zo ja: -te of -ten, anders: -de of -den.",
+      herprobeer:
+        "Schrijf de stam op. Kijk naar de laatste klank. Zit die in 't kofschip'? Dan -te, anders -de.",
+    },
+  },
+
+  VT_VD_FUNCTION_CONFUSION: {
+    herstelvraag: "Is dit een persoonsvorm of een deelwoord?",
+    sleutelwoord: "persoonsvorm",
+    uitleg: {
+      diagnose:
+        "Je hebt waarschijnlijk een voltooid deelwoord ingevuld (zoals gewerkt of gespeeld), maar hier is een persoonsvorm verleden tijd nodig.",
+      redenering:
+        "De persoonsvorm verleden tijd staat zonder voorvoegsel ge-. Een voltooid deelwoord begint vaak met ge- en staat na een hulpwerkwoord. Schrijf 'hij werkte', niet 'hij gewerkt'.",
+      herprobeer:
+        "Verwijder het hulpwerkwoord uit de zin: past de zin dan nog? Dan is het een persoonsvorm — gebruik de verleden-tijdsvorm zonder ge-.",
+    },
+  },
+
+  VT_ENKELVOUD_MEERVOUD: {
+    herstelvraag: "Is het onderwerp enkelvoud of meervoud?",
+    sleutelwoord: "meervoud",
+    uitleg: {
+      diagnose:
+        "Je hebt waarschijnlijk de enkelvoudsvorm (-de/-te) gebruikt bij een meervoudig onderwerp, of andersom.",
+      redenering:
+        "Enkelvoud (ik, hij, zij, het): stam + -de of -te. Meervoud (wij, jullie, zij, en): stam + -den of -ten. Schrijf 'hij werkte' maar 'zij werkten'.",
+      herprobeer:
+        "Bepaal het onderwerp. Is het enkelvoud? Gebruik -de of -te. Is het meervoud? Gebruik -den of -ten.",
+    },
+  },
+
+  VT_RUWE_STAM_OVERRIDE: {
+    herstelvraag: "Welke klank hoor je écht aan het einde van de stam?",
+    sleutelwoord: "klank",
+    uitleg: {
+      diagnose:
+        "Je hebt waarschijnlijk de geschreven stam bekeken in plaats van de eindklank die je hoort bij uitspreken.",
+      redenering:
+        "Soms verschilt de schrijfwijze van de stam van de uitgesproken klank. Spreek de stam uit en beoordeel die klank: 'leven' → je hoort leef (f zit in 't kofschip) → leefde. 'verhuizen' → je hoort verhuis (s zit in 't kofschip) → verhuisde.",
+      herprobeer:
+        "Spreek de stam hardop uit. Hoor je een klank uit 't kofschip' (t-k-f-s-ch-p)? Dan -te, anders -de.",
+    },
+  },
 };
