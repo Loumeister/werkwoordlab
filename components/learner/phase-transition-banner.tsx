@@ -26,7 +26,6 @@ export function PhaseTransitionBanner({ completedPhase, nextPhase, onContinue }:
         {PHASE_ORDER.map((phase, i) => {
           const isDone = i <= completedIndex;
           const isCurrent = phase === nextPhase;
-          const isUpcoming = i > completedIndex + 1;
 
           return (
             <div key={phase} className="flex items-center gap-2">

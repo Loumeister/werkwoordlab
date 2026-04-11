@@ -6,6 +6,8 @@ import unit01 from '@/content/units/unit-01-pv-tt.json';
 import unit02 from '@/content/units/unit-02-voltooid-deelwoord.json';
 import unit03 from '@/content/units/unit-03-pv-vt.json';
 import { BUILT_IN_FEEDBACK } from '@/lib/feedback/builtInFeedback';
+import type { AnyItem } from '@/lib/content';
+import { isContrastPairItem } from '@/lib/content';
 
 type UnitLike = typeof unit01;
 
@@ -16,11 +18,6 @@ function getJsonFiles(dirPath: string): string[] {
   return entries
     .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
     .map((entry) => path.join(dirPath, entry.name));
-}
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function isContrastPair(item: any): boolean {
-  return item.type === 'contrast-pair';
 }
 
 describe('content contracts', () => {
@@ -53,19 +50,18 @@ describe('content contracts', () => {
       expect(unitIds.has(unit.id)).toBe(false);
       unitIds.add(unit.id);
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      for (const item of unit.items as any[]) {
+      for (const item of unit.items as AnyItem[]) {
         expect(item.id).toBeTruthy();
 
         expect(itemIds.has(item.id)).toBe(false);
         itemIds.add(item.id);
 
-        if (isContrastPair(item)) {
-          // Contrast-pair specific required fields
+        if (isContrastPairItem(item)) {
+          // Contrast-pair top-level required fields
           expect(item.contrastLabel).toBeTruthy();
           expect(item.phase).toBeTruthy();
 
-          // Sentence A
+          // Sentence A — all ContrastSentence fields
           expect(item.sentenceA.prompt).toBeTruthy();
           expect(item.sentenceA.lemma).toBeTruthy();
           expect(item.sentenceA.grammaticalFunction).toBeTruthy();
@@ -75,8 +71,10 @@ describe('content contracts', () => {
           expect(item.sentenceA.scaffold.step3).toBeTruthy();
           expect(item.sentenceA.feedback.correct).toBeTruthy();
           expect(item.sentenceA.feedback.hint).toBeTruthy();
+          expect(item.sentenceA.diagnostic.primaryMisconception).toBeTruthy();
+          expect(Array.isArray(item.sentenceA.diagnostic.acceptedVariants)).toBe(true);
 
-          // Sentence B
+          // Sentence B — all ContrastSentence fields
           expect(item.sentenceB.prompt).toBeTruthy();
           expect(item.sentenceB.lemma).toBeTruthy();
           expect(item.sentenceB.grammaticalFunction).toBeTruthy();
@@ -86,6 +84,8 @@ describe('content contracts', () => {
           expect(item.sentenceB.scaffold.step3).toBeTruthy();
           expect(item.sentenceB.feedback.correct).toBeTruthy();
           expect(item.sentenceB.feedback.hint).toBeTruthy();
+          expect(item.sentenceB.diagnostic.primaryMisconception).toBeTruthy();
+          expect(Array.isArray(item.sentenceB.diagnostic.acceptedVariants)).toBe(true);
         } else {
           // Regular ExerciseItem required fields
           expect(item.prompt).toBeTruthy();
@@ -112,9 +112,8 @@ describe('content contracts', () => {
       expect(unit.transferTask.prompt).toBeTruthy();
       expect(unit.transferTask.rubric.length).toBeGreaterThan(0);
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      for (const item of unit.items as any[]) {
-        if (isContrastPair(item)) {
+      for (const item of unit.items as AnyItem[]) {
+        if (isContrastPairItem(item)) {
           expect(
             taxonomyCodes.has(item.sentenceA.diagnostic.primaryMisconception),
             `Invalid taxonomy code "${item.sentenceA.diagnostic.primaryMisconception}" in ${item.id}.sentenceA`
@@ -132,9 +131,8 @@ describe('content contracts', () => {
 
   it('all primaryMisconception codes used in units have a BUILT_IN_FEEDBACK entry', () => {
     for (const unit of units) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      for (const item of unit.items as any[]) {
-        if (isContrastPair(item)) {
+      for (const item of unit.items as AnyItem[]) {
+        if (isContrastPairItem(item)) {
           const codeA = item.sentenceA.diagnostic.primaryMisconception;
           expect(
             BUILT_IN_FEEDBACK,
@@ -159,9 +157,8 @@ describe('content contracts', () => {
 
   it('acceptedVariants are explicit, non-empty alternatives and not duplicates of target', () => {
     for (const unit of units) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      for (const item of unit.items as any[]) {
-        if (isContrastPair(item)) {
+      for (const item of unit.items as AnyItem[]) {
+        if (isContrastPairItem(item)) {
           for (const sentence of [item.sentenceA, item.sentenceB]) {
             const variants = sentence.diagnostic.acceptedVariants;
             expect(Array.isArray(variants)).toBe(true);

@@ -1,5 +1,5 @@
 import { AppShell } from "@/components/app-shell";
-import { getUnits } from "@/lib/content";
+import { getUnits, isContrastPairItem } from "@/lib/content";
 
 export default function ContentPage() {
   const units = getUnits();
@@ -12,13 +12,22 @@ export default function ContentPage() {
           <section key={unit.id} className="space-y-4 rounded-3xl border border-black/15 bg-white p-6">
             <h2 className="text-2xl font-semibold">{unit.title}</h2>
             <ul className="space-y-3">
-              {unit.items.map((item) => (
-                <li key={item.id} className="rounded-2xl border border-neutral-200 p-4">
-                  <p className="text-lg font-semibold">{item.prompt}</p>
-                  <p className="text-base">Scaffold: {item.scaffold.step1} / {item.scaffold.step2} / {item.scaffold.step3}</p>
-                  <p className="text-base">Misconceptie: {item.diagnostic.primaryMisconception}</p>
-                </li>
-              ))}
+              {unit.items.map((item) =>
+                isContrastPairItem(item) ? (
+                  <li key={item.id} className="rounded-2xl border border-neutral-200 p-4">
+                    <p className="text-xs font-medium uppercase tracking-wide text-slate-400">Contrast-paar — {item.contrastLabel}</p>
+                    <p className="text-lg font-semibold">{item.sentenceA.prompt}</p>
+                    <p className="text-base text-neutral-500">{item.sentenceB.prompt}</p>
+                    <p className="text-base">Misconceptie A: {item.sentenceA.diagnostic.primaryMisconception}</p>
+                  </li>
+                ) : (
+                  <li key={item.id} className="rounded-2xl border border-neutral-200 p-4">
+                    <p className="text-lg font-semibold">{item.prompt}</p>
+                    <p className="text-base">Scaffold: {item.scaffold.step1} / {item.scaffold.step2} / {item.scaffold.step3}</p>
+                    <p className="text-base">Misconceptie: {item.diagnostic.primaryMisconception}</p>
+                  </li>
+                )
+              )}
             </ul>
           </section>
         ))}

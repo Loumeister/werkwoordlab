@@ -113,11 +113,12 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
               Correctheid:{" "}
               <span className="font-medium">
                 {/*
-                 * /[dt]\b/ flags any word ending in d or t (e.g. "werkt", "reed").
-                 * These are exactly the characters werkwoordspelling errors cluster
-                 * around. A match is a prompt to double-check, not a hard error.
+                 * /\w+dt\b/ targets the specific overcorrection artifact "dt"
+                 * (e.g. "werkdt", "worddt") — a telltale sign of stem+t confusion.
+                 * The broader /[dt]\b/ was avoided because it matches "het", "dat",
+                 * "dit", "niet" and almost any Dutch text, making it non-discriminative.
                  */}
-                {/[dt]\b/i.test(text)
+                {/\w+dt\b/i.test(text)
                   ? "controleer eindletters zorgvuldig"
                   : "basiscontrole uitgevoerd"}
               </span>

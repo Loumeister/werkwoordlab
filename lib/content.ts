@@ -120,6 +120,10 @@ export type Unit = {
   };
 };
 
+// `as unknown as Unit` is needed because TypeScript infers JSON imports with
+// readonly arrays and narrow literal types, which are not assignable to our
+// mutable Unit type directly. The double-cast is intentional and safe here:
+// the content-contracts test suite validates the actual shape at the JSON level.
 const units: Unit[] = [unit01 as unknown as Unit, unit02 as unknown as Unit, unit03 as unknown as Unit];
 
 export function getUnits() {
