@@ -4,20 +4,31 @@ import { useState } from "react";
 import type { Unit } from "@/lib/content";
 
 type Props = {
+  /** The transferTask object from the unit JSON (id, type, prompt, rubric). */
   task: Unit["transferTask"];
   unitTitle: string;
+  /** Called when the learner presses "Klaar" after reviewing rubric feedback. */
   onFinish: () => void;
 };
 
 /**
  * Inline transfer task — a prop-driven version of the /schrijven page.
  * Shown after the learner completes all Zelfstandig items.
+ *
+ * The rubric feedback is intentionally heuristic (length check, end-letter
+ * pattern, rule-word presence). It gives immediate, formative feedback without
+ * requiring a server round-trip. A teacher can review the submitted text in the
+ * classroom. Replace with an AI-scored rubric when that becomes available.
  */
 export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
   const [text, setText] = useState("");
   const [reflectie, setReflectie] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  // Heuristic: did the learner explicitly name the spelling rule they used?
+  // We check for core grammatical terms across both the main text and the
+  // reflection field. voltooid.?deelwoord covers "voltooiddeelwoord" (no space)
+  // as well as "voltooid deelwoord" (with space).
   const hasRuleWords = /persoonsvorm|stam|werkwoord|voltooid.?deelwoord|infinitief/i.test(
     `${text} ${reflectie}`
   );
@@ -36,6 +47,7 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
         <h2 className="mt-2 text-2xl font-bold">Laat zien dat je het echt begrijpt</h2>
         <p className="mt-3 text-lg text-neutral-700">{task.prompt}</p>
 
+        {/* Rubric criteria from the unit JSON, shown as a checklist before writing */}
         {task.rubric.length > 0 && (
           <ul className="mt-4 space-y-1 text-sm text-neutral-500">
             {task.rubric.map((criterion, i) => (
@@ -56,6 +68,7 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
           <label htmlFor="transfer-text" className="block text-xl font-semibold">
             Jouw tekst
           </label>
+          {/* minLength=40 forces at least a sentence; browser validation handles it */}
           <textarea
             id="transfer-text"
             value={text}
@@ -89,12 +102,21 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
             <li>
               Helderheid:{" "}
               <span className="font-medium">
+                {/*
+                 * Rough proxy for sufficient elaboration: 180 characters ≈ 2–3
+                 * sentences. Raise this threshold if responses are too superficial.
+                 */}
                 {text.length > 180 ? "voldoende" : "voeg meer uitleg toe"}
               </span>
             </li>
             <li>
               Correctheid:{" "}
               <span className="font-medium">
+                {/*
+                 * /[dt]\b/ flags any word ending in d or t (e.g. "werkt", "reed").
+                 * These are exactly the characters werkwoordspelling errors cluster
+                 * around. A match is a prompt to double-check, not a hard error.
+                 */}
                 {/[dt]\b/i.test(text)
                   ? "controleer eindletters zorgvuldig"
                   : "basiscontrole uitgevoerd"}

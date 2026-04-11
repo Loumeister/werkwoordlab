@@ -20,7 +20,14 @@ type PairResult = {
 
 /**
  * Side-by-side exercise showing two contrasting sentences with the same verb.
- * Both answers are submitted together to highlight the contrast directly.
+ *
+ * Both answers are submitted in one action ("Controleer beide") rather than
+ * sequentially. This is intentional: seeing both outcomes simultaneously makes
+ * the contrast visible — the learner cannot fixate on one sentence in isolation.
+ * Individual feedback is shown per column after submission.
+ *
+ * Attempts are saved with itemId suffixes ":a" and ":b" to keep them distinct
+ * from each other and from any regular ExerciseItem with the same base id.
  */
 export function ContrastPairExercise({ item, unitId, onComplete }: Props) {
   const [answerA, setAnswerA] = useState("");
@@ -33,10 +40,12 @@ export function ContrastPairExercise({ item, unitId, onComplete }: Props) {
   const hintsA = [sentenceA.scaffold.step2, sentenceA.scaffold.step3];
   const hintsB = [sentenceB.scaffold.step2, sentenceB.scaffold.step3];
 
+  /** Normalise for comparison: trim whitespace and lower-case. */
   function normalise(s: string) {
     return s.trim().toLowerCase();
   }
 
+  /** Returns true if `answer` matches `target` or any accepted variant (case/space insensitive). */
   function isCorrect(answer: string, target: string, variants: string[]): boolean {
     const n = normalise(answer);
     return n === normalise(target) || variants.some((v) => normalise(v) === n);

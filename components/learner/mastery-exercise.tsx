@@ -85,6 +85,10 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
     setFuncSubmitted(true);
     setFuncCorrect(correct);
 
+    // Convention: function-step attempts use itemId = "<item.id>:function" so
+    // they are distinct from spelling-step attempts for the same item. This also
+    // means hasFunctionMastery can filter them by misconception === FUNCTION_STEP_CODE
+    // without confusing them with regular spelling attempts.
     saveAttempt({
       unitId,
       itemId: `${item.id}:function`,

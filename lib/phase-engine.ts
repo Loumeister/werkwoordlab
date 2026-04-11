@@ -38,6 +38,10 @@ export const PHASE_CONFIGS: Record<PhaseId, PhaseConfig> = {
  * that field is used. Otherwise a heuristic is applied: first ~25% of items
  * are "verkennen", next ~25% (up to 50%) are "oefenen", the rest are
  * "zelfstandig".
+ *
+ * Math.ceil ensures at least 1 item in each guided phase even for very small
+ * units (e.g. ceil(4 * 0.25) = 1, not floor = 1 — same here, but
+ * ceil(3 * 0.25) = 1 vs floor = 0 which would skip verkennen entirely).
  */
 export function resolveItemPhase(item: AnyItem, index: number, total: number): PhaseId {
   if ("phase" in item && item.phase) {
@@ -59,8 +63,9 @@ export type PhaseGroups = {
 };
 
 /**
- * Groups item indices by phase. Transfer items are excluded (they are handled
- * separately as the unit's `transferTask`).
+ * Groups item indices by phase. Transfer items are excluded — they are the
+ * unit's `transferTask` field and are rendered separately by TransferTaskPanel,
+ * not as part of the main exercise loop.
  */
 export function groupItemsByPhase(items: AnyItem[]): PhaseGroups {
   const groups: PhaseGroups = { verkennen: [], oefenen: [], zelfstandig: [] };
@@ -148,8 +153,15 @@ export function getEntryMode(item: ExerciseItem, allAttempts: AttemptRecord[]): 
 // Verb function discovery hints
 // ---------------------------------------------------------------------------
 
+/**
+ * Dutch plural personal pronouns used as verb subjects.
+ * These are the forms that take a plural (uninflected) persoonsvorm, e.g.
+ * "wij werken" vs "hij werkt". Used to generate the juiste getalsverandering-hint:
+ * plural subjects → suggest changing to singular (hij), and vice versa.
+ */
 const PLURAL_SUBJECTS = new Set(["wij", "we", "jullie", "zij", "ze"]);
 
+/** Returns true if `subject` is one of the Dutch plural personal pronouns. */
 function isPlural(subject: string): boolean {
   return PLURAL_SUBJECTS.has(subject.toLowerCase());
 }
