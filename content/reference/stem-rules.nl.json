@@ -12,32 +12,32 @@
     {
       "code": "REMOVE_EN",
       "order": 1,
-      "description": "Trek bij gewone infinitieven -en af om de ruwe stam te krijgen."
+      "description": "Trek bij gewone infinitieven -en af om de stam (infinitief minus -en) te krijgen."
     },
     {
       "code": "LONG_VOWEL_PRESERVE",
       "order": 2,
-      "description": "Behoud een lange klinker in de orthografische stam."
+      "description": "Behoud een lange klinker in de ik-vorm."
     },
     {
       "code": "DROP_DOUBLE_CONSONANT",
       "order": 3,
-      "description": "Laat één medeklinker weg als de ruwe stam op twee gelijke medeklinkers eindigt."
+      "description": "Laat één medeklinker weg als de stam (infinitief minus -en) op twee gelijke medeklinkers eindigt."
     },
     {
       "code": "FINAL_V_TO_F",
       "order": 4,
-      "description": "Vervang eind-v door f in de orthografische stam."
+      "description": "Vervang eind-v door f in de ik-vorm."
     },
     {
       "code": "FINAL_Z_TO_S",
       "order": 5,
-      "description": "Vervang eind-z door s in de orthografische stam."
+      "description": "Vervang eind-z door s in de ik-vorm."
     },
     {
       "code": "IEN_TO_IE",
       "order": 6,
-      "description": "Bij -iën-werkwoorden trek je alleen -n af en eindigt de orthografische stam op ie."
+      "description": "Bij -iën-werkwoorden trek je alleen -n af en eindigt de ik-vorm op ie."
     }
   ],
   "examples": [
@@ -68,7 +68,8 @@
     }
   ],
   "notes": [
-    "Gebruik roughStem voor d/t-beslissingen.",
-    "Gebruik orthographicStem voor zichtbare spelling."
+    "Gebruik de stam (infinitief minus -en, roughStem) voor de d/t-beslissing (kofschip-regel).",
+    "Gebruik de ik-vorm (orthographicStem) voor de zichtbare spelling van vervoegde vormen.",
+    "Engelse leenwoorden (bv. 'deleten', 'updaten') volgen stap 1 en 3–5, maar stap 2 (lange-klinker-verdubbeling) vervalt: de stam van 'deleten' is 'delet', de ik-vorm is ook 'delet'. De kofschip-regel geldt wél: t zit in 't kofschip → hij deletet. DROP_DOUBLE_CONSONANT geldt eveneens: 'chatten' → stam 'chatt' → ik-vorm 'chat'."
   ]
 }

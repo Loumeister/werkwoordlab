@@ -66,7 +66,7 @@
       "code": "PV_MEERVOUD_T_ADDITION",
       "title": "Onterechte +t bij meervoud",
       "learnerDescription": "Je zette een -t bij een meervoudige persoonsvorm, maar meervoud (wij/jullie/zij) krijgt geen +t.",
-      "teacherDescription": "Leerling past de enkelvoud-regel (stam+t) ten onrechte toe op een meervoudig onderwerp (wij/jullie/zij/ze).",
+      "teacherDescription": "Leerling past de enkelvoud-regel (ik-vorm+t) ten onrechte toe op een meervoudig onderwerp (wij/jullie/zij/ze).",
       "remediation": [
         "Controleer het onderwerp: is het meervoud? Dan geen +t.",
         "Vervang het onderwerp door 'wij' en controleer of de zin nog klopt zonder -t."
@@ -76,7 +76,7 @@
       "code": "VT_DE_TE_CONFUSION",
       "title": "Verkeerde keuze -de/-te",
       "learnerDescription": "Je koos -de of -te op basis van de ik-vorm, maar de keuze hangt af van de eindklank van de stam (infinitief minus -en).",
-      "teacherDescription": "Leerling bepaalt het suffix aan de hand van de orthografische stam in plaats van de ruwe stam. Typisch bij werkwoorden als 'werken' (stam=werk, k=kofschip → -te) en 'leven' (orthostam=leef, maar ruwstam=lev, v=niet-kofschip → -de).",
+      "teacherDescription": "Leerling bepaalt het suffix aan de hand van de ik-vorm in plaats van de stam (infinitief minus -en). Typisch bij werkwoorden als 'werken' (stam=werk, k=kofschip → -te) en 'leven' (ik-vorm=leef, maar stam=lev, v=niet-kofschip → -de).",
       "remediation": [
         "Haal de -en af van de infinitief om de stam te vinden.",
         "Controleer of de eindletter van de stam in 't kofschip staat.",
@@ -109,7 +109,7 @@
       "code": "VT_RUWE_STAM_OVERRIDE",
       "title": "Kofschip op ik-vorm toegepast in plaats van stam",
       "learnerDescription": "Je keek of de ik-vorm (leef, verhuis) in 't kofschip staat, maar je moet de stam (lev, verhuiz) controleren.",
-      "teacherDescription": "Leerling past de kofschip-regel toe op de orthografisch genormaliseerde stam terwijl de d/t-keuze bepaald wordt door de klankwaarde van de ruwe stam. Typisch: leven → ruwstam lev (v=stemhebbend → -de) → leefde, niet leefte.",
+      "teacherDescription": "Leerling past de kofschip-regel toe op de ik-vorm terwijl de d/t-keuze bepaald wordt door de eindklank van de stam (infinitief minus -en). Typisch: leven → stam lev (v=stemhebbend → -de) → leefde, niet leefte.",
       "remediation": [
         "Haal -en af van de infinitief: le-ven → lev, verhui-zen → verhuiz.",
         "Controleer de eindletter van deze stam: v en z zijn stemhebbend, dus niet kofschip → -de.",
