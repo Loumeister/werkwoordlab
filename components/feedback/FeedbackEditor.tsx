@@ -20,6 +20,11 @@ import {
   clearAllFeedbackOverrides,
   exportFeedbackOverrides,
 } from "@/lib/feedback/feedbackOverrides";
+import {
+  validateRichFeedback,
+  hasRichErrors,
+  validatePlainFeedback,
+} from "@/lib/feedback/validation";
 
 // ---------------------------------------------------------------------------
 // Field sub-component
@@ -31,6 +36,7 @@ function Field({
   value,
   rows = 2,
   multiline = true,
+  error,
   onChange,
 }: {
   label: string;
@@ -38,9 +44,12 @@ function Field({
   value: string;
   rows?: number;
   multiline?: boolean;
+  error?: string;
   onChange: (v: string) => void;
 }) {
   const fieldId = useId();
+  const errorId = useId();
+  const invalid = !!error;
 
   return (
     <div className="space-y-1">
@@ -53,17 +62,34 @@ function Field({
           id={fieldId}
           rows={rows}
           value={value}
+          aria-invalid={invalid}
+          aria-describedby={invalid ? errorId : undefined}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full rounded-xl border border-neutral-300 px-3 py-2 text-sm leading-relaxed focus:border-[var(--focus-blue)] focus:outline-none focus:ring-1 focus:ring-[var(--focus-blue)]"
+          className={`w-full rounded-xl border px-3 py-2 text-sm leading-relaxed focus:outline-none focus:ring-1 ${
+            invalid
+              ? "border-red-400 focus:border-red-500 focus:ring-red-400"
+              : "border-neutral-300 focus:border-[var(--focus-blue)] focus:ring-[var(--focus-blue)]"
+          }`}
         />
       ) : (
         <input
           id={fieldId}
           type="text"
           value={value}
+          aria-invalid={invalid}
+          aria-describedby={invalid ? errorId : undefined}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full rounded-xl border border-neutral-300 px-3 py-2 text-sm focus:border-[var(--focus-blue)] focus:outline-none focus:ring-1 focus:ring-[var(--focus-blue)]"
+          className={`w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-1 ${
+            invalid
+              ? "border-red-400 focus:border-red-500 focus:ring-red-400"
+              : "border-neutral-300 focus:border-[var(--focus-blue)] focus:ring-[var(--focus-blue)]"
+          }`}
         />
+      )}
+      {invalid && (
+        <p id={errorId} className="text-sm text-red-600">
+          {error}
+        </p>
       )}
     </div>
   );
@@ -109,6 +135,11 @@ function MisconceptionCard({
   const savedEntry = override ?? builtIn;
   const currentDraft: FeedbackEntry = mode === "plain" ? plainDraft : richDraft;
   const isDirty = JSON.stringify(currentDraft) !== JSON.stringify(savedEntry);
+
+  // Validation errors for the current draft
+  const richErrors = mode === "rich" ? validateRichFeedback(richDraft) : {};
+  const plainError = mode === "plain" ? validatePlainFeedback(plainDraft) : undefined;
+  const hasErrors = mode === "rich" ? hasRichErrors(richErrors) : plainError !== undefined;
 
   const [savedFlash, setSavedFlash] = useState(false);
   const savedFlashTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -221,6 +252,7 @@ function MisconceptionCard({
             hint="korte hint voor de leerling"
             value={plainDraft}
             rows={2}
+            error={plainError}
             onChange={setPlainDraft}
           />
         )}
@@ -232,6 +264,7 @@ function MisconceptionCard({
               hint="max. ~15 woorden"
               value={richDraft.herstelvraag}
               rows={2}
+              error={richErrors.herstelvraag}
               onChange={(v) => updateRich("herstelvraag", v)}
             />
             <Field
@@ -240,6 +273,7 @@ function MisconceptionCard({
               value={richDraft.sleutelwoord}
               rows={1}
               multiline={false}
+              error={richErrors.sleutelwoord}
               onChange={(v) => updateRich("sleutelwoord", v)}
             />
             <Field
@@ -247,6 +281,7 @@ function MisconceptionCard({
               hint="wat ging er waarschijnlijk mis"
               value={richDraft.uitleg.diagnose}
               rows={2}
+              error={richErrors.diagnose}
               onChange={(v) => updateRich("uitleg.diagnose", v)}
             />
             <Field
@@ -254,6 +289,7 @@ function MisconceptionCard({
               hint="de grammaticaregel in 1-2 zinnen"
               value={richDraft.uitleg.redenering}
               rows={3}
+              error={richErrors.redenering}
               onChange={(v) => updateRich("uitleg.redenering", v)}
             />
             <Field
@@ -261,6 +297,7 @@ function MisconceptionCard({
               hint="één concrete actie voor de leerling"
               value={richDraft.uitleg.herprobeer}
               rows={2}
+              error={richErrors.herprobeer}
               onChange={(v) => updateRich("uitleg.herprobeer", v)}
             />
           </>
@@ -272,7 +309,7 @@ function MisconceptionCard({
         <button
           type="button"
           onClick={handleSave}
-          disabled={!isDirty}
+          disabled={!isDirty || hasErrors}
           className="rounded-xl bg-[var(--warm-primary)] px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
         >
           Opslaan
