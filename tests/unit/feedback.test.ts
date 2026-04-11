@@ -3,6 +3,11 @@ import { isRichFeedbackEntry, type RichFeedbackEntry } from "@/lib/feedback/type
 import { BUILT_IN_FEEDBACK } from "@/lib/feedback/builtInFeedback";
 import { MISCONCEPTION_TITLES } from "@/lib/feedback/misconceptions";
 import {
+  validateRichFeedback,
+  hasRichErrors,
+  validatePlainFeedback,
+} from "@/lib/feedback/validation";
+import {
   getFeedbackOverrides,
   setFeedbackOverride,
   resetFeedbackOverride,
@@ -308,5 +313,109 @@ describe("getEffectiveFeedback", () => {
     for (const code of codes) {
       expect(getEffectiveFeedback(code)).toBeDefined();
     }
+  });
+});
+
+// ---------------------------------------------------------------------------
+// validateRichFeedback / hasRichErrors / validatePlainFeedback
+// ---------------------------------------------------------------------------
+
+describe("validateRichFeedback", () => {
+  const validEntry: RichFeedbackEntry = {
+    herstelvraag: "Welk onderwerp staat er in de zin?",
+    sleutelwoord: "onderwerp",
+    uitleg: {
+      diagnose: "Je hebt waarschijnlijk de stam gebruikt zonder -t.",
+      redenering: "Bij hij/zij/het krijgt de persoonsvorm stam+t.",
+      herprobeer: "Bepaal het onderwerp. Is het hij/zij/het? Voeg dan -t toe.",
+    },
+  };
+
+  it("geeft geen fouten voor een geldige entry", () => {
+    const errors = validateRichFeedback(validEntry);
+    expect(hasRichErrors(errors)).toBe(false);
+  });
+
+  it("geeft fout wanneer herstelvraag leeg is", () => {
+    const errors = validateRichFeedback({ ...validEntry, herstelvraag: "" });
+    expect(errors.herstelvraag).toBeDefined();
+    expect(hasRichErrors(errors)).toBe(true);
+  });
+
+  it("geeft fout wanneer herstelvraag alleen witruimte bevat", () => {
+    const errors = validateRichFeedback({ ...validEntry, herstelvraag: "   " });
+    expect(errors.herstelvraag).toBeDefined();
+  });
+
+  it("geeft fout wanneer sleutelwoord leeg is", () => {
+    const errors = validateRichFeedback({ ...validEntry, sleutelwoord: "" });
+    expect(errors.sleutelwoord).toBeDefined();
+  });
+
+  it("geeft fout wanneer sleutelwoord meerdere woorden bevat", () => {
+    const errors = validateRichFeedback({ ...validEntry, sleutelwoord: "twee woorden" });
+    expect(errors.sleutelwoord).toBeDefined();
+  });
+
+  it("geeft fout wanneer sleutelwoord niet voorkomt in herstelvraag", () => {
+    const errors = validateRichFeedback({ ...validEntry, sleutelwoord: "werkwoord" });
+    expect(errors.sleutelwoord).toBeDefined();
+  });
+
+  it("vergelijkt sleutelwoord hoofdletteronafhankelijk", () => {
+    const errors = validateRichFeedback({
+      ...validEntry,
+      herstelvraag: "Welk Onderwerp staat er?",
+      sleutelwoord: "onderwerp",
+    });
+    expect(errors.sleutelwoord).toBeUndefined();
+  });
+
+  it("geeft fout wanneer diagnose leeg is", () => {
+    const errors = validateRichFeedback({
+      ...validEntry,
+      uitleg: { ...validEntry.uitleg, diagnose: "" },
+    });
+    expect(errors.diagnose).toBeDefined();
+  });
+
+  it("geeft fout wanneer redenering leeg is", () => {
+    const errors = validateRichFeedback({
+      ...validEntry,
+      uitleg: { ...validEntry.uitleg, redenering: "" },
+    });
+    expect(errors.redenering).toBeDefined();
+  });
+
+  it("geeft fout wanneer herprobeer leeg is", () => {
+    const errors = validateRichFeedback({
+      ...validEntry,
+      uitleg: { ...validEntry.uitleg, herprobeer: "" },
+    });
+    expect(errors.herprobeer).toBeDefined();
+  });
+
+  it("kan meerdere fouten tegelijk rapporteren", () => {
+    const errors = validateRichFeedback({
+      herstelvraag: "",
+      sleutelwoord: "",
+      uitleg: { diagnose: "", redenering: "", herprobeer: "" },
+    });
+    expect(Object.keys(errors).length).toBeGreaterThan(1);
+    expect(hasRichErrors(errors)).toBe(true);
+  });
+});
+
+describe("validatePlainFeedback", () => {
+  it("geeft geen fout voor een niet-lege string", () => {
+    expect(validatePlainFeedback("korte hint")).toBeUndefined();
+  });
+
+  it("geeft fout voor een lege string", () => {
+    expect(validatePlainFeedback("")).toBeDefined();
+  });
+
+  it("geeft fout voor een string met alleen witruimte", () => {
+    expect(validatePlainFeedback("   ")).toBeDefined();
   });
 });
