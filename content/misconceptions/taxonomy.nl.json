@@ -4,7 +4,7 @@
   "misconceptions": [
     {
       "code": "PV_STAM_T_OMISSION",
-      "title": "Stam+t weggelaten",
+      "title": "Ik-vorm+t weggelaten",
       "learnerDescription": "Je vergat de -t bij hij/zij/het.",
       "teacherDescription": "Leerling laat in de tegenwoordige tijd bij derde persoon enkelvoud de +t weg.",
       "remediation": [
@@ -107,7 +107,7 @@
     },
     {
       "code": "VT_RUWE_STAM_OVERRIDE",
-      "title": "Kofschip toegepast op orthografische stam in plaats van ruwe stam",
+      "title": "Kofschip op ik-vorm toegepast in plaats van stam",
       "learnerDescription": "Je keek of de ik-vorm (leef, verhuis) in 't kofschip staat, maar je moet de stam (lev, verhuiz) controleren.",
       "teacherDescription": "Leerling past de kofschip-regel toe op de orthografisch genormaliseerde stam terwijl de d/t-keuze bepaald wordt door de klankwaarde van de ruwe stam. Typisch: leven → ruwstam lev (v=stemhebbend → -de) → leefde, niet leefte.",
       "remediation": [
