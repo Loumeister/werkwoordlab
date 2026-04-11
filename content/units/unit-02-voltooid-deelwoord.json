@@ -5,7 +5,7 @@
   "language": "nl",
   "learningGoals": [
     "Ik herken het voltooid deelwoord in een zin.",
-    "Ik bepaal met stam/eindklank of ik -d of -t schrijf.",
+    "Ik bepaal met ik-vorm/eindklank of ik -d of -t schrijf.",
     "Ik onderscheid homofone paren zoals gebeurt/gebeurd, belooft/beloofd, vertrouwt/vertrouwd, beweert/beweerd en verandert/veranderd op basis van grammaticale functie.",
     "Ik herken onregelmatige voltooid deelwoorden en gebruik de juiste vorm."
   ],
@@ -25,7 +25,7 @@
       "scaffold": {
         "step1": "Bepaal of je een persoonsvorm of voltooid deelwoord nodig hebt.",
         "step2": "Herken hulpwerkwoord: 'is' wijst op voltooid deelwoord.",
-        "step3": "Kies de juiste eindletter op basis van stam/eindklank."
+        "step3": "Kies de juiste eindletter op basis van ik-vorm/eindklank."
       },
       "diagnostic": {
         "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
@@ -51,7 +51,7 @@
       "scaffold": {
         "step1": "Bepaal grammaticale functie.",
         "step2": "Is dit tegenwoordige tijd met onderwerp? Dan persoonsvorm.",
-        "step3": "Pas pv-spelling toe (stam+t)."
+        "step3": "Pas pv-spelling toe (ik-vorm+t)."
       },
       "diagnostic": {
         "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
@@ -76,7 +76,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Herken voltooid deelwoord na hulpwerkwoord.",
-        "step2": "Noteer stam: verbeter.",
+        "step2": "Noteer ik-vorm: verbeter.",
         "step3": "Eindklank niet in 't kofschip/x => -d."
       },
       "diagnostic": {
@@ -85,7 +85,7 @@
       },
       "feedback": {
         "correct": "Goed: 'verbeterd' eindigt op -d.",
-        "hint": "Controleer de laatste klank van de stam."
+        "hint": "Controleer de laatste klank van de ik-vorm."
       }
     },
     {
@@ -102,7 +102,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Herken voltooid deelwoord.",
-        "step2": "Bepaal stam: start.",
+        "step2": "Bepaal ik-vorm: start.",
         "step3": "Stam eindigt op t-klank (kofschip) => -t."
       },
       "diagnostic": {
@@ -111,7 +111,7 @@
       },
       "feedback": {
         "correct": "Juist: 'gestart' krijgt -t.",
-        "hint": "Gebruik de stam zonder -en en check de eindklank."
+        "hint": "Haal -en af van de infinitief om de ik-vorm te krijgen en check de eindklank."
       }
     },
     {
@@ -137,7 +137,7 @@
       },
       "feedback": {
         "correct": "Correct: 'geleerd' met -d.",
-        "hint": "Kijk naar de stam-eindklank, niet naar hoe het klinkt."
+        "hint": "Kijk naar de eindklank van de ik-vorm, niet naar hoe het klinkt."
       }
     },
     {
@@ -154,7 +154,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Herken onregelmatig voltooid deelwoord.",
-        "step2": "Controleer of stamregel direct toepasbaar is.",
+        "step2": "Controleer of de ik-vormregel direct toepasbaar is.",
         "step3": "Gebruik bekende onregelmatige vorm."
       },
       "diagnostic": {
@@ -181,7 +181,7 @@
       "scaffold": {
         "step1": "Bepaal functie: voltooid deelwoord.",
         "step2": "Stam: eindig.",
-        "step3": "Laatste letter van de stam niet in 't kofschip(x) => -d."
+        "step3": "Laatste letter van de ik-vorm niet in 't kofschip => -d."
       },
       "diagnostic": {
         "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
@@ -189,7 +189,7 @@
       },
       "feedback": {
         "correct": "Juist: 'geëindigd' eindigt op -d.",
-        "hint": "Laat de uitspraak niet misleiden; controleer de stam."
+        "hint": "Laat de uitspraak niet misleiden; controleer de ik-vorm."
       }
     },
     {
@@ -207,7 +207,7 @@
       "scaffold": {
         "step1": "Herken voltooid deelwoord na 'is'.",
         "step2": "Herken 'uitstellen' als scheidbaar werkwoord: uit + stellen.",
-        "step3": "Plaats 'ge' na 'uit' en kies -d bij stam 'stel': uitgesteld."
+        "step3": "Plaats 'ge' na 'uit' en kies -d bij ik-vorm 'stel': uitgesteld."
       },
       "diagnostic": {
         "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
@@ -310,7 +310,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Herken scheidbaar werkwoord: in + pakken.",
-        "step2": "Voltooid deelwoord: in + ge + stam + uitgang. Stam = pak.",
+        "step2": "Voltooid deelwoord: in + ge + ik-vorm + uitgang. Ik-vorm = pak.",
         "step3": "Eindklank 'k' zit in 't kofschip → -t: ingepakt."
       },
       "diagnostic": {
@@ -345,7 +345,7 @@
       },
       "feedback": {
         "correct": "Goed: 'gewerkt' eindigt op -t.",
-        "hint": "Controleer de stam en of de eindklank in 't kofschip (t, k, f, s, ch, p) staat."
+        "hint": "Controleer de ik-vorm en of de eindklank in 't kofschip (t, k, f, s, ch, p) staat."
       }
     },
     {
@@ -388,7 +388,7 @@
       "homophonePair": "belooft/beloofd",
       "scaffold": {
         "step1": "Bepaal grammaticale functie: hulpwerkwoord 'heeft' wijst op voltooid deelwoord.",
-        "step2": "Stam van beloven: beloof. Ruwe stam: belov — v is stemhebbend.",
+        "step2": "Ik-vorm van beloven: beloof. Ruwe stam: belov — v is stemhebbend.",
         "step3": "Stemhebbende eindklank → -d: beloofd."
       },
       "diagnostic": {
@@ -423,7 +423,7 @@
       },
       "feedback": {
         "correct": "Goed: 'belooft' is de persoonsvorm. Klinkt als 'beloofd' maar is anders geschreven.",
-        "hint": "Start met functiebepaling: hulpwerkwoord aanwezig? Nee → persoonsvorm → stam+t."
+        "hint": "Start met functiebepaling: hulpwerkwoord aanwezig? Nee → persoonsvorm → ik-vorm+t."
       }
     },
     {
@@ -440,7 +440,7 @@
       "homophonePair": "vertrouwt/vertrouwd",
       "scaffold": {
         "step1": "Hulpwerkwoord 'heeft' → voltooid deelwoord.",
-        "step2": "Stam: vertrouw. Ruwe stam eindigt op w — stemhebbend.",
+        "step2": "Ik-vorm: vertrouw. Ruwe stam eindigt op w — stemhebbend.",
         "step3": "Stemhebbende eindklank → -d: vertrouwd."
       },
       "diagnostic": {
@@ -475,7 +475,7 @@
       },
       "feedback": {
         "correct": "Goed: 'vertrouwt' is de persoonsvorm. Klinkt als 'vertrouwd' maar vraagt +t.",
-        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → stam+t."
+        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → ik-vorm+t."
       }
     },
     {
@@ -527,7 +527,7 @@
       },
       "feedback": {
         "correct": "Goed: 'beweert' is de persoonsvorm. Klinkt als 'beweerd' maar is anders gespeld.",
-        "hint": "Bepaal de functie: geen hulpwerkwoord → persoonsvorm → stam+t."
+        "hint": "Bepaal de functie: geen hulpwerkwoord → persoonsvorm → ik-vorm+t."
       }
     },
     {
@@ -579,7 +579,7 @@
       },
       "feedback": {
         "correct": "Goed: 'verandert' is de persoonsvorm. 'Veranderd' (vd) klinkt hetzelfde.",
-        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → stam+t."
+        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → ik-vorm+t."
       }
     },
     {
@@ -692,7 +692,7 @@
         "scaffold": {
           "step1": "Bepaal de functie.",
           "step2": "Geen hulpwerkwoord: dit is een persoonsvorm.",
-          "step3": "Persoonsvorm 3e persoon enkelvoud: stam+t."
+          "step3": "Persoonsvorm 3e persoon enkelvoud: ik-vorm+t."
         },
         "diagnostic": { "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION", "acceptedVariants": [] },
         "feedback": { "correct": "Goed: 'gebeurt' = persoonsvorm.", "hint": "Geen hulpwerkwoord? Dan persoonsvorm." }

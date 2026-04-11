@@ -5,7 +5,7 @@
   "language": "nl",
   "learningGoals": [
     "Ik bepaal eerst de persoonsvorm.",
-    "Ik pas de stam(+t)-regel correct toe in de tegenwoordige tijd.",
+    "Ik pas de ik-vorm(+t)-regel correct toe in de tegenwoordige tijd.",
     "Ik onderscheid homofone vormen zoals vind/vindt, word/wordt, bedoel/bedoelt, beloof/belooft en vertrouw/vertrouwt.",
     "Ik weet dat meervoud (wij/jullie/zij/ze) geen +t krijgt."
   ],
@@ -25,14 +25,14 @@
       "scaffold": {
         "step1": "Zoek de persoonsvorm in de zin.",
         "step2": "Bepaal het onderwerp.",
-        "step3": "Bij ik-vorm gebruik je de stam zonder +t."
+        "step3": "Bij ik gebruik je de ik-vorm."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: bij ik in de tegenwoordige tijd schrijf je de stam.",
+        "correct": "Goed: bij ik in de tegenwoordige tijd schrijf je de ik-vorm.",
         "hint": "Controleer eerst het onderwerp; bij ik meestal geen +t."
       }
     },
@@ -51,14 +51,14 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "Bepaal persoon en getal van het onderwerp.",
-        "step3": "Derde persoon enkelvoud krijgt stam+t."
+        "step3": "Derde persoon enkelvoud krijgt ik-vorm+t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: zij (enkelvoud) vraagt om stam+t.",
+        "correct": "Juist: zij (enkelvoud) vraagt om ik-vorm+t.",
         "hint": "Kijk of het onderwerp ik is; zo niet in enkelvoud vaak +t."
       }
     },
@@ -103,7 +103,7 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "Geen inversie: onderwerp staat voor persoonsvorm.",
-        "step3": "Gebruik stam+t bij jij/hij/zij/het in enkelvoud."
+        "step3": "Gebruik ik-vorm+t bij jij/hij/zij/het in enkelvoud."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -136,7 +136,7 @@
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: hij + tegenwoordige tijd geeft stam+t.",
+        "correct": "Goed: hij + tegenwoordige tijd geeft ik-vorm+t.",
         "hint": "Controleer altijd eerst onderwerp en tijd."
       }
     },
@@ -155,14 +155,14 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm.",
         "step2": "Bepaal onderwerp: ik.",
-        "step3": "Gebruik stam zonder extra -t."
+        "step3": "Gebruik de ik-vorm."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: bij ik blijft het de stam.",
+        "correct": "Juist: bij ik schrijf je de ik-vorm.",
         "hint": "Voeg geen extra t toe bij ik-vorm."
       }
     },
@@ -207,7 +207,7 @@
       "scaffold": {
         "step1": "Zoek de persoonsvorm.",
         "step2": "Bepaal onderwerp: ik.",
-        "step3": "Gebruik de stam als ik-vorm."
+        "step3": "Schrijf de ik-vorm."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
@@ -259,14 +259,14 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "Onderwerp is 'hij': derde persoon enkelvoud.",
-        "step3": "Geen inversie: gebruik stam+t."
+        "step3": "Geen inversie: gebruik ik-vorm+t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: 'hij bedoelt' krijgt stam+t.",
+        "correct": "Juist: 'hij bedoelt' krijgt ik-vorm+t.",
         "hint": "Kijk of er inversie is; hier staat het onderwerp vóór de persoonsvorm."
       }
     },
@@ -337,14 +337,14 @@
       "scaffold": {
         "step1": "Bepaal het onderwerp: het.",
         "step2": "Derde persoon enkelvoud: het duurt.",
-        "step3": "Gebruik stam+t: duur+t."
+        "step3": "Gebruik ik-vorm+t: duur+t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: 'het duurt' heeft stam+t.",
+        "correct": "Goed: 'het duurt' heeft ik-vorm+t.",
         "hint": "Controleer het onderwerp; 'het' is derde persoon enkelvoud en krijgt +t."
       }
     },
@@ -363,7 +363,7 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "Geen inversie: 'jij' staat vóór de persoonsvorm.",
-        "step3": "Jij zonder inversie krijgt stam+t."
+        "step3": "Jij zonder inversie krijgt ik-vorm+t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -389,7 +389,7 @@
       "scaffold": {
         "step1": "Zoek de persoonsvorm in de zin.",
         "step2": "Bepaal het onderwerp: ik.",
-        "step3": "Bij ik-vorm gebruik je de stam zonder +t."
+        "step3": "Bij ik gebruik je de ik-vorm."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
@@ -422,8 +422,8 @@
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: 'ze belooft' (enkelvoud) krijgt stam+t.",
-        "hint": "Kijk of 'ze' hier enkelvoud is; dan stam+t."
+        "correct": "Juist: 'ze belooft' (enkelvoud) krijgt ik-vorm+t.",
+        "hint": "Kijk of 'ze' hier enkelvoud is; dan ik-vorm+t."
       }
     },
     {
@@ -441,7 +441,7 @@
       "scaffold": {
         "step1": "Zoek de persoonsvorm.",
         "step2": "Bepaal het onderwerp: ik.",
-        "step3": "Stam van vertrouwen is 'vertrouw'; bij ik: stam zonder +t."
+        "step3": "Ik-vorm van vertrouwen is 'vertrouw'; bij ik geen extra -t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
@@ -449,7 +449,7 @@
       },
       "feedback": {
         "correct": "Goed: 'ik vertrouw' heeft geen +t.",
-        "hint": "Bij de ik-vorm gebruik je de stam; geen extra -t."
+        "hint": "Bij ik schrijf je de ik-vorm; geen extra -t."
       }
     },
     {
@@ -474,7 +474,7 @@
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: derde persoon enkelvoud krijgt stam+t: 'vertrouwt'.",
+        "correct": "Juist: derde persoon enkelvoud krijgt ik-vorm+t: 'vertrouwt'.",
         "hint": "Bepaal het onderwerp en persoon; enkelvoud derde persoon krijgt +t."
       }
     },
@@ -501,7 +501,7 @@
       },
       "feedback": {
         "correct": "Goed: 'ze beweert' is de persoonsvorm. Klinkt als 'beweerd' maar is anders gespeld.",
-        "hint": "Bepaal de functie: persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt stam+t."
+        "hint": "Bepaal de functie: persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt ik-vorm+t."
       }
     },
     {
@@ -527,7 +527,7 @@
       },
       "feedback": {
         "correct": "Juist: 'verandert' is de persoonsvorm. Klinkt als 'veranderd' maar vraagt +t.",
-        "hint": "Geen hulpwerkwoord → persoonsvorm → stam+t."
+        "hint": "Geen hulpwerkwoord → persoonsvorm → ik-vorm+t."
       }
     },
     {
@@ -545,15 +545,15 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "'De leerling' is derde persoon enkelvoud.",
-        "step3": "Stam van antwoorden is 'antwoord'; stam + t = antwoordt. Let op de -dt!"
+        "step3": "Ik-vorm van antwoorden is 'antwoord'; ik-vorm + t = antwoordt. Let op de -dt!"
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: 'antwoordt' heeft -dt aan het eind (stam eindigt op d, daarna +t).",
-        "hint": "De stam van antwoorden is 'antwoord'. Derde persoon enkelvoud: antwoord + t = antwoordt."
+        "correct": "Juist: 'antwoordt' heeft -dt aan het eind (ik-vorm eindigt op d, daarna +t).",
+        "hint": "De ik-vorm van antwoorden is 'antwoord'. Derde persoon enkelvoud: antwoord + t = antwoordt."
       }
     },
     {
@@ -579,7 +579,7 @@
       },
       "feedback": {
         "correct": "Goed: 'ze verhuist' is de persoonsvorm. 'Verhuisd' klinkt hetzelfde maar is het voltooid deelwoord.",
-        "hint": "Bepaal de grammaticale functie; persoonsvorm krijgt stam+t."
+        "hint": "Bepaal de grammaticale functie; persoonsvorm krijgt ik-vorm+t."
       }
     },
     {
@@ -605,7 +605,7 @@
       },
       "feedback": {
         "correct": "Goed: 'werkt' is de persoonsvorm voor derde persoon enkelvoud.",
-        "hint": "Bepaal het onderwerp: enkelvoud derde persoon krijgt stam+t."
+        "hint": "Bepaal het onderwerp: enkelvoud derde persoon krijgt ik-vorm+t."
       }
     },
     {
@@ -631,7 +631,7 @@
       },
       "feedback": {
         "correct": "Juist: derde persoon enkelvoud geeft 'studeert'.",
-        "hint": "Bepaal het onderwerp; enkelvoud derde persoon krijgt stam+t."
+        "hint": "Bepaal het onderwerp; enkelvoud derde persoon krijgt ik-vorm+t."
       }
     },
     {
@@ -657,7 +657,7 @@
       },
       "feedback": {
         "correct": "Goed: 'bewondert' is de persoonsvorm. 'Bewonderd' klinkt hetzelfde maar is het voltooid deelwoord.",
-        "hint": "Is dit een persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt stam+t."
+        "hint": "Is dit een persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt ik-vorm+t."
       }
     },
     {
@@ -702,7 +702,7 @@
         "scaffold": {
           "step1": "Bepaal het onderwerp.",
           "step2": "Onderwerp is 'ik'.",
-          "step3": "Ik-vorm: stam zonder +t."
+          "step3": "Ik: schrijf de ik-vorm."
         },
         "diagnostic": { "primaryMisconception": "PV_FALSE_T_ADD", "acceptedVariants": [] },
         "feedback": { "correct": "Goed: 'vind' bij ik.", "hint": "Ik-vorm: geen extra -t." }
@@ -718,10 +718,10 @@
         "scaffold": {
           "step1": "Bepaal het onderwerp.",
           "step2": "Onderwerp is 'zij' (enkelvoud).",
-          "step3": "3e persoon enkelvoud: stam+t."
+          "step3": "3e persoon enkelvoud: ik-vorm+t."
         },
         "diagnostic": { "primaryMisconception": "PV_STAM_T_OMISSION", "acceptedVariants": [] },
-        "feedback": { "correct": "Goed: 'vindt' bij zij.", "hint": "3e persoon enkelvoud: stam+t." }
+        "feedback": { "correct": "Goed: 'vindt' bij zij.", "hint": "3e persoon enkelvoud: ik-vorm+t." }
       }
     },
     {
@@ -756,10 +756,10 @@
         "scaffold": {
           "step1": "Bepaal het onderwerp.",
           "step2": "Jij staat vóór de persoonsvorm: geen inversie.",
-          "step3": "Zonder inversie: stam+t."
+          "step3": "Zonder inversie: ik-vorm+t."
         },
         "diagnostic": { "primaryMisconception": "PV_STAM_T_OMISSION", "acceptedVariants": [] },
-        "feedback": { "correct": "Goed: 'wordt' zonder inversie.", "hint": "Geen inversie: stam+t." }
+        "feedback": { "correct": "Goed: 'wordt' zonder inversie.", "hint": "Geen inversie: ik-vorm+t." }
       }
     },
     {
@@ -778,7 +778,7 @@
         "scaffold": {
           "step1": "Bepaal het onderwerp.",
           "step2": "'Wij' is meervoud.",
-          "step3": "Meervoud: geen +t, gebruik de infinitief-stam."
+          "step3": "Meervoud: geen +t, gebruik de ik-vorm."
         },
         "diagnostic": { "primaryMisconception": "PV_MEERVOUD_T_ADDITION", "acceptedVariants": [] },
         "feedback": { "correct": "Goed: 'werken' bij wij, geen +t.", "hint": "Meervoud: geen +t." }
@@ -794,10 +794,10 @@
         "scaffold": {
           "step1": "Bepaal het onderwerp.",
           "step2": "'Hij' is enkelvoud (3e persoon).",
-          "step3": "Enkelvoud 3e persoon: stam+t."
+          "step3": "Enkelvoud 3e persoon: ik-vorm+t."
         },
         "diagnostic": { "primaryMisconception": "PV_STAM_T_OMISSION", "acceptedVariants": [] },
-        "feedback": { "correct": "Goed: 'rent' bij hij.", "hint": "3e persoon enkelvoud: stam+t." }
+        "feedback": { "correct": "Goed: 'rent' bij hij.", "hint": "3e persoon enkelvoud: ik-vorm+t." }
       }
     }
   ],

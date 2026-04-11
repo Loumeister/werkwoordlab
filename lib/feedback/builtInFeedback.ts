@@ -15,11 +15,11 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "onderwerp",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de stam gebruikt, maar bij hij, zij of het hoort er een -t achter de stam.",
+        "Je hebt waarschijnlijk de ik-vorm gebruikt zonder -t, maar bij hij, zij of het hoort er een -t achter de ik-vorm.",
       redenering:
-        "In de tegenwoordige tijd krijgt de persoonsvorm bij hij/zij/het de stam plus -t. Schrijf 'hij loopt', niet 'hij loop'.",
+        "In de tegenwoordige tijd krijgt de persoonsvorm bij hij/zij/het de ik-vorm plus -t. Schrijf 'hij loopt', niet 'hij loop'.",
       herprobeer:
-        "Bepaal het onderwerp. Is het hij, zij of het? Voeg dan -t toe aan de stam.",
+        "Bepaal het onderwerp. Is het hij, zij of het? Voeg dan -t toe aan de ik-vorm.",
     },
   },
 
@@ -28,11 +28,11 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "ik",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de stam plus -t gebruikt, maar bij 'ik' schrijf je alleen de stam.",
+        "Je hebt waarschijnlijk de ik-vorm plus -t gebruikt, maar bij 'ik' schrijf je alleen de ik-vorm.",
       redenering:
-        "De ik-vorm in de tegenwoordige tijd is gelijk aan de stam — zonder -t. Schrijf 'ik loop', niet 'ik loopt'.",
+        "De ik-vorm schrijf je zonder -t. Schrijf 'ik loop', niet 'ik loopt'.",
       herprobeer:
-        "Kijk naar het onderwerp. Staat er 'ik'? Gebruik dan alleen de stam, zonder -t.",
+        "Kijk naar het onderwerp. Staat er 'ik'? Gebruik dan de ik-vorm, zonder -t.",
     },
   },
 
@@ -45,7 +45,7 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
       redenering:
         "Wanneer 'je' of 'jij' achter de persoonsvorm staat, krijgt de persoonsvorm geen -t. Schrijf 'Hoe oud word jij?', niet 'wordt jij'.",
       herprobeer:
-        "Controleer of 'je' of 'jij' achter de persoonsvorm staat. Zo ja: gebruik de stam zonder -t.",
+        "Controleer of 'je' of 'jij' achter de persoonsvorm staat. Zo ja: gebruik de ik-vorm.",
     },
   },
 
@@ -56,9 +56,9 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
       diagnose:
         "Je hebt waarschijnlijk de enkelvoudsregel toegepast op een meervoudig onderwerp.",
       redenering:
-        "Bij meervoudige onderwerpen (wij, jullie, zij) gebruikt de persoonsvorm de stam zonder -t. Schrijf 'wij lopen', niet 'wij loopt'.",
+        "Bij meervoudige onderwerpen (wij, jullie, zij) gebruikt de persoonsvorm de ik-vorm. Schrijf 'wij lopen', niet 'wij loopt'.",
       herprobeer:
-        "Controleer het onderwerp: is het wij/jullie/zij? Gebruik dan de stam zonder -t.",
+        "Controleer het onderwerp: is het wij/jullie/zij? Gebruik dan de ik-vorm.",
     },
   },
 

@@ -29,7 +29,7 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
   // We check for core grammatical terms across both the main text and the
   // reflection field. voltooid.?deelwoord covers "voltooiddeelwoord" (no space)
   // as well as "voltooid deelwoord" (with space).
-  const hasRuleWords = /persoonsvorm|stam|werkwoord|voltooid.?deelwoord|infinitief/i.test(
+  const hasRuleWords = /persoonsvorm|ik-vorm|stam|werkwoord|voltooid.?deelwoord|infinitief/i.test(
     `${text} ${reflectie}`
   );
 
@@ -113,14 +113,14 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
               Correctheid:{" "}
               <span className="font-medium">
                 {/*
-                 * /\w+dt\b/ targets the specific overcorrection artifact "dt"
-                 * (e.g. "werkdt", "worddt") — a telltale sign of stem+t confusion.
-                 * The broader /[dt]\b/ was avoided because it matches "het", "dat",
-                 * "dit", "niet" and almost any Dutch text, making it non-discriminative.
+                 * No regex can reliably detect d/t spelling errors in free text
+                 * without a full syntactic parser: "dt" is correct Dutch in "wordt",
+                 * "vindt", "antwoordt" (ik-vorm ending in d + persoonsvorm -t), so
+                 * any pattern would generate false positives on valid verb forms.
+                 * Since werkwoordspelling texts always warrant an end-letter check,
+                 * this reminder is unconditional — always relevant, never misleading.
                  */}
-                {/\w+dt\b/i.test(text)
-                  ? "controleer eindletters zorgvuldig"
-                  : "basiscontrole uitgevoerd"}
+                controleer eindletters zorgvuldig
               </span>
             </li>
             <li>

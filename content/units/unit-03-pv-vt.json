@@ -24,7 +24,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Bepaal de grammaticale functie: geen hulpwerkwoord → persoonsvorm verleden tijd.",
-        "step2": "Onderwerp 'hij' is enkelvoud → enkelvoudsvorm: stam + -de of -te.",
+        "step2": "Onderwerp 'hij' is enkelvoud → enkelvoudsvorm: ik-vorm + -de of -te.",
         "step3": "Ruwe stam: werk (k zit in 't kofschip) → stam + -te = werkte."
       },
       "diagnostic": {
@@ -50,7 +50,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd.",
-        "step2": "Onderwerp 'de leraar' is enkelvoud → stam + -de of -te.",
+        "step2": "Onderwerp 'de leraar' is enkelvoud → ik-vorm + -de of -te.",
         "step3": "Ruwe stam: maak (k zit in 't kofschip) → maak + -te = maakte."
       },
       "diagnostic": {
@@ -59,7 +59,7 @@
       },
       "feedback": {
         "correct": "Juist: 'maakte' — eindletter k is stemloze kofschip-klank, dus -te.",
-        "hint": "Infinitief maken → stam maak. Staat k in 't kofschip (t-k-f-s-ch-p)? Dan -te."
+        "hint": "Infinitief maken → ik-vorm maak. Staat k in 't kofschip (t-k-f-s-ch-p)? Dan -te."
       }
     },
     {
@@ -84,8 +84,8 @@
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: 'wachtte' — stam wacht eindigt op t, -te erbij geeft dubbele t.",
-        "hint": "Stam wacht + uitgang -te = wachtte. De -t van de stam en de -t van de uitgang schrijf je allebei."
+        "correct": "Goed: 'wachtte' — ik-vorm wacht eindigt op t, -te erbij geeft dubbele t.",
+        "hint": "Ik-vorm wacht + uitgang -te = wachtte. De -t van de ik-vorm en de -t van de uitgang schrijf je allebei."
       }
     },
     {
@@ -188,7 +188,7 @@
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: 'antwoordde' — stam antwoord eindigt op d, -de erbij geeft dubbele d.",
+        "correct": "Goed: 'antwoordde' — ik-vorm antwoord eindigt op d, -de erbij geeft dubbele d.",
         "hint": "Stam antwoord + uitgang -de = antwoordde. Beide d's schrijf je."
       }
     },
@@ -214,7 +214,7 @@
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: 'werkten' is de meervoudsvorm — wij krijgt stam + -ten.",
+        "correct": "Juist: 'werkten' is de meervoudsvorm — wij krijgt ik-vorm + -ten.",
         "hint": "Vergelijk: hij werkte (enkelvoud) vs wij werkten (meervoud, voeg -n toe)."
       }
     },
@@ -232,7 +232,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'ze' is hier meervoud.",
-        "step2": "Meervoud: stam + -ten (k in 't kofschip).",
+        "step2": "Meervoud: ik-vorm + -ten (k in 't kofschip).",
         "step3": "maak + ten = maakten."
       },
       "diagnostic": {
@@ -241,7 +241,7 @@
       },
       "feedback": {
         "correct": "Goed: 'maakten' — meervoud met -ten omdat k in 't kofschip zit.",
-        "hint": "Onderwerp 'ze' is hier meervoud (ze maakten allemaal). Meervoud: stam + -ten."
+        "hint": "Onderwerp 'ze' is hier meervoud (ze maakten allemaal). Meervoud: ik-vorm + -ten."
       }
     },
     {
@@ -258,7 +258,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'jullie' is meervoud.",
-        "step2": "Meervoud: stam + -ten (t in 't kofschip). Stam: wacht.",
+        "step2": "Meervoud: ik-vorm + -ten (t in 't kofschip). Ik-vorm: wacht.",
         "step3": "Stam eindigt op -t: wacht + ten = wachtten (dubbele t)."
       },
       "diagnostic": {
@@ -266,7 +266,7 @@
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: 'wachtten' — meervoud met dubbele t: stam wacht + ten.",
+        "correct": "Juist: 'wachtten' — meervoud met dubbele t: ik-vorm wacht + ten.",
         "hint": "Stam wacht eindigt al op t. Meervoud: wacht + ten = wachtten."
       }
     },
@@ -284,7 +284,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'wij' is meervoud.",
-        "step2": "Meervoud: stam + -den (r niet in 't kofschip). Stam: studeer.",
+        "step2": "Meervoud: ik-vorm + -den (r niet in 't kofschip). Ik-vorm: studeer.",
         "step3": "studeer + den = studeerden."
       },
       "diagnostic": {
@@ -310,7 +310,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'de regels' is meervoud.",
-        "step2": "Meervoud: stam + -den (r niet in 't kofschip). Stam: verander.",
+        "step2": "Meervoud: ik-vorm + -den (r niet in 't kofschip). Ik-vorm: verander.",
         "step3": "verander + den = veranderden."
       },
       "diagnostic": {
@@ -336,7 +336,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'ze' is hier meervoud ('ze allemaal').",
-        "step2": "Meervoud: stam + -den (d niet in 't kofschip). Stam: antwoord.",
+        "step2": "Meervoud: ik-vorm + -den (d niet in 't kofschip). Ik-vorm: antwoord.",
         "step3": "Stam eindigt op -d: antwoord + den = antwoordden (dubbele d)."
       },
       "diagnostic": {
@@ -344,7 +344,7 @@
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: 'antwoordden' — meervoud met dubbele d: stam antwoord + den.",
+        "correct": "Goed: 'antwoordden' — meervoud met dubbele d: ik-vorm antwoord + den.",
         "hint": "Stam antwoord eindigt al op d. Meervoud: antwoord + den = antwoordden."
       }
     },
@@ -362,7 +362,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord zoals 'heeft' of 'is' → dit is een persoonsvorm verleden tijd, geen voltooid deelwoord.",
-        "step2": "Onderwerp 'ze' is enkelvoud → stam + -de of -te.",
+        "step2": "Onderwerp 'ze' is enkelvoud → ik-vorm + -de of -te.",
         "step3": "Ruwe stam: belov (v is niet in 't kofschip) → orthostam: beloof + de = beloofde."
       },
       "diagnostic": {
@@ -440,7 +440,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'de vrijwilligers' is meervoud.",
-        "step2": "Meervoud + kofschip k → stam + -ten.",
+        "step2": "Meervoud + kofschip k → ik-vorm + -ten.",
         "step3": "werk + ten = werkten."
       },
       "diagnostic": {
@@ -465,7 +465,7 @@
       "target": "leefde",
       "homophonePair": null,
       "scaffold": {
-        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; enkelvoud → stam + -de of -te.",
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; enkelvoud → ik-vorm + -de of -te.",
         "step2": "Haal -en af van de infinitief: le-ven → ruwe stam: lev. Eindletter: v.",
         "step3": "v is stemhebbend en staat niet in 't kofschip → -de. Orthostam leef + de = leefde."
       },
@@ -491,7 +491,7 @@
       "target": "verhuisde",
       "homophonePair": null,
       "scaffold": {
-        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; enkelvoud → stam + -de of -te.",
+        "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; enkelvoud → ik-vorm + -de of -te.",
         "step2": "Haal -en af: verhui-zen → ruwe stam: verhuiz. Eindletter: z.",
         "step3": "z is stemhebbend en staat niet in 't kofschip → -de. Orthostam verhuis + de = verhuisde."
       },
@@ -518,7 +518,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'de leerlingen' is meervoud.",
-        "step2": "Meervoud: stam + -den (r niet in 't kofschip). Stam: beweer.",
+        "step2": "Meervoud: ik-vorm + -den (r niet in 't kofschip). Ik-vorm: beweer.",
         "step3": "beweer + den = beweerden."
       },
       "diagnostic": {
@@ -572,7 +572,7 @@
         "scaffold": {
           "step1": "Bepaal het onderwerp.",
           "step2": "'Hij' is enkelvoud.",
-          "step3": "Enkelvoud + k (kofschip) → stam + -te."
+          "step3": "Enkelvoud + k (kofschip) → ik-vorm + -te."
         },
         "diagnostic": { "primaryMisconception": "VT_DE_TE_CONFUSION", "acceptedVariants": [] },
         "feedback": { "correct": "Goed: 'werkte' bij hij.", "hint": "Enkelvoud + k in kofschip → -te." }
@@ -588,7 +588,7 @@
         "scaffold": {
           "step1": "Bepaal het onderwerp.",
           "step2": "'Wij' is meervoud.",
-          "step3": "Meervoud + k (kofschip) → stam + -ten."
+          "step3": "Meervoud + k (kofschip) → ik-vorm + -ten."
         },
         "diagnostic": { "primaryMisconception": "VT_ENKELVOUD_MEERVOUD", "acceptedVariants": [] },
         "feedback": { "correct": "Goed: 'werkten' bij wij.", "hint": "Meervoud: voeg -n toe aan de enkelvoudsvorm." }
@@ -639,7 +639,7 @@
     "prompt": "Lees de volgende zinnen. Sommige werkwoorden staan in de verkeerde vorm. Verbeter de fouten en leg voor elke correctie uit waarom de vorm verkeerd was.\n\n1. Gisteren werkde hij de hele dag in de bibliotheek.\n2. De leerlingen studerden tot laat in de avond.\n3. Het gezin verhuiste naar Amsterdam.\n4. Ze beloofde hem haar hulp, maar hij heeft haar nooit vertrouwde.",
     "rubric": [
       "Fout 1 herkend: werkde → werkte (k in 't kofschip → -te).",
-      "Fout 2 herkend: studerden → studeerden (stam studeer, meervoud + -den).",
+      "Fout 2 herkend: studerden → studeerden (ik-vorm studeer, meervoud + -den).",
       "Fout 3 herkend: verhuiste → verhuisde (ruwe stam verhuiz, z niet in 't kofschip → -de).",
       "Fout 4 herkend: 'heeft vertrouwde' → 'heeft vertrouwd' (na hulpwerkwoord 'heeft' is een voltooid deelwoord vereist: vertrouwd, niet de verleden tijdsvorm vertrouwde).",
       "Uitleg verwijst expliciet naar grammaticale functie, onderwerp (getal) en ruwe stam."
