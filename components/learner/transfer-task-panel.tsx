@@ -29,7 +29,7 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
   // We check for core grammatical terms across both the main text and the
   // reflection field. voltooid.?deelwoord covers "voltooiddeelwoord" (no space)
   // as well as "voltooid deelwoord" (with space).
-  const hasRuleWords = /persoonsvorm|ik-vorm|stam|werkwoord|voltooid.?deelwoord|infinitief/i.test(
+  const hasRuleWords = /persoonsvorm|ik-vorm|werkwoord|voltooid.?deelwoord|infinitief/i.test(
     `${text} ${reflectie}`
   );
 

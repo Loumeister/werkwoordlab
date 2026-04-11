@@ -129,7 +129,7 @@
       "scaffold": {
         "step1": "Markeer de persoonsvorm.",
         "step2": "Bepaal onderwerp: hij (3e persoon enkelvoud).",
-        "step3": "Stam + t toepassen."
+        "step3": "Ik-vorm + t toepassen."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -415,7 +415,7 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "Onderwerp 'ze' is hier derde persoon enkelvoud.",
-        "step3": "Stam (beloof) + t = belooft."
+        "step3": "Ik-vorm (beloof) + t = belooft."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -467,7 +467,7 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "'De nieuwe leerling' is derde persoon enkelvoud.",
-        "step3": "Stam (vertrouw) + t = vertrouwt."
+        "step3": "Ik-vorm (vertrouw) + t = vertrouwt."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -493,7 +493,7 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "Onderwerp 'ze' is hier enkelvoud (derde persoon).",
-        "step3": "Stam (beweer) + t = beweert."
+        "step3": "Ik-vorm (beweer) + t = beweert."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -519,7 +519,7 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "'Haar plan' is derde persoon enkelvoud.",
-        "step3": "Stam (verander) + t = verandert."
+        "step3": "Ik-vorm (verander) + t = verandert."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -571,7 +571,7 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "'Ze' is hier enkelvoud (derde persoon).",
-        "step3": "Stam (verhuis) + t = verhuist."
+        "step3": "Ik-vorm (verhuis) + t = verhuist."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -597,7 +597,7 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "'De stagiair' is derde persoon enkelvoud.",
-        "step3": "Stam (werk) + t = werkt."
+        "step3": "Ik-vorm (werk) + t = werkt."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -623,7 +623,7 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "'Mijn zus' is derde persoon enkelvoud.",
-        "step3": "Stam (studeer) + t = studeert."
+        "step3": "Ik-vorm (studeer) + t = studeert."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -649,7 +649,7 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "'Iedereen' is derde persoon enkelvoud.",
-        "step3": "Stam (bewonder) + t = bewondert."
+        "step3": "Ik-vorm (bewonder) + t = bewondert."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -675,7 +675,7 @@
       "scaffold": {
         "step1": "Bepaal de grammaticale functie van het werkwoord.",
         "step2": "Er is geen hulpwerkwoord: dit is een persoonsvorm.",
-        "step3": "Stam (gebeur) + t = gebeurt."
+        "step3": "Ik-vorm (gebeur) + t = gebeurt."
       },
       "diagnostic": {
         "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
@@ -807,7 +807,7 @@
     "prompt": "Verbeter in dit korte dagboekfragment alle persoonsvormen in de tegenwoordige tijd en leg bij twee verbeteringen je regel uit.",
     "rubric": [
       "Persoonsvormen correct herkend",
-      "Stam(+t)-regel correct toegepast",
+      "Ik-vorm(+t)-regel correct toegepast",
       "Uitleg gebruikt grammaticale termen"
     ]
   }
