@@ -39,9 +39,13 @@ export const PHASE_CONFIGS: Record<PhaseId, PhaseConfig> = {
  * are "verkennen", next ~25% (up to 50%) are "oefenen", the rest are
  * "zelfstandig".
  *
- * Math.ceil ensures at least 1 item in each guided phase even for very small
- * units (e.g. ceil(4 * 0.25) = 1, not floor = 1 — same here, but
- * ceil(3 * 0.25) = 1 vs floor = 0 which would skip verkennen entirely).
+ * Math.ceil avoids skipping "verkennen" in very small units: ceil(3 * 0.25) = 1
+ * vs floor = 0, which would assign all items to oefenen/zelfstandig. However,
+ * it does not guarantee every phase is non-empty — with total < 3 both boundaries
+ * collapse to the same value (e.g. total=2 → boundary1=1, boundary2=1) and
+ * "oefenen" receives no items. Unit authors should assign explicit `phase` tags
+ * on units with fewer than 4 items, or rely on groupItemsByPhase skipping
+ * empty phases in LearnerFlow.
  */
 export function resolveItemPhase(item: AnyItem, index: number, total: number): PhaseId {
   if ("phase" in item && item.phase) {
