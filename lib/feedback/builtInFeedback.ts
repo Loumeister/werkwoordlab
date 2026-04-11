@@ -63,15 +63,15 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
   },
 
   VD_KOFSCHIP_MISAPPLIED: {
-    herstelvraag: "Eindigt de stam op een klank uit 't kofschip'?",
+    herstelvraag: "Eindigt de stam (infinitief minus -en) op een klank uit 't kofschip'?",
     sleutelwoord: "stam",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de eindklank van de stam verkeerd beoordeeld bij de keuze voor -d of -t.",
+        "Je hebt waarschijnlijk de eindklank van de stam (infinitief minus -en) verkeerd beoordeeld bij de keuze voor -d of -t.",
       redenering:
-        "Schrijf -t in het voltooid deelwoord als de stam eindigt op een klank uit 't kofschip' (t, k, f, s, ch, p). Eindigt de stam op een andere klank, dan -d. Schrijf 'gewerkt', maar 'gespeeld'.",
+        "Schrijf -t in het voltooid deelwoord als de stam (infinitief minus -en) eindigt op een klank uit 't kofschip' (t, k, f, s, ch, p). Eindigt de stam op een andere klank, dan -d. Schrijf 'gewerkt', maar 'gespeeld'.",
       herprobeer:
-        "Schrijf de stam op en kijk naar de laatste klank. Zit die in 't kofschip'? Dan -t, anders -d.",
+        "Bepaal de stam (trek -en af van de infinitief) en kijk naar de eindklank. Zit die in 't kofschip'? Dan -t, anders -d.",
     },
   },
 
@@ -80,7 +80,7 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "onregelmatig",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de regelmatige strategie (stam + -d/-t) toegepast op een onregelmatig werkwoord.",
+        "Je hebt waarschijnlijk de regelmatige strategie (ik-vorm + -d/-t) toegepast op een onregelmatig werkwoord.",
       redenering:
         "Onregelmatige werkwoorden volgen de gewone -d/-t-regel niet. De vorm moet je herkennen of opzoeken, zoals 'gereden', 'gevonden', 'gegaan'.",
       herprobeer:
@@ -102,15 +102,15 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
   },
 
   VT_DE_TE_CONFUSION: {
-    herstelvraag: "Welke eindklank heeft de ruwe stam?",
-    sleutelwoord: "ruwe stam",
+    herstelvraag: "Welke eindklank heeft de stam (infinitief minus -en)?",
+    sleutelwoord: "stam",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de uitgang gekozen op basis van de geschreven stam, maar de kofschip-regel vraagt de eindklank van de ruwe stam.",
+        "Je hebt waarschijnlijk de uitgang gekozen op basis van de ik-vorm, maar de kofschip-regel vraagt de eindklank van de stam (infinitief minus -en).",
       redenering:
-        "Haal -en af van de infinitief om de stam te krijgen. Controleer of de eindklank van die stam in 't kofschip' (t-k-f-s-ch-p) staat. Zo ja: -te of -ten, anders: -de of -den.",
+        "Haal -en af van de infinitief om de stam te krijgen. Controleer of de eindklank van die stam in 't kofschip' (t-k-f-s-ch-p) staat. Zo ja: ik-vorm + -te (of -ten), anders: ik-vorm + -de (of -den).",
       herprobeer:
-        "Schrijf de stam op. Kijk naar de laatste klank. Zit die in 't kofschip'? Dan -te, anders -de.",
+        "Bepaal de stam (trek -en af van de infinitief). Kijk naar de eindklank. Zit die in 't kofschip? Dan ik-vorm + -te, anders ik-vorm + -de.",
     },
   },
 
@@ -134,22 +134,22 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
       diagnose:
         "Je hebt waarschijnlijk de enkelvoudsvorm (-de/-te) gebruikt bij een meervoudig onderwerp, of andersom.",
       redenering:
-        "Enkelvoud (ik, hij, zij, het): stam + -de of -te. Meervoud (wij, jullie, zij, en): stam + -den of -ten. Schrijf 'hij werkte' maar 'zij werkten'.",
+        "Enkelvoud (ik, hij, zij, het): ik-vorm + -de of -te. Meervoud (wij, jullie, zij, en): ik-vorm + -den of -ten. Schrijf 'hij werkte' maar 'zij werkten'.",
       herprobeer:
         "Bepaal het onderwerp. Is het enkelvoud? Gebruik -de of -te. Is het meervoud? Gebruik -den of -ten.",
     },
   },
 
   VT_RUWE_STAM_OVERRIDE: {
-    herstelvraag: "Welke klank hoor je écht aan het einde van de stam?",
+    herstelvraag: "Welke klank hoor je écht als je -en afhaalt van de infinitief?",
     sleutelwoord: "klank",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de geschreven stam bekeken in plaats van de eindklank die je hoort bij uitspreken.",
+        "Je hebt waarschijnlijk de ik-vorm bekeken in plaats van de eindklank van de stam (infinitief minus -en).",
       redenering:
-        "Soms verschilt de schrijfwijze van de stam van de uitgesproken klank. Spreek de stam uit en beoordeel die klank: 'leven' → je hoort leef (f zit in 't kofschip) → leefde. 'verhuizen' → je hoort verhuis (s zit in 't kofschip) → verhuisde.",
+        "Soms verschilt de ik-vorm (schrijfwijze) van de stam (klank). Trek -en af van de infinitief: 'leven' → stam 'lev' (v staat niet in 't kofschip → -de) → ik-vorm leef + de = leefde. 'verhuizen' → stam 'verhuiz' (z staat niet in 't kofschip → -de) → ik-vorm verhuis + de = verhuisde.",
       herprobeer:
-        "Spreek de stam hardop uit. Hoor je een klank uit 't kofschip' (t-k-f-s-ch-p)? Dan -te, anders -de.",
+        "Bepaal de stam (trek -en af van de infinitief). Hoor je een klank uit 't kofschip' (t-k-f-s-ch-p)? Dan ik-vorm + -te, anders ik-vorm + -de.",
     },
   },
 };

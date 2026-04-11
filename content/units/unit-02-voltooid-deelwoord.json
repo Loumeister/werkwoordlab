@@ -388,7 +388,7 @@
       "homophonePair": "belooft/beloofd",
       "scaffold": {
         "step1": "Bepaal grammaticale functie: hulpwerkwoord 'heeft' wijst op voltooid deelwoord.",
-        "step2": "Ik-vorm van beloven: beloof. Ruwe stam: belov — v is stemhebbend.",
+        "step2": "Ik-vorm van beloven: beloof. Stam (infinitief minus -en): belov — v is stemhebbend, dus niet kofschip.",
         "step3": "Stemhebbende eindklank → -d: beloofd."
       },
       "diagnostic": {
@@ -440,7 +440,7 @@
       "homophonePair": "vertrouwt/vertrouwd",
       "scaffold": {
         "step1": "Hulpwerkwoord 'heeft' → voltooid deelwoord.",
-        "step2": "Ik-vorm: vertrouw. Ruwe stam eindigt op w — stemhebbend.",
+        "step2": "Ik-vorm: vertrouw. Stam (infinitief minus -en) eindigt op w — stemhebbend, dus niet kofschip.",
         "step3": "Stemhebbende eindklank → -d: vertrouwd."
       },
       "diagnostic": {
@@ -596,7 +596,7 @@
       "homophonePair": "verhuist/verhuisd",
       "scaffold": {
         "step1": "Hulpwerkwoord 'zijn' → voltooid deelwoord.",
-        "step2": "Ruwe stam: verhuiz — z is stemhebbend.",
+        "step2": "Stam (infinitief minus -en): verhuiz — z is stemhebbend, dus niet kofschip.",
         "step3": "Stemhebbende eindklank → -d: ge + verhuis + d = verhuisd."
       },
       "diagnostic": {

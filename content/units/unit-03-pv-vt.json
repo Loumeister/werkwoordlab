@@ -6,7 +6,7 @@
   "learningGoals": [
     "Ik herken de persoonsvorm in de verleden tijd.",
     "Ik bepaal enkelvoud of meervoud en kies de juiste uitgang (-de/-te of -den/-ten).",
-    "Ik controleer de ruwe stam (voor orthografische aanpassing) om de juiste uitgang te kiezen.",
+    "Ik controleer de stam (infinitief minus -en) om de juiste uitgang te kiezen.",
     "Ik onderscheid de verleden tijdsvorm van het voltooid deelwoord op basis van de grammaticale functie."
   ],
   "items": [
@@ -25,7 +25,7 @@
       "scaffold": {
         "step1": "Bepaal de grammaticale functie: geen hulpwerkwoord → persoonsvorm verleden tijd.",
         "step2": "Onderwerp 'hij' is enkelvoud → enkelvoudsvorm: ik-vorm + -de of -te.",
-        "step3": "Ruwe stam: werk (k zit in 't kofschip) → stam + -te = werkte."
+        "step3": "Stam: werk (k zit in 't kofschip) → ik-vorm + -te = werkte."
       },
       "diagnostic": {
         "primaryMisconception": "VT_DE_TE_CONFUSION",
@@ -51,7 +51,7 @@
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd.",
         "step2": "Onderwerp 'de leraar' is enkelvoud → ik-vorm + -de of -te.",
-        "step3": "Ruwe stam: maak (k zit in 't kofschip) → maak + -te = maakte."
+        "step3": "Stam: maak (k zit in 't kofschip) → ik-vorm maak + -te = maakte."
       },
       "diagnostic": {
         "primaryMisconception": "VT_DE_TE_CONFUSION",
@@ -76,7 +76,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; onderwerp 'ik' is enkelvoud.",
-        "step2": "Infinitief wachten → ruwe stam: wacht (t zit in 't kofschip) → -te.",
+        "step2": "Infinitief wachten → stam: wacht (t zit in 't kofschip) → ik-vorm + -te.",
         "step3": "Stam eindigt al op -t: wacht + te = wachtte (dubbele t)."
       },
       "diagnostic": {
@@ -102,7 +102,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'hij' is enkelvoud.",
-        "step2": "Infinitief studeren → ruwe stam: studeer (r is niet in 't kofschip) → -de.",
+        "step2": "Infinitief studeren → stam: studeer (r is niet in 't kofschip) → ik-vorm + -de.",
         "step3": "studeer + de = studeerde."
       },
       "diagnostic": {
@@ -111,7 +111,7 @@
       },
       "feedback": {
         "correct": "Juist: 'studeerde' — eindletter r is geen kofschip-klank, dus -de.",
-        "hint": "Ruwe stam: studeer. Is r in 't kofschip? Nee → gebruik -de."
+        "hint": "Stam: studeer. Is r in 't kofschip? Nee → ik-vorm + -de."
       }
     },
     {
@@ -128,7 +128,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'het weer' is enkelvoud.",
-        "step2": "Infinitief veranderen → ruwe stam: verander (r is niet in 't kofschip) → -de.",
+        "step2": "Infinitief veranderen → stam: verander (r is niet in 't kofschip) → ik-vorm + -de.",
         "step3": "verander + de = veranderde."
       },
       "diagnostic": {
@@ -137,7 +137,7 @@
       },
       "feedback": {
         "correct": "Goed: 'veranderde' — eindletter r is geen kofschip-klank, dus -de.",
-        "hint": "Ruwe stam: verander. R staat niet in 't kofschip → -de."
+        "hint": "Stam: verander. R staat niet in 't kofschip → ik-vorm + -de."
       }
     },
     {
@@ -154,7 +154,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'ze' is hier enkelvoud.",
-        "step2": "Infinitief beweren → ruwe stam: beweer (r is niet in 't kofschip) → -de.",
+        "step2": "Infinitief beweren → stam: beweer (r is niet in 't kofschip) → ik-vorm + -de.",
         "step3": "beweer + de = beweerde."
       },
       "diagnostic": {
@@ -180,7 +180,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'hij' is enkelvoud.",
-        "step2": "Infinitief antwoorden → ruwe stam: antwoord (d is niet in 't kofschip) → -de.",
+        "step2": "Infinitief antwoorden → stam: antwoord (d is niet in 't kofschip) → ik-vorm + -de.",
         "step3": "Stam eindigt op -d: antwoord + de = antwoordde (dubbele d)."
       },
       "diagnostic": {
@@ -206,7 +206,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'wij' is meervoud.",
-        "step2": "Meervoud: stam + -den of -ten. Ruwe stam: werk (k in 't kofschip) → -ten.",
+        "step2": "Meervoud: ik-vorm + -den of -ten. Stam: werk (k in 't kofschip) → -ten.",
         "step3": "werk + ten = werkten."
       },
       "diagnostic": {
@@ -363,7 +363,7 @@
       "scaffold": {
         "step1": "Geen hulpwerkwoord zoals 'heeft' of 'is' → dit is een persoonsvorm verleden tijd, geen voltooid deelwoord.",
         "step2": "Onderwerp 'ze' is enkelvoud → ik-vorm + -de of -te.",
-        "step3": "Ruwe stam: belov (v is niet in 't kofschip) → orthostam: beloof + de = beloofde."
+        "step3": "Stam: belov (v is niet in 't kofschip → -de) → ik-vorm: beloof + de = beloofde."
       },
       "diagnostic": {
         "primaryMisconception": "VT_VD_FUNCTION_CONFUSION",
@@ -388,7 +388,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'hij' is enkelvoud.",
-        "step2": "Ruwe stam: vertrouw (w is niet in 't kofschip) → -de.",
+        "step2": "Stam: vertrouw (w is niet in 't kofschip) → ik-vorm + -de.",
         "step3": "vertrouw + de = vertrouwde."
       },
       "diagnostic": {
@@ -414,7 +414,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; 'de student' is enkelvoud.",
-        "step2": "Ruwe stam: studeer (r niet in 't kofschip) → -de.",
+        "step2": "Stam: studeer (r niet in 't kofschip) → ik-vorm + -de.",
         "step3": "studeer + de = studeerde."
       },
       "diagnostic": {
@@ -466,16 +466,16 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; enkelvoud → ik-vorm + -de of -te.",
-        "step2": "Haal -en af van de infinitief: le-ven → ruwe stam: lev. Eindletter: v.",
-        "step3": "v is stemhebbend en staat niet in 't kofschip → -de. Orthostam leef + de = leefde."
+        "step2": "Haal -en af van de infinitief: le-ven → stam: lev. Eindletter: v.",
+        "step3": "v is stemhebbend en staat niet in 't kofschip → -de. Ik-vorm: leef + de = leefde."
       },
       "diagnostic": {
         "primaryMisconception": "VT_RUWE_STAM_OVERRIDE",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: 'leefde' — de ruwe stam is lev (v=stemhebbend → -de), niet leef (f=kofschip).",
-        "hint": "Let op: de zichtbare stam is leef, maar de ruwe stam is lev. v staat niet in 't kofschip → -de → leefde."
+        "correct": "Juist: 'leefde' — de stam is lev (v=stemhebbend → -de), niet de ik-vorm leef (f=kofschip).",
+        "hint": "Let op: de ik-vorm is leef, maar de stam is lev. v staat niet in 't kofschip → -de → leefde."
       }
     },
     {
@@ -492,16 +492,16 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Geen hulpwerkwoord → persoonsvorm verleden tijd; enkelvoud → ik-vorm + -de of -te.",
-        "step2": "Haal -en af: verhui-zen → ruwe stam: verhuiz. Eindletter: z.",
-        "step3": "z is stemhebbend en staat niet in 't kofschip → -de. Orthostam verhuis + de = verhuisde."
+        "step2": "Haal -en af: verhui-zen → stam: verhuiz. Eindletter: z.",
+        "step3": "z is stemhebbend en staat niet in 't kofschip → -de. Ik-vorm verhuis + de = verhuisde."
       },
       "diagnostic": {
         "primaryMisconception": "VT_RUWE_STAM_OVERRIDE",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: 'verhuisde' — ruwe stam verhuiz, z staat niet in 't kofschip → -de.",
-        "hint": "De zichtbare stam verhuis suggereert -te (s=kofschip), maar de ruwe stam is verhuiz → z is stemhebbend → -de."
+        "correct": "Goed: 'verhuisde' — stam verhuiz, z staat niet in 't kofschip → -de.",
+        "hint": "De ik-vorm verhuis suggereert -te (s=kofschip), maar de stam is verhuiz → z is stemhebbend → -de."
       }
     },
     {
@@ -598,7 +598,7 @@
       "id": "u3-cp2",
       "type": "contrast-pair",
       "phase": "oefenen",
-      "contrastLabel": "-de of -te? Gebruik de ruwe stam, niet de zichtbare stam",
+      "contrastLabel": "-de of -te? Gebruik de stam, niet de ik-vorm",
       "sentenceA": {
         "prompt": "Vorig jaar ___ hij voor zijn eindexamen. (studeren)",
         "lemma": "studeren",
@@ -609,7 +609,7 @@
         "homophonePair": null,
         "scaffold": {
           "step1": "Bepaal het onderwerp.",
-          "step2": "Ruwe stam: studeer. Eindklank r.",
+          "step2": "Stam: studeer. Eindklank r.",
           "step3": "r zit niet in 't kofschip → -de."
         },
         "diagnostic": { "primaryMisconception": "VT_DE_TE_CONFUSION", "acceptedVariants": [] },
@@ -625,7 +625,7 @@
         "homophonePair": null,
         "scaffold": {
           "step1": "Bepaal het onderwerp.",
-          "step2": "Ruwe stam: werk. Eindklank k.",
+          "step2": "Stam: werk. Eindklank k.",
           "step3": "k zit in 't kofschip → -te."
         },
         "diagnostic": { "primaryMisconception": "VT_DE_TE_CONFUSION", "acceptedVariants": [] },
@@ -640,9 +640,9 @@
     "rubric": [
       "Fout 1 herkend: werkde → werkte (k in 't kofschip → -te).",
       "Fout 2 herkend: studerden → studeerden (ik-vorm studeer, meervoud + -den).",
-      "Fout 3 herkend: verhuiste → verhuisde (ruwe stam verhuiz, z niet in 't kofschip → -de).",
+      "Fout 3 herkend: verhuiste → verhuisde (stam verhuiz, z niet in 't kofschip → -de).",
       "Fout 4 herkend: 'heeft vertrouwde' → 'heeft vertrouwd' (na hulpwerkwoord 'heeft' is een voltooid deelwoord vereist: vertrouwd, niet de verleden tijdsvorm vertrouwde).",
-      "Uitleg verwijst expliciet naar grammaticale functie, onderwerp (getal) en ruwe stam."
+      "Uitleg verwijst expliciet naar grammaticale functie, onderwerp (getal) en stam (infinitief minus -en)."
     ]
   }
 }
