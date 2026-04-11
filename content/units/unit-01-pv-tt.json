@@ -13,6 +13,7 @@
     {
       "id": "u1-i1",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Ik ___ het antwoord meteen. (vinden)",
       "context": "Klassituatie",
       "lemma": "vinden",
@@ -38,6 +39,7 @@
     {
       "id": "u1-i2",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Zij ___ de oefening lastig. (vinden)",
       "context": "Leservaring",
       "lemma": "vinden",
@@ -63,6 +65,7 @@
     {
       "id": "u1-i3",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "___ jij morgen dertien? (worden)",
       "context": "Verjaardag",
       "lemma": "worden",
@@ -88,6 +91,7 @@
     {
       "id": "u1-i4",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Jij ___ morgen dertien. (worden)",
       "context": "Verjaardag",
       "lemma": "worden",
@@ -113,6 +117,7 @@
     {
       "id": "u1-i5",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Elke middag ___ hij op het plein. (rennen)",
       "context": "Dagelijkse routine",
       "lemma": "rennen",
@@ -138,6 +143,7 @@
     {
       "id": "u1-i6",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "In de pauze ___ ik vaak met Noor. (praten)",
       "context": "Schoolpauze",
       "lemma": "praten",
@@ -163,6 +169,7 @@
     {
       "id": "u1-i7",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "___ jij het verschil tussen vind en vindt? (snappen)",
       "context": "Klassikale vraag",
       "lemma": "snappen",
@@ -188,6 +195,7 @@
     {
       "id": "u1-i8",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Morgen ___ ik de opdracht af. (maken)",
       "context": "Huiswerkplanning",
       "lemma": "maken",
@@ -213,6 +221,7 @@
     {
       "id": "u1-i9",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Wat ___ je precies? (bedoelen)",
       "context": "Klasgesprek",
       "lemma": "bedoelen",
@@ -238,6 +247,7 @@
     {
       "id": "u1-i10",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Hij ___ het vast niet verkeerd. (bedoelen)",
       "context": "Gesprek over intenties",
       "lemma": "bedoelen",
@@ -263,6 +273,7 @@
     {
       "id": "u1-i11",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Wij ___ elke week samen aan de schoolkrant. (werken)",
       "context": "Schoolactiviteit",
       "lemma": "werken",
@@ -288,6 +299,7 @@
     {
       "id": "u1-i12",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ allemaal erg hard voor de toets. (studeren)",
       "context": "Toetsvoorbereiding",
       "lemma": "studeren",
@@ -313,6 +325,7 @@
     {
       "id": "u1-i13",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Het ___ mij soms te lang. (duren)",
       "context": "Schoolervaring",
       "lemma": "duren",
@@ -338,6 +351,7 @@
     {
       "id": "u1-i14",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Jij ___ dat altijd zo grappig. (vinden)",
       "context": "Gesprek tussen leerlingen",
       "lemma": "vinden",
@@ -363,6 +377,7 @@
     {
       "id": "u1-i15",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ik ___ dat ik morgen op tijd ben. (beloven)",
       "context": "Afspraak met vriend",
       "lemma": "beloven",
@@ -388,6 +403,7 @@
     {
       "id": "u1-i16",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ elke keer beter te doen. (beloven)",
       "context": "Gesprek over gedrag",
       "lemma": "beloven",
@@ -413,6 +429,7 @@
     {
       "id": "u1-i17",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ik ___ erop dat we dit samen halen. (vertrouwen)",
       "context": "Schoolproject",
       "lemma": "vertrouwen",
@@ -438,6 +455,7 @@
     {
       "id": "u1-i18",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De nieuwe leerling ___ zijn mentor meteen. (vertrouwen)",
       "context": "Introductie op school",
       "lemma": "vertrouwen",
@@ -463,6 +481,7 @@
     {
       "id": "u1-i19",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Ze ___ dat de toets verschoven is. (beweren)",
       "context": "Geruchten in de klas",
       "lemma": "beweren",
@@ -488,6 +507,7 @@
     {
       "id": "u1-i20",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Haar plan ___ elke dag een beetje. (veranderen)",
       "context": "Schoolproject in ontwikkeling",
       "lemma": "veranderen",
@@ -513,6 +533,7 @@
     {
       "id": "u1-i21",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De leerling ___ altijd heel precies. (antwoorden)",
       "context": "Klassikale situatie",
       "lemma": "antwoorden",
@@ -538,6 +559,7 @@
     {
       "id": "u1-i22",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Ze ___ dit jaar naar een nieuwe wijk. (verhuizen)",
       "context": "Nieuws over buurmeisje",
       "lemma": "verhuizen",
@@ -563,6 +585,7 @@
     {
       "id": "u1-i23",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De stagiair ___ al drie maanden op onze school. (werken)",
       "context": "Schoolnieuws",
       "lemma": "werken",
@@ -588,6 +611,7 @@
     {
       "id": "u1-i24",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Mijn zus ___ elke avond voor haar vak. (studeren)",
       "context": "Thuissituatie",
       "lemma": "studeren",
@@ -613,6 +637,7 @@
     {
       "id": "u1-i25",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Iedereen ___ zijn werk enorm. (bewonderen)",
       "context": "Kunstexpositie op school",
       "lemma": "bewonderen",
@@ -638,6 +663,7 @@
     {
       "id": "u1-i26",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Er ___ altijd iets grappigs na de bel. (gebeuren)",
       "context": "Na schooltijd",
       "lemma": "gebeuren",
@@ -658,6 +684,120 @@
       "feedback": {
         "correct": "Juist: 'gebeurt' is hier de persoonsvorm. 'Gebeurd' is het voltooid deelwoord.",
         "hint": "Is er een hulpwerkwoord? Nee — dus dit is een persoonsvorm."
+      }
+    },
+    {
+      "id": "u1-cp1",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Zelfde werkwoord, ander onderwerp — let op de +t",
+      "sentenceA": {
+        "prompt": "Ik ___ het antwoord meteen. (vinden)",
+        "lemma": "vinden",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "ik",
+        "target": "vind",
+        "homophonePair": "vind/vindt",
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Onderwerp is 'ik'.",
+          "step3": "Ik-vorm: stam zonder +t."
+        },
+        "diagnostic": { "primaryMisconception": "PV_FALSE_T_ADD", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'vind' bij ik.", "hint": "Ik-vorm: geen extra -t." }
+      },
+      "sentenceB": {
+        "prompt": "Zij ___ de oefening lastig. (vinden)",
+        "lemma": "vinden",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "zij",
+        "target": "vindt",
+        "homophonePair": "vind/vindt",
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Onderwerp is 'zij' (enkelvoud).",
+          "step3": "3e persoon enkelvoud: stam+t."
+        },
+        "diagnostic": { "primaryMisconception": "PV_STAM_T_OMISSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'vindt' bij zij.", "hint": "3e persoon enkelvoud: stam+t." }
+      }
+    },
+    {
+      "id": "u1-cp2",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Inversie of geen inversie? Dat bepaalt de -t",
+      "sentenceA": {
+        "prompt": "___ jij morgen dertien? (worden)",
+        "lemma": "worden",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "jij",
+        "target": "word",
+        "homophonePair": "word/wordt",
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Herleid: Jij word/wordt morgen dertien.",
+          "step3": "Persoonsvorm staat vóór jij: -t valt weg bij inversie."
+        },
+        "diagnostic": { "primaryMisconception": "PV_JIJ_INVERSION_FALSE_T", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'word' bij inversie met jij.", "hint": "Bij inversie met jij: geen -t." }
+      },
+      "sentenceB": {
+        "prompt": "Jij ___ morgen dertien. (worden)",
+        "lemma": "worden",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "jij",
+        "target": "wordt",
+        "homophonePair": "word/wordt",
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Jij staat vóór de persoonsvorm: geen inversie.",
+          "step3": "Zonder inversie: stam+t."
+        },
+        "diagnostic": { "primaryMisconception": "PV_STAM_T_OMISSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'wordt' zonder inversie.", "hint": "Geen inversie: stam+t." }
+      }
+    },
+    {
+      "id": "u1-cp3",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Enkelvoud of meervoud? Dat bepaalt de +t",
+      "sentenceA": {
+        "prompt": "Wij ___ elke week samen. (werken)",
+        "lemma": "werken",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "wij",
+        "target": "werken",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "'Wij' is meervoud.",
+          "step3": "Meervoud: geen +t, gebruik de infinitief-stam."
+        },
+        "diagnostic": { "primaryMisconception": "PV_MEERVOUD_T_ADDITION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'werken' bij wij, geen +t.", "hint": "Meervoud: geen +t." }
+      },
+      "sentenceB": {
+        "prompt": "Hij ___ elke middag op het plein. (rennen)",
+        "lemma": "rennen",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "hij",
+        "target": "rent",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "'Hij' is enkelvoud (3e persoon).",
+          "step3": "Enkelvoud 3e persoon: stam+t."
+        },
+        "diagnostic": { "primaryMisconception": "PV_STAM_T_OMISSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'rent' bij hij.", "hint": "3e persoon enkelvoud: stam+t." }
       }
     }
   ],

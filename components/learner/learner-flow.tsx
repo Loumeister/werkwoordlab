@@ -1,232 +1,213 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { AlertCircle, CheckCircle2, Lightbulb } from "lucide-react";
-import { type Unit, getMisconceptionLabel } from "@/lib/content";
-import { evaluateAnswer, getExerciseMode, getFunctionOptions, getHomophoneOptions } from "@/lib/evaluator";
-import { saveAttempt } from "@/lib/attempt-store";
-import { type FeedbackEntry, isRichFeedbackEntry } from "@/lib/feedback/types";
-import { type MisconceptionCode, isMisconceptionCode } from "@/lib/feedback/misconceptions";
-import { getEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
+import { useMemo, useState } from "react";
+import type { Unit, ExerciseItem } from "@/lib/content";
+import { isContrastPairItem } from "@/lib/content";
+import type { AttemptRecord } from "@/lib/attempt-store";
+import { readAttempts } from "@/lib/attempt-store";
+import { groupItemsByPhase } from "@/lib/phase-engine";
+import type { PhaseId } from "@/lib/content";
+import { MasteryExercise } from "./mastery-exercise";
+import { ContrastPairExercise } from "./contrast-pair-exercise";
+import { PhaseTransitionBanner } from "./phase-transition-banner";
+import { TransferTaskPanel } from "./transfer-task-panel";
+
+type ActivePhase = "verkennen" | "oefenen" | "zelfstandig";
+const PHASE_SEQUENCE: ActivePhase[] = ["verkennen", "oefenen", "zelfstandig"];
+
+function nextPhase(current: ActivePhase): ActivePhase | "transfer" {
+  const i = PHASE_SEQUENCE.indexOf(current);
+  return i < PHASE_SEQUENCE.length - 1 ? PHASE_SEQUENCE[i + 1] : "transfer";
+}
 
 export function LearnerFlow({ unit }: { unit: Unit }) {
-  const [index, setIndex] = useState(0);
-  const [answer, setAnswer] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [lastCorrect, setLastCorrect] = useState(false);
-  const [effectiveFeedback, setEffectiveFeedback] = useState<FeedbackEntry | undefined>(undefined);
-  const [uitlegOpen, setUitlegOpen] = useState(false);
+  const phaseGroups = useMemo(() => groupItemsByPhase(unit.items), [unit.items]);
 
-  const item = unit.items[index];
-  const uitlegPanelId = `uitleg-${item.id}-${index}`;
-  const mode = getExerciseMode(item);
-  const evaluation = submitted ? evaluateAnswer(item, answer) : null;
-  const progress = Math.round(((index + 1) / unit.items.length) * 100);
-
-  // Resolve effective feedback from localStorage overrides when item changes.
-  // Only runs client-side (localStorage is browser-only).
-  useEffect(() => {
-    const rawCode = item.diagnostic?.primaryMisconception;
-    const code: MisconceptionCode | undefined =
-      rawCode && isMisconceptionCode(rawCode) ? rawCode : undefined;
-    setEffectiveFeedback(code ? getEffectiveFeedback(code) : undefined);
-    setUitlegOpen(false);
-  }, [item]);
-
-  const instruction = useMemo(() => {
-    if (mode === "classificatie") {
-      return "Bepaal eerst de grammaticale functie van het onderstreepte werkwoord.";
+  // Find a phase with at least one item, defaulting to first non-empty phase
+  const initialPhase = useMemo((): ActivePhase => {
+    for (const p of PHASE_SEQUENCE) {
+      if (phaseGroups[p].length > 0) return p;
     }
-    if (mode === "homofonen") {
-      return "Kies de juiste homofone vorm op basis van grammaticale functie.";
-    }
-    return "Vul de correcte werkwoordsvorm in.";
-  }, [mode]);
+    return "verkennen";
+  }, [phaseGroups]);
 
-  const functionOptions = getFunctionOptions();
-  const homophoneOptions = getHomophoneOptions(item);
+  const [phase, setPhase] = useState<ActivePhase>(initialPhase);
+  const [phaseItemIndex, setPhaseItemIndex] = useState(0);
+  const [showPhaseTransition, setShowPhaseTransition] = useState(false);
+  const [transitionTarget, setTransitionTarget] = useState<PhaseId>("oefenen");
+  const [showTransfer, setShowTransfer] = useState(false);
+  const [showFinished, setShowFinished] = useState(false);
+  const [allAttempts, setAllAttempts] = useState<AttemptRecord[]>(() => readAttempts());
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  // -------------------------------------------------------------------------
+  // Derived current item
+  // -------------------------------------------------------------------------
 
-    const result = evaluateAnswer(item, answer);
-    setSubmitted(true);
-    setLastCorrect(result.correct);
+  const currentIndices = phaseGroups[phase];
+  const globalIndex = currentIndices[phaseItemIndex] ?? 0;
+  const item = unit.items[globalIndex];
 
-    saveAttempt({
-      unitId: unit.id,
-      itemId: item.id,
-      correct: result.correct,
-      misconception: item.diagnostic.primaryMisconception,
-      timestamp: new Date().toISOString()
-    });
+  // Progress within current phase
+  const phaseProgress =
+    currentIndices.length > 0
+      ? Math.round(((phaseItemIndex + 1) / currentIndices.length) * 100)
+      : 0;
+
+  // -------------------------------------------------------------------------
+  // Navigation
+  // -------------------------------------------------------------------------
+
+  function refreshAttempts() {
+    setAllAttempts(readAttempts());
   }
 
-  function handleNext() {
-    setSubmitted(false);
-    setAnswer("");
-    setIndex((current) => (current + 1 < unit.items.length ? current + 1 : current));
+  function handleItemComplete() {
+    refreshAttempts();
+
+    const isLastInPhase = phaseItemIndex >= currentIndices.length - 1;
+
+    if (isLastInPhase) {
+      const next = nextPhase(phase);
+      setTransitionTarget(next);
+      setShowPhaseTransition(true);
+    } else {
+      setPhaseItemIndex((n) => n + 1);
+    }
   }
+
+  function handleContrastComplete() {
+    handleItemComplete();
+  }
+
+  function handleContinueFromTransition() {
+    setShowPhaseTransition(false);
+
+    if (transitionTarget === "transfer") {
+      setShowTransfer(true);
+      return;
+    }
+
+    // Skip to next non-empty phase
+    let candidate: ActivePhase | "transfer" = transitionTarget as ActivePhase;
+    while (candidate !== "transfer") {
+      const phase = candidate as ActivePhase;
+      if (phaseGroups[phase].length > 0) {
+        setPhase(phase);
+        setPhaseItemIndex(0);
+        return;
+      }
+      candidate = nextPhase(phase);
+    }
+
+    // All active phases exhausted → transfer
+    setShowTransfer(true);
+  }
+
+  function handleTransferFinish() {
+    setShowFinished(true);
+  }
+
+  // -------------------------------------------------------------------------
+  // Render: finished
+  // -------------------------------------------------------------------------
+
+  if (showFinished) {
+    return (
+      <div className="mx-auto max-w-4xl py-16 text-center">
+        <p className="text-5xl" aria-hidden>
+          🎓
+        </p>
+        <h2 className="mt-4 text-3xl font-bold">Unit voltooid!</h2>
+        <p className="mt-2 text-lg text-neutral-600">
+          Je hebt alle oefeningen en de transfertaak afgerond. Goed gedaan!
+        </p>
+      </div>
+    );
+  }
+
+  // -------------------------------------------------------------------------
+  // Render: transfer task
+  // -------------------------------------------------------------------------
+
+  if (showTransfer) {
+    return (
+      <div className="mx-auto max-w-4xl space-y-6">
+        <h1 className="text-4xl font-semibold tracking-tight">{unit.title}</h1>
+        <TransferTaskPanel
+          task={unit.transferTask}
+          unitTitle={unit.title}
+          onFinish={handleTransferFinish}
+        />
+      </div>
+    );
+  }
+
+  // -------------------------------------------------------------------------
+  // Render: phase transition banner
+  // -------------------------------------------------------------------------
+
+  if (showPhaseTransition) {
+    return (
+      <div className="mx-auto max-w-4xl space-y-6">
+        <h1 className="text-4xl font-semibold tracking-tight">{unit.title}</h1>
+        <PhaseTransitionBanner
+          completedPhase={phase}
+          nextPhase={transitionTarget}
+          onContinue={handleContinueFromTransition}
+        />
+      </div>
+    );
+  }
+
+  // -------------------------------------------------------------------------
+  // Render: active exercise
+  // -------------------------------------------------------------------------
+
+  if (!item) return null;
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
       <h1 className="text-4xl font-semibold tracking-tight">{unit.title}</h1>
 
-      <div
-        className="h-4 w-full overflow-hidden rounded-full bg-neutral-200"
-        aria-label="Voortgang"
-        role="progressbar"
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={progress}
-      >
-        <div className="h-full rounded-full bg-[var(--warm-primary)]" style={{ width: `${progress}%` }} />
+      {/* Phase label + progress */}
+      <div className="space-y-1">
+        <div className="flex items-center justify-between text-sm text-neutral-500">
+          <span className="font-medium capitalize">{phase}</span>
+          <span>
+            {phaseItemIndex + 1} / {currentIndices.length}
+          </span>
+        </div>
+        <div
+          className="h-3 w-full overflow-hidden rounded-full bg-neutral-200"
+          aria-label={`Voortgang ${phase}`}
+          role="progressbar"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={phaseProgress}
+        >
+          <div
+            className="h-full rounded-full bg-[var(--warm-primary)] transition-all duration-300"
+            style={{ width: `${phaseProgress}%` }}
+          />
+        </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6 rounded-3xl border border-black/15 bg-white p-6">
-        <p className="text-lg font-semibold text-neutral-700">Opdracht {index + 1} van {unit.items.length}</p>
-        <p className="text-lg text-neutral-700">{instruction}</p>
-
-        <h2 className="text-[22px] font-semibold leading-snug">{item.prompt}</h2>
-
-        <section className="rounded-2xl border border-[var(--focus-blue)] bg-[#f2f9ff] p-5">
-          <h3 className="mb-2 text-xl font-semibold">Scaffold</h3>
-          <ol className="list-decimal space-y-2 pl-6 text-lg">
-            <li>{item.scaffold.step1}</li>
-            <li>{item.scaffold.step2}</li>
-            <li>{item.scaffold.step3}</li>
-          </ol>
-        </section>
-
-        <section>
-          <label htmlFor="antwoord" className="mb-2 block text-xl font-semibold">
-            Jouw antwoord
-          </label>
-
-          {mode === "korte-correctie" && (
-            <input
-              id="antwoord"
-              autoComplete="off"
-              value={answer}
-              onChange={(event) => setAnswer(event.target.value)}
-              className="w-full rounded-2xl border-2 border-neutral-500 px-4 py-3 text-[20px] leading-relaxed"
-              required
-            />
-          )}
-
-          {mode === "homofonen" && (
-            <fieldset className="space-y-2">
-              {homophoneOptions.map((option) => (
-                <label key={option} className="flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-300 p-3 text-lg">
-                  <input
-                    type="radio"
-                    name="antwoord"
-                    value={option}
-                    checked={answer === option}
-                    onChange={(event) => setAnswer(event.target.value)}
-                    required
-                  />
-                  {option}
-                </label>
-              ))}
-            </fieldset>
-          )}
-
-          {mode === "classificatie" && (
-            <fieldset className="space-y-2">
-              {functionOptions.map((option) => (
-                <label key={option} className="flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-300 p-3 text-lg">
-                  <input
-                    type="radio"
-                    name="antwoord"
-                    value={option}
-                    checked={answer === option}
-                    onChange={(event) => setAnswer(event.target.value)}
-                    required
-                  />
-                  {option}
-                </label>
-              ))}
-            </fieldset>
-          )}
-        </section>
-
-        <button type="submit" className="rounded-xl bg-[var(--warm-primary)] px-5 py-3 font-semibold text-white">
-          Controleer antwoord
-        </button>
-      </form>
-
-      {submitted && evaluation && (
-        <section className="space-y-3 rounded-3xl border border-[#f0c972] bg-[#fff9ea] p-6" aria-live="polite">
-          <h2 className="text-xl font-semibold">Diagnostische feedback</h2>
-
-          <div className="flex items-start gap-3 rounded-2xl border border-[#d7b158] bg-white p-4 text-lg">
-            {lastCorrect ? <CheckCircle2 className="mt-1 text-[var(--ok)]" aria-hidden /> : <AlertCircle className="mt-1 text-[var(--error)]" aria-hidden />}
-            <p>
-              <strong>{lastCorrect ? "Correct" : "Nog niet correct"}.</strong> Verwacht antwoord: {evaluation.expected}
-            </p>
-          </div>
-
-          <div className="flex items-start gap-3 rounded-2xl border border-[#80c59c] bg-white p-4 text-lg">
-            <AlertCircle className="mt-1 text-[var(--warn)]" aria-hidden />
-            <p>
-              <strong>Misconceptiecode:</strong> {item.diagnostic.primaryMisconception}
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-[#7db1d8] bg-white p-4 text-lg">
-            {isRichFeedbackEntry(effectiveFeedback) ? (
-              // Rich feedback: show herstelvraag + collapsible uitleg
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Lightbulb className="mt-1 shrink-0 text-[#1f5da0]" aria-hidden />
-                  <p>
-                    <strong>Hint:</strong> {effectiveFeedback.herstelvraag}
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setUitlegOpen((o) => !o)}
-                  aria-expanded={uitlegOpen}
-                  aria-controls={uitlegPanelId}
-                  className="ml-9 text-sm font-semibold text-[#1f5da0] underline underline-offset-2 hover:no-underline"
-                >
-                  {uitlegOpen ? "Verberg uitleg" : `Meer uitleg over '${effectiveFeedback.sleutelwoord}'`}
-                </button>
-                <div
-                  id={uitlegPanelId}
-                  hidden={!uitlegOpen}
-                  className="ml-9 space-y-2 rounded-xl border border-[#bee3ff] bg-[#f2f9ff] p-4 text-base"
-                >
-                  <p><strong>Diagnose:</strong> {effectiveFeedback.uitleg.diagnose}</p>
-                  <p><strong>Redenering:</strong> {effectiveFeedback.uitleg.redenering}</p>
-                  <p><strong>Herprobeer:</strong> {effectiveFeedback.uitleg.herprobeer}</p>
-                </div>
-              </div>
-            ) : (
-              // Plain string feedback or safe fallback to item.feedback.hint
-              <div className="flex items-start gap-3">
-                <Lightbulb className="mt-1 text-[#1f5da0]" aria-hidden />
-                <p>
-                  <strong>Hint:</strong>{" "}
-                  {typeof effectiveFeedback === "string"
-                    ? effectiveFeedback
-                    : item.feedback.hint}{" "}
-                  {getMisconceptionLabel(item.diagnostic.primaryMisconception)}
-                </p>
-              </div>
-            )}
-          </div>
-
-          <button
-            type="button"
-            onClick={handleNext}
-            disabled={index === unit.items.length - 1}
-            className="rounded-xl border border-black/30 bg-white px-5 py-3 font-semibold disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            Volgende opdracht
-          </button>
-        </section>
+      {/* Exercise routing */}
+      {isContrastPairItem(item) ? (
+        <ContrastPairExercise
+          key={`${phase}-${phaseItemIndex}`}
+          item={item}
+          unitId={unit.id}
+          onComplete={handleContrastComplete}
+        />
+      ) : (
+        <MasteryExercise
+          key={`${phase}-${phaseItemIndex}`}
+          item={item as ExerciseItem}
+          unitId={unit.id}
+          attempts={allAttempts}
+          onComplete={handleItemComplete}
+        />
       )}
     </div>
   );

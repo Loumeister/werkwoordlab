@@ -5,9 +5,12 @@ import unit03 from "@/content/units/unit-03-pv-vt.json";
 
 export type GrammaticalFunction = string;
 
+export type PhaseId = "verkennen" | "oefenen" | "zelfstandig" | "transfer";
+
 export type ExerciseItem = {
   id: string;
   type: string;
+  phase?: PhaseId;
   prompt: string;
   context: string;
   lemma: string;
@@ -31,13 +34,51 @@ export type ExerciseItem = {
   };
 };
 
+type ContrastSentence = {
+  prompt: string;
+  lemma: string;
+  grammaticalFunction: GrammaticalFunction;
+  tense: string;
+  subject: string;
+  target: string;
+  homophonePair: string | null;
+  scaffold: {
+    step1: string;
+    step2: string;
+    step3: string;
+  };
+  diagnostic: {
+    primaryMisconception: string;
+    acceptedVariants: string[];
+  };
+  feedback: {
+    correct: string;
+    hint: string;
+  };
+};
+
+export type ContrastPairItem = {
+  id: string;
+  type: "contrast-pair";
+  phase: PhaseId;
+  contrastLabel: string;
+  sentenceA: ContrastSentence;
+  sentenceB: ContrastSentence;
+};
+
+export type AnyItem = ExerciseItem | ContrastPairItem;
+
+export function isContrastPairItem(item: AnyItem): item is ContrastPairItem {
+  return item.type === "contrast-pair";
+}
+
 export type Unit = {
   id: string;
   title: string;
   level: string;
   language: string;
   learningGoals: string[];
-  items: ExerciseItem[];
+  items: AnyItem[];
   transferTask: {
     id: string;
     type: string;
@@ -46,7 +87,7 @@ export type Unit = {
   };
 };
 
-const units: Unit[] = [unit01, unit02, unit03];
+const units: Unit[] = [unit01 as unknown as Unit, unit02 as unknown as Unit, unit03 as unknown as Unit];
 
 export function getUnits() {
   return units;

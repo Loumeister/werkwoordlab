@@ -13,6 +13,7 @@
     {
       "id": "u2-i1",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Gisteren is er veel ___ in de klas. (gebeuren)",
       "context": "Dagelijkse gebeurtenissen",
       "lemma": "gebeuren",
@@ -38,6 +39,7 @@
     {
       "id": "u2-i2",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Wat ___ er nu in de aula? (gebeuren)",
       "context": "Huidige situatie",
       "lemma": "gebeuren",
@@ -63,6 +65,7 @@
     {
       "id": "u2-i3",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "De trainer heeft de opstelling aangepast en snel ___. (verbeteren)",
       "context": "Sportverslag",
       "lemma": "verbeteren",
@@ -88,6 +91,7 @@
     {
       "id": "u2-i4",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "De wedstrijd is op tijd ___. (starten)",
       "context": "Sportverslag",
       "lemma": "starten",
@@ -113,6 +117,7 @@
     {
       "id": "u2-i5",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "We hebben het hoofdstuk goed ___. (leren)",
       "context": "Toetsvoorbereiding",
       "lemma": "leren",
@@ -138,6 +143,7 @@
     {
       "id": "u2-i6",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "De deur is net ___. (sluiten)",
       "context": "Klassensituatie",
       "lemma": "sluiten",
@@ -163,6 +169,7 @@
     {
       "id": "u2-i7",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Het schoolfeest is gisteren laat ___. (eindigen)",
       "context": "Schoolnieuws",
       "lemma": "eindigen",
@@ -188,6 +195,7 @@
     {
       "id": "u2-i8",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De toets is gisteren onverwacht ___. (uitstellen)",
       "context": "Schoolplanning",
       "lemma": "uitstellen",
@@ -213,6 +221,7 @@
     {
       "id": "u2-i9",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De leraar heeft precies uitgelegd wat hij heeft ___. (bedoelen)",
       "context": "Na een uitleg",
       "lemma": "bedoelen",
@@ -238,6 +247,7 @@
     {
       "id": "u2-i10",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Wat ___ jij nu eigenlijk? (bedoelen)",
       "context": "Klasgesprek",
       "lemma": "bedoelen",
@@ -263,6 +273,7 @@
     {
       "id": "u2-i11",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "We zijn gisteren met de trein naar Amsterdam ___. (rijden)",
       "context": "Schooluitje",
       "lemma": "rijden",
@@ -288,6 +299,7 @@
     {
       "id": "u2-i12",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De spullen voor het kamp zijn al ___. (inpakken)",
       "context": "Schoolkamp voorbereiding",
       "lemma": "inpakken",
@@ -313,6 +325,7 @@
     {
       "id": "u2-i13",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De vrijwilligers hebben de hele ochtend hard ___. (werken)",
       "context": "Schoolactiviteit",
       "lemma": "werken",
@@ -338,6 +351,7 @@
     {
       "id": "u2-i14",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De leerling heeft een mooi verslag ___. (schrijven)",
       "context": "Schoolopdracht",
       "lemma": "schrijven",
@@ -363,6 +377,7 @@
     {
       "id": "u2-i15",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze heeft meer hulp ___ dan ze gaf. (beloven)",
       "context": "Groepsopdracht evaluatie",
       "lemma": "beloven",
@@ -388,6 +403,7 @@
     {
       "id": "u2-i16",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ altijd meer dan ze waarmaakt. (beloven)",
       "context": "Gesprek over afspraken",
       "lemma": "beloven",
@@ -413,6 +429,7 @@
     {
       "id": "u2-i17",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De leerling heeft zijn leraar blindelings ___. (vertrouwen)",
       "context": "Relatie leerling en mentor",
       "lemma": "vertrouwen",
@@ -438,6 +455,7 @@
     {
       "id": "u2-i18",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Mijn juf ___ ons altijd op ons woord. (vertrouwen)",
       "context": "Sfeer in de klas",
       "lemma": "vertrouwen",
@@ -463,6 +481,7 @@
     {
       "id": "u2-i19",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Hij heeft iets ___ waar ik het niet mee eens ben. (beweren)",
       "context": "Discussie in de klas",
       "lemma": "beweren",
@@ -488,6 +507,7 @@
     {
       "id": "u2-i20",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De journalist ___ dat het nieuws klopt. (beweren)",
       "context": "Nieuwsbericht",
       "lemma": "beweren",
@@ -513,6 +533,7 @@
     {
       "id": "u2-i21",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Alles is de laatste tijd erg ___. (veranderen)",
       "context": "Gesprek over school",
       "lemma": "veranderen",
@@ -538,6 +559,7 @@
     {
       "id": "u2-i22",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Het klimaat ___ sneller dan verwacht. (veranderen)",
       "context": "Aardrijkskundeles",
       "lemma": "veranderen",
@@ -563,6 +585,7 @@
     {
       "id": "u2-i23",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Ze zijn vorige week naar een nieuwe wijk ___. (verhuizen)",
       "context": "Nieuws over buren",
       "lemma": "verhuizen",
@@ -588,6 +611,7 @@
     {
       "id": "u2-i24",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Mijn broer heeft gisteren de hele dag ___. (studeren)",
       "context": "Voorbereiding op examen",
       "lemma": "studeren",
@@ -613,6 +637,7 @@
     {
       "id": "u2-i25",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Ze ___ al weken voor het eindexamen. (studeren)",
       "context": "Examenperiode",
       "lemma": "studeren",
@@ -633,6 +658,82 @@
       "feedback": {
         "correct": "Goed: 'studeert' is de persoonsvorm. 'Gestudeerd' (vd) vraagt een hulpwerkwoord.",
         "hint": "Hulpwerkwoord aanwezig? Nee → persoonsvorm → studeert (niet gestudeerd)."
+      }
+    },
+    {
+      "id": "u2-cp1",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Zelfde werkwoord — maar persoonsvorm of voltooid deelwoord?",
+      "sentenceA": {
+        "prompt": "Gisteren is er veel ___ in de klas. (gebeuren)",
+        "lemma": "gebeuren",
+        "grammaticalFunction": "voltooid-deelwoord",
+        "tense": "voltooide-tijd",
+        "subject": "er",
+        "target": "gebeurd",
+        "homophonePair": "gebeurt/gebeurd",
+        "scaffold": {
+          "step1": "Bepaal de functie.",
+          "step2": "Hulpwerkwoord 'is' staat erbij.",
+          "step3": "Na hulpwerkwoord: voltooid deelwoord → -d."
+        },
+        "diagnostic": { "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'gebeurd' = voltooid deelwoord.", "hint": "Hulpwerkwoord erbij? Dan voltooid deelwoord." }
+      },
+      "sentenceB": {
+        "prompt": "Wat ___ er nu in de aula? (gebeuren)",
+        "lemma": "gebeuren",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "er",
+        "target": "gebeurt",
+        "homophonePair": "gebeurt/gebeurd",
+        "scaffold": {
+          "step1": "Bepaal de functie.",
+          "step2": "Geen hulpwerkwoord: dit is een persoonsvorm.",
+          "step3": "Persoonsvorm 3e persoon enkelvoud: stam+t."
+        },
+        "diagnostic": { "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'gebeurt' = persoonsvorm.", "hint": "Geen hulpwerkwoord? Dan persoonsvorm." }
+      }
+    },
+    {
+      "id": "u2-cp2",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Kofschip-keuze: -d of -t bij het voltooid deelwoord?",
+      "sentenceA": {
+        "prompt": "De trainer heeft de opstelling aangepast en snel ___. (verbeteren)",
+        "lemma": "verbeteren",
+        "grammaticalFunction": "voltooid-deelwoord",
+        "tense": "voltooide-tijd",
+        "subject": "de trainer",
+        "target": "verbeterd",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Functie: voltooid deelwoord (na 'heeft').",
+          "step2": "Stam: verbeter. Eindklank: r.",
+          "step3": "r zit niet in 't kofschip → -d."
+        },
+        "diagnostic": { "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'verbeterd' met -d.", "hint": "r niet in kofschip → -d." }
+      },
+      "sentenceB": {
+        "prompt": "De wedstrijd is op tijd ___. (starten)",
+        "lemma": "starten",
+        "grammaticalFunction": "voltooid-deelwoord",
+        "tense": "voltooide-tijd",
+        "subject": "de wedstrijd",
+        "target": "gestart",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Functie: voltooid deelwoord (na 'is').",
+          "step2": "Stam: start. Eindklank: t.",
+          "step3": "t zit in 't kofschip → -t."
+        },
+        "diagnostic": { "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'gestart' met -t.", "hint": "t zit in kofschip → -t." }
       }
     }
   ],

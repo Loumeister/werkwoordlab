@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import taxonomy from "@/content/misconceptions/taxonomy.nl.json";
-import { getUnits } from "@/lib/content";
+import { getUnits, isContrastPairItem } from "@/lib/content";
 
 function getUnitJsonPaths() {
   const dir = path.join(process.cwd(), "content", "units");
@@ -36,7 +36,12 @@ describe("content contracts", () => {
 
     for (const unit of getUnits()) {
       for (const item of unit.items) {
-        expect(validCodes.has(item.diagnostic.primaryMisconception)).toBe(true);
+        if (isContrastPairItem(item)) {
+          expect(validCodes.has(item.sentenceA.diagnostic.primaryMisconception)).toBe(true);
+          expect(validCodes.has(item.sentenceB.diagnostic.primaryMisconception)).toBe(true);
+        } else {
+          expect(validCodes.has(item.diagnostic.primaryMisconception)).toBe(true);
+        }
       }
     }
   });
@@ -51,12 +56,24 @@ describe("content contracts", () => {
 
       for (const item of unit.items) {
         expect(item.id).toBeTruthy();
-        expect(item.prompt).toBeTruthy();
-        expect(item.lemma).toBeTruthy();
-        expect(item.grammaticalFunction).toBeTruthy();
-        expect(item.target).toBeTruthy();
-        expect(item.feedback.hint).toBeTruthy();
-        expect(item.diagnostic.primaryMisconception).toBeTruthy();
+        if (isContrastPairItem(item)) {
+          expect(item.contrastLabel).toBeTruthy();
+          expect(item.sentenceA.prompt).toBeTruthy();
+          expect(item.sentenceA.target).toBeTruthy();
+          expect(item.sentenceA.feedback.hint).toBeTruthy();
+          expect(item.sentenceA.diagnostic.primaryMisconception).toBeTruthy();
+          expect(item.sentenceB.prompt).toBeTruthy();
+          expect(item.sentenceB.target).toBeTruthy();
+          expect(item.sentenceB.feedback.hint).toBeTruthy();
+          expect(item.sentenceB.diagnostic.primaryMisconception).toBeTruthy();
+        } else {
+          expect(item.prompt).toBeTruthy();
+          expect(item.lemma).toBeTruthy();
+          expect(item.grammaticalFunction).toBeTruthy();
+          expect(item.target).toBeTruthy();
+          expect(item.feedback.hint).toBeTruthy();
+          expect(item.diagnostic.primaryMisconception).toBeTruthy();
+        }
       }
     }
   });
@@ -64,16 +81,31 @@ describe("content contracts", () => {
   it("heeft valide acceptedVariants", () => {
     for (const unit of getUnits()) {
       for (const item of unit.items) {
-        const variants = item.diagnostic.acceptedVariants;
-        expect(Array.isArray(variants)).toBe(true);
+        if (isContrastPairItem(item)) {
+          for (const sentence of [item.sentenceA, item.sentenceB]) {
+            const variants = sentence.diagnostic.acceptedVariants;
+            expect(Array.isArray(variants)).toBe(true);
 
-        const normalizedTarget = item.target.trim().toLowerCase();
-        const normalizedVariants = variants.map((variant) => variant.trim().toLowerCase());
-        const uniqueVariants = new Set(normalizedVariants);
+            const normalizedTarget = sentence.target.trim().toLowerCase();
+            const normalizedVariants = variants.map((variant) => variant.trim().toLowerCase());
+            const uniqueVariants = new Set(normalizedVariants);
 
-        expect(normalizedVariants.length).toBe(uniqueVariants.size);
-        expect(normalizedVariants).not.toContain(normalizedTarget);
-        expect(normalizedVariants.every((variant) => variant.length > 0)).toBe(true);
+            expect(normalizedVariants.length).toBe(uniqueVariants.size);
+            expect(normalizedVariants).not.toContain(normalizedTarget);
+            expect(normalizedVariants.every((variant) => variant.length > 0)).toBe(true);
+          }
+        } else {
+          const variants = item.diagnostic.acceptedVariants;
+          expect(Array.isArray(variants)).toBe(true);
+
+          const normalizedTarget = item.target.trim().toLowerCase();
+          const normalizedVariants = variants.map((variant) => variant.trim().toLowerCase());
+          const uniqueVariants = new Set(normalizedVariants);
+
+          expect(normalizedVariants.length).toBe(uniqueVariants.size);
+          expect(normalizedVariants).not.toContain(normalizedTarget);
+          expect(normalizedVariants.every((variant) => variant.length > 0)).toBe(true);
+        }
       }
     }
   });

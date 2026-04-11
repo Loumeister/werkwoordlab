@@ -13,6 +13,7 @@
     {
       "id": "u3-i1",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Gisteren ___ hij de hele dag op school. (werken)",
       "context": "Schooldag",
       "lemma": "werken",
@@ -38,6 +39,7 @@
     {
       "id": "u3-i2",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "De leraar ___ een lastige opdracht voor de klas. (maken)",
       "context": "Wiskundeles",
       "lemma": "maken",
@@ -63,6 +65,7 @@
     {
       "id": "u3-i3",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Ik ___ even voordat ik antwoordde. (wachten)",
       "context": "Klasgesprek",
       "lemma": "wachten",
@@ -88,6 +91,7 @@
     {
       "id": "u3-i4",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Vorig jaar ___ hij voor zijn eindexamen. (studeren)",
       "context": "Toetsperiode",
       "lemma": "studeren",
@@ -113,6 +117,7 @@
     {
       "id": "u3-i5",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Het weer ___ snel nadat de zon verscheen. (veranderen)",
       "context": "Weerbericht",
       "lemma": "veranderen",
@@ -138,6 +143,7 @@
     {
       "id": "u3-i6",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ dat ze het al wist, maar dat klopte niet. (beweren)",
       "context": "Klasgesprek",
       "lemma": "beweren",
@@ -163,6 +169,7 @@
     {
       "id": "u3-i7",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Hij ___ rustig op elke vraag. (antwoorden)",
       "context": "Mondelinge toets",
       "lemma": "antwoorden",
@@ -188,6 +195,7 @@
     {
       "id": "u3-i8",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Wij ___ gisteren samen aan een project. (werken)",
       "context": "Groepsopdracht",
       "lemma": "werken",
@@ -213,6 +221,7 @@
     {
       "id": "u3-i9",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ een heerlijk ontbijt klaar voor de hele klas. (maken)",
       "context": "Schoolontbijt",
       "lemma": "maken",
@@ -238,6 +247,7 @@
     {
       "id": "u3-i10",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Jullie ___ lang voordat jullie aan de beurt waren. (wachten)",
       "context": "Schoolkantine",
       "lemma": "wachten",
@@ -263,6 +273,7 @@
     {
       "id": "u3-i11",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Wij ___ hard voor de toets de volgende dag. (studeren)",
       "context": "Toetsvoorbereiding",
       "lemma": "studeren",
@@ -288,6 +299,7 @@
     {
       "id": "u3-i12",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De regels ___ elk jaar een beetje. (veranderen)",
       "context": "Schoolregels",
       "lemma": "veranderen",
@@ -313,6 +325,7 @@
     {
       "id": "u3-i13",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ allemaal dat ze het antwoord wisten. (antwoorden)",
       "context": "Quizavond",
       "lemma": "antwoorden",
@@ -338,6 +351,7 @@
     {
       "id": "u3-i14",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ hem haar hulp, maar hield zich er niet aan. (beloven)",
       "context": "Afspraak",
       "lemma": "beloven",
@@ -363,6 +377,7 @@
     {
       "id": "u3-i15",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Hij ___ haar volledig, maar dat was een vergissing. (vertrouwen)",
       "context": "Samenwerking",
       "lemma": "vertrouwen",
@@ -388,6 +403,7 @@
     {
       "id": "u3-i16",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De student ___ elke dag twee uur voor het tentamen. (studeren)",
       "context": "Tentamenvoorbereiding",
       "lemma": "studeren",
@@ -413,6 +429,7 @@
     {
       "id": "u3-i17",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De vrijwilligers ___ de hele zaterdag aan de schooltuin. (werken)",
       "context": "Schooltuin",
       "lemma": "werken",
@@ -438,6 +455,7 @@
     {
       "id": "u3-i18",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De oude man ___ al tachtig jaar in hetzelfde dorp. (leven)",
       "context": "Dorpsgeschiedenis",
       "lemma": "leven",
@@ -463,6 +481,7 @@
     {
       "id": "u3-i19",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Het gezin ___ vorig jaar naar een andere stad. (verhuizen)",
       "context": "Verhuizing",
       "lemma": "verhuizen",
@@ -488,6 +507,7 @@
     {
       "id": "u3-i20",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De leerlingen ___ dat ze de goede antwoorden hadden. (beweren)",
       "context": "Na de toets",
       "lemma": "beweren",
@@ -513,6 +533,7 @@
     {
       "id": "u3-i21",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De leerlingen die de tekst goed hadden gelezen, ___ de vragen snel. (begrijpen)",
       "context": "Begrijpend lezen",
       "lemma": "begrijpen",
@@ -533,6 +554,82 @@
       "feedback": {
         "correct": "Goed: 'begrepen' is de onregelmatige meervoudsvorm van begrijpen in de verleden tijd.",
         "hint": "Niet elk werkwoord volgt de -de/-te-regel. Controleer of het werkwoord onregelmatig is: begrijpen → begreep/begrepen."
+      }
+    },
+    {
+      "id": "u3-cp1",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Enkelvoud of meervoud? Let op de uitgang in de verleden tijd",
+      "sentenceA": {
+        "prompt": "Gisteren ___ hij de hele dag op school. (werken)",
+        "lemma": "werken",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "verleden-tijd",
+        "subject": "hij",
+        "target": "werkte",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "'Hij' is enkelvoud.",
+          "step3": "Enkelvoud + k (kofschip) → stam + -te."
+        },
+        "diagnostic": { "primaryMisconception": "VT_DE_TE_CONFUSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'werkte' bij hij.", "hint": "Enkelvoud + k in kofschip → -te." }
+      },
+      "sentenceB": {
+        "prompt": "Gisteren ___ wij samen aan een project. (werken)",
+        "lemma": "werken",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "verleden-tijd",
+        "subject": "wij",
+        "target": "werkten",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "'Wij' is meervoud.",
+          "step3": "Meervoud + k (kofschip) → stam + -ten."
+        },
+        "diagnostic": { "primaryMisconception": "VT_ENKELVOUD_MEERVOUD", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'werkten' bij wij.", "hint": "Meervoud: voeg -n toe aan de enkelvoudsvorm." }
+      }
+    },
+    {
+      "id": "u3-cp2",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "-de of -te? Gebruik de ruwe stam, niet de zichtbare stam",
+      "sentenceA": {
+        "prompt": "Vorig jaar ___ hij voor zijn eindexamen. (studeren)",
+        "lemma": "studeren",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "verleden-tijd",
+        "subject": "hij",
+        "target": "studeerde",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Ruwe stam: studeer. Eindklank r.",
+          "step3": "r zit niet in 't kofschip → -de."
+        },
+        "diagnostic": { "primaryMisconception": "VT_DE_TE_CONFUSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'studeerde' met -de.", "hint": "r niet in kofschip → -de." }
+      },
+      "sentenceB": {
+        "prompt": "Gisteren ___ hij de hele dag. (werken)",
+        "lemma": "werken",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "verleden-tijd",
+        "subject": "hij",
+        "target": "werkte",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Ruwe stam: werk. Eindklank k.",
+          "step3": "k zit in 't kofschip → -te."
+        },
+        "diagnostic": { "primaryMisconception": "VT_DE_TE_CONFUSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'werkte' met -te.", "hint": "k in kofschip → -te." }
       }
     }
   ],
