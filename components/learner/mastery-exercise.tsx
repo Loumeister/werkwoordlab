@@ -6,7 +6,7 @@ import type { ExerciseItem } from "@/lib/content";
 import { getMisconceptionLabel } from "@/lib/content";
 import type { AttemptRecord } from "@/lib/attempt-store";
 import { saveAttempt } from "@/lib/attempt-store";
-import { evaluateAnswer, getExerciseMode, getFunctionOptions, getHomophoneOptions } from "@/lib/evaluator";
+import { getFunctionOptions, getHomophoneOptions } from "@/lib/evaluator";
 import { FUNCTION_STEP_CODE, getEntryMode, getVerbFunctionHints } from "@/lib/phase-engine";
 import type { FeedbackEntry } from "@/lib/feedback/types";
 import { isRichFeedbackEntry } from "@/lib/feedback/types";
@@ -32,7 +32,11 @@ type Stage = "function-step" | "spelling-step" | "feedback";
  * "independent" — Spelling only, hints on demand
  */
 export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
-  const entryMode = getEntryMode(item, attempts);
+  // Scope mastery tracking to the current unit so that function mastery
+  // earned in unit-01 (persoonsvorm) does not skip the function step in
+  // unit-02 (voltooid-deelwoord) — each unit family is its own context.
+  const unitAttempts = attempts.filter((a) => a.unitId === unitId);
+  const entryMode = getEntryMode(item, unitAttempts);
 
   const [stage, setStage] = useState<Stage>(() =>
     entryMode === "full" ? "function-step" : "spelling-step"
@@ -51,7 +55,13 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
   const [uitlegOpen, setUitlegOpen] = useState(false);
 
   const uitlegPanelId = `uitleg-${item.id}`;
-  const exerciseMode = getExerciseMode(item);
+  // Stage B always tests spelling — never function classification again.
+  // HOMOPHONE_FUNCTION_CONFUSION items have a homophonePair (e.g. "belooft/beloofd")
+  // and Stage A already covered the function question, so Stage B shows the
+  // homophone choice and evaluates against item.target (the correct word form).
+  const spellingDisplayMode: "homofonen" | "korte-correctie" = item.homophonePair
+    ? "homofonen"
+    : "korte-correctie";
   const functionHints = getVerbFunctionHints(item);
   const functionOptions = getFunctionOptions();
   const homophoneOptions = getHomophoneOptions(item);
@@ -100,14 +110,25 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
 
   function handleSpellingSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const result = evaluateAnswer(item, spellingAnswer);
-    setSpellingResult({ correct: result.correct, expected: result.expected });
+    // Always evaluate against item.target — never item.grammaticalFunction.
+    // This avoids the classificatie-mode trap where evaluateAnswer() would
+    // expect the grammatical function string instead of the word form.
+    const expected = item.target;
+    const normalized = spellingAnswer.trim().toLowerCase();
+    const normalizedTarget = expected.trim().toLowerCase();
+    const normalizedVariants = item.diagnostic.acceptedVariants.map((v) =>
+      v.trim().toLowerCase()
+    );
+    const correct =
+      normalized === normalizedTarget || normalizedVariants.includes(normalized);
+
+    setSpellingResult({ correct, expected });
     setStage("feedback");
 
     saveAttempt({
       unitId,
       itemId: item.id,
-      correct: result.correct,
+      correct,
       misconception: item.diagnostic.primaryMisconception,
       timestamp: new Date().toISOString(),
     });
@@ -230,7 +251,7 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
             Jouw antwoord
           </label>
 
-          {exerciseMode === "korte-correctie" && (
+          {spellingDisplayMode === "korte-correctie" && (
             <input
               id="antwoord"
               autoComplete="off"
@@ -241,30 +262,9 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
             />
           )}
 
-          {exerciseMode === "homofonen" && (
+          {spellingDisplayMode === "homofonen" && (
             <fieldset className="space-y-2">
               {homophoneOptions.map((option) => (
-                <label
-                  key={option}
-                  className="flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-300 p-3 text-lg"
-                >
-                  <input
-                    type="radio"
-                    name="antwoord"
-                    value={option}
-                    checked={spellingAnswer === option}
-                    onChange={(e) => setSpellingAnswer(e.target.value)}
-                    required
-                  />
-                  {option}
-                </label>
-              ))}
-            </fieldset>
-          )}
-
-          {exerciseMode === "classificatie" && (
-            <fieldset className="space-y-2">
-              {functionOptions.map((option) => (
                 <label
                   key={option}
                   className="flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-300 p-3 text-lg"
