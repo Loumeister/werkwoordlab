@@ -14,7 +14,11 @@ export type MisconceptionCode =
   | "VT_DE_TE_CONFUSION"
   | "VT_VD_FUNCTION_CONFUSION"
   | "VT_ENKELVOUD_MEERVOUD"
-  | "VT_RUWE_STAM_OVERRIDE";
+  | "VT_RUWE_STAM_OVERRIDE"
+  | "INF_PV_CONFUSION"
+  | "INF_VD_CONFUSION"
+  | "VD_ADJ_FUNCTION_CONFUSION"
+  | "OVD_FUNCTION_CONFUSION";
 
 export const MISCONCEPTION_TITLES: Record<MisconceptionCode, string> = {
   PV_STAM_T_OMISSION: "Stam+t weggelaten",
@@ -28,6 +32,10 @@ export const MISCONCEPTION_TITLES: Record<MisconceptionCode, string> = {
   VT_VD_FUNCTION_CONFUSION: "Voltooid deelwoord gebruikt als persoonsvorm VT",
   VT_ENKELVOUD_MEERVOUD: "Enkelvoud/meervoud verwisseld (verleden tijd)",
   VT_RUWE_STAM_OVERRIDE: "Ruwe stam niet herkend bij -de/-te keuze",
+  INF_PV_CONFUSION: "Persoonsvorm gebruikt waar infinitief nodig is",
+  INF_VD_CONFUSION: "Voltooid deelwoord gebruikt waar infinitief nodig is",
+  VD_ADJ_FUNCTION_CONFUSION: "Bijvoeglijk en werkwoordelijk gebruik VD verward",
+  OVD_FUNCTION_CONFUSION: "Onvoltooid deelwoord verward met PV of VD",
 };
 
 const MISCONCEPTION_CODE_SET = new Set<string>([
@@ -42,6 +50,10 @@ const MISCONCEPTION_CODE_SET = new Set<string>([
   "VT_VD_FUNCTION_CONFUSION",
   "VT_ENKELVOUD_MEERVOUD",
   "VT_RUWE_STAM_OVERRIDE",
+  "INF_PV_CONFUSION",
+  "INF_VD_CONFUSION",
+  "VD_ADJ_FUNCTION_CONFUSION",
+  "OVD_FUNCTION_CONFUSION",
 ]);
 
 export function isMisconceptionCode(code: string): code is MisconceptionCode {
@@ -78,5 +90,20 @@ export const FEEDBACK_GROUPS = [
   {
     label: "Homofoniefouten",
     codes: ["HOMOPHONE_FUNCTION_CONFUSION"] as MisconceptionCode[],
+  },
+  {
+    label: "Infinitief",
+    codes: [
+      "INF_PV_CONFUSION",
+      "INF_VD_CONFUSION",
+    ] as MisconceptionCode[],
+  },
+  {
+    label: "Bijvoeglijk deelwoord",
+    codes: ["VD_ADJ_FUNCTION_CONFUSION"] as MisconceptionCode[],
+  },
+  {
+    label: "Onvoltooid deelwoord",
+    codes: ["OVD_FUNCTION_CONFUSION"] as MisconceptionCode[],
   },
 ];

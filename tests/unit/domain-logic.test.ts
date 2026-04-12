@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { getUnit, getUnits, getMisconceptionLabel } from "@/lib/content";
-import { evaluateAnswer, getExerciseMode } from "@/lib/evaluator";
+import { evaluateAnswer, getExerciseMode, getClassifyOptions, getFunctionOptions } from "@/lib/evaluator";
 
 describe("domain logic", () => {
   it("getUnit geeft strict de gevraagde unit terug", () => {
@@ -122,5 +122,108 @@ describe("domain logic", () => {
     for (const item of unit03.items) {
       expect(getExerciseMode(item)).toBe("korte-correctie");
     }
+  });
+
+  // Unit 04 — Infinitief
+  it("unit-04-infinitief bestaat en heeft items met grammaticalFunction infinitief", () => {
+    const unit04 = getUnit("unit-04-infinitief");
+    expect(unit04).toBeDefined();
+    expect(unit04!.items.length).toBeGreaterThanOrEqual(20);
+    for (const item of unit04!.items) {
+      expect(item.grammaticalFunction).toBe("infinitief");
+    }
+  });
+
+  it("INF_PV_CONFUSION geeft begrijpelijke learner-label terug", () => {
+    const label = getMisconceptionLabel("INF_PV_CONFUSION");
+    expect(label).not.toBe("Controleer eerst de grammaticale functie en pas dan de spellingregel toe.");
+    expect(label.length).toBeGreaterThan(0);
+  });
+
+  it("INF_VD_CONFUSION geeft begrijpelijke learner-label terug", () => {
+    const label = getMisconceptionLabel("INF_VD_CONFUSION");
+    expect(label).not.toBe("Controleer eerst de grammaticale functie en pas dan de spellingregel toe.");
+    expect(label.length).toBeGreaterThan(0);
+  });
+
+  it("unit-04 items renderen als korte-correctie modus", () => {
+    const unit04 = getUnit("unit-04-infinitief")!;
+    for (const item of unit04.items) {
+      expect(getExerciseMode(item)).toBe("korte-correctie");
+    }
+  });
+
+  // Unit 05 — Bijvoeglijk gebruikt VD + classify-modus
+  it("unit-05-bijvoeglijk-vd bestaat en begint met classify-items", () => {
+    const unit05 = getUnit("unit-05-bijvoeglijk-vd");
+    expect(unit05).toBeDefined();
+    expect(unit05!.items.length).toBeGreaterThanOrEqual(16);
+    expect(unit05!.items[0].type).toBe("classify");
+  });
+
+  it("classify-items krijgen classificatie-modus via item.type", () => {
+    const unit05 = getUnit("unit-05-bijvoeglijk-vd")!;
+    const classifyItem = unit05.items.find((item) => item.type === "classify")!;
+    expect(getExerciseMode(classifyItem)).toBe("classificatie");
+  });
+
+  it("evaluateAnswer gebruikt item.target als verwacht antwoord bij classify-items", () => {
+    const unit05 = getUnit("unit-05-bijvoeglijk-vd")!;
+    const classifyItem = unit05.items.find((item) => item.type === "classify")!;
+    expect(evaluateAnswer(classifyItem, classifyItem.target).correct).toBe(true);
+    expect(evaluateAnswer(classifyItem, "fout-antwoord").correct).toBe(false);
+    // evaluateAnswer should NOT use grammaticalFunction for classify items
+    const wrongAnswer = classifyItem.grammaticalFunction;
+    if (wrongAnswer !== classifyItem.target) {
+      expect(evaluateAnswer(classifyItem, wrongAnswer).correct).toBe(false);
+    }
+  });
+
+  it("getClassifyOptions geeft classifyOptions terug voor classify-items", () => {
+    const unit05 = getUnit("unit-05-bijvoeglijk-vd")!;
+    const classifyItem = unit05.items.find((item) => item.type === "classify")!;
+    const options = getClassifyOptions(classifyItem);
+    expect(options).toEqual(classifyItem.classifyOptions);
+    expect(options).toContain("werkwoordelijk");
+    expect(options).toContain("bijvoeglijk");
+  });
+
+  it("getClassifyOptions geeft getFunctionOptions terug voor niet-classify-items", () => {
+    const unit01 = getUnit("unit-01-pv-tt")!;
+    const fillInItem = unit01.items.find((item) => item.type === "fill-in")!;
+    const options = getClassifyOptions(fillInItem);
+    expect(options).toEqual(getFunctionOptions());
+  });
+
+  it("VD_ADJ_FUNCTION_CONFUSION geeft begrijpelijke learner-label terug", () => {
+    const label = getMisconceptionLabel("VD_ADJ_FUNCTION_CONFUSION");
+    expect(label).not.toBe("Controleer eerst de grammaticale functie en pas dan de spellingregel toe.");
+    expect(label.length).toBeGreaterThan(0);
+  });
+
+  // Unit 06 — Onvoltooid deelwoord
+  it("unit-06-onvoltooid-deelwoord bestaat en heeft classify-items met drie opties", () => {
+    const unit06 = getUnit("unit-06-onvoltooid-deelwoord");
+    expect(unit06).toBeDefined();
+    expect(unit06!.items.length).toBeGreaterThanOrEqual(16);
+    const classifyItem = unit06!.items.find((item) => item.type === "classify");
+    expect(classifyItem).toBeDefined();
+    expect(classifyItem!.classifyOptions?.length).toBe(3);
+    expect(classifyItem!.classifyOptions).toContain("onvoltooid-deelwoord");
+  });
+
+  it("OVD_FUNCTION_CONFUSION geeft begrijpelijke learner-label terug", () => {
+    const label = getMisconceptionLabel("OVD_FUNCTION_CONFUSION");
+    expect(label).not.toBe("Controleer eerst de grammaticale functie en pas dan de spellingregel toe.");
+    expect(label.length).toBeGreaterThan(0);
+  });
+
+  it("getUnits retourneert alle zes units", () => {
+    const allUnits = getUnits();
+    expect(allUnits.length).toBe(6);
+    const ids = allUnits.map((u) => u.id);
+    expect(ids).toContain("unit-04-infinitief");
+    expect(ids).toContain("unit-05-bijvoeglijk-vd");
+    expect(ids).toContain("unit-06-onvoltooid-deelwoord");
   });
 });

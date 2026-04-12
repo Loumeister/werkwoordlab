@@ -1,0 +1,430 @@
+{
+  "id": "unit-06-onvoltooid-deelwoord",
+  "title": "Onvoltooid deelwoord",
+  "level": "onderbouw-vo",
+  "language": "nl",
+  "learningGoals": [
+    "Ik herken de -end-vorm als onvoltooid deelwoord.",
+    "Ik onderscheid het onvoltooid deelwoord van de persoonsvorm.",
+    "Ik onderscheid het onvoltooid deelwoord van het voltooid deelwoord.",
+    "Ik gebruik de juiste vorm in attributieve en deelwoordgroep-context."
+  ],
+  "items": [
+    {
+      "id": "u6-i1",
+      "type": "classify",
+      "prompt": "De slapende kat lag op de bank.",
+      "context": "Huisdier",
+      "lemma": "slapen",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "kat",
+      "target": "onvoltooid-deelwoord",
+      "homophonePair": null,
+      "classifyOptions": ["persoonsvorm", "voltooid-deelwoord", "onvoltooid-deelwoord"],
+      "scaffold": {
+        "step1": "Zoek de werkwoordsvorm: 'slapende'. Beschrijft het een lopende handeling vóór een zelfstandig naamwoord?",
+        "step2": "'slapende' staat voor 'kat' en beschrijft een handeling die bezig is. Geen ge-, geen persoonsvorm.",
+        "step3": "Kies: onvoltooid-deelwoord."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'slapende' is het onvoltooid deelwoord — de -end-vorm die een lopende handeling beschrijft.",
+        "hint": "Een -end-vorm voor een zelfstandig naamwoord is een onvoltooid deelwoord. Geen ge-, geen persoonsvorm."
+      }
+    },
+    {
+      "id": "u6-i2",
+      "type": "classify",
+      "prompt": "De kat slaapt op de bank.",
+      "context": "Huisdier",
+      "lemma": "slapen",
+      "grammaticalFunction": "persoonsvorm",
+      "tense": "tegenwoordige-tijd",
+      "subject": "de kat",
+      "target": "persoonsvorm",
+      "homophonePair": null,
+      "classifyOptions": ["persoonsvorm", "voltooid-deelwoord", "onvoltooid-deelwoord"],
+      "scaffold": {
+        "step1": "Zoek de werkwoordsvorm: 'slaapt'. Is er een onderwerp dat ermee overeenkomt?",
+        "step2": "'slaapt' hoort bij 'de kat' — het heeft een onderwerp en geeft de tijd aan. Dat is een persoonsvorm.",
+        "step3": "Kies: persoonsvorm."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'slaapt' is een persoonsvorm — het geeft de tijd aan en hoort bij een onderwerp.",
+        "hint": "Een werkwoord met onderwerp dat de tijd aangeeft = persoonsvorm. Geen -end, geen ge-."
+      }
+    },
+    {
+      "id": "u6-i3",
+      "type": "classify",
+      "prompt": "De kat heeft de hele middag geslapen.",
+      "context": "Huisdier",
+      "lemma": "slapen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de kat",
+      "target": "voltooid-deelwoord",
+      "homophonePair": null,
+      "classifyOptions": ["persoonsvorm", "voltooid-deelwoord", "onvoltooid-deelwoord"],
+      "scaffold": {
+        "step1": "Zoek de werkwoordsvorm: 'geslapen'. Is er een hulpwerkwoord bij?",
+        "step2": "'geslapen' staat na 'heeft' — dat is een hulpwerkwoord. Dat is een voltooid deelwoord.",
+        "step3": "Kies: voltooid-deelwoord."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'geslapen' is het voltooid deelwoord — het staat na het hulpwerkwoord 'heeft'.",
+        "hint": "Na een hulpwerkwoord staat het voltooid deelwoord. Dat begint met ge- en heeft geen -end."
+      }
+    },
+    {
+      "id": "u6-i4",
+      "type": "classify",
+      "prompt": "De lachende kinderen renden naar buiten.",
+      "context": "Speelplaats",
+      "lemma": "lachen",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "kinderen",
+      "target": "onvoltooid-deelwoord",
+      "homophonePair": null,
+      "classifyOptions": ["persoonsvorm", "voltooid-deelwoord", "onvoltooid-deelwoord"],
+      "scaffold": {
+        "step1": "Zoek de werkwoordsvorm: 'lachende'. Heeft het een -end-uitgang?",
+        "step2": "'lachende' staat voor 'kinderen', heeft een -end-uitgang en beschrijft een lopende handeling.",
+        "step3": "Kies: onvoltooid-deelwoord."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'lachende' is het onvoltooid deelwoord — de -end-vorm voor een zelfstandig naamwoord.",
+        "hint": "-end-uitgang vóór een zelfstandig naamwoord = onvoltooid deelwoord."
+      }
+    },
+    {
+      "id": "u6-i5",
+      "type": "classify",
+      "prompt": "De leerling heeft de hele les gelachen.",
+      "context": "Schoolles",
+      "lemma": "lachen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de leerling",
+      "target": "voltooid-deelwoord",
+      "homophonePair": null,
+      "classifyOptions": ["persoonsvorm", "voltooid-deelwoord", "onvoltooid-deelwoord"],
+      "scaffold": {
+        "step1": "Zoek de werkwoordsvorm: 'gelachen'. Is er een hulpwerkwoord bij?",
+        "step2": "'gelachen' staat na 'heeft'. Dat is een voltooid deelwoord.",
+        "step3": "Kies: voltooid-deelwoord."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gelachen' is het voltooid deelwoord na het hulpwerkwoord 'heeft'.",
+        "hint": "Na een hulpwerkwoord staat het voltooid deelwoord met ge-. Geen -end-uitgang."
+      }
+    },
+    {
+      "id": "u6-i6",
+      "type": "fill-in",
+      "prompt": "De ___ hond keek op bij het geluid. (blaffen)",
+      "context": "Huisdier",
+      "lemma": "blaffen",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hond",
+      "target": "blaffende",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat voor 'hond'. Het is bijvoeglijk gebruik van het onvoltooid deelwoord.",
+        "step2": "Onvoltooid deelwoord van 'blaffen': blaffend (stam=blaf, voeg -fend toe → blaffend).",
+        "step3": "Bij 'de hond' (de-woord): voeg -e toe → blaffende."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'blaffende' is het onvoltooid deelwoord met buigings-e voor 'hond'.",
+        "hint": "Onvoltooid deelwoord = stam + -end. Bij de-woord: voeg -e toe. Blaffend → blaffende."
+      }
+    },
+    {
+      "id": "u6-i7",
+      "type": "fill-in",
+      "prompt": "De ___ student pakte zijn tas in na de les. (studeren)",
+      "context": "Universiteitscampus",
+      "lemma": "studeren",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "student",
+      "target": "studerende",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat voor 'student'. Het is bijvoeglijk gebruik van het onvoltooid deelwoord.",
+        "step2": "Onvoltooid deelwoord van 'studeren': studerend.",
+        "step3": "Bij 'de student' (de-woord): voeg -e toe → studerende."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'studerende' is het onvoltooid deelwoord met buigings-e voor 'student'.",
+        "hint": "Onvoltooid deelwoord + -e bij de-woord: studerend → studerende."
+      }
+    },
+    {
+      "id": "u6-i8",
+      "type": "fill-in",
+      "prompt": "Een ___ situatie vraagt om snelle actie. (veranderen)",
+      "context": "Nieuwsbericht",
+      "lemma": "veranderen",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "situatie",
+      "target": "veranderende",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat voor 'situatie'. Het is bijvoeglijk gebruik van het onvoltooid deelwoord.",
+        "step2": "Onvoltooid deelwoord van 'veranderen': veranderend.",
+        "step3": "Bij 'een situatie' (de-woord, onbepaald): voeg -e toe → veranderende."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'veranderende' is het onvoltooid deelwoord met buigings-e.",
+        "hint": "Onvoltooid deelwoord + -e voor de-woord: veranderend → veranderende."
+      }
+    },
+    {
+      "id": "u6-i9",
+      "type": "fill-in",
+      "prompt": "Het ___ water was te gevaarlijk om in te zwemmen. (stromen)",
+      "context": "Rivierengebied",
+      "lemma": "stromen",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "water",
+      "target": "stromende",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat voor 'water'. Het is bijvoeglijk gebruik van het onvoltooid deelwoord.",
+        "step2": "Onvoltooid deelwoord van 'stromen': stromend.",
+        "step3": "Bij 'het water' (het-woord, met bepaald lidwoord): voeg -e toe → stromende."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'stromende' is het onvoltooid deelwoord met buigings-e voor 'het water'.",
+        "hint": "Bij het-woord met bepaald lidwoord: ook -e toevoegen. Stromend → stromende."
+      }
+    },
+    {
+      "id": "u6-i10",
+      "type": "fill-in",
+      "prompt": "De vogel heeft de hele ochtend ___. (zingen)",
+      "context": "Tuin",
+      "lemma": "zingen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de vogel",
+      "target": "gezongen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Er staat 'heeft' vóór de lege plek. Dat is een hulpwerkwoord → voltooid deelwoord.",
+        "step2": "Voltooid deelwoord, geen onvoltooid deelwoord. Geen -end-uitgang.",
+        "step3": "Onregelmatig voltooid deelwoord van 'zingen': gezongen."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gezongen' is het voltooid deelwoord na 'heeft'. Niet 'zingend'.",
+        "hint": "Na een hulpwerkwoord staat het voltooid deelwoord, niet het onvoltooid deelwoord. Geen -end."
+      }
+    },
+    {
+      "id": "u6-i11",
+      "type": "fill-in",
+      "prompt": "De ___ vogel trok alle aandacht in de tuin. (zingen)",
+      "context": "Tuin",
+      "lemma": "zingen",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "vogel",
+      "target": "zingende",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat voor 'vogel'. Het is bijvoeglijk gebruik van het onvoltooid deelwoord.",
+        "step2": "Onvoltooid deelwoord van 'zingen': zingend.",
+        "step3": "Bij 'de vogel' (de-woord): voeg -e toe → zingende."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'zingende' is het onvoltooid deelwoord met buigings-e voor 'vogel'.",
+        "hint": "Onvoltooid deelwoord voor een de-woord: zingend + -e = zingende."
+      }
+    },
+    {
+      "id": "u6-i12",
+      "type": "fill-in",
+      "prompt": "De leerlingen hebben hard ___. (werken)",
+      "context": "Schooldag",
+      "lemma": "werken",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de leerlingen",
+      "target": "gewerkt",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Er staat 'hebben' vóór de lege plek. Dat is een hulpwerkwoord → voltooid deelwoord.",
+        "step2": "Voltooid deelwoord, geen onvoltooid deelwoord. Geen -end-uitgang.",
+        "step3": "Voltooid deelwoord van 'werken': gewerkt (stam=werk, k in 't kofschip → -t)."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gewerkt' is het voltooid deelwoord na 'hebben'. Niet 'werkend'.",
+        "hint": "Na een hulpwerkwoord staat het voltooid deelwoord. Niet de -end-vorm."
+      }
+    },
+    {
+      "id": "u6-i13",
+      "type": "fill-in",
+      "prompt": "De ___ leerlingen kregen extra ondersteuning. (worstelen)",
+      "context": "Bijles",
+      "lemma": "worstelen",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "leerlingen",
+      "target": "worstelende",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat voor 'leerlingen'. Het is bijvoeglijk gebruik van het onvoltooid deelwoord.",
+        "step2": "Onvoltooid deelwoord van 'worstelen': worstellend. Let op: stam=worstel, -end → worstellend.",
+        "step3": "Bij meervoud 'leerlingen': voeg -e toe → worstelende."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'worstelende' is het onvoltooid deelwoord met buigings-e voor 'leerlingen'.",
+        "hint": "Onvoltooid deelwoord + -e bij meervoud: worstellend → worstelende."
+      }
+    },
+    {
+      "id": "u6-i14",
+      "type": "fill-in",
+      "prompt": "Hardop ___ liep hij de gang op. (zingen)",
+      "context": "Schoolgebouw",
+      "lemma": "zingen",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "zingend",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat niet voor een zelfstandig naamwoord — het beschrijft een handeling bij 'liep'.",
+        "step2": "Het onvoltooid deelwoord staat hier als deelwoordgroep (bijwoordelijk gebruik). Geen -e.",
+        "step3": "Onvoltooid deelwoord van 'zingen': zingend. Geen buigings-e bij deelwoordgroep."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'zingend' is het onvoltooid deelwoord in een deelwoordgroep. Geen buigings-e.",
+        "hint": "Als het onvoltooid deelwoord niet direct voor een zelfstandig naamwoord staat: geen -e. Zingend, niet zingende."
+      }
+    },
+    {
+      "id": "u6-i15",
+      "type": "fill-in",
+      "prompt": "Nerveus ___ verliet ze de kamer. (tikken)",
+      "context": "Presentatie",
+      "lemma": "tikken",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "tikkend",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat niet voor een zelfstandig naamwoord — het beschrijft hoe ze de kamer verliet.",
+        "step2": "Het onvoltooid deelwoord staat hier als deelwoordgroep. Geen buigings-e.",
+        "step3": "Onvoltooid deelwoord van 'tikken': tikkend. Geen -e bij deelwoordgroep."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'tikkend' is het onvoltooid deelwoord in een deelwoordgroep. Geen buigings-e.",
+        "hint": "Als het onvoltooid deelwoord een handeling bij een werkwoord beschrijft (niet voor een zelfstandig naamwoord): geen -e."
+      }
+    },
+    {
+      "id": "u6-i16",
+      "type": "fill-in",
+      "prompt": "Achterom ___ rende hij de trap af. (kijken)",
+      "context": "Schoolgebouw",
+      "lemma": "kijken",
+      "grammaticalFunction": "onvoltooid-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "kijkend",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat niet voor een zelfstandig naamwoord — het beschrijft hoe hij rende.",
+        "step2": "Het onvoltooid deelwoord staat hier als deelwoordgroep. Geen buigings-e.",
+        "step3": "Onvoltooid deelwoord van 'kijken': kijkend. Geen -e bij deelwoordgroep."
+      },
+      "diagnostic": {
+        "primaryMisconception": "OVD_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'kijkend' is het onvoltooid deelwoord in een deelwoordgroep. Geen buigings-e.",
+        "hint": "Als het onvoltooid deelwoord een handeling bij een werkwoord beschrijft: geen -e. Kijkend, niet kijkende."
+      }
+    }
+  ],
+  "transferTask": {
+    "id": "u6-transfer-1",
+    "type": "revision",
+    "prompt": "Lees de volgende tekst. Er staan vier fouten in de werkwoordsvorm. Verbeter elke fout en leg in één zin uit welke vorm er hoort (persoonsvorm, voltooid deelwoord of onvoltooid deelwoord) en waarom.\n\nDe rennend leerling botste tegen de deur. Ze had de hele ochtend gewerkte voor de presentatie. Schreeuwend de docent probeerde de aandacht te trekken. De spelend kinderen op het schoolplein hadden niets gemerkt.",
+    "rubric": [
+      "Fout 1 (rennend → rennende) herkend: bijvoeglijk voor 'leerling' → buigings-e.",
+      "Fout 2 (gewerkte → gewerkt) herkend: werkwoordelijk na 'had' → geen buigings-e.",
+      "Fout 3 (Schreeuwend de docent → De schreeuwende docent of anders) herkend: bijvoeglijk gebruik vóór zelfstandig naamwoord → buigings-e.",
+      "Fout 4 (spelend → spelende) herkend: bijvoeglijk voor 'kinderen' → buigings-e."
+    ]
+  }
+}

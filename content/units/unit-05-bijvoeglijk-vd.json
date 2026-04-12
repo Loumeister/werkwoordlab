@@ -1,0 +1,431 @@
+{
+  "id": "unit-05-bijvoeglijk-vd",
+  "title": "Bijvoeglijk gebruikt voltooid deelwoord",
+  "level": "onderbouw-vo",
+  "language": "nl",
+  "learningGoals": [
+    "Ik herken wanneer een voltooid deelwoord bijvoeglijk gebruikt is (direct voor een zelfstandig naamwoord).",
+    "Ik onderscheid bijvoeglijk gebruik van werkwoordelijk gebruik van het voltooid deelwoord.",
+    "Ik voeg de juiste buigings-e toe bij attributief gebruikte voltooid-deelwoordvormen.",
+    "Ik kies de juiste spelling in contexten met homofone druk (geschilderd vs geschilderde)."
+  ],
+  "items": [
+    {
+      "id": "u5-i1",
+      "type": "classify",
+      "prompt": "Het geschilderde huis staat te koop.",
+      "context": "Woningmarkt",
+      "lemma": "schilderen",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "huis",
+      "target": "bijvoeglijk",
+      "homophonePair": null,
+      "classifyOptions": ["werkwoordelijk", "bijvoeglijk"],
+      "scaffold": {
+        "step1": "Zoek het deelwoord: 'geschilderde'. Staat het direct vóór een zelfstandig naamwoord?",
+        "step2": "'geschilderde' staat vóór 'huis' — er is geen hulpwerkwoord bij. Dat is bijvoeglijk gebruik.",
+        "step3": "Kies: bijvoeglijk."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'geschilderde' staat direct voor 'huis' en is bijvoeglijk gebruikt.",
+        "hint": "Staat het deelwoord direct voor een zelfstandig naamwoord? Dan is het bijvoeglijk gebruikt."
+      }
+    },
+    {
+      "id": "u5-i2",
+      "type": "classify",
+      "prompt": "De brief is gisteren verstuurd.",
+      "context": "Schooladministratie",
+      "lemma": "versturen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de brief",
+      "target": "werkwoordelijk",
+      "homophonePair": null,
+      "classifyOptions": ["werkwoordelijk", "bijvoeglijk"],
+      "scaffold": {
+        "step1": "Zoek het deelwoord: 'verstuurd'. Staat er een hulpwerkwoord bij?",
+        "step2": "'verstuurd' staat na 'is' — dat is een hulpwerkwoord. Dat is werkwoordelijk gebruik.",
+        "step3": "Kies: werkwoordelijk."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'verstuurd' staat na het hulpwerkwoord 'is' en is werkwoordelijk gebruikt.",
+        "hint": "Staat er een hulpwerkwoord (is, was, heeft, had) bij het deelwoord? Dan is het werkwoordelijk gebruikt."
+      }
+    },
+    {
+      "id": "u5-i3",
+      "type": "classify",
+      "prompt": "De gevonden sleutel lag al drie dagen onder de tafel.",
+      "context": "Verloren voorwerp",
+      "lemma": "vinden",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "sleutel",
+      "target": "bijvoeglijk",
+      "homophonePair": null,
+      "classifyOptions": ["werkwoordelijk", "bijvoeglijk"],
+      "scaffold": {
+        "step1": "Zoek het deelwoord: 'gevonden'. Staat het direct vóór een zelfstandig naamwoord?",
+        "step2": "'gevonden' staat vóór 'sleutel' zonder hulpwerkwoord. Dat is bijvoeglijk gebruik.",
+        "step3": "Kies: bijvoeglijk."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gevonden' staat direct voor 'sleutel' en is bijvoeglijk gebruikt.",
+        "hint": "Geen hulpwerkwoord + deelwoord vóór een zelfstandig naamwoord = bijvoeglijk gebruik."
+      }
+    },
+    {
+      "id": "u5-i4",
+      "type": "classify",
+      "prompt": "Hij heeft zijn sleutel gevonden.",
+      "context": "Verloren voorwerp",
+      "lemma": "vinden",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "hij",
+      "target": "werkwoordelijk",
+      "homophonePair": null,
+      "classifyOptions": ["werkwoordelijk", "bijvoeglijk"],
+      "scaffold": {
+        "step1": "Zoek het deelwoord: 'gevonden'. Staat er een hulpwerkwoord bij?",
+        "step2": "'gevonden' staat na 'heeft' — dat is werkwoordelijk gebruik.",
+        "step3": "Kies: werkwoordelijk."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gevonden' staat na 'heeft' en is werkwoordelijk gebruikt.",
+        "hint": "Na een hulpwerkwoord is het deelwoord altijd werkwoordelijk gebruikt."
+      }
+    },
+    {
+      "id": "u5-i5",
+      "type": "classify",
+      "prompt": "Ze draagt een versleten jas.",
+      "context": "Kleding",
+      "lemma": "verslijten",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jas",
+      "target": "bijvoeglijk",
+      "homophonePair": null,
+      "classifyOptions": ["werkwoordelijk", "bijvoeglijk"],
+      "scaffold": {
+        "step1": "Zoek het deelwoord: 'versleten'. Staat het direct vóór een zelfstandig naamwoord?",
+        "step2": "'versleten' staat vóór 'jas' zonder hulpwerkwoord. Dat is bijvoeglijk gebruik.",
+        "step3": "Kies: bijvoeglijk."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'versleten' staat direct voor 'jas' en is bijvoeglijk gebruikt.",
+        "hint": "Direct voor een zelfstandig naamwoord zonder hulpwerkwoord = bijvoeglijk gebruik."
+      }
+    },
+    {
+      "id": "u5-i6",
+      "type": "classify",
+      "prompt": "De jas is volledig versleten.",
+      "context": "Kleding",
+      "lemma": "verslijten",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de jas",
+      "target": "werkwoordelijk",
+      "homophonePair": null,
+      "classifyOptions": ["werkwoordelijk", "bijvoeglijk"],
+      "scaffold": {
+        "step1": "Zoek het deelwoord: 'versleten'. Staat er een hulpwerkwoord bij?",
+        "step2": "'versleten' staat na 'is' — dat is werkwoordelijk gebruik.",
+        "step3": "Kies: werkwoordelijk."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'versleten' staat na 'is' en is werkwoordelijk gebruikt.",
+        "hint": "Na 'is' is het deelwoord altijd werkwoordelijk gebruikt."
+      }
+    },
+    {
+      "id": "u5-i7",
+      "type": "fill-in",
+      "prompt": "De ___ deur knarste bij het openen. (schilderen)",
+      "context": "Oud schoolgebouw",
+      "lemma": "schilderen",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "deur",
+      "target": "geschilderde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat direct voor 'deur'. Het is bijvoeglijk gebruik van het voltooid deelwoord.",
+        "step2": "Voltooid deelwoord van 'schilderen': geschilderd (stam=schilder, kofschip: d niet in kofschip → -d).",
+        "step3": "Bij 'de deur' (de-woord): voeg -e toe aan de basisvorm → geschilderde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'geschilderde' is het bijvoeglijk gebruikte voltooid deelwoord met buigings-e.",
+        "hint": "Bijvoeglijk gebruik voor een de-woord: voltooid deelwoord + -e. Geschilderd → geschilderde."
+      }
+    },
+    {
+      "id": "u5-i8",
+      "type": "fill-in",
+      "prompt": "De ___ leerling ontving een compliment. (bewonderen)",
+      "context": "Schoolprestatie",
+      "lemma": "bewonderen",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "leerling",
+      "target": "bewonderde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat direct voor 'leerling'. Het is bijvoeglijk gebruik.",
+        "step2": "Voltooid deelwoord van 'bewonderen': bewonderd (stam=bewonder, -d want stemhebbend).",
+        "step3": "Bij 'de leerling' (de-woord): voeg -e toe → bewonderde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'bewonderde' is het bijvoeglijk voltooid deelwoord met buigings-e.",
+        "hint": "Bijvoeglijk gebruik voor een de-woord: bewonderd + -e = bewonderde."
+      }
+    },
+    {
+      "id": "u5-i9",
+      "type": "fill-in",
+      "prompt": "De ___ tekst bevatte veel fouten. (corrigeren)",
+      "context": "Schrijfopdracht",
+      "lemma": "corrigeren",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "tekst",
+      "target": "gecorrigeerde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat direct voor 'tekst'. Het is bijvoeglijk gebruik.",
+        "step2": "Voltooid deelwoord van 'corrigeren': gecorrigeerd (stam=corrigeer, -d want stemhebbend r).",
+        "step3": "Bij 'de tekst' (de-woord): voeg -e toe → gecorrigeerde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gecorrigeerde' is het bijvoeglijk voltooid deelwoord met buigings-e.",
+        "hint": "Bijvoeglijk gebruik voor een de-woord: gecorrigeerd + -e = gecorrigeerde."
+      }
+    },
+    {
+      "id": "u5-i10",
+      "type": "fill-in",
+      "prompt": "De ___ appels lagen in een grote mand. (plukken)",
+      "context": "Fruit oogsten",
+      "lemma": "plukken",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "appels",
+      "target": "geplukte",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat direct voor 'appels'. Het is bijvoeglijk gebruik.",
+        "step2": "Voltooid deelwoord van 'plukken': geplukt (stam=pluk, k zit in 't kofschip → -t).",
+        "step3": "Bij 'de appels' (meervoud): voeg -e toe → geplukte."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'geplukte' is het bijvoeglijk voltooid deelwoord met buigings-e.",
+        "hint": "Bijvoeglijk gebruik voor meervoud: geplukt + -e = geplukte."
+      }
+    },
+    {
+      "id": "u5-i11",
+      "type": "fill-in",
+      "prompt": "De muur is verleden jaar zorgvuldig ___. (schilderen)",
+      "context": "Renovatie",
+      "lemma": "schilderen",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de muur",
+      "target": "geschilderd",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Er staat 'is' vóór de lege plek. Dat is een hulpwerkwoord → werkwoordelijk gebruik.",
+        "step2": "Werkwoordelijk gebruik: geen buigings-e. Kies het kale voltooid deelwoord.",
+        "step3": "Voltooid deelwoord van 'schilderen': geschilderd (stam=schilder, -d → geschilderd)."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'geschilderd' is werkwoordelijk gebruikt na 'is'. Geen buigings-e.",
+        "hint": "Na een hulpwerkwoord (is, was, heeft): kaal voltooid deelwoord zonder -e. Geschilderd, niet geschilderde."
+      }
+    },
+    {
+      "id": "u5-i12",
+      "type": "fill-in",
+      "prompt": "De ___ muur trok veel aandacht van voorbijgangers. (schilderen)",
+      "context": "Renovatie",
+      "lemma": "schilderen",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "muur",
+      "target": "geschilderde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat direct voor 'muur'. Het is bijvoeglijk gebruik.",
+        "step2": "Bijvoeglijk gebruik: voeg buigings-e toe. Kies de -e-vorm.",
+        "step3": "Voltooid deelwoord van 'schilderen': geschilderd. Bij 'de muur': geschilderde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'geschilderde' is bijvoeglijk gebruikt voor 'muur'. Met buigings-e.",
+        "hint": "Direct voor een de-woord: voeg -e toe. Geschilderd → geschilderde."
+      }
+    },
+    {
+      "id": "u5-i13",
+      "type": "fill-in",
+      "prompt": "De fiets was al ___. (repareren)",
+      "context": "Fietsenstalling",
+      "lemma": "repareren",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "de fiets",
+      "target": "gerepareerd",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Er staat 'was' vóór de lege plek. Dat is een hulpwerkwoord → werkwoordelijk gebruik.",
+        "step2": "Werkwoordelijk gebruik: geen buigings-e.",
+        "step3": "Voltooid deelwoord van 'repareren': gerepareerd (stam=repareer, -d → gerepareerd)."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gerepareerd' is werkwoordelijk gebruikt na 'was'. Geen buigings-e.",
+        "hint": "Na een hulpwerkwoord: kaal voltooid deelwoord. Gerepareerd, niet gerepareerde."
+      }
+    },
+    {
+      "id": "u5-i14",
+      "type": "fill-in",
+      "prompt": "Ik zag een ___ fiets voor de deur staan. (repareren)",
+      "context": "Fietsenstalling",
+      "lemma": "repareren",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "fiets",
+      "target": "gerepareerde",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat direct voor 'fiets'. Het is bijvoeglijk gebruik.",
+        "step2": "Bijvoeglijk gebruik voor een de-woord: voeg -e toe.",
+        "step3": "Voltooid deelwoord van 'repareren': gerepareerd. Met -e: gerepareerde."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gerepareerde' is bijvoeglijk gebruikt voor 'fiets'. Met buigings-e.",
+        "hint": "Direct voor een de-woord: gerepareerd + -e = gerepareerde."
+      }
+    },
+    {
+      "id": "u5-i15",
+      "type": "fill-in",
+      "prompt": "Het rapport is door de docent ___. (nakijken)",
+      "context": "Schoolwerk",
+      "lemma": "nakijken",
+      "grammaticalFunction": "voltooid-deelwoord",
+      "tense": "voltooide-tijd",
+      "subject": "het rapport",
+      "target": "nagekeken",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Er staat 'is' vóór de lege plek. Dat is een hulpwerkwoord → werkwoordelijk gebruik.",
+        "step2": "Werkwoordelijk gebruik: geen buigings-e. Kies het kale voltooid deelwoord.",
+        "step3": "Voltooid deelwoord van 'nakijken': nagekeken (scheidbaar: na + gekeken)."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'nagekeken' is werkwoordelijk gebruikt na 'is'. Geen buigings-e.",
+        "hint": "Na een hulpwerkwoord: kaal voltooid deelwoord. Nagekeken, niet nagekekene."
+      }
+    },
+    {
+      "id": "u5-i16",
+      "type": "fill-in",
+      "prompt": "De ___ opdracht lag op het bureau van de docent. (nakijken)",
+      "context": "Schoolwerk",
+      "lemma": "nakijken",
+      "grammaticalFunction": "bijvoeglijk-deelwoord",
+      "tense": "tegenwoordige-tijd",
+      "subject": "opdracht",
+      "target": "nagekeken",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "De lege plek staat direct voor 'opdracht'. Het is bijvoeglijk gebruik.",
+        "step2": "Voltooid deelwoord van 'nakijken': nagekeken (eindigt op -en, geen extra -e nodig).",
+        "step3": "'nagekeken' eindigt al op -en — de bijvoeglijke vorm blijft nagekeken."
+      },
+      "diagnostic": {
+        "primaryMisconception": "VD_ADJ_FUNCTION_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'nagekeken' is de bijvoeglijke vorm. Voltooid deelwoorden op -en veranderen niet.",
+        "hint": "Voltooid deelwoorden die eindigen op -en (nagekeken, gebroken) krijgen geen extra -e."
+      }
+    }
+  ],
+  "transferTask": {
+    "id": "u5-transfer-1",
+    "type": "short-writing",
+    "prompt": "Schrijf vier zinnen over een recent schoolproject. Gebruik het voltooid deelwoord van 'maken', 'corrigeren', 'inleveren' en 'beoordelen'. Gebruik elk deelwoord op twee manieren: eenmaal werkwoordelijk (na hebben/zijn/was/werd) en eenmaal bijvoeglijk (direct voor een zelfstandig naamwoord). Markeer telkens of het werkwoordelijk of bijvoeglijk is.",
+    "rubric": [
+      "Werkwoordelijk gebruik: correct kaal voltooid deelwoord na hulpwerkwoord (geen buigings-e).",
+      "Bijvoeglijk gebruik: correct voltooid deelwoord met buigings-e voor de-woord of meervoud.",
+      "Markering van werkwoordelijk/bijvoeglijk klopt bij alle vier deelwoorden.",
+      "Zinnen zijn naturlijktalig en grammaticaal correct."
+    ]
+  }
+}

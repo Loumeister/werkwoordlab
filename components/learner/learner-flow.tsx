@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AlertCircle, CheckCircle2, Lightbulb } from "lucide-react";
 import { type Unit, getMisconceptionLabel } from "@/lib/content";
-import { evaluateAnswer, getExerciseMode, getFunctionOptions, getHomophoneOptions } from "@/lib/evaluator";
+import { evaluateAnswer, getExerciseMode, getClassifyOptions, getHomophoneOptions } from "@/lib/evaluator";
 import { saveAttempt } from "@/lib/attempt-store";
 import { type FeedbackEntry, isRichFeedbackEntry } from "@/lib/feedback/types";
 import { type MisconceptionCode, isMisconceptionCode } from "@/lib/feedback/misconceptions";
@@ -16,12 +16,16 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
   const [lastCorrect, setLastCorrect] = useState(false);
   const [effectiveFeedback, setEffectiveFeedback] = useState<FeedbackEntry | undefined>(undefined);
   const [uitlegOpen, setUitlegOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const item = unit.items[index];
   const uitlegPanelId = `uitleg-${item.id}-${index}`;
   const mode = getExerciseMode(item);
   const evaluation = submitted ? evaluateAnswer(item, answer) : null;
   const progress = Math.round(((index + 1) / unit.items.length) * 100);
+
+  // Signal that React has hydrated so Playwright tests can wait before interacting.
+  useEffect(() => { setMounted(true); }, []);
 
   // Resolve effective feedback from localStorage overrides when item changes.
   // Only runs client-side (localStorage is browser-only).
@@ -34,6 +38,9 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
   }, [item]);
 
   const instruction = useMemo(() => {
+    if (mode === "classificatie" && item.type === "classify") {
+      return "Kies de juiste categorie voor het werkwoord in de zin.";
+    }
     if (mode === "classificatie") {
       return "Bepaal eerst de grammaticale functie van het onderstreepte werkwoord.";
     }
@@ -41,9 +48,9 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
       return "Kies de juiste homofone vorm op basis van grammaticale functie.";
     }
     return "Vul de correcte werkwoordsvorm in.";
-  }, [mode]);
+  }, [mode, item.type]);
 
-  const functionOptions = getFunctionOptions();
+  const classifyOptions = getClassifyOptions(item);
   const homophoneOptions = getHomophoneOptions(item);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -83,7 +90,7 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
         <div className="h-full rounded-full bg-[var(--warm-primary)]" style={{ width: `${progress}%` }} />
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6 rounded-3xl border border-black/15 bg-white p-6">
+      <form onSubmit={handleSubmit} noValidate data-hydrated={mounted || undefined} className="space-y-6 rounded-3xl border border-black/15 bg-white p-6">
         <p className="text-lg font-semibold text-neutral-700">Opdracht {index + 1} van {unit.items.length}</p>
         <p className="text-lg text-neutral-700">{instruction}</p>
 
@@ -134,7 +141,7 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
 
           {mode === "classificatie" && (
             <fieldset className="space-y-2">
-              {functionOptions.map((option) => (
+              {classifyOptions.map((option) => (
                 <label key={option} className="flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-300 p-3 text-lg">
                   <input
                     type="radio"

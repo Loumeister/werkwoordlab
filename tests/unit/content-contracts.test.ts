@@ -2,14 +2,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import taxonomy from '@/content/misconceptions/taxonomy.nl.json';
-import unit01 from '@/content/units/unit-01-pv-tt.json';
-import unit02 from '@/content/units/unit-02-voltooid-deelwoord.json';
-import unit03 from '@/content/units/unit-03-pv-vt.json';
+import { getUnits } from '@/lib/content';
 import { BUILT_IN_FEEDBACK } from '@/lib/feedback/builtInFeedback';
 
-type UnitLike = typeof unit01;
-
-const units: UnitLike[] = [unit01, unit02, unit03];
+const units = getUnits();
 
 function getJsonFiles(dirPath: string): string[] {
   const entries = fs.readdirSync(dirPath, { withFileTypes: true });
@@ -110,6 +106,27 @@ describe('content contracts', () => {
 
         expect(normalizedVariants).not.toContain(normalizedTarget);
         expect(new Set(normalizedVariants).size).toBe(normalizedVariants.length);
+      }
+    }
+  });
+
+  it('classify items have classifyOptions with at least two entries', () => {
+    for (const unit of units) {
+      for (const item of unit.items) {
+        if (item.type === 'classify') {
+          expect(
+            item.classifyOptions,
+            `classify item ${item.id} is missing classifyOptions`
+          ).toBeDefined();
+          expect(
+            item.classifyOptions!.length,
+            `classify item ${item.id} needs at least 2 classifyOptions`
+          ).toBeGreaterThanOrEqual(2);
+          expect(
+            item.classifyOptions!.includes(item.target),
+            `classify item ${item.id} target "${item.target}" must be in classifyOptions`
+          ).toBe(true);
+        }
       }
     }
   });
