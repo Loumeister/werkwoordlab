@@ -328,7 +328,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "De lege plek staat voor 'leerlingen'. Het is bijvoeglijk gebruik van het onvoltooid deelwoord.",
-        "step2": "Onvoltooid deelwoord van 'worstelen': worstellend. Let op: stam=worstel, -end → worstellend.",
+        "step2": "Onvoltooid deelwoord van 'worstelen': worstelend (stam = worstel, voeg -end toe → worstelend).",
         "step3": "Bij meervoud 'leerlingen': voeg -e toe → worstelende."
       },
       "diagnostic": {
@@ -337,7 +337,7 @@
       },
       "feedback": {
         "correct": "Juist: 'worstelende' is het onvoltooid deelwoord met buigings-e voor 'leerlingen'.",
-        "hint": "Onvoltooid deelwoord + -e bij meervoud: worstellend → worstelende."
+        "hint": "Onvoltooid deelwoord + -e bij meervoud: worstelend → worstelende."
       }
     },
     {
