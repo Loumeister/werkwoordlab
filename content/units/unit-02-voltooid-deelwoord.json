@@ -5,7 +5,7 @@
   "language": "nl",
   "learningGoals": [
     "Ik herken het voltooid deelwoord in een zin.",
-    "Ik bepaal met stam/eindklank of ik -d of -t schrijf.",
+    "Ik bepaal met ik-vorm/eindklank of ik -d of -t schrijf.",
     "Ik onderscheid homofone paren zoals gebeurt/gebeurd, belooft/beloofd, vertrouwt/vertrouwd, beweert/beweerd en verandert/veranderd op basis van grammaticale functie.",
     "Ik herken onregelmatige voltooid deelwoorden en gebruik de juiste vorm."
   ],
@@ -13,6 +13,7 @@
     {
       "id": "u2-i1",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Gisteren is er veel ___ in de klas. (gebeuren)",
       "context": "Dagelijkse gebeurtenissen",
       "lemma": "gebeuren",
@@ -24,7 +25,7 @@
       "scaffold": {
         "step1": "Bepaal of je een persoonsvorm of voltooid deelwoord nodig hebt.",
         "step2": "Herken hulpwerkwoord: 'is' wijst op voltooid deelwoord.",
-        "step3": "Kies de juiste eindletter op basis van stam/eindklank."
+        "step3": "Kies de juiste eindletter op basis van ik-vorm/eindklank."
       },
       "diagnostic": {
         "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
@@ -38,6 +39,7 @@
     {
       "id": "u2-i2",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Wat ___ er nu in de aula? (gebeuren)",
       "context": "Huidige situatie",
       "lemma": "gebeuren",
@@ -49,7 +51,7 @@
       "scaffold": {
         "step1": "Bepaal grammaticale functie.",
         "step2": "Is dit tegenwoordige tijd met onderwerp? Dan persoonsvorm.",
-        "step3": "Pas pv-spelling toe (stam+t)."
+        "step3": "Pas pv-spelling toe (ik-vorm+t)."
       },
       "diagnostic": {
         "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
@@ -63,6 +65,7 @@
     {
       "id": "u2-i3",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "De trainer heeft de opstelling aangepast en snel ___. (verbeteren)",
       "context": "Sportverslag",
       "lemma": "verbeteren",
@@ -73,7 +76,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Herken voltooid deelwoord na hulpwerkwoord.",
-        "step2": "Noteer stam: verbeter.",
+        "step2": "Noteer ik-vorm: verbeter.",
         "step3": "Eindklank niet in 't kofschip/x => -d."
       },
       "diagnostic": {
@@ -82,12 +85,13 @@
       },
       "feedback": {
         "correct": "Goed: 'verbeterd' eindigt op -d.",
-        "hint": "Controleer de laatste klank van de stam."
+        "hint": "Controleer de laatste klank van de ik-vorm."
       }
     },
     {
       "id": "u2-i4",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "De wedstrijd is op tijd ___. (starten)",
       "context": "Sportverslag",
       "lemma": "starten",
@@ -98,7 +102,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Herken voltooid deelwoord.",
-        "step2": "Bepaal stam: start.",
+        "step2": "Bepaal ik-vorm: start.",
         "step3": "Stam eindigt op t-klank (kofschip) => -t."
       },
       "diagnostic": {
@@ -107,12 +111,13 @@
       },
       "feedback": {
         "correct": "Juist: 'gestart' krijgt -t.",
-        "hint": "Gebruik de stam zonder -en en check de eindklank."
+        "hint": "Haal -en af van de infinitief om de ik-vorm te krijgen en check de eindklank."
       }
     },
     {
       "id": "u2-i5",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "We hebben het hoofdstuk goed ___. (leren)",
       "context": "Toetsvoorbereiding",
       "lemma": "leren",
@@ -132,12 +137,13 @@
       },
       "feedback": {
         "correct": "Correct: 'geleerd' met -d.",
-        "hint": "Kijk naar de stam-eindklank, niet naar hoe het klinkt."
+        "hint": "Kijk naar de eindklank van de ik-vorm, niet naar hoe het klinkt."
       }
     },
     {
       "id": "u2-i6",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "De deur is net ___. (sluiten)",
       "context": "Klassensituatie",
       "lemma": "sluiten",
@@ -148,7 +154,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Herken onregelmatig voltooid deelwoord.",
-        "step2": "Controleer of stamregel direct toepasbaar is.",
+        "step2": "Controleer of de ik-vormregel direct toepasbaar is.",
         "step3": "Gebruik bekende onregelmatige vorm."
       },
       "diagnostic": {
@@ -163,6 +169,7 @@
     {
       "id": "u2-i7",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Het schoolfeest is gisteren laat ___. (eindigen)",
       "context": "Schoolnieuws",
       "lemma": "eindigen",
@@ -174,7 +181,7 @@
       "scaffold": {
         "step1": "Bepaal functie: voltooid deelwoord.",
         "step2": "Stam: eindig.",
-        "step3": "Laatste letter van de stam niet in 't kofschip(x) => -d."
+        "step3": "Laatste letter van de ik-vorm niet in 't kofschip => -d."
       },
       "diagnostic": {
         "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
@@ -182,12 +189,13 @@
       },
       "feedback": {
         "correct": "Juist: 'geëindigd' eindigt op -d.",
-        "hint": "Laat de uitspraak niet misleiden; controleer de stam."
+        "hint": "Laat de uitspraak niet misleiden; controleer de ik-vorm."
       }
     },
     {
       "id": "u2-i8",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De toets is gisteren onverwacht ___. (uitstellen)",
       "context": "Schoolplanning",
       "lemma": "uitstellen",
@@ -199,7 +207,7 @@
       "scaffold": {
         "step1": "Herken voltooid deelwoord na 'is'.",
         "step2": "Herken 'uitstellen' als scheidbaar werkwoord: uit + stellen.",
-        "step3": "Plaats 'ge' na 'uit' en kies -d bij stam 'stel': uitgesteld."
+        "step3": "Plaats 'ge' na 'uit' en kies -d bij ik-vorm 'stel': uitgesteld."
       },
       "diagnostic": {
         "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED",
@@ -213,6 +221,7 @@
     {
       "id": "u2-i9",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De leraar heeft precies uitgelegd wat hij heeft ___. (bedoelen)",
       "context": "Na een uitleg",
       "lemma": "bedoelen",
@@ -238,6 +247,7 @@
     {
       "id": "u2-i10",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Wat ___ jij nu eigenlijk? (bedoelen)",
       "context": "Klasgesprek",
       "lemma": "bedoelen",
@@ -263,6 +273,7 @@
     {
       "id": "u2-i11",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "We zijn gisteren met de trein naar Amsterdam ___. (rijden)",
       "context": "Schooluitje",
       "lemma": "rijden",
@@ -288,6 +299,7 @@
     {
       "id": "u2-i12",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De spullen voor het kamp zijn al ___. (inpakken)",
       "context": "Schoolkamp voorbereiding",
       "lemma": "inpakken",
@@ -298,7 +310,7 @@
       "homophonePair": null,
       "scaffold": {
         "step1": "Herken scheidbaar werkwoord: in + pakken.",
-        "step2": "Voltooid deelwoord: in + ge + stam + uitgang. Stam = pak.",
+        "step2": "Voltooid deelwoord: in + ge + ik-vorm + uitgang. Ik-vorm = pak.",
         "step3": "Eindklank 'k' zit in 't kofschip → -t: ingepakt."
       },
       "diagnostic": {
@@ -313,6 +325,7 @@
     {
       "id": "u2-i13",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De vrijwilligers hebben de hele ochtend hard ___. (werken)",
       "context": "Schoolactiviteit",
       "lemma": "werken",
@@ -332,12 +345,13 @@
       },
       "feedback": {
         "correct": "Goed: 'gewerkt' eindigt op -t.",
-        "hint": "Controleer de stam en of de eindklank in 't kofschip (t, k, f, s, ch, p) staat."
+        "hint": "Controleer de ik-vorm en of de eindklank in 't kofschip (t, k, f, s, ch, p) staat."
       }
     },
     {
       "id": "u2-i14",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De leerling heeft een mooi verslag ___. (schrijven)",
       "context": "Schoolopdracht",
       "lemma": "schrijven",
@@ -363,6 +377,7 @@
     {
       "id": "u2-i15",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze heeft meer hulp ___ dan ze gaf. (beloven)",
       "context": "Groepsopdracht evaluatie",
       "lemma": "beloven",
@@ -373,7 +388,7 @@
       "homophonePair": "belooft/beloofd",
       "scaffold": {
         "step1": "Bepaal grammaticale functie: hulpwerkwoord 'heeft' wijst op voltooid deelwoord.",
-        "step2": "Stam van beloven: beloof. Ruwe stam: belov — v is stemhebbend.",
+        "step2": "Ik-vorm van beloven: beloof. Stam (infinitief minus -en): belov — v is stemhebbend, dus niet kofschip.",
         "step3": "Stemhebbende eindklank → -d: beloofd."
       },
       "diagnostic": {
@@ -388,6 +403,7 @@
     {
       "id": "u2-i16",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ altijd meer dan ze waarmaakt. (beloven)",
       "context": "Gesprek over afspraken",
       "lemma": "beloven",
@@ -407,12 +423,13 @@
       },
       "feedback": {
         "correct": "Goed: 'belooft' is de persoonsvorm. Klinkt als 'beloofd' maar is anders geschreven.",
-        "hint": "Start met functiebepaling: hulpwerkwoord aanwezig? Nee → persoonsvorm → stam+t."
+        "hint": "Start met functiebepaling: hulpwerkwoord aanwezig? Nee → persoonsvorm → ik-vorm+t."
       }
     },
     {
       "id": "u2-i17",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De leerling heeft zijn leraar blindelings ___. (vertrouwen)",
       "context": "Relatie leerling en mentor",
       "lemma": "vertrouwen",
@@ -423,7 +440,7 @@
       "homophonePair": "vertrouwt/vertrouwd",
       "scaffold": {
         "step1": "Hulpwerkwoord 'heeft' → voltooid deelwoord.",
-        "step2": "Stam: vertrouw. Ruwe stam eindigt op w — stemhebbend.",
+        "step2": "Ik-vorm: vertrouw. Stam (infinitief minus -en) eindigt op w — stemhebbend, dus niet kofschip.",
         "step3": "Stemhebbende eindklank → -d: vertrouwd."
       },
       "diagnostic": {
@@ -438,6 +455,7 @@
     {
       "id": "u2-i18",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Mijn juf ___ ons altijd op ons woord. (vertrouwen)",
       "context": "Sfeer in de klas",
       "lemma": "vertrouwen",
@@ -457,12 +475,13 @@
       },
       "feedback": {
         "correct": "Goed: 'vertrouwt' is de persoonsvorm. Klinkt als 'vertrouwd' maar vraagt +t.",
-        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → stam+t."
+        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → ik-vorm+t."
       }
     },
     {
       "id": "u2-i19",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Hij heeft iets ___ waar ik het niet mee eens ben. (beweren)",
       "context": "Discussie in de klas",
       "lemma": "beweren",
@@ -488,6 +507,7 @@
     {
       "id": "u2-i20",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De journalist ___ dat het nieuws klopt. (beweren)",
       "context": "Nieuwsbericht",
       "lemma": "beweren",
@@ -507,12 +527,13 @@
       },
       "feedback": {
         "correct": "Goed: 'beweert' is de persoonsvorm. Klinkt als 'beweerd' maar is anders gespeld.",
-        "hint": "Bepaal de functie: geen hulpwerkwoord → persoonsvorm → stam+t."
+        "hint": "Bepaal de functie: geen hulpwerkwoord → persoonsvorm → ik-vorm+t."
       }
     },
     {
       "id": "u2-i21",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Alles is de laatste tijd erg ___. (veranderen)",
       "context": "Gesprek over school",
       "lemma": "veranderen",
@@ -538,6 +559,7 @@
     {
       "id": "u2-i22",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Het klimaat ___ sneller dan verwacht. (veranderen)",
       "context": "Aardrijkskundeles",
       "lemma": "veranderen",
@@ -557,12 +579,13 @@
       },
       "feedback": {
         "correct": "Goed: 'verandert' is de persoonsvorm. 'Veranderd' (vd) klinkt hetzelfde.",
-        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → stam+t."
+        "hint": "Is er een hulpwerkwoord? Nee → persoonsvorm → ik-vorm+t."
       }
     },
     {
       "id": "u2-i23",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Ze zijn vorige week naar een nieuwe wijk ___. (verhuizen)",
       "context": "Nieuws over buren",
       "lemma": "verhuizen",
@@ -573,7 +596,7 @@
       "homophonePair": "verhuist/verhuisd",
       "scaffold": {
         "step1": "Hulpwerkwoord 'zijn' → voltooid deelwoord.",
-        "step2": "Ruwe stam: verhuiz — z is stemhebbend.",
+        "step2": "Stam (infinitief minus -en): verhuiz — z is stemhebbend, dus niet kofschip.",
         "step3": "Stemhebbende eindklank → -d: ge + verhuis + d = verhuisd."
       },
       "diagnostic": {
@@ -588,6 +611,7 @@
     {
       "id": "u2-i24",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Mijn broer heeft gisteren de hele dag ___. (studeren)",
       "context": "Voorbereiding op examen",
       "lemma": "studeren",
@@ -613,6 +637,7 @@
     {
       "id": "u2-i25",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Ze ___ al weken voor het eindexamen. (studeren)",
       "context": "Examenperiode",
       "lemma": "studeren",
@@ -633,6 +658,82 @@
       "feedback": {
         "correct": "Goed: 'studeert' is de persoonsvorm. 'Gestudeerd' (vd) vraagt een hulpwerkwoord.",
         "hint": "Hulpwerkwoord aanwezig? Nee → persoonsvorm → studeert (niet gestudeerd)."
+      }
+    },
+    {
+      "id": "u2-cp1",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Zelfde werkwoord — maar persoonsvorm of voltooid deelwoord?",
+      "sentenceA": {
+        "prompt": "Gisteren is er veel ___ in de klas. (gebeuren)",
+        "lemma": "gebeuren",
+        "grammaticalFunction": "voltooid-deelwoord",
+        "tense": "voltooide-tijd",
+        "subject": "er",
+        "target": "gebeurd",
+        "homophonePair": "gebeurt/gebeurd",
+        "scaffold": {
+          "step1": "Bepaal de functie.",
+          "step2": "Hulpwerkwoord 'is' staat erbij.",
+          "step3": "Na hulpwerkwoord: voltooid deelwoord → -d."
+        },
+        "diagnostic": { "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'gebeurd' = voltooid deelwoord.", "hint": "Hulpwerkwoord erbij? Dan voltooid deelwoord." }
+      },
+      "sentenceB": {
+        "prompt": "Wat ___ er nu in de aula? (gebeuren)",
+        "lemma": "gebeuren",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "er",
+        "target": "gebeurt",
+        "homophonePair": "gebeurt/gebeurd",
+        "scaffold": {
+          "step1": "Bepaal de functie.",
+          "step2": "Geen hulpwerkwoord: dit is een persoonsvorm.",
+          "step3": "Persoonsvorm 3e persoon enkelvoud: ik-vorm+t."
+        },
+        "diagnostic": { "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'gebeurt' = persoonsvorm.", "hint": "Geen hulpwerkwoord? Dan persoonsvorm." }
+      }
+    },
+    {
+      "id": "u2-cp2",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Kofschip-keuze: -d of -t bij het voltooid deelwoord?",
+      "sentenceA": {
+        "prompt": "De trainer heeft de opstelling aangepast en snel ___. (verbeteren)",
+        "lemma": "verbeteren",
+        "grammaticalFunction": "voltooid-deelwoord",
+        "tense": "voltooide-tijd",
+        "subject": "de trainer",
+        "target": "verbeterd",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Functie: voltooid deelwoord (na 'heeft').",
+          "step2": "Stam: verbeter. Eindklank: r.",
+          "step3": "r zit niet in 't kofschip → -d."
+        },
+        "diagnostic": { "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'verbeterd' met -d.", "hint": "r niet in kofschip → -d." }
+      },
+      "sentenceB": {
+        "prompt": "De wedstrijd is op tijd ___. (starten)",
+        "lemma": "starten",
+        "grammaticalFunction": "voltooid-deelwoord",
+        "tense": "voltooide-tijd",
+        "subject": "de wedstrijd",
+        "target": "gestart",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Functie: voltooid deelwoord (na 'is').",
+          "step2": "Stam: start. Eindklank: t.",
+          "step3": "t zit in 't kofschip → -t."
+        },
+        "diagnostic": { "primaryMisconception": "VD_KOFSCHIP_MISAPPLIED", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'gestart' met -t.", "hint": "t zit in kofschip → -t." }
       }
     }
   ],

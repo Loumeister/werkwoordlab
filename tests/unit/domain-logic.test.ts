@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { getUnit, getUnits, getMisconceptionLabel } from "@/lib/content";
+import { getUnit, getUnits, getMisconceptionLabel, isContrastPairItem } from "@/lib/content";
+import type { ExerciseItem } from "@/lib/content";
 import { evaluateAnswer, getExerciseMode } from "@/lib/evaluator";
 
 describe("domain logic", () => {
@@ -119,7 +120,8 @@ describe("domain logic", () => {
 
   it("unit-03 items renderen als korte-correctie modus (geen homofoon/classificatie)", () => {
     const unit03 = getUnit("unit-03-pv-vt")!;
-    for (const item of unit03.items) {
+    const exerciseItems = unit03.items.filter((item): item is ExerciseItem => !isContrastPairItem(item));
+    for (const item of exerciseItems) {
       expect(getExerciseMode(item)).toBe("korte-correctie");
     }
   });

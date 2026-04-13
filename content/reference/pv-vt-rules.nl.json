@@ -42,7 +42,7 @@
     }
   ],
   "warnings": [
-    "Werkwoorden met roughStem op v of z blijven d-werkwoorden, ook als de orthografische stam op f of s eindigt.",
+    "Werkwoorden met een stam op v of z blijven d-werkwoorden, ook als de ik-vorm op f of s eindigt.",
     "Bij stem op t of d mag de zichtbare vorm dubbel t of d krijgen door suffixaanhechting."
   ],
   "examples": [

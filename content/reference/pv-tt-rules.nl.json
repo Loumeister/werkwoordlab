@@ -42,7 +42,7 @@
   "exceptions": [
     {
       "code": "STEM_ENDS_WITH_T",
-      "description": "Als de orthografische stam al op t eindigt, voeg je geen extra t toe."
+      "description": "Als de ik-vorm al op t eindigt, voeg je geen extra t toe."
     },
     {
       "code": "JIJ_INVERSION_NO_T",
