@@ -18,7 +18,7 @@ type Props = {
  * The rubric feedback is intentionally heuristic (length check, end-letter
  * pattern, rule-word presence). It gives immediate, formative feedback without
  * requiring a server round-trip. A teacher can review the submitted text in the
- * classroom. Replace with an AI-scored rubric when that becomes available.
+ * classroom. If needed, expand this with additional deterministic rubric checks.
  */
 export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
   const [text, setText] = useState("");
