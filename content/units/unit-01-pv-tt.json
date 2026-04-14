@@ -5,7 +5,7 @@
   "language": "nl",
   "learningGoals": [
     "Ik bepaal eerst de persoonsvorm.",
-    "Ik pas de stam(+t)-regel correct toe in de tegenwoordige tijd.",
+    "Ik pas de ik-vorm(+t)-regel correct toe in de tegenwoordige tijd.",
     "Ik onderscheid homofone vormen zoals vind/vindt, word/wordt, bedoel/bedoelt, beloof/belooft en vertrouw/vertrouwt.",
     "Ik weet dat meervoud (wij/jullie/zij/ze) geen +t krijgt."
   ],
@@ -13,6 +13,7 @@
     {
       "id": "u1-i1",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Ik ___ het antwoord meteen. (vinden)",
       "context": "Klassituatie",
       "lemma": "vinden",
@@ -24,20 +25,21 @@
       "scaffold": {
         "step1": "Zoek de persoonsvorm in de zin.",
         "step2": "Bepaal het onderwerp.",
-        "step3": "Bij ik-vorm gebruik je de stam zonder +t."
+        "step3": "Bij ik gebruik je de ik-vorm."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: bij ik in de tegenwoordige tijd schrijf je de stam.",
+        "correct": "Goed: bij ik in de tegenwoordige tijd schrijf je de ik-vorm.",
         "hint": "Controleer eerst het onderwerp; bij ik meestal geen +t."
       }
     },
     {
       "id": "u1-i2",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Zij ___ de oefening lastig. (vinden)",
       "context": "Leservaring",
       "lemma": "vinden",
@@ -49,20 +51,21 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "Bepaal persoon en getal van het onderwerp.",
-        "step3": "Derde persoon enkelvoud krijgt stam+t."
+        "step3": "Derde persoon enkelvoud krijgt ik-vorm+t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: zij (enkelvoud) vraagt om stam+t.",
+        "correct": "Juist: zij (enkelvoud) vraagt om ik-vorm+t.",
         "hint": "Kijk of het onderwerp ik is; zo niet in enkelvoud vaak +t."
       }
     },
     {
       "id": "u1-i3",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "___ jij morgen dertien? (worden)",
       "context": "Verjaardag",
       "lemma": "worden",
@@ -88,6 +91,7 @@
     {
       "id": "u1-i4",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Jij ___ morgen dertien. (worden)",
       "context": "Verjaardag",
       "lemma": "worden",
@@ -99,7 +103,7 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "Geen inversie: onderwerp staat voor persoonsvorm.",
-        "step3": "Gebruik stam+t bij jij/hij/zij/het in enkelvoud."
+        "step3": "Gebruik ik-vorm+t bij jij/hij/zij/het in enkelvoud."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -113,6 +117,7 @@
     {
       "id": "u1-i5",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "Elke middag ___ hij op het plein. (rennen)",
       "context": "Dagelijkse routine",
       "lemma": "rennen",
@@ -124,20 +129,21 @@
       "scaffold": {
         "step1": "Markeer de persoonsvorm.",
         "step2": "Bepaal onderwerp: hij (3e persoon enkelvoud).",
-        "step3": "Stam + t toepassen."
+        "step3": "Ik-vorm + t toepassen."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: hij + tegenwoordige tijd geeft stam+t.",
+        "correct": "Goed: hij + tegenwoordige tijd geeft ik-vorm+t.",
         "hint": "Controleer altijd eerst onderwerp en tijd."
       }
     },
     {
       "id": "u1-i6",
       "type": "fill-in",
+      "phase": "verkennen",
       "prompt": "In de pauze ___ ik vaak met Noor. (praten)",
       "context": "Schoolpauze",
       "lemma": "praten",
@@ -149,20 +155,21 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm.",
         "step2": "Bepaal onderwerp: ik.",
-        "step3": "Gebruik stam zonder extra -t."
+        "step3": "Gebruik de ik-vorm."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: bij ik blijft het de stam.",
+        "correct": "Juist: bij ik schrijf je de ik-vorm.",
         "hint": "Voeg geen extra t toe bij ik-vorm."
       }
     },
     {
       "id": "u1-i7",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "___ jij het verschil tussen vind en vindt? (snappen)",
       "context": "Klassikale vraag",
       "lemma": "snappen",
@@ -188,6 +195,7 @@
     {
       "id": "u1-i8",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Morgen ___ ik de opdracht af. (maken)",
       "context": "Huiswerkplanning",
       "lemma": "maken",
@@ -199,7 +207,7 @@
       "scaffold": {
         "step1": "Zoek de persoonsvorm.",
         "step2": "Bepaal onderwerp: ik.",
-        "step3": "Gebruik de stam als ik-vorm."
+        "step3": "Schrijf de ik-vorm."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
@@ -213,6 +221,7 @@
     {
       "id": "u1-i9",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Wat ___ je precies? (bedoelen)",
       "context": "Klasgesprek",
       "lemma": "bedoelen",
@@ -238,6 +247,7 @@
     {
       "id": "u1-i10",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Hij ___ het vast niet verkeerd. (bedoelen)",
       "context": "Gesprek over intenties",
       "lemma": "bedoelen",
@@ -249,20 +259,21 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "Onderwerp is 'hij': derde persoon enkelvoud.",
-        "step3": "Geen inversie: gebruik stam+t."
+        "step3": "Geen inversie: gebruik ik-vorm+t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: 'hij bedoelt' krijgt stam+t.",
+        "correct": "Juist: 'hij bedoelt' krijgt ik-vorm+t.",
         "hint": "Kijk of er inversie is; hier staat het onderwerp vóór de persoonsvorm."
       }
     },
     {
       "id": "u1-i11",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Wij ___ elke week samen aan de schoolkrant. (werken)",
       "context": "Schoolactiviteit",
       "lemma": "werken",
@@ -288,6 +299,7 @@
     {
       "id": "u1-i12",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ allemaal erg hard voor de toets. (studeren)",
       "context": "Toetsvoorbereiding",
       "lemma": "studeren",
@@ -313,6 +325,7 @@
     {
       "id": "u1-i13",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Het ___ mij soms te lang. (duren)",
       "context": "Schoolervaring",
       "lemma": "duren",
@@ -324,20 +337,21 @@
       "scaffold": {
         "step1": "Bepaal het onderwerp: het.",
         "step2": "Derde persoon enkelvoud: het duurt.",
-        "step3": "Gebruik stam+t: duur+t."
+        "step3": "Gebruik ik-vorm+t: duur+t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Goed: 'het duurt' heeft stam+t.",
+        "correct": "Goed: 'het duurt' heeft ik-vorm+t.",
         "hint": "Controleer het onderwerp; 'het' is derde persoon enkelvoud en krijgt +t."
       }
     },
     {
       "id": "u1-i14",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Jij ___ dat altijd zo grappig. (vinden)",
       "context": "Gesprek tussen leerlingen",
       "lemma": "vinden",
@@ -349,7 +363,7 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "Geen inversie: 'jij' staat vóór de persoonsvorm.",
-        "step3": "Jij zonder inversie krijgt stam+t."
+        "step3": "Jij zonder inversie krijgt ik-vorm+t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -363,6 +377,7 @@
     {
       "id": "u1-i15",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ik ___ dat ik morgen op tijd ben. (beloven)",
       "context": "Afspraak met vriend",
       "lemma": "beloven",
@@ -374,7 +389,7 @@
       "scaffold": {
         "step1": "Zoek de persoonsvorm in de zin.",
         "step2": "Bepaal het onderwerp: ik.",
-        "step3": "Bij ik-vorm gebruik je de stam zonder +t."
+        "step3": "Bij ik gebruik je de ik-vorm."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
@@ -388,6 +403,7 @@
     {
       "id": "u1-i16",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ze ___ elke keer beter te doen. (beloven)",
       "context": "Gesprek over gedrag",
       "lemma": "beloven",
@@ -399,20 +415,21 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "Onderwerp 'ze' is hier derde persoon enkelvoud.",
-        "step3": "Stam (beloof) + t = belooft."
+        "step3": "Ik-vorm (beloof) + t = belooft."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: 'ze belooft' (enkelvoud) krijgt stam+t.",
-        "hint": "Kijk of 'ze' hier enkelvoud is; dan stam+t."
+        "correct": "Juist: 'ze belooft' (enkelvoud) krijgt ik-vorm+t.",
+        "hint": "Kijk of 'ze' hier enkelvoud is; dan ik-vorm+t."
       }
     },
     {
       "id": "u1-i17",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "Ik ___ erop dat we dit samen halen. (vertrouwen)",
       "context": "Schoolproject",
       "lemma": "vertrouwen",
@@ -424,7 +441,7 @@
       "scaffold": {
         "step1": "Zoek de persoonsvorm.",
         "step2": "Bepaal het onderwerp: ik.",
-        "step3": "Stam van vertrouwen is 'vertrouw'; bij ik: stam zonder +t."
+        "step3": "Ik-vorm van vertrouwen is 'vertrouw'; bij ik geen extra -t."
       },
       "diagnostic": {
         "primaryMisconception": "PV_FALSE_T_ADD",
@@ -432,12 +449,13 @@
       },
       "feedback": {
         "correct": "Goed: 'ik vertrouw' heeft geen +t.",
-        "hint": "Bij de ik-vorm gebruik je de stam; geen extra -t."
+        "hint": "Bij ik schrijf je de ik-vorm; geen extra -t."
       }
     },
     {
       "id": "u1-i18",
       "type": "fill-in",
+      "phase": "oefenen",
       "prompt": "De nieuwe leerling ___ zijn mentor meteen. (vertrouwen)",
       "context": "Introductie op school",
       "lemma": "vertrouwen",
@@ -449,20 +467,21 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "'De nieuwe leerling' is derde persoon enkelvoud.",
-        "step3": "Stam (vertrouw) + t = vertrouwt."
+        "step3": "Ik-vorm (vertrouw) + t = vertrouwt."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: derde persoon enkelvoud krijgt stam+t: 'vertrouwt'.",
+        "correct": "Juist: derde persoon enkelvoud krijgt ik-vorm+t: 'vertrouwt'.",
         "hint": "Bepaal het onderwerp en persoon; enkelvoud derde persoon krijgt +t."
       }
     },
     {
       "id": "u1-i19",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Ze ___ dat de toets verschoven is. (beweren)",
       "context": "Geruchten in de klas",
       "lemma": "beweren",
@@ -474,7 +493,7 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "Onderwerp 'ze' is hier enkelvoud (derde persoon).",
-        "step3": "Stam (beweer) + t = beweert."
+        "step3": "Ik-vorm (beweer) + t = beweert."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -482,12 +501,13 @@
       },
       "feedback": {
         "correct": "Goed: 'ze beweert' is de persoonsvorm. Klinkt als 'beweerd' maar is anders gespeld.",
-        "hint": "Bepaal de functie: persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt stam+t."
+        "hint": "Bepaal de functie: persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt ik-vorm+t."
       }
     },
     {
       "id": "u1-i20",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Haar plan ___ elke dag een beetje. (veranderen)",
       "context": "Schoolproject in ontwikkeling",
       "lemma": "veranderen",
@@ -499,7 +519,7 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "'Haar plan' is derde persoon enkelvoud.",
-        "step3": "Stam (verander) + t = verandert."
+        "step3": "Ik-vorm (verander) + t = verandert."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -507,12 +527,13 @@
       },
       "feedback": {
         "correct": "Juist: 'verandert' is de persoonsvorm. Klinkt als 'veranderd' maar vraagt +t.",
-        "hint": "Geen hulpwerkwoord → persoonsvorm → stam+t."
+        "hint": "Geen hulpwerkwoord → persoonsvorm → ik-vorm+t."
       }
     },
     {
       "id": "u1-i21",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De leerling ___ altijd heel precies. (antwoorden)",
       "context": "Klassikale situatie",
       "lemma": "antwoorden",
@@ -524,20 +545,21 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "'De leerling' is derde persoon enkelvoud.",
-        "step3": "Stam van antwoorden is 'antwoord'; stam + t = antwoordt. Let op de -dt!"
+        "step3": "Ik-vorm van antwoorden is 'antwoord'; ik-vorm + t = antwoordt. Let op de -dt!"
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
         "acceptedVariants": []
       },
       "feedback": {
-        "correct": "Juist: 'antwoordt' heeft -dt aan het eind (stam eindigt op d, daarna +t).",
-        "hint": "De stam van antwoorden is 'antwoord'. Derde persoon enkelvoud: antwoord + t = antwoordt."
+        "correct": "Juist: 'antwoordt' heeft -dt aan het eind (ik-vorm eindigt op d, daarna +t).",
+        "hint": "De ik-vorm van antwoorden is 'antwoord'. Derde persoon enkelvoud: antwoord + t = antwoordt."
       }
     },
     {
       "id": "u1-i22",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Ze ___ dit jaar naar een nieuwe wijk. (verhuizen)",
       "context": "Nieuws over buurmeisje",
       "lemma": "verhuizen",
@@ -549,7 +571,7 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "'Ze' is hier enkelvoud (derde persoon).",
-        "step3": "Stam (verhuis) + t = verhuist."
+        "step3": "Ik-vorm (verhuis) + t = verhuist."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -557,12 +579,13 @@
       },
       "feedback": {
         "correct": "Goed: 'ze verhuist' is de persoonsvorm. 'Verhuisd' klinkt hetzelfde maar is het voltooid deelwoord.",
-        "hint": "Bepaal de grammaticale functie; persoonsvorm krijgt stam+t."
+        "hint": "Bepaal de grammaticale functie; persoonsvorm krijgt ik-vorm+t."
       }
     },
     {
       "id": "u1-i23",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "De stagiair ___ al drie maanden op onze school. (werken)",
       "context": "Schoolnieuws",
       "lemma": "werken",
@@ -574,7 +597,7 @@
       "scaffold": {
         "step1": "Bepaal persoonsvorm en onderwerp.",
         "step2": "'De stagiair' is derde persoon enkelvoud.",
-        "step3": "Stam (werk) + t = werkt."
+        "step3": "Ik-vorm (werk) + t = werkt."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -582,12 +605,13 @@
       },
       "feedback": {
         "correct": "Goed: 'werkt' is de persoonsvorm voor derde persoon enkelvoud.",
-        "hint": "Bepaal het onderwerp: enkelvoud derde persoon krijgt stam+t."
+        "hint": "Bepaal het onderwerp: enkelvoud derde persoon krijgt ik-vorm+t."
       }
     },
     {
       "id": "u1-i24",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Mijn zus ___ elke avond voor haar vak. (studeren)",
       "context": "Thuissituatie",
       "lemma": "studeren",
@@ -599,7 +623,7 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "'Mijn zus' is derde persoon enkelvoud.",
-        "step3": "Stam (studeer) + t = studeert."
+        "step3": "Ik-vorm (studeer) + t = studeert."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -607,12 +631,13 @@
       },
       "feedback": {
         "correct": "Juist: derde persoon enkelvoud geeft 'studeert'.",
-        "hint": "Bepaal het onderwerp; enkelvoud derde persoon krijgt stam+t."
+        "hint": "Bepaal het onderwerp; enkelvoud derde persoon krijgt ik-vorm+t."
       }
     },
     {
       "id": "u1-i25",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Iedereen ___ zijn werk enorm. (bewonderen)",
       "context": "Kunstexpositie op school",
       "lemma": "bewonderen",
@@ -624,7 +649,7 @@
       "scaffold": {
         "step1": "Bepaal de persoonsvorm.",
         "step2": "'Iedereen' is derde persoon enkelvoud.",
-        "step3": "Stam (bewonder) + t = bewondert."
+        "step3": "Ik-vorm (bewonder) + t = bewondert."
       },
       "diagnostic": {
         "primaryMisconception": "PV_STAM_T_OMISSION",
@@ -632,12 +657,13 @@
       },
       "feedback": {
         "correct": "Goed: 'bewondert' is de persoonsvorm. 'Bewonderd' klinkt hetzelfde maar is het voltooid deelwoord.",
-        "hint": "Is dit een persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt stam+t."
+        "hint": "Is dit een persoonsvorm of voltooid deelwoord? Persoonsvorm krijgt ik-vorm+t."
       }
     },
     {
       "id": "u1-i26",
       "type": "fill-in",
+      "phase": "zelfstandig",
       "prompt": "Er ___ altijd iets grappigs na de bel. (gebeuren)",
       "context": "Na schooltijd",
       "lemma": "gebeuren",
@@ -649,7 +675,7 @@
       "scaffold": {
         "step1": "Bepaal de grammaticale functie van het werkwoord.",
         "step2": "Er is geen hulpwerkwoord: dit is een persoonsvorm.",
-        "step3": "Stam (gebeur) + t = gebeurt."
+        "step3": "Ik-vorm (gebeur) + t = gebeurt."
       },
       "diagnostic": {
         "primaryMisconception": "HOMOPHONE_FUNCTION_CONFUSION",
@@ -659,6 +685,120 @@
         "correct": "Juist: 'gebeurt' is hier de persoonsvorm. 'Gebeurd' is het voltooid deelwoord.",
         "hint": "Is er een hulpwerkwoord? Nee — dus dit is een persoonsvorm."
       }
+    },
+    {
+      "id": "u1-cp1",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Zelfde werkwoord, ander onderwerp — let op de +t",
+      "sentenceA": {
+        "prompt": "Ik ___ het antwoord meteen. (vinden)",
+        "lemma": "vinden",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "ik",
+        "target": "vind",
+        "homophonePair": "vind/vindt",
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Onderwerp is 'ik'.",
+          "step3": "Ik: schrijf de ik-vorm."
+        },
+        "diagnostic": { "primaryMisconception": "PV_FALSE_T_ADD", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'vind' bij ik.", "hint": "Ik-vorm: geen extra -t." }
+      },
+      "sentenceB": {
+        "prompt": "Zij ___ de oefening lastig. (vinden)",
+        "lemma": "vinden",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "zij",
+        "target": "vindt",
+        "homophonePair": "vind/vindt",
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Onderwerp is 'zij' (enkelvoud).",
+          "step3": "3e persoon enkelvoud: ik-vorm+t."
+        },
+        "diagnostic": { "primaryMisconception": "PV_STAM_T_OMISSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'vindt' bij zij.", "hint": "3e persoon enkelvoud: ik-vorm+t." }
+      }
+    },
+    {
+      "id": "u1-cp2",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Inversie of geen inversie? Dat bepaalt de -t",
+      "sentenceA": {
+        "prompt": "___ jij morgen dertien? (worden)",
+        "lemma": "worden",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "jij",
+        "target": "word",
+        "homophonePair": "word/wordt",
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Herleid: Jij word/wordt morgen dertien.",
+          "step3": "Persoonsvorm staat vóór jij: -t valt weg bij inversie."
+        },
+        "diagnostic": { "primaryMisconception": "PV_JIJ_INVERSION_FALSE_T", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'word' bij inversie met jij.", "hint": "Bij inversie met jij: geen -t." }
+      },
+      "sentenceB": {
+        "prompt": "Jij ___ morgen dertien. (worden)",
+        "lemma": "worden",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "jij",
+        "target": "wordt",
+        "homophonePair": "word/wordt",
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "Jij staat vóór de persoonsvorm: geen inversie.",
+          "step3": "Zonder inversie: ik-vorm+t."
+        },
+        "diagnostic": { "primaryMisconception": "PV_STAM_T_OMISSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'wordt' zonder inversie.", "hint": "Geen inversie: ik-vorm+t." }
+      }
+    },
+    {
+      "id": "u1-cp3",
+      "type": "contrast-pair",
+      "phase": "oefenen",
+      "contrastLabel": "Enkelvoud of meervoud? Dat bepaalt de +t",
+      "sentenceA": {
+        "prompt": "Wij ___ elke week samen. (werken)",
+        "lemma": "werken",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "wij",
+        "target": "werken",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "'Wij' is meervoud.",
+          "step3": "Meervoud: geen +t, gebruik de ik-vorm."
+        },
+        "diagnostic": { "primaryMisconception": "PV_MEERVOUD_T_ADDITION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'werken' bij wij, geen +t.", "hint": "Meervoud: geen +t." }
+      },
+      "sentenceB": {
+        "prompt": "Hij ___ elke middag op het plein. (rennen)",
+        "lemma": "rennen",
+        "grammaticalFunction": "persoonsvorm",
+        "tense": "tegenwoordige-tijd",
+        "subject": "hij",
+        "target": "rent",
+        "homophonePair": null,
+        "scaffold": {
+          "step1": "Bepaal het onderwerp.",
+          "step2": "'Hij' is enkelvoud (3e persoon).",
+          "step3": "Enkelvoud 3e persoon: ik-vorm+t."
+        },
+        "diagnostic": { "primaryMisconception": "PV_STAM_T_OMISSION", "acceptedVariants": [] },
+        "feedback": { "correct": "Goed: 'rent' bij hij.", "hint": "3e persoon enkelvoud: ik-vorm+t." }
+      }
     }
   ],
   "transferTask": {
@@ -667,7 +807,7 @@
     "prompt": "Verbeter in dit korte dagboekfragment alle persoonsvormen in de tegenwoordige tijd en leg bij twee verbeteringen je regel uit.",
     "rubric": [
       "Persoonsvormen correct herkend",
-      "Stam(+t)-regel correct toegepast",
+      "Ik-vorm(+t)-regel correct toegepast",
       "Uitleg gebruikt grammaticale termen"
     ]
   }

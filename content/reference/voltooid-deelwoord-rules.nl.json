@@ -32,7 +32,7 @@
     },
     {
       "code": "DT_FROM_ROUGH_STEM",
-      "description": "Kies d of t op basis van de roughStem, niet op basis van de zichtbare orthografische stam."
+      "description": "Kies d of t op basis van de stam (infinitief minus -en), niet op basis van de ik-vorm."
     }
   ],
   "herExceptionsMayTakeGe": [

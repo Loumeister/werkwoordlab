@@ -21,7 +21,7 @@ export type MisconceptionCode =
   | "OVD_FUNCTION_CONFUSION";
 
 export const MISCONCEPTION_TITLES: Record<MisconceptionCode, string> = {
-  PV_STAM_T_OMISSION: "Stam+t weggelaten",
+  PV_STAM_T_OMISSION: "Ik-vorm+t weggelaten",
   PV_FALSE_T_ADD: "Onterechte +t toegevoegd",
   PV_JIJ_INVERSION_FALSE_T: "Onterechte +t bij inversie met jij",
   PV_MEERVOUD_T_ADDITION: "Onterechte +t bij meervoud",
@@ -31,7 +31,7 @@ export const MISCONCEPTION_TITLES: Record<MisconceptionCode, string> = {
   VT_DE_TE_CONFUSION: "Verkeerde uitgang -de of -te (verleden tijd)",
   VT_VD_FUNCTION_CONFUSION: "Voltooid deelwoord gebruikt als persoonsvorm VT",
   VT_ENKELVOUD_MEERVOUD: "Enkelvoud/meervoud verwisseld (verleden tijd)",
-  VT_RUWE_STAM_OVERRIDE: "Ruwe stam niet herkend bij -de/-te keuze",
+  VT_RUWE_STAM_OVERRIDE: "Kofschip op ik-vorm toegepast in plaats van stam",
   INF_PV_CONFUSION: "Persoonsvorm gebruikt waar infinitief nodig is",
   INF_VD_CONFUSION: "Voltooid deelwoord gebruikt waar infinitief nodig is",
   VD_ADJ_FUNCTION_CONFUSION: "Bijvoeglijk en werkwoordelijk gebruik VD verward",

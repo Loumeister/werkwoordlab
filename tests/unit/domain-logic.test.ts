@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { getUnit, getUnits, getMisconceptionLabel } from "@/lib/content";
+import { getUnit, getUnits, getMisconceptionLabel, isContrastPairItem } from "@/lib/content";
+import type { ExerciseItem } from "@/lib/content";
 import { evaluateAnswer, getExerciseMode, getClassifyOptions, getFunctionOptions } from "@/lib/evaluator";
 
 describe("domain logic", () => {
@@ -14,13 +15,13 @@ describe("domain logic", () => {
   });
 
   it("evaluateAnswer is correct voor target en incorrect voor fout antwoord", () => {
-    const item = getUnit("unit-01-pv-tt")!.items[0];
+    const item = getUnit("unit-01-pv-tt")!.items[0] as ExerciseItem;
     expect(evaluateAnswer(item, item.target).correct).toBe(true);
     expect(evaluateAnswer(item, "fout-antwoord").correct).toBe(false);
   });
 
   it("evaluateAnswer ondersteunt acceptedVariants en hoofdletter-normalisatie", () => {
-    const baseItem = getUnit("unit-01-pv-tt")!.items[0];
+    const baseItem = getUnit("unit-01-pv-tt")!.items[0] as ExerciseItem;
     const variantItem = {
       ...baseItem,
       target: "word",
@@ -36,7 +37,7 @@ describe("domain logic", () => {
   });
 
   it("evaluateAnswer ondersteunt acceptedVariants voor classificatie-modus", () => {
-    const classItem = getUnit("unit-02-voltooid-deelwoord")!.items[0];
+    const classItem = getUnit("unit-02-voltooid-deelwoord")!.items[0] as ExerciseItem;
     const variantItem = {
       ...classItem,
       diagnostic: {
@@ -51,9 +52,11 @@ describe("domain logic", () => {
 
   it("detecteert oefenmodus deterministisch", () => {
     const units = getUnits();
-    const classItem = getUnit("unit-02-voltooid-deelwoord")!.items[0];
-    const homophoneItem = getUnit("unit-01-pv-tt")!.items[0];
-    const shortItem = getUnit("unit-01-pv-tt")!.items.find((item) => item.homophonePair === null)!;
+    const classItem = getUnit("unit-02-voltooid-deelwoord")!.items[0] as ExerciseItem;
+    const homophoneItem = getUnit("unit-01-pv-tt")!.items[0] as ExerciseItem;
+    const shortItem = getUnit("unit-01-pv-tt")!.items
+      .filter((item): item is ExerciseItem => !isContrastPairItem(item))
+      .find((item) => item.homophonePair === null)!;
 
     expect(units.length).toBeGreaterThan(0);
     expect(getExerciseMode(classItem)).toBe("classificatie");
@@ -68,7 +71,9 @@ describe("domain logic", () => {
 
   it("detecteert homofoon-modus voor het nieuwe paar bedoel/bedoelt", () => {
     const unit01 = getUnit("unit-01-pv-tt")!;
-    const bedoelItem = unit01.items.find((item) => item.homophonePair === "bedoel/bedoelt");
+    const bedoelItem = unit01.items
+      .filter((item): item is ExerciseItem => !isContrastPairItem(item))
+      .find((item) => item.homophonePair === "bedoel/bedoelt");
     expect(bedoelItem).toBeDefined();
     expect(getExerciseMode(bedoelItem!)).toBe("homofonen");
   });
@@ -81,8 +86,9 @@ describe("domain logic", () => {
 
   it("detecteert homofoon-modus voor Tier-1-paren beloof/belooft en vertrouw/vertrouwt", () => {
     const unit01 = getUnit("unit-01-pv-tt")!;
-    const beloofItem = unit01.items.find((item) => item.homophonePair === "beloof/belooft");
-    const vertrouwItem = unit01.items.find((item) => item.homophonePair === "vertrouw/vertrouwt");
+    const exerciseItems01 = unit01.items.filter((item): item is ExerciseItem => !isContrastPairItem(item));
+    const beloofItem = exerciseItems01.find((item) => item.homophonePair === "beloof/belooft");
+    const vertrouwItem = exerciseItems01.find((item) => item.homophonePair === "vertrouw/vertrouwt");
     expect(beloofItem).toBeDefined();
     expect(vertrouwItem).toBeDefined();
     expect(getExerciseMode(beloofItem!)).toBe("homofonen");
@@ -91,8 +97,9 @@ describe("domain logic", () => {
 
   it("detecteert classificatie-modus voor Tier-1 contrastparen belooft/beloofd en vertrouwt/vertrouwd in unit-02", () => {
     const unit02 = getUnit("unit-02-voltooid-deelwoord")!;
-    const belooftItem = unit02.items.find((item) => item.homophonePair === "belooft/beloofd");
-    const vertrouwtItem = unit02.items.find((item) => item.homophonePair === "vertrouwt/vertrouwd");
+    const exerciseItems02 = unit02.items.filter((item): item is ExerciseItem => !isContrastPairItem(item));
+    const belooftItem = exerciseItems02.find((item) => item.homophonePair === "belooft/beloofd");
+    const vertrouwtItem = exerciseItems02.find((item) => item.homophonePair === "vertrouwt/vertrouwd");
     expect(belooftItem).toBeDefined();
     expect(vertrouwtItem).toBeDefined();
     expect(getExerciseMode(belooftItem!)).toBe("classificatie");
@@ -119,7 +126,8 @@ describe("domain logic", () => {
 
   it("unit-03 items renderen als korte-correctie modus (geen homofoon/classificatie)", () => {
     const unit03 = getUnit("unit-03-pv-vt")!;
-    for (const item of unit03.items) {
+    const exerciseItems = unit03.items.filter((item): item is ExerciseItem => !isContrastPairItem(item));
+    for (const item of exerciseItems) {
       expect(getExerciseMode(item)).toBe("korte-correctie");
     }
   });
@@ -129,7 +137,8 @@ describe("domain logic", () => {
     const unit04 = getUnit("unit-04-infinitief");
     expect(unit04).toBeDefined();
     expect(unit04!.items.length).toBeGreaterThanOrEqual(20);
-    for (const item of unit04!.items) {
+    const exerciseItems = unit04!.items.filter((item): item is ExerciseItem => !isContrastPairItem(item));
+    for (const item of exerciseItems) {
       expect(item.grammaticalFunction).toBe("infinitief");
     }
   });
@@ -148,7 +157,8 @@ describe("domain logic", () => {
 
   it("unit-04 items renderen als korte-correctie modus", () => {
     const unit04 = getUnit("unit-04-infinitief")!;
-    for (const item of unit04.items) {
+    const exerciseItems = unit04.items.filter((item): item is ExerciseItem => !isContrastPairItem(item));
+    for (const item of exerciseItems) {
       expect(getExerciseMode(item)).toBe("korte-correctie");
     }
   });
@@ -163,13 +173,13 @@ describe("domain logic", () => {
 
   it("classify-items krijgen classificatie-modus via item.type", () => {
     const unit05 = getUnit("unit-05-bijvoeglijk-vd")!;
-    const classifyItem = unit05.items.find((item) => item.type === "classify")!;
+    const classifyItem = unit05.items.find((item) => item.type === "classify")! as ExerciseItem;
     expect(getExerciseMode(classifyItem)).toBe("classificatie");
   });
 
   it("evaluateAnswer gebruikt item.target als verwacht antwoord bij classify-items", () => {
     const unit05 = getUnit("unit-05-bijvoeglijk-vd")!;
-    const classifyItem = unit05.items.find((item) => item.type === "classify")!;
+    const classifyItem = unit05.items.find((item) => item.type === "classify")! as ExerciseItem;
     expect(evaluateAnswer(classifyItem, classifyItem.target).correct).toBe(true);
     expect(evaluateAnswer(classifyItem, "fout-antwoord").correct).toBe(false);
     // evaluateAnswer should NOT use grammaticalFunction for classify items
@@ -181,7 +191,7 @@ describe("domain logic", () => {
 
   it("getClassifyOptions geeft classifyOptions terug voor classify-items", () => {
     const unit05 = getUnit("unit-05-bijvoeglijk-vd")!;
-    const classifyItem = unit05.items.find((item) => item.type === "classify")!;
+    const classifyItem = unit05.items.find((item) => item.type === "classify")! as ExerciseItem;
     const options = getClassifyOptions(classifyItem);
     expect(options).toEqual(classifyItem.classifyOptions);
     expect(options).toContain("werkwoordelijk");
@@ -190,7 +200,7 @@ describe("domain logic", () => {
 
   it("getClassifyOptions geeft getFunctionOptions terug voor niet-classify-items", () => {
     const unit01 = getUnit("unit-01-pv-tt")!;
-    const fillInItem = unit01.items.find((item) => item.type === "fill-in")!;
+    const fillInItem = unit01.items.find((item) => item.type === "fill-in")! as ExerciseItem;
     const options = getClassifyOptions(fillInItem);
     expect(options).toEqual(getFunctionOptions());
   });
@@ -206,7 +216,7 @@ describe("domain logic", () => {
     const unit06 = getUnit("unit-06-onvoltooid-deelwoord");
     expect(unit06).toBeDefined();
     expect(unit06!.items.length).toBeGreaterThanOrEqual(16);
-    const classifyItem = unit06!.items.find((item) => item.type === "classify");
+    const classifyItem = unit06!.items.find((item) => item.type === "classify") as ExerciseItem | undefined;
     expect(classifyItem).toBeDefined();
     expect(classifyItem!.classifyOptions?.length).toBe(3);
     expect(classifyItem!.classifyOptions).toContain("onvoltooid-deelwoord");
