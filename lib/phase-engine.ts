@@ -1,5 +1,6 @@
 import type { AnyItem, ExerciseItem, PhaseId } from "@/lib/content";
 import type { AttemptRecord } from "@/lib/attempt-store";
+import type { MisconceptionCode } from "@/lib/feedback/misconceptions";
 
 // ---------------------------------------------------------------------------
 // Phase configuration
@@ -151,6 +152,63 @@ export function getEntryMode(item: ExerciseItem, allAttempts: AttemptRecord[]): 
   if (funcMastery && patternMastery) return "independent";
   if (funcMastery) return "spell-first";
   return "full";
+}
+
+// ---------------------------------------------------------------------------
+// Proof chips — bewijs kiezen
+// ---------------------------------------------------------------------------
+
+/**
+ * Short "wrong reasoning" labels per misconception, representing the typical
+ * student rationale behind the error. Used as the distractor chip in the
+ * "bewijs kiezen" interaction.
+ */
+const WRONG_REASONING: Partial<Record<MisconceptionCode, string>> = {
+  PV_FALSE_T_ADD: "Persoonsvorm → altijd +t",
+  PV_STAM_T_OMISSION: "Ik-vorm, dus geen -t nodig",
+  PV_JIJ_INVERSION_FALSE_T: "Na het werkwoord altijd +t",
+  PV_MEERVOUD_T_ADDITION: "Derde persoon enkelvoud → ik-vorm +t",
+  VD_KOFSCHIP_MISAPPLIED: "Stam eindigt op d → deelwoord op -d",
+  VD_IRREGULAR_PP_REGULARIZED: "Ik-vorm + -d of -t, zoals altijd",
+  HOMOPHONE_FUNCTION_CONFUSION: "Klinkt hetzelfde → kies de vertrouwde vorm",
+  VT_DE_TE_CONFUSION: "Verleden tijd → altijd -de",
+  VT_VD_FUNCTION_CONFUSION: "Na hulpwerkwoord → deelwoord met ge-",
+  VT_ENKELVOUD_MEERVOUD: "Enkelvoud → ik-vorm + -de of -te",
+  VT_RUWE_STAM_OVERRIDE: "Ik-vorm eindigt op -f → kofschip → -te",
+};
+
+/**
+ * Returns two short reasoning chips for the "bewijs kiezen" interaction:
+ *   [0] correct chip  — derived from item.scaffold.step3 (the rule-application step)
+ *   [1] wrong chip    — the typical misconception reasoning for this item's code
+ *
+ * The array order is intentionally [correct, wrong] so callers can shuffle
+ * before rendering to avoid a predictable position bias.
+ */
+export function getProofChips(item: ExerciseItem): [string, string] {
+  const correctChip = item.scaffold.step3;
+  const code = item.diagnostic.primaryMisconception as MisconceptionCode;
+  const wrongChip = WRONG_REASONING[code] ?? "De uitgang klinkt goed";
+  return [correctChip, wrongChip];
+}
+
+/**
+ * Returns true when no prior spelling attempt exists for this misconception
+ * pattern in the current unit. Used to decide whether to show proof chips
+ * even on a correct answer (first-encounter onboarding).
+ */
+export function isFirstOccurrenceOfPattern(
+  item: ExerciseItem,
+  unitAttempts: AttemptRecord[]
+): boolean {
+  const code = item.diagnostic.primaryMisconception;
+  const priorAttempts = unitAttempts.filter(
+    (a) =>
+      a.misconception === code &&
+      !a.itemId.endsWith(":function") &&
+      !a.itemId.endsWith(":repair-detect")
+  );
+  return priorAttempts.length === 0;
 }
 
 // ---------------------------------------------------------------------------
