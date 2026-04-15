@@ -4,6 +4,8 @@ export type AttemptRecord = {
   correct: boolean;
   misconception: string;
   timestamp: string;
+  /** Whether the learner chose the correct reasoning chip (proof-chips stage). Absent when chips were not shown. */
+  proofCorrect?: boolean;
 };
 
 const STORAGE_KEY = "werkwoordlab-attempts";

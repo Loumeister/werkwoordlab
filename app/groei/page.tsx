@@ -39,7 +39,13 @@ export default function GroeiPage() {
   );
 
   // Aggregate per subvaardigheid (misconception category)
-  type SkillStats = { correct: number; total: number; codes: MisconceptionCode[] };
+  type SkillStats = {
+    correct: number;
+    total: number;
+    codes: MisconceptionCode[];
+    proofCorrect: number;
+    proofTotal: number;
+  };
   const skillStats: Record<string, SkillStats> = {};
 
   for (const group of FEEDBACK_GROUPS) {
@@ -50,7 +56,20 @@ export default function GroeiPage() {
     const correct = groupAttempts.filter(
       (a: import("@/lib/attempt-store").AttemptRecord) => a.correct
     ).length;
-    skillStats[group.label] = { correct, total: groupAttempts.length, codes: group.codes };
+    // Proof chip accuracy: only attempts where the chip was actually shown
+    const proofAttempts = groupAttempts.filter(
+      (a: import("@/lib/attempt-store").AttemptRecord) => a.proofCorrect !== undefined
+    );
+    const proofCorrect = proofAttempts.filter(
+      (a: import("@/lib/attempt-store").AttemptRecord) => a.proofCorrect
+    ).length;
+    skillStats[group.label] = {
+      correct,
+      total: groupAttempts.length,
+      codes: group.codes,
+      proofCorrect,
+      proofTotal: proofAttempts.length,
+    };
   }
 
   // Focus tip: the lastig/groeiende skill with most attempts
@@ -104,6 +123,13 @@ export default function GroeiPage() {
               const level = getMasteryLevel(stats.correct, stats.total);
               const cfg = MASTERY_CONFIG[level];
 
+              // Show reasoning insight when spelling is OK but proof-chip accuracy is weak
+              const reasoningWeak =
+                stats.proofTotal >= 3 &&
+                level !== "lastig" &&
+                level !== "onbekend" &&
+                stats.proofCorrect / stats.proofTotal < 0.6;
+
               return (
                 <div
                   key={group.label}
@@ -134,6 +160,13 @@ export default function GroeiPage() {
                       <span className="ml-1 font-normal opacity-70">— nog niet geoefend</span>
                     )}
                   </p>
+
+                  {/* Reasoning insight: good spelling but unstable reasoning */}
+                  {reasoningWeak && (
+                    <p className="mt-2 text-xs text-amber-700">
+                      Je schrijft het goed, maar de redenering is nog niet stabiel.
+                    </p>
+                  )}
 
                   {/* Progress bar (only when enough data) */}
                   {stats.total >= 3 && (

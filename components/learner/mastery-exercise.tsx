@@ -155,31 +155,42 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
     const result = { correct, expected };
     setSpellingResult(result);
 
-    saveAttempt({
-      unitId,
-      itemId: item.id,
-      correct,
-      misconception: item.diagnostic.primaryMisconception,
-      timestamp: new Date().toISOString(),
-    });
-
     // Decide whether to show proof chips
     const firstOccurrence = isFirstOccurrenceOfPattern(item, unitAttempts);
     if (!correct || firstOccurrence) {
+      // Defer saving the attempt until proof chip selection so proofCorrect can be attached.
       const chips = getProofChips(item);
       const shuffled = Math.random() < 0.5 ? [chips[0], chips[1]] : [chips[1], chips[0]];
       setProofChips(chips);
       setShuffledChips(shuffled);
       setStage("proof-chips");
     } else {
+      // No proof chips: save immediately without proofCorrect.
+      saveAttempt({
+        unitId,
+        itemId: item.id,
+        correct,
+        misconception: item.diagnostic.primaryMisconception,
+        timestamp: new Date().toISOString(),
+      });
       setStage("feedback");
     }
   }
 
   function handleProofChipSelect(chip: string) {
-    if (!proofChips) return;
+    if (!proofChips || !spellingResult) return;
+    const proofCorrect = chip === proofChips[0]; // proofChips[0] is always the correct chip
     setProofAnswer(chip);
-    // Advance to feedback after a brief delay so the selection is visible
+    // Save spelling attempt now with proof chip accuracy attached.
+    saveAttempt({
+      unitId,
+      itemId: item.id,
+      correct: spellingResult.correct,
+      misconception: item.diagnostic.primaryMisconception,
+      timestamp: new Date().toISOString(),
+      proofCorrect,
+    });
+    // Advance to feedback after a brief delay so the selection is visible.
     setTimeout(() => setStage("feedback"), 350);
   }
 

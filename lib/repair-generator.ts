@@ -141,16 +141,18 @@ export function buildRepairItem(item: ExerciseItem): RepairItem | null {
 /**
  * Determines whether a repair exercise should be presented for this item.
  *
- * Rules (all must pass):
+ * Hard gates (all must pass):
  * - Phase is not "verkennen" (explore phase uses fully scaffolded exercises only)
  * - lastWasRepair is false (no two repair items in a row)
  * - repairCount / phaseSize < 0.30 (frequency cap: ≤ 30% of phase)
  * - buildRepairItem(item) returns non-null (structural eligibility)
  *
- * Conditional rules:
- * - oefenen: repair is more likely when the learner has prior wrong attempts
- *   on this misconception pattern, or randomly ~25% of the time
- * - zelfstandig: repair is sparser (robustness check), ~15% of the time
+ * Conditional rules (deterministic, mastery-driven — no random component):
+ * - oefenen:    remediation trigger — show repair when the learner has previously
+ *               answered this misconception pattern incorrectly (priorWrong > 0)
+ * - zelfstandig: robustness check — show repair only when pattern mastery is
+ *               established (≥ 2 correct spelling attempts for this code), so the
+ *               learner proves detection ability at full independence level
  */
 export function shouldUseRepair(
   item: ExerciseItem,
@@ -166,16 +168,29 @@ export function shouldUseRepair(
   if (!buildRepairItem(item)) return false;
 
   const code = item.diagnostic.primaryMisconception;
-  const priorWrong = unitAttempts.filter(
-    (a) => a.misconception === code && !a.correct
-  ).length;
 
   if (phase === "oefenen") {
-    return priorWrong > 0 || Math.random() < 0.25;
+    // Remediation: only show repair when there is a prior error to address.
+    const priorWrong = unitAttempts.filter(
+      (a) =>
+        a.misconception === code &&
+        !a.itemId.endsWith(":function") &&
+        !a.itemId.endsWith(":repair-detect") &&
+        !a.correct
+    ).length;
+    return priorWrong > 0;
   }
 
   if (phase === "zelfstandig") {
-    return Math.random() < 0.15;
+    // Robustness check: repair only when ≥ 2 correct spelling attempts prove mastery.
+    const priorCorrect = unitAttempts.filter(
+      (a) =>
+        a.misconception === code &&
+        !a.itemId.endsWith(":function") &&
+        !a.itemId.endsWith(":repair-detect") &&
+        a.correct
+    ).length;
+    return priorCorrect >= 2;
   }
 
   return false;
