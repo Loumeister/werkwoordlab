@@ -6,10 +6,12 @@ import {
   PHASE_CONFIGS,
   type EntryMode,
   getEntryMode,
+  getProofChips,
   getVerbFunctionHints,
   groupItemsByPhase,
   hasFunctionMastery,
   hasPatternMastery,
+  isFirstOccurrenceOfPattern,
   resolveItemPhase,
 } from "@/lib/phase-engine";
 
@@ -336,5 +338,80 @@ describe("getVerbFunctionHints", () => {
       const hints = getVerbFunctionHints(item);
       expect(hints[1]).toContain("-en");
     });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// getProofChips
+// ---------------------------------------------------------------------------
+
+describe("getProofChips", () => {
+  it("returns [correctChip, wrongChip] tuple", () => {
+    const item = makeItem({
+      scaffold: { step1: "s1", step2: "s2", step3: "Ik-vorm, geen -t" },
+      diagnostic: { primaryMisconception: "PV_FALSE_T_ADD", acceptedVariants: [] },
+    });
+    const [correct, wrong] = getProofChips(item);
+    expect(correct).toBe("Ik-vorm, geen -t");
+    expect(typeof wrong).toBe("string");
+    expect(wrong.length).toBeGreaterThan(0);
+  });
+
+  it("uses scaffold.step3 as the correct chip", () => {
+    const item = makeItem({
+      scaffold: { step1: "s1", step2: "s2", step3: "Custom rule explanation" },
+    });
+    const [correct] = getProofChips(item);
+    expect(correct).toBe("Custom rule explanation");
+  });
+
+  it("falls back to generic wrong chip for unknown misconception codes", () => {
+    const item = makeItem({
+      diagnostic: { primaryMisconception: "UNKNOWN_CODE" as string, acceptedVariants: [] },
+    });
+    const [, wrong] = getProofChips(item);
+    expect(wrong).toBe("De uitgang klinkt goed");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// isFirstOccurrenceOfPattern
+// ---------------------------------------------------------------------------
+
+describe("isFirstOccurrenceOfPattern", () => {
+  const item = makeItem({
+    diagnostic: { primaryMisconception: "PV_FALSE_T_ADD", acceptedVariants: [] },
+  });
+
+  it("returns true when no prior attempts exist", () => {
+    expect(isFirstOccurrenceOfPattern(item, [])).toBe(true);
+  });
+
+  it("returns true when prior attempts are for a different misconception", () => {
+    const attempts = [
+      makeAttempt({ misconception: "PV_STAM_T_OMISSION", correct: true }),
+    ];
+    expect(isFirstOccurrenceOfPattern(item, attempts)).toBe(true);
+  });
+
+  it("returns false when a spelling attempt with the same code exists", () => {
+    const attempts = [
+      makeAttempt({ misconception: "PV_FALSE_T_ADD", correct: false }),
+    ];
+    expect(isFirstOccurrenceOfPattern(item, attempts)).toBe(false);
+  });
+
+  it("ignores :function attempts for the same code", () => {
+    const attempts = [
+      makeAttempt({ itemId: "u1-i1:function", misconception: "PV_FALSE_T_ADD", correct: true }),
+    ];
+    expect(isFirstOccurrenceOfPattern(item, attempts)).toBe(true);
+  });
+
+  it("ignores :repair attempts for the same code", () => {
+    const attempts = [
+      makeAttempt({ itemId: "u1-i1:repair", misconception: "PV_FALSE_T_ADD", correct: true }),
+    ];
+    expect(isFirstOccurrenceOfPattern(item, attempts)).toBe(true);
   });
 });

@@ -79,6 +79,53 @@ describe("attempt persistence", () => {
     expect(readAttempts()).toEqual([valid]);
   });
 
+  it("accepts records with valid proofCorrect boolean", () => {
+    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+
+    const attempt: AttemptRecord = {
+      unitId: "unit-01-pv-tt",
+      itemId: "u1-i1",
+      correct: true,
+      misconception: "PV_FALSE_T_ADD",
+      timestamp: "2026-04-01T00:00:00.000Z",
+      proofCorrect: true,
+    };
+
+    saveAttempt(attempt);
+    const result = readAttempts();
+    expect(result).toEqual([attempt]);
+    expect(result[0].proofCorrect).toBe(true);
+  });
+
+  it("accepts records without proofCorrect (undefined)", () => {
+    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+
+    const attempt: AttemptRecord = {
+      unitId: "unit-01-pv-tt",
+      itemId: "u1-i1",
+      correct: true,
+      misconception: "PV_FALSE_T_ADD",
+      timestamp: "2026-04-01T00:00:00.000Z",
+    };
+
+    saveAttempt(attempt);
+    expect(readAttempts()).toEqual([attempt]);
+  });
+
+  it("rejects records with non-boolean proofCorrect", () => {
+    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+
+    storage.setItem("werkwoordlab-attempts", JSON.stringify([{
+      unitId: "unit-01-pv-tt",
+      itemId: "u1-i1",
+      correct: true,
+      misconception: "PV_FALSE_T_ADD",
+      timestamp: "2026-04-01T00:00:00.000Z",
+      proofCorrect: "yes",
+    }]));
+    expect(readAttempts()).toEqual([]);
+  });
+
   it("caps persisted attempt history to 200 records", () => {
     (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
 

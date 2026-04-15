@@ -4,6 +4,8 @@ export type AttemptRecord = {
   correct: boolean;
   misconception: string;
   timestamp: string;
+  /** Whether the learner chose the correct reasoning chip (proof-chips stage). Absent when chips were not shown. */
+  proofCorrect?: boolean;
 };
 
 const STORAGE_KEY = "werkwoordlab-attempts";
@@ -19,7 +21,8 @@ function isAttemptRecord(value: unknown): value is AttemptRecord {
     typeof candidate.itemId === "string" &&
     typeof candidate.correct === "boolean" &&
     typeof candidate.misconception === "string" &&
-    typeof candidate.timestamp === "string"
+    typeof candidate.timestamp === "string" &&
+    (candidate.proofCorrect === undefined || typeof candidate.proofCorrect === "boolean")
   );
 }
 

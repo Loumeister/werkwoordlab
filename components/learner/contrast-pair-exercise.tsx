@@ -19,15 +19,13 @@ type PairResult = {
 };
 
 /**
- * Side-by-side exercise showing two contrasting sentences with the same verb.
+ * Twijfelduel: two near-identical sentences that differ only in grammatical
+ * function or context. Seeing both outcomes side-by-side forces the learner
+ * to actively distinguish them — not just produce one form in isolation.
  *
- * Both answers are submitted in one action ("Controleer beide") rather than
- * sequentially. This is intentional: seeing both outcomes simultaneously makes
- * the contrast visible — the learner cannot fixate on one sentence in isolation.
- * Individual feedback is shown per column after submission.
- *
- * Attempts are saved with itemId suffixes ":a" and ":b" to keep them distinct
- * from each other and from any regular ExerciseItem with the same base id.
+ * Both answers are submitted simultaneously ("Controleer beide") so the
+ * contrast becomes visible at the same moment. Individual inline feedback
+ * highlights which word made the difference and why.
  */
 export function ContrastPairExercise({ item, unitId, onComplete }: Props) {
   const [answerA, setAnswerA] = useState("");
@@ -40,12 +38,10 @@ export function ContrastPairExercise({ item, unitId, onComplete }: Props) {
   const hintsA = [sentenceA.scaffold.step2, sentenceA.scaffold.step3];
   const hintsB = [sentenceB.scaffold.step2, sentenceB.scaffold.step3];
 
-  /** Normalise for comparison: trim whitespace and lower-case. */
   function normalise(s: string) {
     return s.trim().toLowerCase();
   }
 
-  /** Returns true if `answer` matches `target` or any accepted variant (case/space insensitive). */
   function isCorrect(answer: string, target: string, variants: string[]): boolean {
     const n = normalise(answer);
     return n === normalise(target) || variants.some((v) => normalise(v) === n);
@@ -74,11 +70,36 @@ export function ContrastPairExercise({ item, unitId, onComplete }: Props) {
     });
   }
 
+  // Determine the "contrast insight" to show after submission:
+  // if one is correct and one wrong, surface the key distinguishing hint.
+  function contrastInsight(): string | null {
+    if (!result) return null;
+    if (result.aCorrect && !result.bCorrect) {
+      return sentenceB.scaffold.step3;
+    }
+    if (!result.aCorrect && result.bCorrect) {
+      return sentenceA.scaffold.step3;
+    }
+    if (!result.aCorrect && !result.bCorrect) {
+      return sentenceA.scaffold.step3;
+    }
+    return null;
+  }
+
+  const insight = contrastInsight();
+
   return (
     <div className="space-y-4 rounded-3xl border border-black/15 bg-white p-6">
-      {/* Contrast label */}
-      <div className="rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3">
-        <p className="font-semibold text-amber-900">{item.contrastLabel}</p>
+      {/* Twijfelduel badge + contrast label */}
+      <div className="space-y-2">
+        <div className="flex items-center gap-2">
+          <span className="rounded-full border border-purple-300 bg-purple-50 px-3 py-1 text-sm font-semibold text-purple-800">
+            Twijfelduel
+          </span>
+        </div>
+        <div className="rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3">
+          <p className="font-semibold text-amber-900">{item.contrastLabel}</p>
+        </div>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -103,7 +124,7 @@ export function ContrastPairExercise({ item, unitId, onComplete }: Props) {
               </>
             ) : (
               <div
-                className={`flex items-center gap-2 rounded-xl border px-3 py-2 text-base ${
+                className={`animate-slide-up flex items-center gap-2 rounded-xl border px-3 py-2 text-base ${
                   result.aCorrect
                     ? "border-green-200 bg-green-50 text-green-800"
                     : "border-red-200 bg-red-50 text-red-800"
@@ -147,7 +168,7 @@ export function ContrastPairExercise({ item, unitId, onComplete }: Props) {
               </>
             ) : (
               <div
-                className={`flex items-center gap-2 rounded-xl border px-3 py-2 text-base ${
+                className={`animate-slide-up flex items-center gap-2 rounded-xl border px-3 py-2 text-base ${
                   result.bCorrect
                     ? "border-green-200 bg-green-50 text-green-800"
                     : "border-red-200 bg-red-50 text-red-800"
@@ -172,10 +193,17 @@ export function ContrastPairExercise({ item, unitId, onComplete }: Props) {
           </div>
         </div>
 
+        {/* Contrast insight — shown when at least one answer is wrong */}
+        {result && insight && (
+          <div className="animate-slide-up rounded-2xl border border-[#7db1d8] bg-[#f2f9ff] px-4 py-3 text-base text-[#1f5da0]">
+            <strong>Wat maakt het verschil:</strong> {insight}
+          </div>
+        )}
+
         {!result ? (
           <button
             type="submit"
-            className="rounded-xl bg-[var(--warm-primary)] px-5 py-3 font-semibold text-white"
+            className="rounded-xl bg-[var(--warm-primary)] px-5 py-3 font-semibold text-white hover:opacity-90"
           >
             Controleer beide
           </button>
@@ -183,9 +211,9 @@ export function ContrastPairExercise({ item, unitId, onComplete }: Props) {
           <button
             type="button"
             onClick={() => onComplete(result.aCorrect, result.bCorrect)}
-            className="rounded-xl border border-black/30 bg-white px-5 py-3 font-semibold"
+            className="rounded-xl border border-black/30 bg-white px-5 py-3 font-semibold hover:bg-neutral-50"
           >
-            Volgende opdracht
+            Verder →
           </button>
         )}
       </form>

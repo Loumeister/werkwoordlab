@@ -12,12 +12,20 @@ type Props = {
 
 const PHASE_ORDER: PhaseId[] = ["verkennen", "oefenen", "zelfstandig", "transfer"];
 
+/** Phase-specific motivational one-liners shown below the phase description. */
+const PHASE_MOTIVATION: Partial<Record<PhaseId, string>> = {
+  oefenen: "Nu ga je herhalen tot het echt zit.",
+  zelfstandig: "Je hebt de basis. Nu zonder hulp.",
+  transfer: "Dit is het echte werk. Jij kan dit!",
+};
+
 /**
  * Shown between phases. Includes a visual stepper (all four phases), a
- * motivational message for the next phase, and a continue button.
+ * bigger celebration moment, a motivational tagline, and a continue button.
  */
 export function PhaseTransitionBanner({ completedPhase, nextPhase, onContinue }: Props) {
   const completedIndex = PHASE_ORDER.indexOf(completedPhase);
+  const motivationLine = PHASE_MOTIVATION[nextPhase];
 
   return (
     <div className="mx-auto max-w-2xl space-y-8 py-8 text-center">
@@ -68,17 +76,22 @@ export function PhaseTransitionBanner({ completedPhase, nextPhase, onContinue }:
         })}
       </nav>
 
-      {/* Celebration + description */}
-      <div className="rounded-3xl border border-[#f0c972] bg-[#fff9ea] px-8 py-10 shadow-sm">
-        <p className="text-4xl" aria-hidden>
+      {/* Celebration box */}
+      <div className="animate-bounce-in rounded-3xl border border-[#f0c972] bg-[#fff9ea] px-8 py-10 shadow-sm">
+        <p className="text-6xl" aria-hidden>
           🎉
         </p>
-        <h2 className="mt-3 text-2xl font-bold">
+        <h2 className="mt-4 text-3xl font-bold">
           {PHASE_CONFIGS[completedPhase].label} voltooid!
         </h2>
         <p className="mt-2 text-lg text-neutral-600">
           {PHASE_CONFIGS[nextPhase].description}
         </p>
+        {motivationLine && (
+          <p className="mt-1 text-base font-semibold text-[var(--warm-primary)]">
+            {motivationLine}
+          </p>
+        )}
 
         <button
           type="button"
