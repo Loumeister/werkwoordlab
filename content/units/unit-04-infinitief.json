@@ -1,0 +1,776 @@
+{
+  "id": "unit-04-infinitief",
+  "title": "Infinitief",
+  "level": "onderbouw-vo",
+  "language": "nl",
+  "learningGoals": [
+    "Ik herken een infinitief als het werkwoord in de zin al een persoonsvorm heeft.",
+    "Ik herken een infinitief na 'te' en in de 'om...te'-constructie.",
+    "Ik herken een infinitief in de 'aan het'-constructie.",
+    "Ik herken meerdere infinitieven in één zin.",
+    "Ik onderscheid de infinitief van het voltooid deelwoord."
+  ],
+  "items": [
+    {
+      "id": "u4-i1",
+      "type": "fill-in",
+      "prompt": "Tom wil elke dag ___. (sporten)",
+      "context": "Sportactiviteit",
+      "lemma": "sporten",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "Tom",
+      "target": "sporten",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm (past bij 'Tom').",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'wil'. Er kan maar één persoonsvorm in een zin zijn.",
+        "step3": "Elk werkwoord dat niet de persoonsvorm is, staat in zijn basisvorm: de infinitief. Schrijf de basisvorm van 'sporten': 'sporten'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'sporten' is de infinitief na 'wil'.",
+        "hint": "Na 'wil' staat een infinitief (basisvorm op -en). Niet de persoonsvorm 'sport'."
+      }
+    },
+    {
+      "id": "u4-i2",
+      "type": "fill-in",
+      "prompt": "Mia kan goed ___. (zingen)",
+      "context": "Muziekles",
+      "lemma": "zingen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "Mia",
+      "target": "zingen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'kan' is de persoonsvorm (past bij 'Mia').",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'kan'.",
+        "step3": "Elk werkwoord dat niet de persoonsvorm is, staat in zijn basisvorm. Schrijf de basisvorm van 'zingen': 'zingen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'zingen' is de infinitief na 'kan'.",
+        "hint": "Na 'kan' staat een infinitief. Niet 'zingt' (persoonsvorm hij/zij)."
+      }
+    },
+    {
+      "id": "u4-i3",
+      "type": "fill-in",
+      "prompt": "Het kind moet rustig ___. (slapen)",
+      "context": "Bedtijd",
+      "lemma": "slapen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "het kind",
+      "target": "slapen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'moet' is de persoonsvorm (past bij 'het kind').",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'moet'. Denk niet: 'het kind' → 'slaapt'.",
+        "step3": "Elk werkwoord dat niet de persoonsvorm is, staat in zijn basisvorm. Schrijf: 'slapen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'slapen' is de infinitief na 'moet'.",
+        "hint": "Na 'moet' staat een infinitief. Niet 'slaapt' (persoonsvorm hij/zij/het)."
+      }
+    },
+    {
+      "id": "u4-i4",
+      "type": "fill-in",
+      "prompt": "De hond mag buiten ___. (spelen)",
+      "context": "Huisdier",
+      "lemma": "spelen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "de hond",
+      "target": "spelen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'mag' is de persoonsvorm.",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'mag'.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'spelen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'spelen' is de infinitief na 'mag'.",
+        "hint": "Na 'mag' staat een infinitief. Niet 'speelt' (persoonsvorm hij)."
+      }
+    },
+    {
+      "id": "u4-i5",
+      "type": "fill-in",
+      "prompt": "De docent wil iets ___. (uitleggen)",
+      "context": "Klaslokaal",
+      "lemma": "uitleggen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "de docent",
+      "target": "uitleggen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm.",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'wil'.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'uitleggen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'uitleggen' is de infinitief na 'wil'.",
+        "hint": "Na 'wil' staat een infinitief. Schrijfbaar werkwoord 'uitleggen' blijft als basisvorm."
+      }
+    },
+    {
+      "id": "u4-i6",
+      "type": "fill-in",
+      "prompt": "We gaan morgen vroeg ___. (opstaan)",
+      "context": "Weekendplanning",
+      "lemma": "opstaan",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "we",
+      "target": "opstaan",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'gaan' is de persoonsvorm (past bij 'we').",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'gaan'.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'opstaan'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'opstaan' is de infinitief na 'gaan'.",
+        "hint": "Na 'gaan' staat een infinitief. Geen persoonsvorm 'sta op'."
+      }
+    },
+    {
+      "id": "u4-i7",
+      "type": "fill-in",
+      "prompt": "Jullie blijven nog even ___. (wachten)",
+      "context": "Schoolgang",
+      "lemma": "wachten",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jullie",
+      "target": "wachten",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'blijven' is de persoonsvorm (past bij 'jullie').",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'blijven'.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'wachten'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'wachten' is de infinitief na 'blijven'.",
+        "hint": "Na 'blijven' staat een infinitief. Niet 'wacht' (persoonsvorm)."
+      }
+    },
+    {
+      "id": "u4-i8",
+      "type": "fill-in",
+      "prompt": "De trainer laat het team ___. (trainen)",
+      "context": "Sporttraining",
+      "lemma": "trainen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "het team",
+      "target": "trainen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'laat' is de persoonsvorm.",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'laat'.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'trainen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'trainen' is de infinitief na 'laat'.",
+        "hint": "Na 'laat' staat een infinitief. Niet 'traint' (persoonsvorm)."
+      }
+    },
+    {
+      "id": "u4-i9",
+      "type": "fill-in",
+      "prompt": "Ze probeert elke dag te ___. (lezen)",
+      "context": "Leesgewoontes",
+      "lemma": "lezen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "lezen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'probeert' is de persoonsvorm.",
+        "step2": "Na 'te' staat een werkwoord. Is dat de persoonsvorm? Nee — de persoonsvorm is al 'probeert'. Na 'te' staat nooit een persoonsvorm.",
+        "step3": "Het werkwoord na 'te' staat altijd in zijn basisvorm: 'lezen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'lezen' is de infinitief na 'te'.",
+        "hint": "Na 'te' staat altijd een infinitief. Niet 'leest' (persoonsvorm)."
+      }
+    },
+    {
+      "id": "u4-i10",
+      "type": "fill-in",
+      "prompt": "Hij weigert zijn kamer te ___. (opruimen)",
+      "context": "Thuissituatie",
+      "lemma": "opruimen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "opruimen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'weigert' is de persoonsvorm.",
+        "step2": "Na 'te' staat een werkwoord. Is dat de persoonsvorm? Nee — de persoonsvorm is al 'weigert'.",
+        "step3": "Het werkwoord na 'te' staat in zijn basisvorm: 'opruimen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'opruimen' is de infinitief na 'te'.",
+        "hint": "Na 'te' staat altijd een infinitief. Niet 'ruimt op' (persoonsvorm)."
+      }
+    },
+    {
+      "id": "u4-i11",
+      "type": "fill-in",
+      "prompt": "Het is moeilijk om alles te ___. (onthouden)",
+      "context": "Huiswerk",
+      "lemma": "onthouden",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "alles",
+      "target": "onthouden",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'is' is de persoonsvorm.",
+        "step2": "Na 'te' staat een werkwoord. Is dat de persoonsvorm? Nee — de persoonsvorm is al 'is'.",
+        "step3": "Het werkwoord na 'te' staat in zijn basisvorm: 'onthouden'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'onthouden' is de infinitief in de om...te-constructie.",
+        "hint": "Na 'om...te' staat altijd een infinitief. Niet 'onthoudt' (persoonsvorm)."
+      }
+    },
+    {
+      "id": "u4-i12",
+      "type": "fill-in",
+      "prompt": "Ze hoeft dat niet te ___. (weten)",
+      "context": "Klassituatie",
+      "lemma": "weten",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "weten",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'hoeft' is de persoonsvorm.",
+        "step2": "Na 'te' staat een werkwoord. Is dat de persoonsvorm? Nee — de persoonsvorm is al 'hoeft'.",
+        "step3": "Het werkwoord na 'te' staat in zijn basisvorm: 'weten'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'weten' is de infinitief na 'hoeft...te'.",
+        "hint": "Na 'hoeft...te' staat altijd een infinitief. Niet 'weet' (persoonsvorm)."
+      }
+    },
+    {
+      "id": "u4-i13",
+      "type": "fill-in",
+      "prompt": "Kun jij mij even ___? (helpen)",
+      "context": "Groepswerk",
+      "lemma": "helpen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "jij",
+      "target": "helpen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'kun' is de persoonsvorm — ook in een vraagzin staat de persoonsvorm vooraan.",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'kun'.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'helpen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'helpen' is de infinitief na 'kun'.",
+        "hint": "Na 'kun/kan' staat altijd een infinitief. Niet 'helpt' (persoonsvorm)."
+      }
+    },
+    {
+      "id": "u4-i14",
+      "type": "fill-in",
+      "prompt": "Hij wil harder ___. (trainen)",
+      "context": "Sportmotivatie",
+      "lemma": "trainen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "trainen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm (past bij 'hij').",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'wil'. Denk niet: 'hij' → dan moet er een -t aan.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'trainen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'trainen' is de infinitief na 'wil'.",
+        "hint": "Na 'wil' staat een infinitief. Niet 'traint' (persoonsvorm hij)."
+      }
+    },
+    {
+      "id": "u4-i15",
+      "type": "fill-in",
+      "prompt": "We kunnen beter thuis ___. (blijven)",
+      "context": "Regenachtige dag",
+      "lemma": "blijven",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "we",
+      "target": "blijven",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'kunnen' is de persoonsvorm (past bij 'we').",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'kunnen'.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'blijven'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'blijven' is de infinitief na 'kunnen'.",
+        "hint": "Na 'kunnen' staat een infinitief. Niet 'blijft' (persoonsvorm hij)."
+      }
+    },
+    {
+      "id": "u4-i16",
+      "type": "fill-in",
+      "prompt": "Ze wil haar verhaal nog eens ___. (herlezen)",
+      "context": "Schrijfopdracht",
+      "lemma": "herlezen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "herlezen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm.",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'wil'.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'herlezen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'herlezen' is de infinitief na 'wil'.",
+        "hint": "Na 'wil' staat een infinitief. Niet 'herleest' (persoonsvorm)."
+      }
+    },
+    {
+      "id": "u4-i17",
+      "type": "fill-in",
+      "prompt": "Hij wil die film ___. (zien)",
+      "context": "Filmavond",
+      "lemma": "zien",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "zien",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm.",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee. Is het een voltooid deelwoord? Nee — er is geen hulpwerkwoord 'hebben' of 'zijn' dat een voltooid deelwoord aankondigt.",
+        "step3": "Het werkwoord staat in zijn basisvorm: 'zien'. Niet 'gezien' — dat is het voltooid deelwoord."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_VD_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'zien' is de infinitief na 'wil'.",
+        "hint": "Na 'wil' staat een infinitief zonder ge-. Niet 'gezien' (voltooid deelwoord)."
+      }
+    },
+    {
+      "id": "u4-i18",
+      "type": "fill-in",
+      "prompt": "We moeten dat nummer ___. (horen)",
+      "context": "Muziekles",
+      "lemma": "horen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "we",
+      "target": "horen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'moeten' is de persoonsvorm.",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee. Is het een voltooid deelwoord? Nee — er is geen 'hebben' of 'zijn' in de zin.",
+        "step3": "Het werkwoord staat in zijn basisvorm: 'horen'. Niet 'gehoord' — dat is het voltooid deelwoord."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_VD_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'horen' is de infinitief na 'moeten'.",
+        "hint": "Na 'moeten' staat een infinitief zonder ge-. Niet 'gehoord' (voltooid deelwoord)."
+      }
+    },
+    {
+      "id": "u4-i19",
+      "type": "fill-in",
+      "prompt": "Ze wil de brief ___. (schrijven)",
+      "context": "Briefwisseling",
+      "lemma": "schrijven",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "schrijven",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm.",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee. Is het een voltooid deelwoord? Nee — er is geen 'hebben' of 'zijn' in de zin.",
+        "step3": "Het werkwoord staat in zijn basisvorm: 'schrijven'. Niet 'geschreven' — dat is het voltooid deelwoord."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_VD_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'schrijven' is de infinitief na 'wil'.",
+        "hint": "Na 'wil' staat een infinitief zonder ge-. Niet 'geschreven' (voltooid deelwoord)."
+      }
+    },
+    {
+      "id": "u4-i20",
+      "type": "fill-in",
+      "prompt": "Kan zij dat zelf ___? (beslissen)",
+      "context": "Leerlinggesprek",
+      "lemma": "beslissen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "zij",
+      "target": "beslissen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'kan' is de persoonsvorm — ook in een vraagzin staat de persoonsvorm vooraan.",
+        "step2": "Is het werkwoord op de lege plek de persoonsvorm? Nee — de persoonsvorm is al 'kan'. Denk niet: 'zij' → dan moet er een -t aan.",
+        "step3": "Het werkwoord op de lege plek staat in zijn basisvorm: 'beslissen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'beslissen' is de infinitief na 'kan'.",
+        "hint": "Na 'kan' staat een infinitief. Niet 'beslist' (persoonsvorm zij)."
+      }
+    },
+    {
+      "id": "u4-i21",
+      "type": "fill-in",
+      "prompt": "Ze wil aan het ___ blijven. (sporten)",
+      "context": "Sportactiviteit",
+      "lemma": "sporten",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "sporten",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm.",
+        "step2": "Er zijn twee andere werkwoorden: 'blijven' (infinitief na 'wil') en het lege werkwoord na 'aan het'. Is dat lege werkwoord de persoonsvorm? Nee — de persoonsvorm is al 'wil'.",
+        "step3": "Een werkwoord dat niet de persoonsvorm is, staat in zijn basisvorm. De basisvorm van 'sporten': 'sporten'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'sporten' is de basisvorm (infinitief) na 'aan het'.",
+        "hint": "Na 'aan het' staat de basisvorm (infinitief): 'sporten', niet 'sport' (stam/persoonsvorm)."
+      }
+    },
+    {
+      "id": "u4-i22",
+      "type": "fill-in",
+      "prompt": "Hij moet aan het ___ gaan. (werken)",
+      "context": "Werksituatie",
+      "lemma": "werken",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "werken",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'moet' is de persoonsvorm.",
+        "step2": "Er zijn twee andere werkwoorden: 'gaan' (infinitief na 'moet') en het lege werkwoord na 'aan het'. Is dat lege werkwoord de persoonsvorm? Nee.",
+        "step3": "Een werkwoord dat niet de persoonsvorm is, staat in zijn basisvorm: 'werken'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'werken' is de basisvorm (infinitief) na 'aan het'.",
+        "hint": "Na 'aan het' staat de basisvorm: 'werken', niet 'werkt' of 'werk'."
+      }
+    },
+    {
+      "id": "u4-i23",
+      "type": "fill-in",
+      "prompt": "De kinderen mogen aan het ___ blijven. (spelen)",
+      "context": "Speeltijd",
+      "lemma": "spelen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "de kinderen",
+      "target": "spelen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'mogen' is de persoonsvorm.",
+        "step2": "'Blijven' is de infinitief na 'mogen'. Het lege werkwoord staat na 'aan het' — is dat de persoonsvorm? Nee.",
+        "step3": "Een werkwoord dat niet de persoonsvorm is, staat in zijn basisvorm: 'spelen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'spelen' is de basisvorm (infinitief) na 'aan het'.",
+        "hint": "Na 'aan het' staat de basisvorm: 'spelen', niet 'speelt'."
+      }
+    },
+    {
+      "id": "u4-i24",
+      "type": "fill-in",
+      "prompt": "Ze wil aan het lopen ___. (blijven)",
+      "context": "Hardlopen",
+      "lemma": "blijven",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "blijven",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm.",
+        "step2": "'Lopen' is de basisvorm na 'aan het'. Het lege werkwoord — is dat de persoonsvorm? Nee — de persoonsvorm is al 'wil'.",
+        "step3": "Het lege werkwoord is de tweede infinitief in de zin. Schrijf de basisvorm: 'blijven'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'blijven' is de infinitief na 'wil'.",
+        "hint": "'Bleef' is de verleden tijdsvorm. Hier heb je de basisvorm nodig: 'blijven'."
+      }
+    },
+    {
+      "id": "u4-i25",
+      "type": "fill-in",
+      "prompt": "We kunnen aan het oefenen ___. (blijven)",
+      "context": "Muziekrepetitie",
+      "lemma": "blijven",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "we",
+      "target": "blijven",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'kunnen' is de persoonsvorm (past bij 'we').",
+        "step2": "'Oefenen' is de basisvorm na 'aan het'. Het lege werkwoord — is dat de persoonsvorm? Nee.",
+        "step3": "De tweede infinitief in de zin staat in zijn basisvorm: 'blijven'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'blijven' is de infinitief na 'kunnen'.",
+        "hint": "Er zijn twee infinitieven: 'oefenen' (na 'aan het') en 'blijven' (na 'kunnen'). Beide staan in de basisvorm."
+      }
+    },
+    {
+      "id": "u4-i26",
+      "type": "fill-in",
+      "prompt": "Ze wil kunnen aan het studeren ___. (blijven)",
+      "context": "Examenweken",
+      "lemma": "blijven",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "blijven",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm.",
+        "step2": "Er zijn drie andere werkwoorden: 'kunnen', 'studeren' (na 'aan het') en het lege werkwoord. Zijn die de persoonsvorm? Nee — de persoonsvorm is al 'wil'.",
+        "step3": "Alle werkwoorden die niet de persoonsvorm zijn, staan in hun basisvorm. Het lege werkwoord: 'blijven'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'blijven' is de derde infinitief in de zin.",
+        "hint": "De zin heeft drie infinitieven: 'kunnen', 'studeren' en 'blijven'. Alle drie staan in de basisvorm."
+      }
+    },
+    {
+      "id": "u4-i27",
+      "type": "fill-in",
+      "prompt": "Hij moet kunnen aan het trainen ___. (gaan)",
+      "context": "Sportrevalidatie",
+      "lemma": "gaan",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "hij",
+      "target": "gaan",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'moet' is de persoonsvorm.",
+        "step2": "'Kunnen', 'trainen' (na 'aan het') en het lege werkwoord zijn alle drie niet de persoonsvorm.",
+        "step3": "Alle niet-persoonsvormen staan in hun basisvorm. Het lege werkwoord: 'gaan'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'gaan' is de derde infinitief in de zin.",
+        "hint": "De zin heeft drie infinitieven: 'kunnen', 'trainen' en 'gaan'. Alle drie staan in de basisvorm."
+      }
+    },
+    {
+      "id": "u4-i28",
+      "type": "fill-in",
+      "prompt": "We willen kunnen aan het ___ blijven. (leren)",
+      "context": "Bijlessen",
+      "lemma": "leren",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "we",
+      "target": "leren",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'willen' is de persoonsvorm (past bij 'we').",
+        "step2": "'Kunnen', 'blijven' en het lege werkwoord na 'aan het' zijn alle drie niet de persoonsvorm.",
+        "step3": "Het lege werkwoord staat in zijn basisvorm: 'leren'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'leren' is de derde infinitief in de zin.",
+        "hint": "De zin heeft drie infinitieven: 'kunnen', 'leren' en 'blijven'. Alle drie staan in de basisvorm."
+      }
+    },
+    {
+      "id": "u4-i29",
+      "type": "fill-in",
+      "prompt": "Ze moet kunnen aan het ___ gaan. (werken)",
+      "context": "Werkstage",
+      "lemma": "werken",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "ze",
+      "target": "werken",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'moet' is de persoonsvorm.",
+        "step2": "'Kunnen', 'gaan' en het lege werkwoord na 'aan het' zijn alle drie niet de persoonsvorm.",
+        "step3": "Het lege werkwoord staat in zijn basisvorm: 'werken'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'werken' is de derde infinitief in de zin.",
+        "hint": "De zin heeft drie infinitieven: 'kunnen', 'werken' en 'gaan'. Alle drie staan in de basisvorm."
+      }
+    },
+    {
+      "id": "u4-i30",
+      "type": "fill-in",
+      "prompt": "De coach wil de spelers aan het ___ laten blijven. (trainen)",
+      "context": "Sporttraining",
+      "lemma": "trainen",
+      "grammaticalFunction": "infinitief",
+      "tense": "tegenwoordige-tijd",
+      "subject": "de spelers",
+      "target": "trainen",
+      "homophonePair": null,
+      "scaffold": {
+        "step1": "Zoek de persoonsvorm: 'wil' is de persoonsvorm.",
+        "step2": "'Laten', 'blijven' en het lege werkwoord na 'aan het' zijn alle drie niet de persoonsvorm.",
+        "step3": "Het lege werkwoord staat in zijn basisvorm: 'trainen'."
+      },
+      "diagnostic": {
+        "primaryMisconception": "INF_PV_CONFUSION",
+        "acceptedVariants": []
+      },
+      "feedback": {
+        "correct": "Juist: 'trainen' is de derde infinitief in de zin.",
+        "hint": "De zin heeft drie infinitieven: 'laten', 'trainen' en 'blijven'. Alle drie staan in de basisvorm."
+      }
+    }
+  ],
+  "transferTask": {
+    "id": "u4-transfer-1",
+    "type": "revision",
+    "prompt": "Lees de volgende tekst. Er staan vier fouten in de werkwoordsvorm. Verbeter elke fout en leg in één zin uit waarom je die vorm kiest.\n\nMorgen gaat Lena vroeg opstaat, want ze wil naar school loopt voor de bel. Ze kan haar huiswerk nog niet afgemaakt, dus moet ze dat 's ochtends doen. Haar moeder zegt dat ze niet zo laat gaat slapen als ze haar werk op tijd wil afmaken.",
+    "rubric": [
+      "Fout 1 (opstaat → opstaan) herkend en gecorrigeerd: de persoonsvorm is al 'gaat', dus het tweede werkwoord staat in de basisvorm.",
+      "Fout 2 (loopt → lopen) herkend en gecorrigeerd: de persoonsvorm is al 'wil', dus het tweede werkwoord staat in de basisvorm.",
+      "Fout 3 (afgemaakt → afmaken) herkend en gecorrigeerd: de persoonsvorm is al 'kan', dus het tweede werkwoord staat in de basisvorm (niet een voltooid deelwoord).",
+      "Fout 4 (gaat slapen) is correct — leerling benoemt dit als correct of identificeert de echte fout elders."
+    ]
+  }
+}
