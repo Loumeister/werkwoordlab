@@ -50,10 +50,12 @@ export function RepairExercise({ repairItem, unitId, onComplete }: Props) {
     }
   }, [stage]);
 
-  // Enter key advances from feedback stage
+  // Enter key advances from feedback stage (ignore when focus is on interactive elements)
   useEffect(() => {
     if (stage !== "feedback" || !fixResult) return;
     function onKey(e: KeyboardEvent) {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "BUTTON" || tag === "INPUT" || tag === "TEXTAREA") return;
       if (e.key === "Enter") onComplete(fixResult!.correct);
     }
     document.addEventListener("keydown", onKey);
@@ -64,7 +66,9 @@ export function RepairExercise({ repairItem, unitId, onComplete }: Props) {
 
   /**
    * Splits promptWithError into parts so the wrong form can be rendered with
-   * distinct styling. Uses a case-insensitive match on the first occurrence.
+   * distinct styling. The capturing group in split places the matched token
+   * at index 1; we highlight only that position to avoid false positives when
+   * the wrong form appears as a substring elsewhere.
    */
   function renderSentenceWithHighlight() {
     const escapedWrong = wrongForm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -74,7 +78,7 @@ export function RepairExercise({ repairItem, unitId, onComplete }: Props) {
     return (
       <span>
         {parts.map((part, i) =>
-          regex.test(part) ? (
+          i === 1 ? (
             <mark
               key={i}
               className="rounded bg-red-100 px-1 font-bold text-red-700 not-italic underline decoration-red-400 decoration-2 underline-offset-2"

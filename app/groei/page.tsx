@@ -32,10 +32,10 @@ export default function GroeiPage() {
   const units = getUnits();
   const attempts = useAttempts();
 
-  // Spelling-only attempts (exclude :function and :repair-detect)
+  // Spelling-only attempts (exclude :function and :repair)
   const spellingAttempts = attempts.filter(
     (a: import("@/lib/attempt-store").AttemptRecord) =>
-      !a.itemId.endsWith(":function") && !a.itemId.endsWith(":repair-detect")
+      !a.itemId.endsWith(":function") && !a.itemId.endsWith(":repair")
   );
 
   // Aggregate per subvaardigheid (misconception category)

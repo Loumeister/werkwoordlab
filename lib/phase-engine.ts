@@ -206,7 +206,7 @@ export function isFirstOccurrenceOfPattern(
     (a) =>
       a.misconception === code &&
       !a.itemId.endsWith(":function") &&
-      !a.itemId.endsWith(":repair-detect")
+      !a.itemId.endsWith(":repair")
   );
   return priorAttempts.length === 0;
 }

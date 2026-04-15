@@ -162,7 +162,7 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
     const correctByCode: Record<string, number> = {};
 
     for (const attempt of unitAttempts) {
-      if (attempt.itemId.endsWith(":function") || attempt.itemId.endsWith(":repair-detect")) {
+      if (attempt.itemId.endsWith(":function") || attempt.itemId.endsWith(":repair")) {
         continue;
       }
       const code = attempt.misconception;
@@ -175,7 +175,7 @@ export function LearnerFlow({ unit }: { unit: Unit }) {
 
     const totalCorrect = Object.values(correctByCode).reduce((a, b) => a + b, 0);
     const totalAttempts = unitAttempts.filter(
-      (a) => !a.itemId.endsWith(":function") && !a.itemId.endsWith(":repair-detect")
+      (a) => !a.itemId.endsWith(":function") && !a.itemId.endsWith(":repair")
     ).length;
 
     // Worst-performing misconception code

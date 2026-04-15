@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AlertCircle, CheckCircle2, Lightbulb } from "lucide-react";
 import type { ExerciseItem } from "@/lib/content";
 import type { AttemptRecord } from "@/lib/attempt-store";
@@ -66,11 +66,16 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
   const [emptyAnswerError, setEmptyAnswerError] = useState(false);
 
   // Proof chips state
+  const proofTimerRef = useRef<ReturnType<typeof setTimeout>>(null);
   const [proofChips, setProofChips] = useState<[string, string] | null>(null);
   const [proofAnswer, setProofAnswer] = useState<string | null>(null);
   const [shuffledChips, setShuffledChips] = useState<string[]>([]);
 
   const uitlegPanelId = `uitleg-${item.id}`;
+
+  // Clean up proof-chip timer on unmount
+  useEffect(() => () => { if (proofTimerRef.current) clearTimeout(proofTimerRef.current); }, []);
+
   // Stage B display mode:
   //   "classificatie" — classify items: show item.classifyOptions as radio buttons
   //   "homofonen"     — homophone items: show split homophonePair as radio buttons
@@ -92,18 +97,12 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
     setUitlegOpen(false);
   }, [item]);
 
-  // Determine proof chip visibility after spelling submit
-  const shouldShowProofChips = useMemo(() => {
-    if (!spellingResult) return false;
-    // Show chips after wrong answers, or on first encounter with this pattern.
-    return !spellingResult.correct || isFirstOccurrenceOfPattern(item, unitAttempts);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [spellingResult]);
-
-  // Enter key: advance from feedback stage
+  // Enter key: advance from feedback stage (ignore when focus is on interactive elements)
   useEffect(() => {
     if (stage !== "feedback" || !spellingResult) return;
     function onKey(e: KeyboardEvent) {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "BUTTON" || tag === "INPUT" || tag === "TEXTAREA") return;
       if (e.key === "Enter") onComplete(spellingResult!.correct);
     }
     document.addEventListener("keydown", onKey);
@@ -116,6 +115,8 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
     const canAdvance = funcCorrect === true || wrongFuncAttempts >= 2;
     if (!canAdvance) return;
     function onKey(e: KeyboardEvent) {
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "BUTTON" || tag === "INPUT" || tag === "TEXTAREA") return;
       if (e.key === "Enter") advanceToSpelling();
     }
     document.addEventListener("keydown", onKey);
@@ -208,7 +209,7 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
       proofCorrect,
     });
     // Advance to feedback after a brief delay so the selection is visible.
-    setTimeout(() => setStage("feedback"), 350);
+    proofTimerRef.current = setTimeout(() => setStage("feedback"), 350);
   }
 
   // ─── Step indicator component ─────────────────────────────────────────────

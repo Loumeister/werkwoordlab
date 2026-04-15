@@ -21,7 +21,8 @@ function isAttemptRecord(value: unknown): value is AttemptRecord {
     typeof candidate.itemId === "string" &&
     typeof candidate.correct === "boolean" &&
     typeof candidate.misconception === "string" &&
-    typeof candidate.timestamp === "string"
+    typeof candidate.timestamp === "string" &&
+    (candidate.proofCorrect === undefined || typeof candidate.proofCorrect === "boolean")
   );
 }
 

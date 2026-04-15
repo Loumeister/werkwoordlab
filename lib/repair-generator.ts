@@ -27,7 +27,7 @@ import type { AttemptRecord } from "@/lib/attempt-store";
  * - PV_FALSE_T_ADD:           correct form has no -t → add -t (e.g. "vind" → "vindt")
  * - PV_STAM_T_OMISSION:       correct form has -t → remove -t (e.g. "vindt" → "vind")
  * - PV_JIJ_INVERSION_FALSE_T: same as FALSE_T_ADD but for jij-inversion context
- * - VD_KOFSCHIP_MISAPPLIED:   correct form ends in -d/-t → swap (e.g. "gewerkt"→"gewerkt"/"gespeeld"→"gespeelt")
+ * - VD_KOFSCHIP_MISAPPLIED:   correct form ends in -d/-t → swap (e.g. "gewerkt"→"gewerkd"/"gespeeld"→"gespeelt")
  * - HOMOPHONE_FUNCTION_CONFUSION: use the other member of the homophone pair
  * - VT_DE_TE_CONFUSION:       correct form ends in -de/-te → swap (e.g. "werkte"→"werkde")
  */
@@ -175,7 +175,7 @@ export function shouldUseRepair(
       (a) =>
         a.misconception === code &&
         !a.itemId.endsWith(":function") &&
-        !a.itemId.endsWith(":repair-detect") &&
+        !a.itemId.endsWith(":repair") &&
         !a.correct
     ).length;
     return priorWrong > 0;
@@ -187,7 +187,7 @@ export function shouldUseRepair(
       (a) =>
         a.misconception === code &&
         !a.itemId.endsWith(":function") &&
-        !a.itemId.endsWith(":repair-detect") &&
+        !a.itemId.endsWith(":repair") &&
         a.correct
     ).length;
     return priorCorrect >= 2;
