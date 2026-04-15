@@ -5,7 +5,7 @@ import { AlertCircle, CheckCircle2, Lightbulb } from "lucide-react";
 import type { ExerciseItem } from "@/lib/content";
 import type { AttemptRecord } from "@/lib/attempt-store";
 import { saveAttempt } from "@/lib/attempt-store";
-import { getFunctionOptions, getHomophoneOptions } from "@/lib/evaluator";
+import { getFunctionOptions, getClassifyOptions, getHomophoneOptions } from "@/lib/evaluator";
 import {
   FUNCTION_STEP_CODE,
   getEntryMode,
@@ -45,9 +45,12 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
   const unitAttempts = attempts.filter((a) => a.unitId === unitId);
   const entryMode = getEntryMode(item, unitAttempts);
 
-  const [stage, setStage] = useState<Stage>(() =>
-    entryMode === "full" ? "function-step" : "spelling-step"
-  );
+  const [stage, setStage] = useState<Stage>(() => {
+    // Classify items have no separate function step — they are their own
+    // categorisation exercise, so we go straight to the answer step.
+    if (item.type === "classify") return "spelling-step";
+    return entryMode === "full" ? "function-step" : "spelling-step";
+  });
 
   // Function step state
   const [funcAnswer, setFuncAnswer] = useState("");
@@ -60,6 +63,7 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
   const [spellingResult, setSpellingResult] = useState<{ correct: boolean; expected: string } | null>(null);
   const [effectiveFeedback, setEffectiveFeedback] = useState<FeedbackEntry | undefined>(undefined);
   const [uitlegOpen, setUitlegOpen] = useState(false);
+  const [emptyAnswerError, setEmptyAnswerError] = useState(false);
 
   // Proof chips state
   const [proofChips, setProofChips] = useState<[string, string] | null>(null);
@@ -67,11 +71,16 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
   const [shuffledChips, setShuffledChips] = useState<string[]>([]);
 
   const uitlegPanelId = `uitleg-${item.id}`;
-  const spellingDisplayMode: "homofonen" | "korte-correctie" = item.homophonePair
-    ? "homofonen"
-    : "korte-correctie";
+  // Stage B display mode:
+  //   "classificatie" — classify items: show item.classifyOptions as radio buttons
+  //   "homofonen"     — homophone items: show split homophonePair as radio buttons
+  //   "korte-correctie" — default: free-text input
+  const spellingDisplayMode: "classificatie" | "homofonen" | "korte-correctie" =
+    item.type === "classify" ? "classificatie" :
+    item.homophonePair ? "homofonen" : "korte-correctie";
   const functionHints = getVerbFunctionHints(item);
   const functionOptions = getFunctionOptions();
+  const classifyOptions = getClassifyOptions(item);
   const homophoneOptions = getHomophoneOptions(item);
   const spellingHints = [item.scaffold.step2, item.scaffold.step3];
 
@@ -143,6 +152,14 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
 
   function handleSpellingSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (spellingAnswer.trim() === "") {
+      setEmptyAnswerError(true);
+      return;
+    }
+    setEmptyAnswerError(false);
+    // Always evaluate against item.target — never item.grammaticalFunction.
+    // This avoids the classificatie-mode trap where evaluateAnswer() would
+    // expect the grammatical function string instead of the word form.
     const expected = item.target;
     const normalized = spellingAnswer.trim().toLowerCase();
     const normalizedTarget = expected.trim().toLowerCase();
@@ -339,7 +356,7 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
       >
         <StepIndicator currentStep={2} />
 
-        {(entryMode === "spell-first" || entryMode === "independent") && (
+        {item.type !== "classify" && (entryMode === "spell-first" || entryMode === "independent") && (
           <p className="text-sm font-medium uppercase tracking-wide text-slate-400">
             Functie: <span className="font-semibold text-slate-600">{item.grammaticalFunction}</span>
             {entryMode === "independent" && (
@@ -360,10 +377,29 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
               id="antwoord"
               autoComplete="off"
               value={spellingAnswer}
-              onChange={(e) => setSpellingAnswer(e.target.value)}
+              onChange={(e) => { setSpellingAnswer(e.target.value); setEmptyAnswerError(false); }}
               className="w-full rounded-2xl border-2 border-neutral-500 px-4 py-3 text-[20px] leading-relaxed"
-              required
             />
+          )}
+
+          {spellingDisplayMode === "classificatie" && (
+            <fieldset className="space-y-2">
+              {classifyOptions.map((option) => (
+                <label
+                  key={option}
+                  className="flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-300 p-3 text-lg"
+                >
+                  <input
+                    type="radio"
+                    name="antwoord"
+                    value={option}
+                    checked={spellingAnswer === option}
+                    onChange={(e) => { setSpellingAnswer(e.target.value); setEmptyAnswerError(false); }}
+                  />
+                  {option}
+                </label>
+              ))}
+            </fieldset>
           )}
 
           {spellingDisplayMode === "homofonen" && (
@@ -378,13 +414,18 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
                     name="antwoord"
                     value={option}
                     checked={spellingAnswer === option}
-                    onChange={(e) => setSpellingAnswer(e.target.value)}
-                    required
+                    onChange={(e) => { setSpellingAnswer(e.target.value); setEmptyAnswerError(false); }}
                   />
                   {option}
                 </label>
               ))}
             </fieldset>
+          )}
+
+          {emptyAnswerError && (
+            <p role="alert" className="mt-2 text-sm font-semibold text-red-600">
+              Vul een antwoord in voor je verder gaat.
+            </p>
           )}
         </section>
 

@@ -115,6 +115,50 @@
         "Controleer de eindletter van deze stam: v en z zijn stemhebbend, dus niet kofschip → -de.",
         "Schrijf dan de ik-vorm en voeg -de toe: leef + de = leefde, verhuis + de = verhuisde."
       ]
+    },
+    {
+      "code": "INF_PV_CONFUSION",
+      "title": "Persoonsvorm gebruikt waar infinitief nodig is",
+      "learnerDescription": "Je schreef een persoonsvorm, maar hier hoort een infinitief (de basisvorm op -en).",
+      "teacherDescription": "Leerling schrijft de persoonsvorm (bijv. 'loopt') na een modaal of hulpwerkwoord in plaats van de infinitief ('lopen'). Typisch: 'hij wil loopt' in plaats van 'hij wil lopen'.",
+      "remediation": [
+        "Zoek het hulpwerkwoord of modale werkwoord in de zin (wil, kan, mag, moet, gaat, laat, blijft, hoeft).",
+        "Na zo'n werkwoord staat altijd een infinitief, ook bij hij/zij/het als onderwerp.",
+        "De infinitief is de basisvorm op -en, gelijk aan wat je in het woordenboek vindt."
+      ]
+    },
+    {
+      "code": "INF_VD_CONFUSION",
+      "title": "Voltooid deelwoord gebruikt waar infinitief nodig is",
+      "learnerDescription": "Je schreef een voltooid deelwoord (met ge-), maar hier hoort een infinitief (de basisvorm op -en).",
+      "teacherDescription": "Leerling schrijft het voltooid deelwoord (bijv. 'gelopen') na een modaal werkwoord in plaats van de infinitief ('lopen'). Typisch: 'hij wil gelopen' in plaats van 'hij wil lopen'.",
+      "remediation": [
+        "Na modale werkwoorden (wil, kan, mag, moet) staat een infinitief, niet een voltooid deelwoord.",
+        "Een voltooid deelwoord staat na hebben of zijn, niet na wil/kan/mag/moet.",
+        "De infinitief heeft geen ge-voorvoegsel: 'lopen', niet 'gelopen'."
+      ]
+    },
+    {
+      "code": "VD_ADJ_FUNCTION_CONFUSION",
+      "title": "Bijvoeglijk en werkwoordelijk gebruik voltooid deelwoord verward",
+      "learnerDescription": "Je verwarde bijvoeglijk gebruik (voor een zelfstandig naamwoord) en werkwoordelijk gebruik (na hebben/zijn) van het voltooid deelwoord.",
+      "teacherDescription": "Leerling onderscheidt niet of het voltooid deelwoord bijvoeglijk gebruikt wordt (direct vóór een zelfstandig naamwoord, met verplichte buigings-e) dan wel werkwoordelijk (na hebben/zijn, zonder buigings-e).",
+      "remediation": [
+        "Stel de vraag: staat het deelwoord direct voor een zelfstandig naamwoord? Dan is het bijvoeglijk gebruikt.",
+        "Bijvoeglijk gebruik: voeg -e toe bij de-woorden en meervoud (de geschilderde deur, het geschilderde huis).",
+        "Werkwoordelijk gebruik (na hebben/zijn): geen buigings-e (het huis is geschilderd)."
+      ]
+    },
+    {
+      "code": "OVD_FUNCTION_CONFUSION",
+      "title": "Onvoltooid deelwoord verward met persoonsvorm of voltooid deelwoord",
+      "learnerDescription": "Je verwarde de -end-vorm (onvoltooid deelwoord) met een persoonsvorm of voltooid deelwoord.",
+      "teacherDescription": "Leerling herkent het onvoltooid deelwoord (-end-vorm) niet als aparte categorie en verwart het met de persoonsvorm (hij werkt) of het voltooid deelwoord (gewerkt). Typisch bij attributief gebruik: 'de werkende student'.",
+      "remediation": [
+        "Het onvoltooid deelwoord eindigt op -end en beschrijft een lopende handeling: werkend, slapend, zingend.",
+        "Het is geen persoonsvorm: er is geen onderwerp dat ermee overeenkomt in de klassieke PV-zin.",
+        "Het heeft geen ge-voorvoegsel zoals het voltooid deelwoord (gewerkt, geslapen)."
+      ]
     }
   ]
 }

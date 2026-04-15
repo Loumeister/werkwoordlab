@@ -35,3 +35,26 @@ test("learner doorloopt eerste opdracht en ziet diagnostische feedback", async (
   await expect(page.getByText(/misconceptiecode:/i)).toBeVisible();
   await expect(page.getByText(/hint:/i)).toBeVisible();
 });
+
+test("learner kan classify-item beantwoorden in unit-05 (werkwoordelijk vs bijvoeglijk)", async ({ page }) => {
+  await page.goto("/oefenen/unit-05-bijvoeglijk-vd");
+
+  // Item 1 is a classify item — MasteryExercise goes straight to answer step
+  await expect(page.getByText(/jouw antwoord/i)).toBeVisible();
+
+  // classifyOptions knoppen verschijnen
+  await expect(page.getByRole("radio", { name: "werkwoordelijk" })).toBeVisible();
+  await expect(page.getByRole("radio", { name: "bijvoeglijk" })).toBeVisible();
+
+  // Standaard functieopties zijn niet aanwezig (regressiebewaker)
+  await expect(page.getByRole("radio", { name: "persoonsvorm" })).not.toBeVisible();
+  await expect(page.getByRole("radio", { name: "infinitief" })).not.toBeVisible();
+
+  // Selecteer correct antwoord (item 1 target = "bijvoeglijk")
+  await page.getByRole("radio", { name: "bijvoeglijk" }).check();
+  await page.getByRole("button", { name: /controleer antwoord/i }).click();
+
+  // Feedbacksectie verschijnt
+  await expect(page.getByRole("heading", { name: /diagnostische feedback/i })).toBeVisible();
+  await expect(page.getByText(/misconceptiecode:/i)).toBeVisible();
+});

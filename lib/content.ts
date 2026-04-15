@@ -2,6 +2,9 @@ import taxonomy from "@/content/misconceptions/taxonomy.nl.json";
 import unit01 from "@/content/units/unit-01-pv-tt.json";
 import unit02 from "@/content/units/unit-02-voltooid-deelwoord.json";
 import unit03 from "@/content/units/unit-03-pv-vt.json";
+import unit04 from "@/content/units/unit-04-infinitief.json";
+import unit05 from "@/content/units/unit-05-bijvoeglijk-vd.json";
+import unit06 from "@/content/units/unit-06-onvoltooid-deelwoord.json";
 
 /**
  * Grammatical function of the target verb in an exercise item.
@@ -32,6 +35,12 @@ export type ExerciseItem = {
    * Items with misconception HOMOPHONE_FUNCTION_CONFUSION also have this set.
    */
   homophonePair: string | null;
+  /**
+   * Category options for classify-type items (e.g. ["werkwoordelijk", "bijvoeglijk"]).
+   * When set, MasteryExercise renders radio buttons for these options instead of a text input.
+   * Only present on items with type === "classify".
+   */
+  classifyOptions?: string[];
   /**
    * Three-step scaffold ladder shown progressively via HintDisclosure:
    *   step1 — function discovery (identify which grammatical function the verb has)
@@ -124,7 +133,14 @@ export type Unit = {
 // readonly arrays and narrow literal types, which are not assignable to our
 // mutable Unit type directly. The double-cast is intentional and safe here:
 // the content-contracts test suite validates the actual shape at the JSON level.
-const units: Unit[] = [unit01 as unknown as Unit, unit02 as unknown as Unit, unit03 as unknown as Unit];
+const units: Unit[] = [
+  unit01 as unknown as Unit,
+  unit02 as unknown as Unit,
+  unit03 as unknown as Unit,
+  unit04 as unknown as Unit,
+  unit05 as unknown as Unit,
+  unit06 as unknown as Unit,
+];
 
 export function getUnits() {
   return units;

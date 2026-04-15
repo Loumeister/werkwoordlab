@@ -152,4 +152,56 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
         "Bepaal de stam (trek -en af van de infinitief). Hoor je een klank uit 't kofschip' (t-k-f-s-ch-p)? Dan ik-vorm + -te, anders ik-vorm + -de.",
     },
   },
+
+  INF_PV_CONFUSION: {
+    herstelvraag: "Welk hulpwerkwoord staat er vóór de lege plek?",
+    sleutelwoord: "hulpwerkwoord",
+    uitleg: {
+      diagnose:
+        "Je hebt waarschijnlijk de persoonsvorm geschreven, maar na een hulpwerkwoord of modaal werkwoord staat altijd een infinitief.",
+      redenering:
+        "Na werkwoorden als 'wil', 'kan', 'mag', 'moet', 'gaat', 'blijft' en 'laat' staat altijd de basisvorm van het werkwoord (de infinitief op -en). Schrijf 'hij wil lopen', niet 'hij wil loopt'.",
+      herprobeer:
+        "Zoek het hulpwerkwoord of modale werkwoord. Staat er een? Gebruik dan de basisvorm op -en — de infinitief.",
+    },
+  },
+
+  INF_VD_CONFUSION: {
+    herstelvraag: "Staat er 'hebben' of 'zijn' in de zin, of een modaal werkwoord?",
+    sleutelwoord: "modaal",
+    uitleg: {
+      diagnose:
+        "Je hebt waarschijnlijk het voltooid deelwoord (met ge-) geschreven, maar na een modaal werkwoord hoort een infinitief zonder ge-.",
+      redenering:
+        "Na 'wil', 'kan', 'mag' en 'moet' staat een infinitief (basisvorm op -en). Het voltooid deelwoord met ge- staat na 'hebben' of 'zijn'. Schrijf 'hij wil lopen', niet 'hij wil gelopen'.",
+      herprobeer:
+        "Is het hulpwerkwoord 'wil', 'kan', 'mag' of 'moet'? Dan infinitief zonder ge-. Is het 'heeft' of 'is'? Dan voltooid deelwoord.",
+    },
+  },
+
+  VD_ADJ_FUNCTION_CONFUSION: {
+    herstelvraag: "Staat het deelwoord direct vóór een zelfstandig naamwoord?",
+    sleutelwoord: "zelfstandig naamwoord",
+    uitleg: {
+      diagnose:
+        "Je hebt bijvoeglijk en werkwoordelijk gebruik van het voltooid deelwoord door elkaar gehaald.",
+      redenering:
+        "Staat het deelwoord direct vóór een zelfstandig naamwoord? Dan is het bijvoeglijk gebruikt en krijgt het een buigings-e (de geschilderde deur). Staat het na 'is', 'was', 'heeft' of 'zijn'? Dan is het werkwoordelijk gebruikt en geen buigings-e (het huis is geschilderd).",
+      herprobeer:
+        "Zoek het zelfstandig naamwoord. Staat het deelwoord er direct voor? Voeg dan -e toe. Staat het na 'is'/'heeft'? Geen -e.",
+    },
+  },
+
+  OVD_FUNCTION_CONFUSION: {
+    herstelvraag: "Beschrijft het werkwoord een lopende handeling vóór een zelfstandig naamwoord?",
+    sleutelwoord: "lopende handeling",
+    uitleg: {
+      diagnose:
+        "Je hebt waarschijnlijk de -end-vorm verward met een persoonsvorm of voltooid deelwoord.",
+      redenering:
+        "Het onvoltooid deelwoord eindigt op -end en beschrijft een lopende handeling: werkend, slapend, zingend. Het heeft geen ge- (niet 'gewerkt') en is geen persoonsvorm (niet 'werkt'). Gebruik het als bijvoeglijke bepaling: 'de werkende student'.",
+      herprobeer:
+        "Beschrijft het woord een lopende handeling bij een zelfstandig naamwoord? Gebruik dan de -end-vorm (werkend, slapend). Geen ge-, geen -t als PV.",
+    },
+  },
 };
