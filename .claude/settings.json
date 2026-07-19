@@ -5,5 +5,8 @@
       "Bash(git check-ignore *)",
       "Bash(echo \"exit: $?\")"
     ]
+  },
+  "enabledPlugins": {
+    "grammar-core-toolkit@grammar-core": true
   }
 }
