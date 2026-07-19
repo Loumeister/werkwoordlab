@@ -181,4 +181,4 @@ Wanneer lokale elementen kandidaat zijn voor shared canon:
 2. bespreek promotie via `grammar-core` issues/PR
 3. pas het lokale contract bij na promotie
 
-De grammar-core snapshot in `shared/grammar-core/` wordt bijgehouden via de instructies in `shared/grammar-core/MIRROR-SOURCE.md`.
+De grammar-core subtree in `shared/grammar-core/` wordt gesynchroniseerd met de `grammar-core-sync` skill; zie `shared/grammar-core/docs/repo-sync-strategy.md`.

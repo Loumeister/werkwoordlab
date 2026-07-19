@@ -59,7 +59,7 @@ Shared canon (`shared/grammar-core/`) informs local behavior at the right bounda
 | Shared content authoring rules | `shared/grammar-core/docs/content-authoring-rules.md` |
 | Scope boundaries across repos | `shared/grammar-core/docs/repo-scope-contracts.md` |
 | Shared agent catalog | `shared/grammar-core/docs/agent-catalog.md` |
-| How to sync grammar-core snapshot | `shared/grammar-core/MIRROR-SOURCE.md` |
+| How to sync grammar-core subtree | `shared/grammar-core/docs/repo-sync-strategy.md` (of de `grammar-core-sync` skill) |
 
 ## When to use repo skills
 Use exactly the skill matching your workstream in `.agents/skills/`:

@@ -3,7 +3,7 @@
 ## Doel
 Dit document legt vast hoe lokale werkwoordregelbestanden en documentatie in Werkwoordlab zich verhouden tot `shared/grammar-core/`.
 
-`shared/grammar-core/` is aanwezig als handmatig geboostrappede snapshot van `Loumeister/grammar-core` @ `4a4cfeceac2fe4f37cf81eb395446acd977460a7`. Zie `shared/grammar-core/MIRROR-SOURCE.md` voor sync-instructies.
+`shared/grammar-core/` is een git subtree van `Loumeister/grammar-core` @ `af6aca7` (branch `main`). Zie `shared/grammar-core/docs/repo-sync-strategy.md` voor de sync-strategie.
 
 ## Leeshierarchie
 Bij inhoudelijke wijzigingen aan werkwoordspellingsregels geldt deze volgorde:
@@ -50,11 +50,11 @@ Nieuwe lokale werkwoordregelbestanden zijn alleen toegestaan als ze aan alle voo
 - Bij conflict gaat shared canon vóór lokale uitleg.
 - Bij conflict tussen code en documentatie gaat lokale code/runtime-werkelijkheid vóór documentatie (voor feitelijk gedrag van de repo).
 
-## Mirror-sync en onderhoud
-Zie `shared/grammar-core/MIRROR-SOURCE.md` voor:
-- de pinned commit van de huidige snapshot
-- instructies voor het vervangen van de snapshot door een echte git subtree
-- instructies voor toekomstige updates na de echte subtree-koppeling
+## Subtree-sync en onderhoud
+Synchroniseer `shared/grammar-core/` met de `grammar-core-sync` skill, of handmatig via:
+`git subtree pull --prefix=shared/grammar-core https://github.com/Loumeister/grammar-core.git main --squash`
+
+Bij het synchroniseren geldt: upstream wint in `shared/grammar-core/`, lokale afwijkingen horen in `docs/product-contract.md`. Zie `shared/grammar-core/docs/repo-sync-strategy.md`.
 
 Intentionele lokale afwijkingen van shared canon worden gedocumenteerd in `docs/product-contract.md`, niet in `shared/grammar-core/`.
 

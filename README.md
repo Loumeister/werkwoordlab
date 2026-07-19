@@ -87,12 +87,12 @@ werkwoordlab/
 │   └── e2e/                    # Playwright e2e-tests
 ├── docs/                       # Volledige documentatie (zie index)
 └── shared/
-    └── grammar-core/           # Lokale snapshot van grammar-core gedeelde canon
+    └── grammar-core/           # Git subtree van grammar-core gedeelde canon
 ```
 
 > **Nieuwe unit toevoegen?** Maak `content/units/<unit-id>.json` aan en registreer de unit in `lib/content.ts`. Zie [`docs/content-schema.md`](docs/content-schema.md) voor het verplichte schema.
 >
-> **Shared-core:** `shared/grammar-core/` is aanwezig als handmatig geboostrappede snapshot van `Loumeister/grammar-core` @ `4a4cfeceac2fe4f37cf81eb395446acd977460a7`. Zie [`shared/grammar-core/MIRROR-SOURCE.md`](shared/grammar-core/MIRROR-SOURCE.md) voor sync-instructies en het pad naar een echte git subtree.
+> **Shared-core:** `shared/grammar-core/` is een git subtree van `Loumeister/grammar-core` @ `af6aca7` (branch `main`). Synchroniseer met de `grammar-core-sync` skill of handmatig via `git subtree pull --prefix=shared/grammar-core https://github.com/Loumeister/grammar-core.git main --squash`. Zie [`shared/grammar-core/docs/repo-sync-strategy.md`](shared/grammar-core/docs/repo-sync-strategy.md) voor de sync-strategie.
 
 ---
 
@@ -169,5 +169,5 @@ Volledige takenlijst en didactische eisen: [`docs/content-expansion-roadmap.md`]
 | [`docs/content-expansion-roadmap.md`](docs/content-expansion-roadmap.md) | Uitvoerbare contentroadmap: units, taxonomie, evaluator |
 | [`docs/release-checklist.md`](docs/release-checklist.md) | Releasechecklist voor MVP |
 | [`docs/product-contract.md`](docs/product-contract.md) | Lokaal productcontract: adoptie shared canon, source-of-truth regel, lokale elementen |
-| [`shared/grammar-core/`](shared/grammar-core/MIRROR-SOURCE.md) | Lokale snapshot van grammar-core gedeelde canon (zie MIRROR-SOURCE.md voor sync) |
+| [`shared/grammar-core/`](shared/grammar-core/docs/repo-sync-strategy.md) | Git subtree van grammar-core gedeelde canon (zie repo-sync-strategy.md voor sync) |
 | [`AGENTS.md`](AGENTS.md) | Werkafspraken voor AI-agents die aan dit project werken |
