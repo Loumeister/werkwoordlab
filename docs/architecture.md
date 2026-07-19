@@ -24,9 +24,9 @@ Vastgestelde stack:
 
 ## Shared-core locatie
 - De lokale locatie voor gedeelde grammatica-canon is `shared/grammar-core/`.
-- `shared/grammar-core/` is aanwezig als handmatig geboostrappede snapshot van `Loumeister/grammar-core` @ `4a4cfeceac2fe4f37cf81eb395446acd977460a7`.
+- `shared/grammar-core/` is een git subtree van `Loumeister/grammar-core` @ `af6aca7` (branch `main`).
 - Lokale Werkwoordlab-runtimecontracten blijven leidend voor productspecifiek gedrag; zie `docs/product-contract.md`.
-- Zie `shared/grammar-core/MIRROR-SOURCE.md` voor sync-instructies en het pad naar een echte git subtree.
+- Synchroniseer met de `grammar-core-sync` skill (of `git subtree pull --prefix=shared/grammar-core https://github.com/Loumeister/grammar-core.git main --squash`); zie `shared/grammar-core/docs/repo-sync-strategy.md`.
 
 ## Runtime contract
 ### Leerlingflow

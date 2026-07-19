@@ -59,7 +59,7 @@ Shared canon (`shared/grammar-core/`) informs local behavior at the right bounda
 | Shared content authoring rules | `shared/grammar-core/docs/content-authoring-rules.md` |
 | Scope boundaries across repos | `shared/grammar-core/docs/repo-scope-contracts.md` |
 | Shared agent catalog | `shared/grammar-core/docs/agent-catalog.md` |
-| How to sync grammar-core snapshot | `shared/grammar-core/MIRROR-SOURCE.md` |
+| How to sync grammar-core subtree | `shared/grammar-core/docs/repo-sync-strategy.md` (of de `grammar-core-sync` skill) |
 
 ## When to use repo skills
 Use exactly the skill matching your workstream in `.agents/skills/`:
@@ -69,3 +69,12 @@ Use exactly the skill matching your workstream in `.agents/skills/`:
 - `teacher-insights` -> aggregation and teacher dashboard behavior
 - `content-seed-generator` -> creating/updating units or taxonomy seeds
 - `evals-and-release` -> final validation and release readiness
+
+## Grammar-core fixes
+
+Bij een fix in grammar-core:
+1. Lokale checkout: $HOME\Code\grammar-core
+2. Branch aanmaken vanaf main: git switch -c fix/beschrijving
+3. Fix uitvoeren, claude plugin validate . draaien als het .claude-plugin/ raakt
+4. Commit, push, draft PR
+5. Na merge: grammar-core-sync uitvoeren in alle productrepo's
