@@ -23,7 +23,7 @@ Een lokaal productcontract maakt expliciet:
 1. welke lokale termen, onderscheidingen of codes daadwerkelijk gelden
 2. welk lokaal inhouds- of taakmodel gebruikt wordt
 3. welke verschijnselen, taaktypen of evaluatievormen lokaal ondersteund worden
-4. welke lokale ambiguïteiten of risico's vermeden moeten worden
+4. welke lokale ambiguïteiten of risico’s vermeden moeten worden
 5. hoe gedeelde canon lokaal wordt vertaald, voor zover dat nodig is
 
 ## Relatie tot `grammar-core`
@@ -66,7 +66,7 @@ Doel:
 - gedeelde feedbackprincipes niet verwarren met lokale datastructuren of UI-koppelingen
 
 ### 5. Risks / ambiguities to avoid
-Welke lokale ambiguïteiten, inhoudsrisico's of modelgrenzen expliciet vermeden moeten worden.
+Welke lokale ambiguïteiten, inhoudsrisico’s of modelgrenzen expliciet vermeden moeten worden.
 
 Doel:
 - inhoudelijke eenduidigheid bewaken

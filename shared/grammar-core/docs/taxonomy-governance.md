@@ -53,7 +53,7 @@ The following table defines the shared canonical labels. The canonical label is 
 
 **Note on predicate taxonomy**: `werkwoordelijk_gezegde` and `naamwoordelijk_gezegde` are the two top-level predicate types (the full predicate construction). `naamwoordelijk_gezegde` has two constituent parts:
 
-- `werkwoordelijk_deel` (WD) — the verbal part within a nominal predicate (the copula or linking verb cluster, e.g., "is" in "is ziek")
+- `werkwoordelijk_deel` (WWD) — the verbal part within a nominal predicate (the copula or linking verb cluster, e.g., "is" in "is ziek")
 - `naamwoordelijk_deel` (NWD) — the nominal part within a nominal predicate (e.g., "ziek" in "is ziek")
 
 `werkwoordelijk_gezegde` has no canonical sub-parts in this taxonomy. Products that annotate the full predicate construction use `werkwoordelijk_gezegde` or `naamwoordelijk_gezegde`. Products that annotate the parts of a nominal predicate separately use `werkwoordelijk_deel` and `naamwoordelijk_deel`.
@@ -73,7 +73,7 @@ Product repos often use short keys internally. These are product-local and not s
 | `bijst` | `bijstelling` |
 | `wg` | `werkwoordelijk_gezegde` |
 | `ng` | `naamwoordelijk_gezegde` |
-| `wd` | `werkwoordelijk_deel` |
+| `wwd` | `werkwoordelijk_deel` |
 | `nwd` | `naamwoordelijk_deel` |
 | `bijzin` | `bijzin` |
 | `vw_neven` | `nevenschikkend_voegwoord` |

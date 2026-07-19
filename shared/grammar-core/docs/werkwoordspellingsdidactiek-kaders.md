@@ -10,7 +10,7 @@ Het doel is niet om losse onderwijsclaims te verzamelen, maar om een klein aanta
 
 ## Reikwijdte en adoptiegrens
 
-Dit document is **canoniek binnen `grammar-core`** als gedeeld didactisch kader voor werkwoordsspellingsonderwijs.
+Dit document is **canoniek binnen `grammar-core`** als gedeeld didactisch kader voor werkwoordspellingsonderwijs.
 
 Dit document is **niet automatisch bindend voor productrepo's**.
 
