@@ -1,0 +1,4 @@
+interface:
+  display_name: "Teacher Insights"
+  short_description: "Bouw privacyveilige, bruikbare docentinzichten"
+  default_prompt: "Gebruik $teacher-insights om deze docentmetric privacyveilig en actiegericht uit te werken."
