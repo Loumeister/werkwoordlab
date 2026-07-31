@@ -84,9 +84,9 @@ General planning, implementation, TDD, diagnosis and review come from the global
 ## Delivery discipline
 
 - Anchor non-trivial work to an issue or numbered plan step, and state its scope.
-- Before editing, select the applicable global Matt process skill and local domain skill.
+- Before editing, select an installed global process skill appropriate to the task and any applicable local domain skill. If no matching global process skill is installed, follow the deterministic scope, validation, range-review, and reporting gates in this file and report that fallback.
 - Decide the test and validation evidence before implementation.
-- Review the exact Git range before claiming completion.
+- Before claiming completion, resolve the target base and review `git diff <base>...HEAD`; also review `git diff --cached` for staged work and `git diff` for remaining unstaged work.
 - Report commands, results, and failures honestly.
 - Do not claim work is done until applicable checks and required review pass.
 

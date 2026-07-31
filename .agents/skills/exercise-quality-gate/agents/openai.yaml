@@ -1,4 +1,4 @@
 interface:
   display_name: "Exercise Quality Gate"
-  short_description: "Controleer contentcontract en antwoordambigu�teit"
-  default_prompt: "Gebruik $exercise-quality-gate om deze oefencontent v��r merge te valideren."
+  short_description: "Controleer contentcontract en antwoordambiguïteit"
+  default_prompt: "Gebruik $exercise-quality-gate om deze oefencontent vóór merge te valideren."
