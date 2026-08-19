@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence-Based Werkwoordspellingsdidactiek"
+  short_description: "Onderbouw didactische keuzes met gedeelde canon"
+  default_prompt: "Gebruik $evidence-based-werkwoordspellingsdidactiek om dit didactische voorstel te onderbouwen en beoordelen."

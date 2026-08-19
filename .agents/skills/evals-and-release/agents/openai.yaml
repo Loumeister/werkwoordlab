@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evals and Release"
+  short_description: "Voer de Werkwoordlab-releasegates uit"
+  default_prompt: "Gebruik $evals-and-release om een Werkwoordlab-releasekandidaat volledig te valideren."

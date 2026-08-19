@@ -1,0 +1,4 @@
+interface:
+  display_name: "Didactische Werkwoordspelling"
+  short_description: "Bewaak evaluator, feedback en leerprogressie"
+  default_prompt: "Gebruik $didactic-workwoordspelling om evaluator- en feedbackgedrag didactisch correct te wijzigen."

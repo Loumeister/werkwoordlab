@@ -1,0 +1,4 @@
+interface:
+  display_name: "Learner Flow UI"
+  short_description: "Bouw een toegankelijke didactische leerlingflow"
+  default_prompt: "Gebruik $learner-flow-ui om deze leerlingflow didactisch en toegankelijk uit te werken."

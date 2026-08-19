@@ -1,0 +1,4 @@
+interface:
+  display_name: "Content Seed Generator"
+  short_description: "Maak valide, didactisch sterke oefencontent"
+  default_prompt: "Gebruik $content-seed-generator om een valide, didactisch sterke Werkwoordlab-unit te maken."
