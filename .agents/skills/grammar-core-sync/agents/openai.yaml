@@ -1,0 +1,4 @@
+interface:
+  display_name: "Grammar Core Sync"
+  short_description: "Synchroniseer de grammar-core-subtree veilig"
+  default_prompt: "Gebruik $grammar-core-sync om shared/grammar-core veilig met de canonieke repository te synchroniseren."

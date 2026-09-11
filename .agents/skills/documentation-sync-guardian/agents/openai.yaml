@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation Sync Guardian"
+  short_description: "Beperk docs-sync tot bewijsgebonden auto-output"
+  default_prompt: "Gebruik $documentation-sync-guardian om een bewijsgebonden main-commit-samenvatting onder docs/auto-sync te maken."

@@ -62,19 +62,41 @@ Shared canon (`shared/grammar-core/`) informs local behavior at the right bounda
 | How to sync grammar-core subtree | `shared/grammar-core/docs/repo-sync-strategy.md` (of de `grammar-core-sync` skill) |
 
 ## When to use repo skills
-Use exactly the skill matching your workstream in `.agents/skills/`:
-- `didactic-workwoordspelling` -> evaluator/feedback/progression logic
-- `exercise-quality-gate` -> content validity and ambiguity checks
+
+Choose one primary local workstream skill from `.agents/skills/`:
+
+- `didactic-workwoordspelling` -> evaluator, feedback and progression logic
+- `exercise-quality-gate` -> content validity and ambiguity review
 - `learner-flow-ui` -> learner screens and interaction flow
 - `teacher-insights` -> aggregation and teacher dashboard behavior
-- `content-seed-generator` -> creating/updating units or taxonomy seeds
+- `content-seed-generator` -> creating or updating units and local taxonomy implementation
 - `evals-and-release` -> final validation and release readiness
+
+Add a cross-cutting local wrapper only when its boundary is actually involved:
+
+- `evidence-based-werkwoordspellingsdidactiek` -> didactic justification against adopted shared canon
+- `shared-content-integration` -> explicit adapters from shared grammar-core content
+- `grammar-core-sync` -> safe subtree synchronization
+- `documentation-sync-guardian` -> generated `docs/auto-sync/*` summaries after a main commit
+
+General planning, implementation, TDD, diagnosis and review come from the global engineering skills; do not recreate those workflows in a local domain skill. For learner UI work, combine global `frontend-design` for visual design/build, local `learner-flow-ui` for product-specific didactics, and global `web-design-guidelines` for the final UI/accessibility audit.
+
+## Delivery discipline
+
+- Anchor non-trivial work to an issue or numbered plan step, and state its scope.
+- Before editing, select an installed global process skill appropriate to the task and any applicable local domain skill. If no matching global process skill is installed, follow the deterministic scope, validation, range-review, and reporting gates in this file and report that fallback.
+- Decide the test and validation evidence before implementation.
+- Before claiming completion, resolve the target base and review `git diff <base>...HEAD`; also review `git diff --cached` for staged work and `git diff` for remaining unstaged work.
+- Report commands, results, and failures honestly.
+- Do not claim work is done until applicable checks and required review pass.
 
 ## Grammar-core fixes
 
 Bij een fix in grammar-core:
-1. Lokale checkout: $HOME\Code\grammar-core
-2. Branch aanmaken vanaf main: git switch -c fix/beschrijving
-3. Fix uitvoeren, claude plugin validate . draaien als het .claude-plugin/ raakt
-4. Commit, push, draft PR
-5. Na merge: grammar-core-sync uitvoeren in alle productrepo's
+
+1. Gebruik de lokale `grammar-core-sync`-skill om eigenaarschap en syncvolgorde te bewaken.
+2. Werk in een aparte checkout en detecteer de actuele default branch; neem `main` niet stilzwijgend aan.
+3. Maak een gerichte fixbranch.
+4. Voer de fix uit en draai `claude plugin validate .` als het `.claude-plugin/` raakt.
+5. Commit, push en open een draft PR wanneer de taak dat expliciet omvat.
+6. Voer na merge `grammar-core-sync` uit in alle productrepo's.

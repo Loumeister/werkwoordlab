@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shared Content Integration"
+  short_description: "Integreer gedeelde content met expliciete adapters"
+  default_prompt: "Gebruik $shared-content-integration om gedeelde grammar-core-content expliciet in Werkwoordlab te integreren."
