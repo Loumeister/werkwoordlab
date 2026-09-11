@@ -183,9 +183,10 @@ describe("feedbackOverrides", () => {
   });
 
   function withStorage() {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = {
-      localStorage: storage,
-    };
+    Object.defineProperty(globalThis, "window", {
+      configurable: true,
+      value: { localStorage: storage },
+    });
   }
 
   it("getFeedbackOverrides geeft leeg object bij geen opgeslagen overrides", () => {
@@ -273,9 +274,10 @@ describe("getEffectiveFeedback", () => {
   });
 
   function withStorage() {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = {
-      localStorage: storage,
-    };
+    Object.defineProperty(globalThis, "window", {
+      configurable: true,
+      value: { localStorage: storage },
+    });
   }
 
   it("geeft built-in feedback terug als er geen override is", () => {
