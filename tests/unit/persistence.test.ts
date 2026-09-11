@@ -17,6 +17,13 @@ class LocalStorageMock {
   }
 }
 
+function installWindowStorage(storage: LocalStorageMock) {
+  Object.defineProperty(globalThis, "window", {
+    configurable: true,
+    value: { localStorage: storage },
+  });
+}
+
 describe("attempt persistence", () => {
   const storage = new LocalStorageMock();
 
@@ -36,7 +43,7 @@ describe("attempt persistence", () => {
   }
 
   it("slaat pogingen op en leest ze terug", () => {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+    installWindowStorage(storage);
 
     const attempt: AttemptRecord = {
       unitId: "unit-01-pv-tt",
@@ -51,12 +58,12 @@ describe("attempt persistence", () => {
   });
 
   it("geeft lege lijst bij empty state", () => {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+    installWindowStorage(storage);
     expect(readAttempts()).toEqual([]);
   });
 
   it("handelt malformed persisted state veilig af", () => {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+    installWindowStorage(storage);
     storage.setItem("werkwoordlab-attempts", "geen-json");
     expect(readAttempts()).toEqual([]);
 
@@ -65,7 +72,7 @@ describe("attempt persistence", () => {
   });
 
   it("behoudt alleen geldige records als persisted state gemengd is", () => {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+    installWindowStorage(storage);
 
     const valid: AttemptRecord = {
       unitId: "unit-02-voltooid-deelwoord",
@@ -80,7 +87,7 @@ describe("attempt persistence", () => {
   });
 
   it("accepts records with valid proofCorrect boolean", () => {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+    installWindowStorage(storage);
 
     const attempt: AttemptRecord = {
       unitId: "unit-01-pv-tt",
@@ -98,7 +105,7 @@ describe("attempt persistence", () => {
   });
 
   it("accepts records without proofCorrect (undefined)", () => {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+    installWindowStorage(storage);
 
     const attempt: AttemptRecord = {
       unitId: "unit-01-pv-tt",
@@ -113,7 +120,7 @@ describe("attempt persistence", () => {
   });
 
   it("rejects records with non-boolean proofCorrect", () => {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+    installWindowStorage(storage);
 
     storage.setItem("werkwoordlab-attempts", JSON.stringify([{
       unitId: "unit-01-pv-tt",
@@ -127,7 +134,7 @@ describe("attempt persistence", () => {
   });
 
   it("caps persisted attempt history to 200 records", () => {
-    (globalThis as { window: { localStorage: LocalStorageMock } }).window = { localStorage: storage };
+    installWindowStorage(storage);
 
     for (let i = 1; i <= 205; i += 1) {
       saveAttempt(makeAttempt(i));
