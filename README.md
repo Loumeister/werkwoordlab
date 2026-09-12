@@ -4,7 +4,7 @@ Statische Next.js-oefenapp voor Nederlandse werkwoordspelling. De leerling bepaa
 
 ## Huidige productkern
 
-- zes units: persoonsvorm tt, voltooid deelwoord, persoonsvorm vt, infinitief, bijvoeglijk gebruikt voltooid deelwoord en onvoltooid deelwoord
+- oefenunits voor persoonsvormen, infinitieven en deelwoorden, geregistreerd in `lib/content.ts`
 - invul-, classificatie- en contrastitems uit JSON
 - deterministische evaluatie en lokale misconceptiecodes
 - hints, bewijskeuze, herstelitems en browserlokale voortgang
@@ -27,7 +27,7 @@ npm run build
 
 | Pad | Verantwoordelijkheid |
 |---|---|
-| `content/units/*.json` | zes lokale oefenunits |
+| `content/units/*.json` | lokale oefenunits |
 | `content/reference/*.json` | machineleesbare lokale spellingregels |
 | `lib/content.ts` | types en unitregister |
 | `lib/evaluator.ts` | deterministische beoordeling |

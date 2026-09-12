@@ -302,14 +302,13 @@ export function RepairExercise({ repairItem, unitId, onComplete }: Props) {
                   className="ml-9 space-y-2 rounded-xl border border-[#bee3ff] bg-[#f2f9ff] p-4 text-base"
                 >
                   <p>
-                    <strong>Wat je antwoord laat zien:</strong> {effectiveFeedback.uitleg.diagnose}
-                  </p>
-                  <p>
                     <strong>Redenering:</strong> {effectiveFeedback.uitleg.redenering}
                   </p>
-                  <p>
-                    <strong>Herprobeer:</strong> {effectiveFeedback.uitleg.herprobeer}
-                  </p>
+                  {!fixResult.correct && (
+                    <p>
+                      <strong>Probeer opnieuw:</strong> {effectiveFeedback.uitleg.herprobeer}
+                    </p>
+                  )}
                 </div>
               </div>
             ) : (

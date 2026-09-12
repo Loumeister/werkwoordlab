@@ -49,7 +49,7 @@ describe("isRichFeedbackEntry", () => {
     herstelvraag: "Welk onderwerp staat er in de zin?",
     sleutelwoord: "onderwerp",
     uitleg: {
-      diagnose: "Je hebt waarschijnlijk de stam gebruikt zonder -t.",
+      diagnose: "De vorm zonder -t contrasteert hier met de derde persoon enkelvoud.",
       redenering: "Bij hij/zij/het krijgt de persoonsvorm stam+t.",
       herprobeer: "Bepaal het onderwerp. Is het hij/zij/het? Voeg dan -t toe.",
     },
@@ -175,6 +175,15 @@ describe("BUILT_IN_FEEDBACK", () => {
       if (isRichFeedbackEntry(entry)) {
         expect(validateRichFeedback(entry)).toEqual({});
       }
+    }
+  });
+
+  it("de infinitiefuitleg geldt ook buiten modale werkwoordgroepen", () => {
+    const entry = BUILT_IN_FEEDBACK.INF_PV_CONFUSION;
+    expect(isRichFeedbackEntry(entry)).toBe(true);
+    if (isRichFeedbackEntry(entry)) {
+      expect(entry.uitleg.redenering).toContain("gaan, blijven en laten");
+      expect(entry.uitleg.redenering).toContain("te en om te");
     }
   });
 });

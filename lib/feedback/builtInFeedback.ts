@@ -2,7 +2,7 @@
  * Built-in feedback content for werkwoordlab misconception codes.
  * Local to werkwoordlab — not portable to grammar-core.
  *
- * Rich feedback is used only where the app can name an observed answer pattern.
+ * Rich feedback explains the relevant contrast without inferring learner thinking.
  */
 
 import { type FeedbackEntry } from "./types";
@@ -153,15 +153,15 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
   },
 
   INF_PV_CONFUSION: {
-    herstelvraag: "Vormt het werkwoord hier samen met wil, kan, mag of moet een werkwoordgroep?",
+    herstelvraag: "Welke vorm vraagt de werkwoordgroep of te-constructie op deze plek?",
     sleutelwoord: "werkwoordgroep",
     uitleg: {
       diagnose:
-        "Je antwoord is een persoonsvorm, terwijl deze plek in de werkwoordgroep om een infinitief vraagt.",
+        "Op deze plek staat een infinitief en niet de persoonsvorm van de zin.",
       redenering:
-        "Na een modaal werkwoord als wil, kan, mag of moet staat hier de infinitief. Schrijf 'hij wil lopen', niet 'hij wil loopt'. Niet elk hulpwerkwoord wordt door een infinitief gevolgd, dus controleer de hele werkwoordgroep.",
+        "Een infinitief kan onder meer volgen op een modaal werkwoord, op werkwoorden als gaan, blijven en laten, of op te en om te. Bepaal daarom de functie in de hele constructie.",
       herprobeer:
-        "Markeer het modale werkwoord en schrijf het andere werkwoord als infinitief.",
+        "Markeer de persoonsvorm en het woord dat de infinitief inleidt. Schrijf daarna de infinitief.",
     },
   },
 
