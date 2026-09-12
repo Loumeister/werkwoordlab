@@ -19,7 +19,7 @@
 
 ## Lokale eigendom
 
-- zes units en lokale itemvormen
+- het unitregister en lokale itemvormen
 - `lib/evaluator.ts` en fase-/steunlogica
 - lokale misconceptiecodes en feedbackmapping
 - routes, componenten, browseropslag en voortgangsweergave

@@ -5,7 +5,7 @@ _Alleen open werk. Afgerond werk staat in git._
 ## P0: inhoudelijke juistheid
 
 - [ ] Laat een vakinhoudelijke review alle ingebouwde feedback en functiehints toetsen op absolute of foutieve regels.
-- [ ] Geef unit 4–6 expliciete fases en controleer dat iedere overgang een ander niveau van steun vraagt.
+- [ ] Geef iedere unit die nog op positiebepaalde fallback leunt expliciete fases en controleer dat iedere overgang een ander niveau van steun vraagt.
 - [ ] Vervang beheersingstaal door voortgangstaal totdat prestaties over nieuwe contexten en tijd zijn gemeten.
 
 ## P1: één coherente leerlinglus

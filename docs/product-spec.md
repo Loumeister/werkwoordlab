@@ -14,7 +14,7 @@ Werkwoordlab leert leerlingen een overdraagbare beslisroute gebruiken:
 
 ## Huidige scope
 
-De zes aanwezige units vormen samen de productkern. Unit 1–3 bevatten expliciete fases; unit 4–6 gebruiken nog positiebepaalde fallbackfases. Pogingen, voortgang en inzichten zijn lokaal op één browser.
+De units in `lib/content.ts` vormen de productkern; hun fasegedrag volgt uit de fasevelden in de content en anders uit de positiebepaalde fallback. Pogingen, voortgang en inzichten zijn lokaal op één browser.
 
 ## Didactische eisen
 
@@ -39,7 +39,7 @@ De zes aanwezige units vormen samen de productkern. Unit 1–3 bevatten explicie
 - geen klasdashboard op basis van één browser
 - geen generatieve spellingbeoordeling
 - geen gedeelde runtime met Ontleedlab zonder aantoonbaar dubbele, stabiele logica
-- geen nieuwe unit voordat de bestaande zes inhoudelijk en technisch coherent zijn
+- geen nieuwe unit voordat de bestaande units inhoudelijk en technisch coherent zijn
 
 ## Acceptatie
 

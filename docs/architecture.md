@@ -31,7 +31,7 @@ lib/evaluator.ts + lib/phase-engine.ts
 
 ## Bekende spanning
 
-- unit 4–6 missen expliciete fasevelden en leunen op positie
+- units zonder expliciete fasevelden leunen op hun positie
 - korte aantalsdrempels worden nu als steunafbouw gebruikt, niet als bewezen beheersing
 - `/inzichten` leest dezelfde browseropslag als de leerling
 - feedback kan rijk worden weergegeven, maar de app heeft meestal geen bewijs voor een precieze cognitieve diagnose
