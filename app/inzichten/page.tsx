@@ -16,7 +16,8 @@ export default function InzichtenPage() {
   return (
     <AppShell>
       <div className="mx-auto max-w-4xl space-y-6">
-        <h1 className="text-4xl font-semibold tracking-tight">Inzichten (docent)</h1>
+        <h1 className="text-4xl font-semibold tracking-tight">Inzichten op dit apparaat</h1>
+        <p>Dit overzicht gebruikt alleen pogingen uit deze browser; het bevat geen klasgegevens.</p>
 
         <section className="rounded-3xl border border-black/15 bg-white p-6">
           <h2 className="text-2xl font-semibold">Accuratesse per unit</h2>
@@ -45,7 +46,7 @@ export default function InzichtenPage() {
                 <span>{count}</span>
               </li>
             ))}
-            {attempts.length === 0 && <li>Nog geen klasdata beschikbaar.</li>}
+            {attempts.length === 0 && <li>Nog geen lokale pogingen beschikbaar.</li>}
           </ul>
         </section>
       </div>

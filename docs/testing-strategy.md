@@ -12,7 +12,7 @@ Borgen dat evaluatorlogica, contentcontracten en kernflows deterministisch en st
 - Evaluator/didactische logica: unit tests + minimaal 1 integratietest.
 - Contentwijziging: JSON/schema-validatie + content smoke test.
 - Learner UI flow wijziging: Playwright flowtest voor aangepast pad.
-- Teacher insights wijziging: aggregatie-integratietest + route-smoke zonder crash.
+- Lokale inzichtenwijziging: aggregatie-integratietest + route-smoke zonder crash.
 
 ## Minimale smoke suite (Playwright)
 1. Leerling kan `/oefenen` openen.
@@ -21,7 +21,7 @@ Borgen dat evaluatorlogica, contentcontracten en kernflows deterministisch en st
 4. Ongeldige unitroute (`/oefenen/nonexistent-unit`) geeft not-found gedrag en valt niet stil terug op een default-unit.
 5. Schrijfroute (`/schrijven`) rendert zonder crash.
 6. Groeiroute (`/groei`) rendert zonder crash.
-7. Docentinzichten-route (`/inzichten`) rendert zonder crash.
+7. Lokale inzichten-route (`/inzichten`) rendert zonder crash.
 8. Content/bibliotheek-route (`/content`) rendert zonder crash.
 
 ## Verdiepende flowtest
@@ -32,5 +32,5 @@ Borgen dat evaluatorlogica, contentcontracten en kernflows deterministisch en st
 Een release candidate is geblokkeerd bij:
 - falende content-invarianten,
 - falende evaluator tests,
-- falende learner/teacher smoke tests,
+- falende learner/insights smoke tests,
 - open P0/P1 defecten.

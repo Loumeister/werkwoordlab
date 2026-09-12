@@ -150,7 +150,7 @@ describe("BUILT_IN_FEEDBACK", () => {
     }
   });
 
-  it("alle built-in entries zijn RichFeedbackEntry (v1 content keuze)", () => {
+  it("alle built-in entries zijn RichFeedbackEntry", () => {
     for (const code of codes) {
       expect(isRichFeedbackEntry(BUILT_IN_FEEDBACK[code])).toBe(true);
     }
@@ -165,6 +165,15 @@ describe("BUILT_IN_FEEDBACK", () => {
         expect(entry.uitleg.diagnose.trim()).not.toBe("");
         expect(entry.uitleg.redenering.trim()).not.toBe("");
         expect(entry.uitleg.herprobeer.trim()).not.toBe("");
+      }
+    }
+  });
+
+  it("alle rich entries voldoen aan de auteursregels", () => {
+    for (const code of codes) {
+      const entry = BUILT_IN_FEEDBACK[code];
+      if (isRichFeedbackEntry(entry)) {
+        expect(validateRichFeedback(entry)).toEqual({});
       }
     }
   });

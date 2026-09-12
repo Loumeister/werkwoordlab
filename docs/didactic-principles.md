@@ -4,12 +4,12 @@
 1. **Functie eerst**: bepaal persoonsvorm/infinitief/voltooid deelwoord vóór spellingkeuze.
 2. **Homofonen expliciet**: oefen contrasterende gevallen (word/wordt, vind/vindt, gebeurt/gebeurd).
 3. **Zichtbare scaffolding**: toon redeneerstappen expliciet in vroege items.
-4. **Diagnostische feedback**: label denkfout als misconceptie + geef korte herstelactie.
+4. **Gerichte feedback**: benoem het waarneembare antwoordpatroon + geef één herstelactie.
 5. **Transferopbouw**: geïsoleerde oefening -> revisie -> korte schrijftaak.
 6. **Fading**: ondersteuning neemt af per unitprogressie.
 
 ## Anti-patronen (afkeur)
-- Alleen goed/fout zonder fouttype.
+- Alleen goed/fout zonder herstelhandeling.
 - Spellingkeuze zonder functiebepaling.
 - Open schrijfopdracht zonder voorbereidende oefenset.
 - UI-complexiteit die redeneerstappen verbergt.

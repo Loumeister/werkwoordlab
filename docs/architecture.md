@@ -1,52 +1,37 @@
 # Architectuur
 
-## Startpunt en stack
-Vastgestelde stack:
-- Next.js (App Router) + TypeScript
-- Tailwind CSS
-- Prisma + SQLite (dev) — *gepland; huidig MVP gebruikt localStorage voor attempt-opslag*
-- Vitest
-- Playwright
+## Huidige werkelijkheid
 
-## Kernprincipes
-1. Deterministische kern: evaluatorlogica is pure en testbaar.
-2. Content-first: oefeninhoud staat in versieerde JSON-bestanden.
-3. Functie-voor-spelling: flow dwingt grammaticale functiekeuze vóór spelling.
-4. Diagnostiek: feedback levert misconceptiecode + herstelhint.
-5. Privacy-first MVP: anonieme sessies, geen verplichte leerlinglogin.
+Werkwoordlab is een statisch geëxporteerde Next.js-app. Er is geen serverruntime of database.
 
-## Systeemdelen
-- **Learner UI (Next.js)**: unitselectie, itemflow, scaffold, feedback, transfer.
-- **Teacher UI (Next.js)**: geaggregeerde inzichten per klascode/periode.
-- **Domain/evaluator (TS)**: functiebepaling, regeltoepassing, misconceptiemapping.
-- **Content layer**: JSON loader + schema validatie.
-- **Persistence (Prisma/SQLite)**: sessies, attempts, progressie, docentaggregaties — *huidig MVP gebruikt `lib/attempt-store.ts` (localStorage); Prisma-migratie is Fase 3-werk*.
+```text
+content/units + content/reference
+              ↓
+        lib/content.ts
+              ↓
+lib/evaluator.ts + lib/phase-engine.ts
+              ↓
+      components/learner
+              ↓
+  localStorage voor pogingen
+```
 
-## Shared-core locatie
-- De lokale locatie voor gedeelde grammatica-canon is `shared/grammar-core/`.
-- `shared/grammar-core/` is een git subtree van `Loumeister/grammar-core` @ `af6aca7` (branch `main`).
-- Lokale Werkwoordlab-runtimecontracten blijven leidend voor productspecifiek gedrag; zie `docs/product-contract.md`.
-- Synchroniseer met de `grammar-core-sync` skill (of `git subtree pull --prefix=shared/grammar-core https://github.com/Loumeister/grammar-core.git main --squash`); zie `shared/grammar-core/docs/repo-sync-strategy.md`.
+## Bronnen van waarheid
 
-## Runtime contract
-### Leerlingflow
-1. Laad item uit JSON-unit.
-2. Toon scaffoldstappen (functie -> regel -> spelling).
-3. Evalueer antwoord deterministisch.
-4. Sla attempt op met misconceptionCode.
-5. Toon feedback en vervolgactie.
+- Iteminhoud: `content/units/*.json`
+- Spellingregels: `content/reference/*.json` en de gedeelde beslisvolgorde
+- Evaluatie: `lib/evaluator.ts`
+- Feedbackmapping: `lib/feedback/`
+- Feitelijk gedrag: tests en runtime
+- Productkeuzes: `docs/product-spec.md`
 
-### Docentflow
-1. Lees attempts op klascode/periode.
-2. Aggregeer naar misconceptieverdeling, accuratesse, deelname.
-3. Toon dashboard met drilldown per unit/itemtype.
+## Grenzen
 
-## Data-objecten (MVP)
-- `LearnerSession(id, createdAt, locale, classCode?)`
-- `Attempt(id, sessionId, unitId, itemId, learnerAnswer, correctness, misconceptionCode, responseMs, createdAt)`
-- `UnitProgress(id, sessionId, unitId, startedAt, completedAt, score)`
+`shared/grammar-core/` bevat canon, geen runtime-afhankelijkheid. Een adapter is alleen nodig wanneer beide producten dezelfde content daadwerkelijk gebruiken. Een backend is alleen nodig na een expliciet besluit over identiteit, privacy, beheer en meerapparaatgebruik.
 
-## Niet in MVP
-- Verplichte accounts/auth voor leerlingen.
-- LLM-gegenereerde leerlingfeedback.
-- Productie-infra uitbreidingen buiten lokale/dev-behoefte.
+## Bekende spanning
+
+- unit 4–6 missen expliciete fasevelden en leunen op positie
+- korte aantalsdrempels worden nu als steunafbouw gebruikt, niet als bewezen beheersing
+- `/inzichten` leest dezelfde browseropslag als de leerling
+- feedback kan rijk worden weergegeven, maar de app heeft meestal geen bewijs voor een precieze cognitieve diagnose

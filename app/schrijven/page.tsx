@@ -2,15 +2,13 @@
 
 import { useState } from "react";
 import { AppShell } from "@/components/app-shell";
-import { getUnitOrDefault } from "@/lib/content";
+import { getUnit } from "@/lib/content";
 
 export default function SchrijvenPage() {
   const [text, setText] = useState("");
   const [reflectie, setReflectie] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const transfer = getUnitOrDefault("unit-01-pv-tt").transferTask;
-
-  const hasRuleWords = /persoonsvorm|stam|werkwoord/i.test(`${text} ${reflectie}`);
+  const transfer = getUnit("unit-01-pv-tt")!.transferTask;
 
   return (
     <AppShell>
@@ -49,16 +47,15 @@ export default function SchrijvenPage() {
             className="min-h-28 w-full rounded-2xl border-2 border-neutral-300 p-4 text-lg"
           />
 
-          <button className="rounded-xl bg-[var(--warm-primary)] px-5 py-3 font-semibold text-white">Nakijken</button>
+          <button className="rounded-xl bg-[var(--warm-primary)] px-5 py-3 font-semibold text-white">Open zelfcontrole</button>
         </form>
 
         {submitted && (
           <section className="space-y-3 rounded-3xl border border-[#f0c972] bg-[#fff9ea] p-6">
-            <h2 className="text-xl font-semibold">Rubric-feedback</h2>
-            <ul className="space-y-2 text-lg">
-              <li>Helderheid: {text.length > 180 ? "voldoende" : "voeg meer uitleg toe"}</li>
-              <li>Correctheid: {/[dt]\b/i.test(text) ? "controleer eindletters zorgvuldig" : "basiscontrole uitgevoerd"}</li>
-              <li>Toepassing regel: {hasRuleWords ? "regel benoemd" : "noem expliciet de gebruikte werkwoordregel"}</li>
+            <h2 className="text-xl font-semibold">Zelfcontrole</h2>
+            <p>De app kan je tekst niet inhoudelijk beoordelen. Controleer hem met deze criteria:</p>
+            <ul className="list-disc space-y-2 pl-6 text-lg">
+              {transfer.rubric.map((criterion) => <li key={criterion}>{criterion}</li>)}
             </ul>
           </section>
         )}
