@@ -62,15 +62,15 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
   },
 
   VD_KOFSCHIP_MISAPPLIED: {
-    herstelvraag: "Welke letter staat in het hele werkwoord vlak vóór -en?",
-    sleutelwoord: "werkwoord",
+    herstelvraag: "Welke letter of lettercombinatie sluit de stam af?",
+    sleutelwoord: "stam",
     uitleg: {
       diagnose:
-        "Je antwoord kiest de andere uitgang dan de eindletter vóór -en aangeeft.",
+        "De gekozen uitgang past niet bij het slot van de stam.",
       redenering:
-        "Kijk bij een regelmatig werkwoord naar de letter vlak vóór -en in het hele werkwoord. Hoort die bij 't (ex-)kofschip, dan eindigt het deelwoord op -t; anders op -d. Zo blijven de v van leven en de z van reizen zichtbaar voor de keuze: geleefd, gereisd.",
+        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op t, k, f, s, ch, p of x, dan eindigt het deelwoord op -t; anders op -d. Zo blijven ook v en z zichtbaar voor de keuze: geleefd, gereisd; bij juich telt ch als één lettercombinatie: gejuicht.",
       herprobeer:
-        "Neem het hele werkwoord en markeer de letter vlak vóór -en. Kies daarmee opnieuw tussen -d en -t.",
+        "Haal -en weg en markeer de laatste letter of lettercombinatie. Kies opnieuw tussen -d en -t.",
     },
   },
 
@@ -101,15 +101,15 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
   },
 
   VT_DE_TE_CONFUSION: {
-    herstelvraag: "Welke letter staat in het hele werkwoord vlak vóór -en?",
-    sleutelwoord: "werkwoord",
+    herstelvraag: "Welke letter of lettercombinatie sluit de stam af?",
+    sleutelwoord: "stam",
     uitleg: {
       diagnose:
-        "Je antwoord kiest -de waar de letter vóór -en om -te vraagt, of andersom.",
+        "De gekozen uitgang past niet bij het slot van de stam.",
       redenering:
-        "Kijk bij een regelmatig werkwoord naar de letter vlak vóór -en in het hele werkwoord. Hoort die bij 't (ex-)kofschip, dan schrijf je -te(n); anders -de(n). Gebruik daarna de ik-vorm als schrijfvorm: leefde, verhuisde.",
+        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op t, k, f, s, ch, p of x, dan schrijf je -te(n); anders -de(n). Gebruik daarna de ik-vorm als schrijfvorm: juichte, leefde, verhuisde.",
       herprobeer:
-        "Markeer de letter vlak vóór -en en kies opnieuw tussen -de(n) en -te(n).",
+        "Haal -en weg en markeer de laatste letter of lettercombinatie. Kies opnieuw tussen -de(n) en -te(n).",
     },
   },
 

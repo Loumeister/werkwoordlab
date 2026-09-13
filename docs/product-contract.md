@@ -29,7 +29,7 @@ De huidige evaluator is de runtimebron. Een gedeeld algoritmedocument verandert 
 
 ## Huidige mogelijkheden
 
-- unit 1–6 zijn aanwezig en bereikbaar
+- alle units uit `lib/content.ts` zijn rechtstreeks bereikbaar
 - classificatie, invullen en contrastparen
 - functie-, spelling-, bewijs- en herstelstappen
 - lokale pogingen en lokale inzichten

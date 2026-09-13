@@ -7,31 +7,18 @@ type Props = {
   /** The transferTask object from the unit JSON (id, type, prompt, rubric). */
   task: Unit["transferTask"];
   unitTitle: string;
-  /** Called when the learner presses "Klaar" after reviewing rubric feedback. */
+  /** Called when the learner finishes the self-check. */
   onFinish: () => void;
 };
 
 /**
  * Inline transfer task — a prop-driven version of the /schrijven page.
  * Shown after the learner completes all Zelfstandig items.
- *
- * The rubric feedback is intentionally heuristic (length check, end-letter
- * pattern, rule-word presence). It gives immediate, formative feedback without
- * requiring a server round-trip. A teacher can review the submitted text in the
- * classroom. If needed, expand this with additional deterministic rubric checks.
  */
 export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
   const [text, setText] = useState("");
   const [reflectie, setReflectie] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
-  // Heuristic: did the learner explicitly name the spelling rule they used?
-  // We check for core grammatical terms across both the main text and the
-  // reflection field. voltooid.?deelwoord covers "voltooiddeelwoord" (no space)
-  // as well as "voltooid deelwoord" (with space).
-  const hasRuleWords = /persoonsvorm|ik-vorm|werkwoord|voltooid.?deelwoord|infinitief/i.test(
-    `${text} ${reflectie}`
-  );
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -68,13 +55,11 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
           <label htmlFor="transfer-text" className="block text-xl font-semibold">
             Jouw tekst
           </label>
-          {/* minLength=40 forces at least a sentence; browser validation handles it */}
           <textarea
             id="transfer-text"
             value={text}
             onChange={(e) => setText(e.target.value)}
             className="min-h-52 w-full rounded-2xl border-2 border-neutral-500 p-4 text-lg"
-            minLength={40}
             required
           />
 
@@ -92,43 +77,15 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
             type="submit"
             className="rounded-xl bg-[var(--warm-primary)] px-5 py-3 font-semibold text-white"
           >
-            Inleveren
+            Open zelfcontrole
           </button>
         </form>
       ) : (
         <section className="space-y-4 rounded-3xl border border-[#f0c972] bg-[#fff9ea] p-6">
-          <h2 className="text-xl font-semibold">Rubric-feedback</h2>
-          <ul className="space-y-2 text-lg">
-            <li>
-              Helderheid:{" "}
-              <span className="font-medium">
-                {/*
-                 * Rough proxy for sufficient elaboration: 180 characters ≈ 2–3
-                 * sentences. Raise this threshold if responses are too superficial.
-                 */}
-                {text.length > 180 ? "voldoende" : "voeg meer uitleg toe"}
-              </span>
-            </li>
-            <li>
-              Correctheid:{" "}
-              <span className="font-medium">
-                {/*
-                 * No regex can reliably detect d/t spelling errors in free text
-                 * without a full syntactic parser: "dt" is correct Dutch in "wordt",
-                 * "vindt", "antwoordt" (ik-vorm ending in d + persoonsvorm -t), so
-                 * any pattern would generate false positives on valid verb forms.
-                 * Since werkwoordspelling texts always warrant an end-letter check,
-                 * this reminder is unconditional — always relevant, never misleading.
-                 */}
-                controleer eindletters zorgvuldig
-              </span>
-            </li>
-            <li>
-              Toepassing regel:{" "}
-              <span className="font-medium">
-                {hasRuleWords ? "regel benoemd" : "noem expliciet de gebruikte werkwoordregel"}
-              </span>
-            </li>
+          <h2 className="text-xl font-semibold">Zelfcontrole</h2>
+          <p>De app kan je tekst niet inhoudelijk beoordelen. Controleer hem met deze criteria:</p>
+          <ul className="list-disc space-y-2 pl-6 text-lg">
+            {task.rubric.map((criterion) => <li key={criterion}>{criterion}</li>)}
           </ul>
 
           <button

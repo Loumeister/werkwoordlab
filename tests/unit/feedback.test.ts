@@ -186,6 +186,17 @@ describe("BUILT_IN_FEEDBACK", () => {
       expect(entry.uitleg.redenering).toContain("te en om te");
     }
   });
+
+  it("de kofschipuitleg behandelt ch als lettercombinatie", () => {
+    for (const code of ["VD_KOFSCHIP_MISAPPLIED", "VT_DE_TE_CONFUSION"] as const) {
+      const entry = BUILT_IN_FEEDBACK[code];
+      expect(isRichFeedbackEntry(entry)).toBe(true);
+      if (isRichFeedbackEntry(entry)) {
+        expect(entry.uitleg.redenering).toContain("ch");
+        expect(entry.uitleg.redenering).toContain("juich");
+      }
+    }
+  });
 });
 
 // ---------------------------------------------------------------------------
