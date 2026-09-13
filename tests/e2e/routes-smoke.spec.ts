@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 const routeChecks: Array<{ path: string; heading: RegExp }> = [
   { path: "/oefenen", heading: /^oefenen$/i },
   { path: "/oefenen/unit-01-pv-tt", heading: /persoonsvorm tegenwoordige tijd/i },
-  { path: "/schrijven", heading: /schrijven & nakijken/i },
+  { path: "/schrijven", heading: /schrijven & zelfcontrole/i },
   { path: "/groei", heading: /mijn groei/i },
   { path: "/inzichten", heading: /inzichten/i },
   { path: "/content", heading: /contentbibliotheek/i }

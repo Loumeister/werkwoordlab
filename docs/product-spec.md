@@ -1,7 +1,5 @@
 # Productspecificatie Werkwoordlab
 
-_Actueel op 2026-09-12._
-
 ## Doel
 
 Werkwoordlab leert leerlingen een overdraagbare beslisroute gebruiken:
