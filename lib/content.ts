@@ -8,7 +8,7 @@ import unit06 from "@/content/units/unit-06-onvoltooid-deelwoord.json";
 
 /**
  * Grammatical function of the target verb in an exercise item.
- * Values supported by the current six units and evaluator.
+ * Values supported by the unit registry and evaluator.
  */
 export type GrammaticalFunction =
   | "persoonsvorm"

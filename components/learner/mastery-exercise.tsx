@@ -16,7 +16,7 @@ import {
 import { isRichFeedbackEntry } from "@/lib/feedback/types";
 import type { MisconceptionCode } from "@/lib/feedback/misconceptions";
 import { isMisconceptionCode } from "@/lib/feedback/misconceptions";
-import { getEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
+import { useEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
 import { HintDisclosure } from "./hint-disclosure";
 
 type Props = {
@@ -89,7 +89,7 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
   const rawCode = item.diagnostic?.primaryMisconception;
   const code: MisconceptionCode | undefined =
     rawCode && isMisconceptionCode(rawCode) ? rawCode : undefined;
-  const effectiveFeedback = code ? getEffectiveFeedback(code) : undefined;
+  const effectiveFeedback = useEffectiveFeedback(code);
 
   // Enter key: advance from feedback stage (ignore when focus is on interactive elements)
   useEffect(() => {

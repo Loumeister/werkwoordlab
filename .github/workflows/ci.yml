@@ -33,5 +33,5 @@ jobs:
       - name: Controleer gedeelde canon
         run: |
           git clone --depth=1 https://github.com/Loumeister/grammar-core.git "$RUNNER_TEMP/grammar-core"
-          diff -qr --exclude=.git --exclude=.github --exclude=.claude-plugin --exclude=plugins \
+          diff -qr --exclude=.git --exclude=.github --exclude=.claude-plugin \
             "$RUNNER_TEMP/grammar-core" shared/grammar-core

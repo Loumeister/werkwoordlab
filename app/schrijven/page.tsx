@@ -13,7 +13,7 @@ export default function SchrijvenPage() {
   return (
     <AppShell>
       <div className="mx-auto max-w-4xl space-y-6">
-        <h1 className="text-4xl font-semibold tracking-tight">Schrijven & nakijken</h1>
+        <h1 className="text-4xl font-semibold tracking-tight">Schrijven & zelfcontrole</h1>
         <section className="rounded-3xl border border-black/15 bg-white p-6">
           <h2 className="text-2xl font-semibold">Transferopdracht</h2>
           <p className="mt-2 text-lg">{transfer.prompt}</p>

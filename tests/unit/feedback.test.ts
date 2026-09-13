@@ -14,7 +14,7 @@ import {
   clearAllFeedbackOverrides,
   exportFeedbackOverrides,
 } from "@/lib/feedback/feedbackOverrides";
-import { getEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
+import { getEffectiveFeedback, resolveFeedback } from "@/lib/feedback/feedbackLookup";
 
 // ---------------------------------------------------------------------------
 // LocalStorage mock — same pattern as persistence.test.ts, with removeItem added
@@ -169,7 +169,7 @@ describe("BUILT_IN_FEEDBACK", () => {
     }
   });
 
-  it("alle rich entries voldoen aan de auteursregels", () => {
+  it("alle rich entries voldoen aan de structureel controleerbare auteursregels", () => {
     for (const code of codes) {
       const entry = BUILT_IN_FEEDBACK[code];
       if (isRichFeedbackEntry(entry)) {
@@ -187,12 +187,14 @@ describe("BUILT_IN_FEEDBACK", () => {
     }
   });
 
-  it("de kofschipuitleg behandelt ch als lettercombinatie", () => {
+  it("de kofschipuitleg bevat alle letters uit het regelbestand", () => {
     for (const code of ["VD_KOFSCHIP_MISAPPLIED", "VT_DE_TE_CONFUSION"] as const) {
       const entry = BUILT_IN_FEEDBACK[code];
       expect(isRichFeedbackEntry(entry)).toBe(true);
       if (isRichFeedbackEntry(entry)) {
-        expect(entry.uitleg.redenering).toContain("ch");
+        expect(entry.uitleg.redenering).toContain("c, f, h, k, p, s, t of x");
+        expect(entry.uitleg.redenering).toContain("rac");
+        expect(entry.uitleg.redenering).toContain("finish");
         expect(entry.uitleg.redenering).toContain("juich");
       }
     }
@@ -221,6 +223,16 @@ describe("feedbackOverrides", () => {
   it("getFeedbackOverrides geeft leeg object bij geen opgeslagen overrides", () => {
     withStorage();
     expect(getFeedbackOverrides()).toEqual({});
+  });
+
+  it("houdt de eerste clientrender gelijk aan de serverrender", () => {
+    withStorage();
+    setFeedbackOverride("PV_STAM_T_OMISSION", "Lokale override");
+
+    expect(resolveFeedback("PV_STAM_T_OMISSION", false)).toBe(
+      BUILT_IN_FEEDBACK.PV_STAM_T_OMISSION,
+    );
+    expect(resolveFeedback("PV_STAM_T_OMISSION", true)).toBe("Lokale override");
   });
 
   it("setFeedbackOverride slaat een override op en getFeedbackOverrides leest hem terug", () => {

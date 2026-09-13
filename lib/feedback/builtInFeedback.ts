@@ -62,13 +62,13 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
   },
 
   VD_KOFSCHIP_MISAPPLIED: {
-    herstelvraag: "Welke letter of lettercombinatie sluit de stam af?",
+    herstelvraag: "Welke letter sluit de stam af?",
     sleutelwoord: "stam",
     uitleg: {
       diagnose:
         "De gekozen uitgang past niet bij het slot van de stam.",
       redenering:
-        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op t, k, f, s, ch, p of x, dan eindigt het deelwoord op -t; anders op -d. Zo blijven ook v en z zichtbaar voor de keuze: geleefd, gereisd; bij juich telt ch als één lettercombinatie: gejuicht.",
+        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op c, f, h, k, p, s, t of x, dan eindigt het deelwoord op -t; anders op -d. Zo vallen rac, finish en juich in de t-groep; v en z blijven zichtbaar voor de d-groep: geleefd, gereisd.",
       herprobeer:
         "Haal -en weg en markeer de laatste letter of lettercombinatie. Kies opnieuw tussen -d en -t.",
     },
@@ -101,13 +101,13 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
   },
 
   VT_DE_TE_CONFUSION: {
-    herstelvraag: "Welke letter of lettercombinatie sluit de stam af?",
+    herstelvraag: "Welke letter sluit de stam af?",
     sleutelwoord: "stam",
     uitleg: {
       diagnose:
         "De gekozen uitgang past niet bij het slot van de stam.",
       redenering:
-        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op t, k, f, s, ch, p of x, dan schrijf je -te(n); anders -de(n). Gebruik daarna de ik-vorm als schrijfvorm: juichte, leefde, verhuisde.",
+        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op c, f, h, k, p, s, t of x, dan schrijf je -te(n); anders -de(n). Gebruik daarna de ik-vorm als schrijfvorm: racete, finishte, juichte, leefde.",
       herprobeer:
         "Haal -en weg en markeer de laatste letter of lettercombinatie. Kies opnieuw tussen -de(n) en -te(n).",
     },
@@ -133,7 +133,7 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
       diagnose:
         "Je antwoord gebruikt enkelvoud bij een meervoudig onderwerp, of meervoud bij een enkelvoudig onderwerp.",
       redenering:
-        "Enkelvoud (ik, hij, zij, het): ik-vorm + -de of -te. Meervoud (wij, jullie, zij, en): ik-vorm + -den of -ten. Schrijf 'hij werkte' maar 'zij werkten'.",
+        "Enkelvoud (ik, hij, zij, het): ik-vorm + -de of -te. Meervoud (wij, jullie, zij): ik-vorm + -den of -ten. Schrijf 'hij werkte' maar 'zij werkten'.",
       herprobeer:
         "Bepaal het onderwerp. Is het enkelvoud? Gebruik -de of -te. Is het meervoud? Gebruik -den of -ten.",
     },

@@ -14,7 +14,7 @@ export interface RichFeedbackEntry {
   /** Single word from herstelvraag that anchors the expand interaction. */
   sleutelwoord: string;
   uitleg: {
-    /** "Je hebt waarschijnlijk..." — 1-2 sentences diagnosing what went wrong. */
+    /** Observable answer pattern or neutral contrast; never infer learner thinking. */
     diagnose: string;
     /** The grammar rule or distinction — 1-2 sentences. */
     redenering: string;

@@ -1,6 +1,6 @@
 # Feedback schrijven
 
-Volg eerst `shared/grammar-core/docs/feedback-authoring.md`.
+Volg eerst `shared/grammar-core/docs/feedback-authoring.md`. Tot de volgende core-sync vervangt de lokale regel hieronder de verouderde formulering over `diagnose` in die subtree.
 
 ## Lokale mapping
 
@@ -8,7 +8,7 @@ Volg eerst `shared/grammar-core/docs/feedback-authoring.md`.
 - Een foutcode toont welk antwoordpatroon optrad; zij bewijst geen precieze leerlinggedachte.
 - Gebruik standaard een korte `herstelvraag` en één `herprobeer`-actie.
 - `redenering` bevat alleen de regel die voor dit onderscheid nodig is.
-- Het legacyveld `diagnose` formuleert hoogstens wat het antwoord laat zien, bijvoorbeeld: “Je antwoord past bij de enkelvoudsregel.”
+- Het legacyveld `diagnose` benoemt uitsluitend een werkelijk herkend antwoordpatroon of anders een neutraal grammaticaal contrast.
 - `sleutelwoord` is één woord uit de herstelvraag zolang de huidige uitklap-UI dat vereist.
 
 ## Controle
