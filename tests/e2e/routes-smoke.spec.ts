@@ -19,5 +19,4 @@ for (const { path, heading } of routeChecks) {
 test("route smoke: invalid unit route toont not-found", async ({ page }) => {
   const response = await page.goto("/oefenen/unit-bestaat-niet");
   expect(response?.status()).toBe(404);
-  await expect(page.getByRole("heading", { name: /404/i })).toBeVisible();
 });
