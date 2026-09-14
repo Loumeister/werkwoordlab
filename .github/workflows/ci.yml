@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  push:
   pull_request:
     branches: [main]
   schedule:
@@ -9,7 +10,6 @@ on:
 
 jobs:
   verify:
-    if: github.event_name == 'pull_request'
     name: Verify product
     runs-on: ubuntu-latest
     steps:
