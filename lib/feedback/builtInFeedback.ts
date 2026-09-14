@@ -68,7 +68,7 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
       diagnose:
         "De gekozen uitgang past niet bij het slot van de stam.",
       redenering:
-        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op c, f, h, k, p, s, t of x, dan eindigt het deelwoord op -t; anders op -d. Zo vallen rac, finish en juich in de t-groep; v en z blijven zichtbaar voor de d-groep: geleefd, gereisd.",
+        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op c, f, h, k, p, s, t of x, dan eindigt het deelwoord op -t; anders op -d. Zo vallen rac, finish en juich in de t-groep; v en z in het hele werkwoord bepalen de d-groep, ook al schrijf je in de ik-vorm f of s: geleefd, gereisd.",
       herprobeer:
         "Haal -en weg en markeer de laatste letter of lettercombinatie. Kies opnieuw tussen -d en -t.",
     },

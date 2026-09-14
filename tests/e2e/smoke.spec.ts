@@ -4,7 +4,7 @@ const VALID_UNIT_ROUTE = '/oefenen/unit-01-pv-tt';
 const INVALID_UNIT_ROUTE = '/oefenen/nonexistent-unit';
 const WRITING_ROUTE = '/schrijven';
 const GROWTH_ROUTE = '/groei';
-const TEACHER_INSIGHTS_ROUTE = '/inzichten';
+const LEARNER_INSIGHTS_ROUTE = '/inzichten';
 const CONTENT_LIBRARY_ROUTE = '/content';
 
 const notFoundPatterns = [
@@ -64,8 +64,8 @@ test('growth route renders without crashing', async ({ page }) => {
   expect(response!.status()).toBeLessThan(500);
 });
 
-test('teacher insights route renders without crashing', async ({ page }) => {
-  const response = await page.goto(TEACHER_INSIGHTS_ROUTE);
+test('learner insights route renders without crashing', async ({ page }) => {
+  const response = await page.goto(LEARNER_INSIGHTS_ROUTE);
 
   expect(response).toBeTruthy();
   expect(response!.status()).toBeLessThan(500);

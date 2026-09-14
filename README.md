@@ -35,7 +35,7 @@ npm run build
 | `lib/feedback/*` | lokale foutcodes, feedback en overrides |
 | `components/learner/*` | leerlinglus en herstel |
 | `app/groei` | browserlokale voortgang |
-| `app/inzichten` | browserlokale diagnoseweergave |
+| `app/inzichten` | browserlokale telling van pogingen en waargenomen foutpatronen |
 | `docs/product-spec.md` | productcontract |
 | `docs/backlog.md` | nog open werk |
 

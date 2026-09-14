@@ -277,8 +277,8 @@ function MisconceptionCard({
               onChange={(v) => updateRich("sleutelwoord", v)}
             />
             <Field
-              label="Diagnose"
-              hint="wat ging er waarschijnlijk mis"
+              label="Waargenomen antwoordpatroon"
+              hint="wat is zichtbaar in het antwoord"
               value={richDraft.uitleg.diagnose}
               rows={2}
               error={richErrors.diagnose}
@@ -406,7 +406,7 @@ export function FeedbackEditor() {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Feedback editor</h1>
           <p className="mt-1 text-neutral-500">
-            Pas de diagnostische feedback per misconceptietype aan.{" "}
+            Pas de herstelgerichte feedback per foutpatroon aan.{" "}
             {overrideCount > 0 && (
               <span className="font-medium text-amber-700">{overrideCount} aangepast</span>
             )}

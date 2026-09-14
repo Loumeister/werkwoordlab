@@ -65,7 +65,7 @@ Het veld `classifyOptions` is **verplicht** bij `type: classify`; de evaluator v
 
 ### Contrastpaar
 
-Een `contrast-pair` bevat een `contrastLabel` en twee volledige zinnen onder `sentenceA` en `sentenceB`. Beide zinnen volgen hetzelfde contract als een `fill-in`, zonder eigen `id` of `type`:
+Een `contrast-pair` bevat een `contrastLabel` en twee verkorte zinnen onder `sentenceA` en `sentenceB`. Elke geneste zin bevat `prompt`, `lemma`, `grammaticalFunction`, `tense`, `subject`, `target`, `homophonePair`, `scaffold`, `diagnostic` en `feedback`; de velden `id`, `type`, `phase` en `context` horen alleen bij gewone items of het contrastpaar zelf:
 
 ```json
 {

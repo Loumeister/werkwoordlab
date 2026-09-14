@@ -1,15 +1,24 @@
 "use client";
 
 import { AppShell } from "@/components/app-shell";
-import { useAttempts } from "@/lib/use-attempts";
 import { getUnits } from "@/lib/content";
+import { isMisconceptionCode, MISCONCEPTION_TITLES } from "@/lib/feedback/misconceptions";
+import { useAttempts } from "@/lib/use-attempts";
 
 export default function InzichtenPage() {
   const attempts = useAttempts();
   const units = getUnits();
+  const spellingAttempts = attempts.filter(
+    (attempt) =>
+      !attempt.itemId.endsWith(":function") &&
+      !attempt.itemId.endsWith(":repair"),
+  );
+  const patternAttempts = spellingAttempts.filter(
+    (attempt) => !attempt.correct && isMisconceptionCode(attempt.misconception),
+  );
 
-  const misconceptionCounts = attempts.reduce<Record<string, number>>((acc, item) => {
-    acc[item.misconception] = (acc[item.misconception] ?? 0) + 1;
+  const patternCounts = patternAttempts.reduce<Record<string, number>>((acc, attempt) => {
+    acc[attempt.misconception] = (acc[attempt.misconception] ?? 0) + 1;
     return acc;
   }, {});
 
@@ -23,7 +32,7 @@ export default function InzichtenPage() {
           <h2 className="text-2xl font-semibold">Accuratesse per unit</h2>
           <ul className="mt-4 space-y-3 text-lg">
             {units.map((unit) => {
-              const unitAttempts = attempts.filter((attempt) => attempt.unitId === unit.id);
+              const unitAttempts = spellingAttempts.filter((attempt) => attempt.unitId === unit.id);
               const accuracy = unitAttempts.length
                 ? Math.round((unitAttempts.filter((attempt) => attempt.correct).length / unitAttempts.length) * 100)
                 : 0;
@@ -38,15 +47,18 @@ export default function InzichtenPage() {
         </section>
 
         <section className="rounded-3xl border border-black/15 bg-white p-6">
-          <h2 className="text-2xl font-semibold">Misconceptieverdeling</h2>
+          <h2 className="text-2xl font-semibold">Waargenomen foutpatronen</h2>
+          <p className="mt-2 text-neutral-600">
+            Alleen onjuiste spellingantwoorden tellen mee. De gekoppelde foutcode kiest een herstelpad en bewijst niet wat de leerling dacht.
+          </p>
           <ul className="mt-4 space-y-2 text-lg">
-            {Object.entries(misconceptionCounts).map(([code, count]) => (
+            {Object.entries(patternCounts).map(([code, count]) => (
               <li key={code} className="flex items-center justify-between rounded-xl border border-neutral-200 px-4 py-3">
-                <span>{code}</span>
+                <span>{isMisconceptionCode(code) ? MISCONCEPTION_TITLES[code] : code}</span>
                 <span>{count}</span>
               </li>
             ))}
-            {attempts.length === 0 && <li>Nog geen lokale pogingen beschikbaar.</li>}
+            {patternAttempts.length === 0 && <li>Nog geen onjuiste spellingantwoorden beschikbaar.</li>}
           </ul>
         </section>
       </div>

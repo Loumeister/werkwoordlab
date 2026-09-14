@@ -16,7 +16,12 @@ for (const { path, heading } of routeChecks) {
   });
 }
 
-test("route smoke: invalid unit route toont not-found", async ({ page }) => {
+test("route smoke: invalid unit route geeft 404", async ({ page }) => {
   const response = await page.goto("/oefenen/unit-bestaat-niet");
   expect(response?.status()).toBe(404);
+});
+
+test("de productie-export bevat de gebruiksvriendelijke 404-pagina", async ({ page }) => {
+  await page.goto("/404.html");
+  await expect(page.getByRole("heading", { name: /pagina niet gevonden/i })).toBeVisible();
 });

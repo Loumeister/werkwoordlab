@@ -17,6 +17,9 @@ export type GrammaticalFunction =
   | "bijvoeglijk-deelwoord"
   | "onvoltooid-deelwoord";
 
+/** Supported transfer-task forms in the unit registry. */
+export type TransferTaskType = "revision" | "short-writing";
+
 /** The four learning phases a unit progresses through. */
 export type PhaseId = "verkennen" | "oefenen" | "zelfstandig" | "transfer";
 
@@ -127,7 +130,7 @@ export type Unit = {
   items: AnyItem[];
   transferTask: {
     id: string;
-    type: string;
+    type: TransferTaskType;
     prompt: string;
     rubric: string[];
   };

@@ -368,7 +368,7 @@ describe("validateRichFeedback", () => {
     herstelvraag: "Welk onderwerp staat er in de zin?",
     sleutelwoord: "onderwerp",
     uitleg: {
-      diagnose: "Je hebt waarschijnlijk de stam gebruikt zonder -t.",
+      diagnose: "Het antwoord gebruikt de stam zonder -t bij derde persoon enkelvoud.",
       redenering: "Bij hij/zij/het krijgt de persoonsvorm stam+t.",
       herprobeer: "Bepaal het onderwerp. Is het hij/zij/het? Voeg dan -t toe.",
     },
@@ -418,6 +418,14 @@ describe("validateRichFeedback", () => {
     const errors = validateRichFeedback({
       ...validEntry,
       uitleg: { ...validEntry.uitleg, diagnose: "" },
+    });
+    expect(errors.diagnose).toBeDefined();
+  });
+
+  it("weigert een aanname over niet-waargenomen denken", () => {
+    const errors = validateRichFeedback({
+      ...validEntry,
+      uitleg: { ...validEntry.uitleg, diagnose: "Je hebt waarschijnlijk de regel vergeten." },
     });
     expect(errors.diagnose).toBeDefined();
   });

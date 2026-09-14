@@ -6,9 +6,12 @@
  * - All fields must be non-empty.
  * - sleutelwoord must be exactly one word (no whitespace).
  * - sleutelwoord must appear (case-insensitive) in herstelvraag.
+ * - diagnose must avoid explicit speculation about unobserved learner thinking.
  */
 
 import { type RichFeedbackEntry } from "./types";
+
+const INFERENTIAL_DIAGNOSIS = /\b(waarschijnlijk|vermoedelijk|je (?:hebt )?(?:gedacht|gemeend|vergeten)|je (?:denkt|dacht|meent|meende|begrijpt|begreep|weet|wist|vergat))\b/i;
 
 export interface RichFeedbackErrors {
   herstelvraag?: string;
@@ -37,7 +40,9 @@ export function validateRichFeedback(entry: RichFeedbackEntry): RichFeedbackErro
   }
 
   if (!entry.uitleg.diagnose.trim()) {
-    errors.diagnose = "Diagnose mag niet leeg zijn.";
+    errors.diagnose = "Antwoordpatroon mag niet leeg zijn.";
+  } else if (INFERENTIAL_DIAGNOSIS.test(entry.uitleg.diagnose)) {
+    errors.diagnose = "Beschrijf alleen wat zichtbaar is in het antwoord, zonder aanname over het denken.";
   }
 
   if (!entry.uitleg.redenering.trim()) {
