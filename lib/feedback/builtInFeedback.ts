@@ -2,8 +2,7 @@
  * Built-in feedback content for werkwoordlab misconception codes.
  * Local to werkwoordlab — not portable to grammar-core.
  *
- * V1 uses RichFeedbackEntry for all 7 current codes. This is a content choice, not an
- * architectural constraint. Future or simpler entries may be plain strings.
+ * Rich feedback explains the relevant contrast without inferring learner thinking.
  */
 
 import { type FeedbackEntry } from "./types";
@@ -15,7 +14,7 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "onderwerp",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de ik-vorm gebruikt zonder -t, maar bij hij, zij of het hoort er een -t achter de ik-vorm.",
+        "Je antwoord gebruikt de ik-vorm zonder -t terwijl het onderwerp derde persoon enkelvoud is.",
       redenering:
         "In de tegenwoordige tijd krijgt de persoonsvorm bij hij/zij/het de ik-vorm plus -t. Schrijf 'hij loopt', niet 'hij loop'.",
       herprobeer:
@@ -28,7 +27,7 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "ik",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de ik-vorm plus -t gebruikt, maar bij 'ik' schrijf je alleen de ik-vorm.",
+        "Je antwoord voegt een -t toe terwijl 'ik' het onderwerp is.",
       redenering:
         "De ik-vorm schrijf je zonder -t. Schrijf 'ik loop', niet 'ik loopt'.",
       herprobeer:
@@ -41,7 +40,7 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "persoonsvorm",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de gewone -t-regel toegepast, maar bij 'je/jij' achter de persoonsvorm vervalt de -t.",
+        "Je antwoord volgt de gewone jij-regel terwijl 'je/jij' achter de persoonsvorm staat.",
       redenering:
         "Wanneer 'je' of 'jij' achter de persoonsvorm staat, krijgt de persoonsvorm geen -t. Schrijf 'Hoe oud word jij?', niet 'wordt jij'.",
       herprobeer:
@@ -54,24 +53,24 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "meervoud",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de enkelvoudsregel toegepast op een meervoudig onderwerp.",
+        "Je antwoord gebruikt een enkelvoudsvorm bij een meervoudig onderwerp.",
       redenering:
-        "Bij meervoudige onderwerpen (wij, jullie, zij) gebruikt de persoonsvorm de ik-vorm. Schrijf 'wij lopen', niet 'wij loopt'.",
+        "Bij een meervoudig onderwerp krijgt de persoonsvorm de vorm van het hele werkwoord. Schrijf 'wij lopen', niet 'wij loopt'.",
       herprobeer:
-        "Controleer het onderwerp: is het wij/jullie/zij? Gebruik dan de ik-vorm.",
+        "Controleer het onderwerp. Is het meervoud? Gebruik dan de vorm van het hele werkwoord.",
     },
   },
 
   VD_KOFSCHIP_MISAPPLIED: {
-    herstelvraag: "Eindigt de stam (infinitief minus -en) op een klank uit 't kofschip'?",
+    herstelvraag: "Welke letter sluit de stam af?",
     sleutelwoord: "stam",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de eindklank van de stam (infinitief minus -en) verkeerd beoordeeld bij de keuze voor -d of -t.",
+        "De gekozen uitgang past niet bij het slot van de stam.",
       redenering:
-        "Schrijf -t in het voltooid deelwoord als de stam (infinitief minus -en) eindigt op een klank uit 't kofschip' (t, k, f, s, ch, p). Eindigt de stam op een andere klank, dan -d. Schrijf 'gewerkt', maar 'gespeeld'.",
+        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op c, f, h, k, p, s, t of x, dan eindigt het deelwoord op -t; anders op -d. Zo vallen rac, finish en juich in de t-groep; v en z in het hele werkwoord bepalen de d-groep, ook al schrijf je in de ik-vorm f of s: geleefd, gereisd.",
       herprobeer:
-        "Bepaal de stam (trek -en af van de infinitief) en kijk naar de eindklank. Zit die in 't kofschip'? Dan -t, anders -d.",
+        "Haal -en weg en markeer de laatste letter of lettercombinatie. Kies opnieuw tussen -d en -t.",
     },
   },
 
@@ -80,7 +79,7 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "onregelmatig",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de regelmatige strategie (ik-vorm + -d/-t) toegepast op een onregelmatig werkwoord.",
+        "Je antwoord maakt van dit onregelmatige werkwoord een regelmatige vorm.",
       redenering:
         "Onregelmatige werkwoorden volgen de gewone -d/-t-regel niet. De vorm moet je herkennen of opzoeken, zoals 'gereden', 'gevonden', 'gegaan'.",
       herprobeer:
@@ -93,24 +92,24 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "functie",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de klank gevolgd in plaats van eerst de grammaticale functie te bepalen.",
+        "Je antwoord past bij een andere grammaticale functie dan het werkwoord in deze zin heeft.",
       redenering:
         "Homofonische werkwoordsvormen klinken hetzelfde maar spellen anders op basis van grammaticale functie. Bepaal altijd eerst of het een persoonsvorm, infinitief of deelwoord is.",
       herprobeer:
-        "Verander de zin naar de verleden tijd. Verandert het woord van vorm? Dan is het een persoonsvorm.",
+        "Bepaal eerst de functie. Gebruik de tijdproef alleen wanneer je controleert of het woord een persoonsvorm is.",
     },
   },
 
   VT_DE_TE_CONFUSION: {
-    herstelvraag: "Welke eindklank heeft de stam (infinitief minus -en)?",
+    herstelvraag: "Welke letter sluit de stam af?",
     sleutelwoord: "stam",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de uitgang gekozen op basis van de ik-vorm, maar de kofschip-regel vraagt de eindklank van de stam (infinitief minus -en).",
+        "De gekozen uitgang past niet bij het slot van de stam.",
       redenering:
-        "Haal -en af van de infinitief om de stam te krijgen. Controleer of de eindklank van die stam in 't kofschip' (t-k-f-s-ch-p) staat. Zo ja: ik-vorm + -te (of -ten), anders: ik-vorm + -de (of -den).",
+        "Haal bij een regelmatig werkwoord -en weg. Eindigt de stam op c, f, h, k, p, s, t of x, dan schrijf je -te(n); anders -de(n). Gebruik daarna de ik-vorm als schrijfvorm: racete, finishte, juichte, leefde.",
       herprobeer:
-        "Bepaal de stam (trek -en af van de infinitief). Kijk naar de eindklank. Zit die in 't kofschip? Dan ik-vorm + -te, anders ik-vorm + -de.",
+        "Haal -en weg en markeer de laatste letter of lettercombinatie. Kies opnieuw tussen -de(n) en -te(n).",
     },
   },
 
@@ -119,11 +118,11 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "persoonsvorm",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk een voltooid deelwoord ingevuld (zoals gewerkt of gespeeld), maar hier is een persoonsvorm verleden tijd nodig.",
+        "Je antwoord is een voltooid deelwoord, terwijl deze plek om een persoonsvorm in de verleden tijd vraagt.",
       redenering:
         "De persoonsvorm verleden tijd staat zonder voorvoegsel ge-. Een voltooid deelwoord begint vaak met ge- en staat na een hulpwerkwoord. Schrijf 'hij werkte', niet 'hij gewerkt'.",
       herprobeer:
-        "Verwijder het hulpwerkwoord uit de zin: past de zin dan nog? Dan is het een persoonsvorm — gebruik de verleden-tijdsvorm zonder ge-.",
+        "Zet de zin in een andere tijd. Het werkwoord dat mee verandert is de persoonsvorm; schrijf daarvan nu de verleden tijd.",
     },
   },
 
@@ -132,37 +131,37 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "meervoud",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de enkelvoudsvorm (-de/-te) gebruikt bij een meervoudig onderwerp, of andersom.",
+        "Je antwoord gebruikt enkelvoud bij een meervoudig onderwerp, of meervoud bij een enkelvoudig onderwerp.",
       redenering:
-        "Enkelvoud (ik, hij, zij, het): ik-vorm + -de of -te. Meervoud (wij, jullie, zij, en): ik-vorm + -den of -ten. Schrijf 'hij werkte' maar 'zij werkten'.",
+        "Enkelvoud (ik, hij, zij, het): ik-vorm + -de of -te. Meervoud (wij, jullie, zij): ik-vorm + -den of -ten. Schrijf 'hij werkte' maar 'zij werkten'.",
       herprobeer:
         "Bepaal het onderwerp. Is het enkelvoud? Gebruik -de of -te. Is het meervoud? Gebruik -den of -ten.",
     },
   },
 
   VT_RUWE_STAM_OVERRIDE: {
-    herstelvraag: "Welke klank hoor je écht als je -en afhaalt van de infinitief?",
-    sleutelwoord: "klank",
+    herstelvraag: "Welke letter staat in het hele werkwoord vlak vóór -en?",
+    sleutelwoord: "werkwoord",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de ik-vorm bekeken in plaats van de eindklank van de stam (infinitief minus -en).",
+        "Je antwoord gebruikt de f of s van de ik-vorm voor de uitgang, terwijl het hele werkwoord vóór -en een v of z heeft.",
       redenering:
-        "Soms verschilt de ik-vorm (schrijfwijze) van de stam (klank). Trek -en af van de infinitief: 'leven' → stam 'lev' (v staat niet in 't kofschip → -de) → ik-vorm leef + de = leefde. 'verhuizen' → stam 'verhuiz' (z staat niet in 't kofschip → -de) → ik-vorm verhuis + de = verhuisde.",
+        "Kies -de of -te met de letter in het hele werkwoord, vóór -en. Schrijf de uitgang daarna achter de ik-vorm: leven heeft v en wordt leefde; verhuizen heeft z en wordt verhuisde.",
       herprobeer:
-        "Bepaal de stam (trek -en af van de infinitief). Hoor je een klank uit 't kofschip' (t-k-f-s-ch-p)? Dan ik-vorm + -te, anders ik-vorm + -de.",
+        "Kijk vóór -en in het hele werkwoord. Staat daar v of z? Kies dan -de en zet die uitgang achter de ik-vorm.",
     },
   },
 
   INF_PV_CONFUSION: {
-    herstelvraag: "Welk hulpwerkwoord staat er vóór de lege plek?",
-    sleutelwoord: "hulpwerkwoord",
+    herstelvraag: "Welke vorm vraagt de werkwoordgroep of te-constructie op deze plek?",
+    sleutelwoord: "werkwoordgroep",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de persoonsvorm geschreven, maar na een hulpwerkwoord of modaal werkwoord staat altijd een infinitief.",
+        "Op deze plek staat een infinitief en niet de persoonsvorm van de zin.",
       redenering:
-        "Na werkwoorden als 'wil', 'kan', 'mag', 'moet', 'gaat', 'blijft' en 'laat' staat altijd de basisvorm van het werkwoord (de infinitief op -en). Schrijf 'hij wil lopen', niet 'hij wil loopt'.",
+        "Een infinitief kan onder meer volgen op een modaal werkwoord, op werkwoorden als gaan, blijven en laten, of op te en om te. Bepaal daarom de functie in de hele constructie.",
       herprobeer:
-        "Zoek het hulpwerkwoord of modale werkwoord. Staat er een? Gebruik dan de basisvorm op -en — de infinitief.",
+        "Markeer de persoonsvorm en het woord dat de infinitief inleidt. Schrijf daarna de infinitief.",
     },
   },
 
@@ -171,7 +170,7 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
     sleutelwoord: "modaal",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk het voltooid deelwoord (met ge-) geschreven, maar na een modaal werkwoord hoort een infinitief zonder ge-.",
+        "Je antwoord is een voltooid deelwoord, terwijl na het modale werkwoord hier een infinitief hoort.",
       redenering:
         "Na 'wil', 'kan', 'mag' en 'moet' staat een infinitief (basisvorm op -en). Het voltooid deelwoord met ge- staat na 'hebben' of 'zijn'. Schrijf 'hij wil lopen', niet 'hij wil gelopen'.",
       herprobeer:
@@ -181,27 +180,27 @@ export const BUILT_IN_FEEDBACK: Record<MisconceptionCode, FeedbackEntry> = {
 
   VD_ADJ_FUNCTION_CONFUSION: {
     herstelvraag: "Staat het deelwoord direct vóór een zelfstandig naamwoord?",
-    sleutelwoord: "zelfstandig naamwoord",
+    sleutelwoord: "naamwoord",
     uitleg: {
       diagnose:
-        "Je hebt bijvoeglijk en werkwoordelijk gebruik van het voltooid deelwoord door elkaar gehaald.",
+        "Je antwoord behandelt het deelwoord als werkwoordelijke vorm terwijl het hier bijvoeglijk wordt gebruikt, of andersom.",
       redenering:
-        "Staat het deelwoord direct vóór een zelfstandig naamwoord? Dan is het bijvoeglijk gebruikt en krijgt het een buigings-e (de geschilderde deur). Staat het na 'is', 'was', 'heeft' of 'zijn'? Dan is het werkwoordelijk gebruikt en geen buigings-e (het huis is geschilderd).",
+        "Vóór een zelfstandig naamwoord kan een voltooid deelwoord bijvoeglijk zijn. Pas dan de gewone verbuiging van bijvoeglijke naamwoorden toe: de geschilderde deur, maar een gesloten huis. In een werkwoordgroep blijft het een werkwoordelijke vorm: het huis is geschilderd.",
       herprobeer:
-        "Zoek het zelfstandig naamwoord. Staat het deelwoord er direct voor? Voeg dan -e toe. Staat het na 'is'/'heeft'? Geen -e.",
+        "Bepaal eerst of het deelwoord bij een naamwoord hoort of deel van de werkwoordgroep is. Pas alleen bij bijvoeglijk gebruik de gewone verbuigingsregel toe.",
     },
   },
 
   OVD_FUNCTION_CONFUSION: {
     herstelvraag: "Beschrijft het werkwoord een lopende handeling vóór een zelfstandig naamwoord?",
-    sleutelwoord: "lopende handeling",
+    sleutelwoord: "handeling",
     uitleg: {
       diagnose:
-        "Je hebt waarschijnlijk de -end-vorm verward met een persoonsvorm of voltooid deelwoord.",
+        "Je antwoord is een persoonsvorm of voltooid deelwoord, terwijl hier een onvoltooid deelwoord gevraagd wordt.",
       redenering:
-        "Het onvoltooid deelwoord eindigt op -end en beschrijft een lopende handeling: werkend, slapend, zingend. Het heeft geen ge- (niet 'gewerkt') en is geen persoonsvorm (niet 'werkt'). Gebruik het als bijvoeglijke bepaling: 'de werkende student'.",
+        "De basisvorm van het onvoltooid deelwoord eindigt op -end: werkend, slapend, zingend. Bijvoeglijk gebruikt kan die vorm worden verbogen, zoals in 'de werkende leerling'.",
       herprobeer:
-        "Beschrijft het woord een lopende handeling bij een zelfstandig naamwoord? Gebruik dan de -end-vorm (werkend, slapend). Geen ge-, geen -t als PV.",
+        "Beschrijft het woord een doorgaande handeling bij een naamwoord? Vorm dan het onvoltooid deelwoord en controleer daarna de verbuiging.",
     },
   },
 };

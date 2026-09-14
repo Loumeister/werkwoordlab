@@ -13,11 +13,10 @@ import {
   getVerbFunctionHints,
   isFirstOccurrenceOfPattern,
 } from "@/lib/phase-engine";
-import type { FeedbackEntry } from "@/lib/feedback/types";
 import { isRichFeedbackEntry } from "@/lib/feedback/types";
 import type { MisconceptionCode } from "@/lib/feedback/misconceptions";
 import { isMisconceptionCode } from "@/lib/feedback/misconceptions";
-import { getEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
+import { useEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
 import { HintDisclosure } from "./hint-disclosure";
 
 type Props = {
@@ -61,7 +60,6 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
   // Spelling step state
   const [spellingAnswer, setSpellingAnswer] = useState("");
   const [spellingResult, setSpellingResult] = useState<{ correct: boolean; expected: string } | null>(null);
-  const [effectiveFeedback, setEffectiveFeedback] = useState<FeedbackEntry | undefined>(undefined);
   const [uitlegOpen, setUitlegOpen] = useState(false);
   const [emptyAnswerError, setEmptyAnswerError] = useState(false);
 
@@ -88,14 +86,10 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
   const classifyOptions = getClassifyOptions(item);
   const homophoneOptions = getHomophoneOptions(item);
   const spellingHints = [item.scaffold.step2, item.scaffold.step3];
-
-  useEffect(() => {
-    const rawCode = item.diagnostic?.primaryMisconception;
-    const code: MisconceptionCode | undefined =
-      rawCode && isMisconceptionCode(rawCode) ? rawCode : undefined;
-    setEffectiveFeedback(code ? getEffectiveFeedback(code) : undefined);
-    setUitlegOpen(false);
-  }, [item]);
+  const rawCode = item.diagnostic?.primaryMisconception;
+  const code: MisconceptionCode | undefined =
+    rawCode && isMisconceptionCode(rawCode) ? rawCode : undefined;
+  const effectiveFeedback = useEffectiveFeedback(code);
 
   // Enter key: advance from feedback stage (ignore when focus is on interactive elements)
   useEffect(() => {
@@ -103,7 +97,10 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
     function onKey(e: KeyboardEvent) {
       const tag = (e.target as HTMLElement)?.tagName;
       if (tag === "BUTTON" || tag === "INPUT" || tag === "TEXTAREA") return;
-      if (e.key === "Enter") onComplete(spellingResult!.correct);
+      if (e.key === "Enter") {
+        setUitlegOpen(false);
+        onComplete(spellingResult!.correct);
+      }
     }
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -117,11 +114,10 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
     function onKey(e: KeyboardEvent) {
       const tag = (e.target as HTMLElement)?.tagName;
       if (tag === "BUTTON" || tag === "INPUT" || tag === "TEXTAREA") return;
-      if (e.key === "Enter") advanceToSpelling();
+      if (e.key === "Enter") setStage("spelling-step");
     }
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stage, funcSubmitted, funcCorrect, wrongFuncAttempts]);
 
   // ─── Handlers ──────────────────────────────────────────────────────────────
@@ -212,9 +208,9 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
     proofTimerRef.current = setTimeout(() => setStage("feedback"), 350);
   }
 
-  // ─── Step indicator component ─────────────────────────────────────────────
+  // ─── Step indicator ───────────────────────────────────────────────────────
 
-  function StepIndicator({ currentStep }: { currentStep: 1 | 2 }) {
+  function renderStepIndicator(currentStep: 1 | 2) {
     const totalSteps = entryMode === "full" ? 2 : 1;
     if (totalSteps === 1) return null;
 
@@ -263,7 +259,7 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
 
     return (
       <div className="animate-slide-up space-y-4 rounded-3xl border border-blue-100 bg-blue-50/40 p-6">
-        <StepIndicator currentStep={1} />
+        {renderStepIndicator(1)}
 
         <p className="text-sm font-medium uppercase tracking-wide text-slate-400">
           Stap 1 — Functie bepalen
@@ -355,7 +351,7 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
         onSubmit={handleSpellingSubmit}
         className="animate-slide-up space-y-4 rounded-3xl border border-black/15 bg-white p-6"
       >
-        <StepIndicator currentStep={2} />
+        {renderStepIndicator(2)}
 
         {item.type !== "classify" && (entryMode === "spell-first" || entryMode === "independent") && (
           <p className="text-sm font-medium uppercase tracking-wide text-slate-400">
@@ -549,14 +545,13 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
                 className="ml-9 space-y-2 rounded-xl border border-[#bee3ff] bg-[#f2f9ff] p-4 text-base"
               >
                 <p>
-                  <strong>Diagnose:</strong> {effectiveFeedback.uitleg.diagnose}
-                </p>
-                <p>
                   <strong>Redenering:</strong> {effectiveFeedback.uitleg.redenering}
                 </p>
-                <p>
-                  <strong>Herprobeer:</strong> {effectiveFeedback.uitleg.herprobeer}
-                </p>
+                {!spellingResult.correct && (
+                  <p>
+                    <strong>Probeer opnieuw:</strong> {effectiveFeedback.uitleg.herprobeer}
+                  </p>
+                )}
               </div>
             </div>
           ) : (
@@ -573,7 +568,10 @@ export function MasteryExercise({ item, unitId, attempts, onComplete }: Props) {
 
         <button
           type="button"
-          onClick={() => onComplete(spellingResult.correct)}
+          onClick={() => {
+            setUitlegOpen(false);
+            onComplete(spellingResult.correct);
+          }}
           className="rounded-xl border border-black/30 bg-white px-5 py-3 font-semibold hover:bg-neutral-50"
         >
           Verder →

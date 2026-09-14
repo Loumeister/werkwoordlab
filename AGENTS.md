@@ -1,80 +1,39 @@
-# AGENTS.md — werkwoordlab
+# Agent guide
 
-## Repo mode
-Effectively greenfield. Use this fixed stack unless explicitly changed:
-- Next.js + TypeScript
-- Tailwind CSS
-- Prisma + SQLite
-- Vitest
-- Playwright
+Werkwoordlab is de lokale werkwoordspellingsapp. Code, JSON-content en tests bepalen huidig gedrag; `shared/grammar-core/` levert alleen gedeelde canon.
 
-## MVP operating rules (non-negotiable)
-1. Grammar function first, spelling decision second.
-2. Deterministic evaluator only (no LLM in learner loop).
-3. Exercises are data-driven from versioned JSON content files.
-4. Feedback must include misconception code + actionable hint.
-5. Privacy-first MVP: anonymous learner sessions, no required student login.
-6. Teacher insights are in MVP scope.
+## Leesroute per taak
 
-## Definition of done for implementation tasks
-- Scope matches `docs/product-spec.md` and `docs/backlog.md`.
-- Data/logic changes remain consistent with `docs/content-schema.md` and `docs/didactic-principles.md`.
-- Required tests for the change type are added/updated per `docs/testing-strategy.md`.
-- Relevant checks pass locally (at minimum content validation; plus lint/test/e2e when available).
-- If architecture or contracts changed, docs are updated in the same PR.
+- Productdoel of prioriteit: `docs/product-spec.md`, `docs/backlog.md`
+- Runtime of UI: betrokken bestand, aanroepers en tests
+- Evaluator of spellingsregel: `shared/grammar-core/docs/werkwoordspellingsalgoritme.md`, `content/reference/`, `lib/evaluator.ts`
+- Feedback of didactiek: `shared/grammar-core/docs/werkwoordspellingsdidactiek-kaders.md`, `shared/grammar-core/docs/feedback-authoring.md`, daarna lokale feedbackcode
+- Content: `docs/content-schema.md`, relevante unit en `tests/unit/content-contracts.test.ts`
+- Gedeelde canon of sync: `shared/grammar-core/README.md`, `shared/grammar-core/docs/repo-sync-strategy.md`
 
-## Guardrails
-- No speculative features beyond current backlog.
-- Dutch learner-facing UI/content for MVP.
-- Do not hardcode exercise items in UI code.
+Lees niet standaard alle docs of skills.
 
-## Working read order
+## Productinvarianten
 
-For every task, read in this order:
-1. `AGENTS.md` (this file)
-2. Relevant `shared/grammar-core` docs (see list below — read only what is relevant to the task)
-3. `docs/product-contract.md`
-4. Local code/runtime truth (`lib/`, `content/`, `app/`)
-5. Task prompt
+- Bepaal grammaticale functie vóór de spellingregel.
+- Goed/fout is deterministisch; geen LLM in de leerlinglus.
+- Oefencontent staat in versiebeheer, niet in componentcode.
+- Feedback baseert zich op de waarneembare foutcode, geeft één herstelactie en laat opnieuw toepassen.
+- De app heeft geen accounts of klasdatalaag. Voortgang en inzichten zijn browserlokaal.
+- Noem een onbeoordeelde schrijftaak geen automatische rubric.
 
-**Source-of-truth rule**: for factual repo behavior, local code/runtime truth outranks documentation — both shared and local. If a doc claims something that the code does not do, the code is the truth. Fix the doc, not the code.
+## Werkregels
 
-Shared canon (`shared/grammar-core/`) informs local behavior at the right boundary level. Local runtime contracts and product logic remain local unless intentionally upstreamed to `grammar-core`.
+- Voeg geen Prisma, backend, state library of gedeelde runtime toe zonder huidig productbesluit.
+- Verander gedeelde bestanden nooit onder `shared/grammar-core/`; wijzig eerst `grammar-core` en synchroniseer na merge.
+- Voeg bij niet-triviale logica één gerichte regressietest toe.
+- Gebruik Nederlandse leerlingtekst en bestaande Next.js/Tailwindpatronen.
+- Leid aantallen en status uit code/tests af; schrijf ze niet handmatig in docs.
 
-## When to consult docs
+## Controle
 
-| Concern | Read |
-|---|---|
-| Product boundaries | `docs/product-spec.md` |
-| Learning model | `docs/didactic-principles.md` |
-| Content contract | `docs/content-schema.md` |
-| System boundaries / data flow | `docs/architecture.md` |
-| Test obligations | `docs/testing-strategy.md` |
-| Release gate | `docs/release-checklist.md` |
-| Local adoption contract | `docs/product-contract.md` |
-| Shared didactic principles | `shared/grammar-core/docs/werkwoordspellingsdidactiek-kaders.md` |
-| Shared taxonomy governance | `shared/grammar-core/docs/taxonomy-governance.md` |
-| Shared spelling algorithm | `shared/grammar-core/docs/werkwoordspellingsalgoritme.md` |
-| Platform principles / current vs future | `shared/grammar-core/docs/grammar-platform-principles.md` |
-| Shared content authoring rules | `shared/grammar-core/docs/content-authoring-rules.md` |
-| Scope boundaries across repos | `shared/grammar-core/docs/repo-scope-contracts.md` |
-| Shared agent catalog | `shared/grammar-core/docs/agent-catalog.md` |
-| How to sync grammar-core subtree | `shared/grammar-core/docs/repo-sync-strategy.md` (of de `grammar-core-sync` skill) |
-
-## When to use repo skills
-Use exactly the skill matching your workstream in `.agents/skills/`:
-- `didactic-workwoordspelling` -> evaluator/feedback/progression logic
-- `exercise-quality-gate` -> content validity and ambiguity checks
-- `learner-flow-ui` -> learner screens and interaction flow
-- `teacher-insights` -> aggregation and teacher dashboard behavior
-- `content-seed-generator` -> creating/updating units or taxonomy seeds
-- `evals-and-release` -> final validation and release readiness
-
-## Grammar-core fixes
-
-Bij een fix in grammar-core:
-1. Lokale checkout: $HOME\Code\grammar-core
-2. Branch aanmaken vanaf main: git switch -c fix/beschrijving
-3. Fix uitvoeren, claude plugin validate . draaien als het .claude-plugin/ raakt
-4. Commit, push, draft PR
-5. Na merge: grammar-core-sync uitvoeren in alle productrepo's
+```bash
+npm run lint
+npm test
+npm run build
+```

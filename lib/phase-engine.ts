@@ -262,7 +262,21 @@ export function getVerbFunctionHints(item: ExerciseItem): string[] {
     ];
   }
 
-  // Default: persoonsvorm (covers "persoonsvorm" and any unknown function)
+  if (fn === "bijvoeglijk-deelwoord") {
+    return [
+      "Kijk of het deelwoord iets zegt over een zelfstandig naamwoord, zoals in 'de geschilderde deur'.",
+      "Vormt het met 'hebben', 'zijn' of 'worden' het gezegde? Dan is het werkwoordelijk gebruikt.",
+    ];
+  }
+
+  if (fn === "onvoltooid-deelwoord") {
+    return [
+      "Zoek een werkwoordsvorm op -end of -ende, zoals 'werkend' of 'werkende'.",
+      "Controleer of de vorm een gelijktijdige, nog voortdurende handeling beschrijft.",
+    ];
+  }
+
+  // Remaining supported function: persoonsvorm
   const tenseHint =
     item.tense === "tegenwoordige-tijd"
       ? "Zet de zin in de verleden tijd. Welk woord verandert? Dat is de persoonsvorm."

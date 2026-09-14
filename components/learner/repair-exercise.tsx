@@ -6,7 +6,7 @@ import type { RepairItem } from "@/lib/repair-generator";
 import { saveAttempt } from "@/lib/attempt-store";
 import { isMisconceptionCode } from "@/lib/feedback/misconceptions";
 import { isRichFeedbackEntry } from "@/lib/feedback/types";
-import { getEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
+import { useEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
 import { HintDisclosure } from "./hint-disclosure";
 
 type Props = {
@@ -41,7 +41,7 @@ export function RepairExercise({ repairItem, unitId, onComplete }: Props) {
 
   const rawCode = item.diagnostic.primaryMisconception;
   const code = isMisconceptionCode(rawCode) ? rawCode : undefined;
-  const effectiveFeedback = code ? getEffectiveFeedback(code) : undefined;
+  const effectiveFeedback = useEffectiveFeedback(code);
 
   // Focus the fix input when stage advances to "fix"
   useEffect(() => {
@@ -302,14 +302,13 @@ export function RepairExercise({ repairItem, unitId, onComplete }: Props) {
                   className="ml-9 space-y-2 rounded-xl border border-[#bee3ff] bg-[#f2f9ff] p-4 text-base"
                 >
                   <p>
-                    <strong>Diagnose:</strong> {effectiveFeedback.uitleg.diagnose}
-                  </p>
-                  <p>
                     <strong>Redenering:</strong> {effectiveFeedback.uitleg.redenering}
                   </p>
-                  <p>
-                    <strong>Herprobeer:</strong> {effectiveFeedback.uitleg.herprobeer}
-                  </p>
+                  {!fixResult.correct && (
+                    <p>
+                      <strong>Probeer opnieuw:</strong> {effectiveFeedback.uitleg.herprobeer}
+                    </p>
+                  )}
                 </div>
               </div>
             ) : (

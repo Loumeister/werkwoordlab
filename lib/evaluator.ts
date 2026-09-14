@@ -29,7 +29,13 @@ export function getHomophoneOptions(item: ExerciseItem) {
 }
 
 export function getFunctionOptions(): GrammaticalFunction[] {
-  return ["persoonsvorm", "infinitief", "voltooid-deelwoord"];
+  return [
+    "persoonsvorm",
+    "infinitief",
+    "voltooid-deelwoord",
+    "bijvoeglijk-deelwoord",
+    "onvoltooid-deelwoord",
+  ];
 }
 
 export function getClassifyOptions(item: ExerciseItem): string[] {

@@ -8,6 +8,15 @@ import type { AnyItem } from '@/lib/content';
 import { isContrastPairItem } from '@/lib/content';
 
 const units = getUnits();
+const ITEM_TYPES = new Set(["fill-in", "classify", "contrast-pair"]);
+const GRAMMATICAL_FUNCTIONS = new Set([
+  "persoonsvorm",
+  "infinitief",
+  "voltooid-deelwoord",
+  "bijvoeglijk-deelwoord",
+  "onvoltooid-deelwoord",
+]);
+const TRANSFER_TASK_TYPES = new Set(["revision", "short-writing"]);
 
 function getJsonFiles(dirPath: string): string[] {
   const entries = fs.readdirSync(dirPath, { withFileTypes: true });
@@ -48,6 +57,7 @@ describe('content contracts', () => {
 
       for (const item of unit.items as AnyItem[]) {
         expect(item.id).toBeTruthy();
+        expect(ITEM_TYPES.has(item.type), `Invalid item type "${item.type}" in ${item.id}`).toBe(true);
 
         expect(itemIds.has(item.id)).toBe(false);
         itemIds.add(item.id);
@@ -60,7 +70,7 @@ describe('content contracts', () => {
           // Sentence A — all ContrastSentence fields
           expect(item.sentenceA.prompt).toBeTruthy();
           expect(item.sentenceA.lemma).toBeTruthy();
-          expect(item.sentenceA.grammaticalFunction).toBeTruthy();
+          expect(GRAMMATICAL_FUNCTIONS.has(item.sentenceA.grammaticalFunction)).toBe(true);
           expect(item.sentenceA.target).toBeTruthy();
           expect(item.sentenceA.scaffold.step1).toBeTruthy();
           expect(item.sentenceA.scaffold.step2).toBeTruthy();
@@ -73,7 +83,7 @@ describe('content contracts', () => {
           // Sentence B — all ContrastSentence fields
           expect(item.sentenceB.prompt).toBeTruthy();
           expect(item.sentenceB.lemma).toBeTruthy();
-          expect(item.sentenceB.grammaticalFunction).toBeTruthy();
+          expect(GRAMMATICAL_FUNCTIONS.has(item.sentenceB.grammaticalFunction)).toBe(true);
           expect(item.sentenceB.target).toBeTruthy();
           expect(item.sentenceB.scaffold.step1).toBeTruthy();
           expect(item.sentenceB.scaffold.step2).toBeTruthy();
@@ -86,7 +96,7 @@ describe('content contracts', () => {
           // Regular ExerciseItem required fields
           expect(item.prompt).toBeTruthy();
           expect(item.lemma).toBeTruthy();
-          expect(item.grammaticalFunction).toBeTruthy();
+          expect(GRAMMATICAL_FUNCTIONS.has(item.grammaticalFunction)).toBe(true);
           expect(item.target).toBeTruthy();
           expect(item.scaffold.step1).toBeTruthy();
           expect(item.scaffold.step2).toBeTruthy();
@@ -104,7 +114,7 @@ describe('content contracts', () => {
 
     for (const unit of units) {
       expect(unit.transferTask.id).toBeTruthy();
-      expect(unit.transferTask.type).toMatch(/revision|short-writing/);
+      expect(TRANSFER_TASK_TYPES.has(unit.transferTask.type)).toBe(true);
       expect(unit.transferTask.prompt).toBeTruthy();
       expect(unit.transferTask.rubric.length).toBeGreaterThan(0);
 

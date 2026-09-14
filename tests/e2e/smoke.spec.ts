@@ -4,7 +4,7 @@ const VALID_UNIT_ROUTE = '/oefenen/unit-01-pv-tt';
 const INVALID_UNIT_ROUTE = '/oefenen/nonexistent-unit';
 const WRITING_ROUTE = '/schrijven';
 const GROWTH_ROUTE = '/groei';
-const TEACHER_INSIGHTS_ROUTE = '/inzichten';
+const LEARNER_INSIGHTS_ROUTE = '/inzichten';
 const CONTENT_LIBRARY_ROUTE = '/content';
 
 const notFoundPatterns = [
@@ -26,10 +26,9 @@ test('learner can open a real unit route and sees core exercise elements', async
 
   expect(response?.ok()).toBeTruthy();
 
-  await expect(page.getByText(/opdracht 1 van/i)).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Scaffold' })).toBeVisible();
-  await expect(page.getByRole('textbox').first()).toBeVisible();
-  await expect(page.getByRole('button', { name: /controleer antwoord/i })).toBeVisible();
+  await expect(page.getByText(/welke grammaticale functie/i)).toBeVisible();
+  await expect(page.getByRole('radio', { name: 'persoonsvorm' })).toBeVisible();
+  await expect(page.getByRole('button', { name: /^controleer$/i })).toBeVisible();
 });
 
 test('invalid unit route returns not-found behavior and does not silently load a default unit', async ({ page }) => {
@@ -65,8 +64,8 @@ test('growth route renders without crashing', async ({ page }) => {
   expect(response!.status()).toBeLessThan(500);
 });
 
-test('teacher insights route renders without crashing', async ({ page }) => {
-  const response = await page.goto(TEACHER_INSIGHTS_ROUTE);
+test('learner insights route renders without crashing', async ({ page }) => {
+  const response = await page.goto(LEARNER_INSIGHTS_ROUTE);
 
   expect(response).toBeTruthy();
   expect(response!.status()).toBeLessThan(500);

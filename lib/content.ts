@@ -8,17 +8,24 @@ import unit06 from "@/content/units/unit-06-onvoltooid-deelwoord.json";
 
 /**
  * Grammatical function of the target verb in an exercise item.
- * Valid values used in content and evaluator: "persoonsvorm" | "infinitief" | "voltooid-deelwoord".
- * Typed as string (not a union) so future unit authors can extend without a code change.
+ * Values supported by the unit registry and evaluator.
  */
-export type GrammaticalFunction = string;
+export type GrammaticalFunction =
+  | "persoonsvorm"
+  | "infinitief"
+  | "voltooid-deelwoord"
+  | "bijvoeglijk-deelwoord"
+  | "onvoltooid-deelwoord";
+
+/** Supported transfer-task forms in the unit registry. */
+export type TransferTaskType = "revision" | "short-writing";
 
 /** The four learning phases a unit progresses through. */
 export type PhaseId = "verkennen" | "oefenen" | "zelfstandig" | "transfer";
 
 export type ExerciseItem = {
   id: string;
-  type: string;
+  type: "fill-in" | "classify";
   /** Explicit phase assignment. When omitted, resolveItemPhase() derives a phase from item position. */
   phase?: PhaseId;
   prompt: string;
@@ -58,7 +65,7 @@ export type ExerciseItem = {
   };
   diagnostic: {
     /**
-     * Code from the 11-entry taxonomy (content/misconceptions/taxonomy.nl.json).
+     * Code from the local taxonomy (content/misconceptions/taxonomy.nl.json).
      * Used to look up BUILT_IN_FEEDBACK and to track which misconception the
      * learner is training on. Also used as the `misconception` field in AttemptRecord.
      */
@@ -123,7 +130,7 @@ export type Unit = {
   items: AnyItem[];
   transferTask: {
     id: string;
-    type: string;
+    type: TransferTaskType;
     prompt: string;
     rubric: string[];
   };
@@ -148,10 +155,6 @@ export function getUnits() {
 
 export function getUnit(unitId: string): Unit | undefined {
   return units.find((unit) => unit.id === unitId);
-}
-
-export function getUnitOrDefault(unitId: string): Unit {
-  return getUnit(unitId) ?? units[0];
 }
 
 /**

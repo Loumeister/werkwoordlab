@@ -339,6 +339,18 @@ describe("getVerbFunctionHints", () => {
       expect(hints[1]).toContain("-en");
     });
   });
+
+  it("geeft functiespecifieke hints voor een bijvoeglijk gebruikt deelwoord", () => {
+    const hints = getVerbFunctionHints(makeItem({ grammaticalFunction: "bijvoeglijk-deelwoord" }));
+    expect(hints.join(" ")).toMatch(/zelfstandig naamwoord|bijvoeglijk/);
+    expect(hints[0]).not.toContain("verleden tijd");
+  });
+
+  it("geeft functiespecifieke hints voor een onvoltooid deelwoord", () => {
+    const hints = getVerbFunctionHints(makeItem({ grammaticalFunction: "onvoltooid-deelwoord" }));
+    expect(hints.join(" ")).toMatch(/-end|voortdurende handeling/);
+    expect(hints[0]).not.toContain("verleden tijd");
+  });
 });
 
 // ---------------------------------------------------------------------------

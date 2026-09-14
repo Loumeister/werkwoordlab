@@ -6,7 +6,7 @@
 - Adjusting learner-side accessibility/cognitive-load behavior.
 
 ## Do not use when
-- Changing evaluator correctness rules only (use `didactic-workwoordspelling`).
+- Changing evaluator correctness rules only (read the shared algorithm and test the evaluator directly).
 - Editing content files only (use `content-seed-generator` / `exercise-quality-gate`).
 - Working solely on teacher insights pages.
 

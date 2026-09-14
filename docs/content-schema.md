@@ -43,7 +43,7 @@
 
 ## Enums
 - `grammaticalFunction`: `persoonsvorm | infinitief | voltooid-deelwoord | bijvoeglijk-deelwoord | onvoltooid-deelwoord`
-- `type`: `fill-in | multiple-choice | classify`
+- `type`: `fill-in | classify | contrast-pair`
 - `transferTask.type`: `revision | short-writing`
 
 ### Toelichting nieuwe grammaticalFunction-waarden
@@ -62,6 +62,21 @@ Items van `type: classify` kunnen leerlingen laten kiezen tussen twee grammatica
 }
 ```
 Het veld `classifyOptions` is **verplicht** bij `type: classify`; de evaluator valideert dat `target` één van de opties is.
+
+### Contrastpaar
+
+Een `contrast-pair` bevat een `contrastLabel` en twee verkorte zinnen onder `sentenceA` en `sentenceB`. Elke geneste zin bevat `prompt`, `lemma`, `grammaticalFunction`, `tense`, `subject`, `target`, `homophonePair`, `scaffold`, `diagnostic` en `feedback`; de velden `id`, `type`, `phase` en `context` horen alleen bij gewone items of het contrastpaar zelf:
+
+```json
+{
+  "id": "u1-c1",
+  "type": "contrast-pair",
+  "phase": "verkennen",
+  "contrastLabel": "ik tegenover hij",
+  "sentenceA": { "prompt": "...", "grammaticalFunction": "persoonsvorm", "target": "..." },
+  "sentenceB": { "prompt": "...", "grammaticalFunction": "persoonsvorm", "target": "..." }
+}
+```
 
 ## Taxonomie contract
 ```json

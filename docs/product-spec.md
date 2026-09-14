@@ -1,41 +1,48 @@
-# Productspec (MVP)
+# Productspecificatie Werkwoordlab
 
-## Productdoel
-Webapp voor onderbouw VO om werkwoordspelling correct toe te passen via expliciete redenering en transfer.
+## Doel
 
-## Doelgroep
-- Leerlingen (12–15 jaar)
-- Docenten Nederlands
+Werkwoordlab leert leerlingen een overdraagbare beslisroute gebruiken:
 
-## Productgrenzen
-### In scope
-1. Nederlandstalige browserapp.
-2. Data-gedreven oefenunits uit JSON-content.
-3. Zichtbare scaffold: grammaticale functie -> regel -> spelling.
-4. Diagnostische feedback met misconceptiecode.
-5. Anonieme leerlingsessie zonder verplichte login.
-6. Docentinzichten (misconcepties/accuratesse/deelname) in MVP.
-7. Transfer per unit: revisie of korte schrijftaak.
+1. bepaal de grammaticale functie van de werkwoordsvorm
+2. kies het passende regelpad
+3. bepaal stam, onderwerp, tijd of deelwoordvorm waar nodig
+4. schrijf de vorm
+5. verantwoord of herstel de keuze
 
-### Out of scope
-- AI/LLM-feedback in learner loop.
-- Verplicht leerlingaccount.
-- Geavanceerde adaptieve personalisatie buiten regels/content.
+## Huidige scope
 
-## Functionele eisen
-- Item bevat minimaal: prompt, lemma, grammaticale functie, target, scaffold, diagnostic, feedback.
-- Engine onderscheidt homofone probleemparen op basis van functie (o.a. word/wordt, vind/vindt, gebeurt/gebeurd).
-- De UI toont feedback op basis van evaluator-correctheid, diagnostic.primaryMisconception en feedback.hint.
-- Elke unit eindigt met transferopdracht.
+De units in `lib/content.ts` vormen de productkern; hun fasegedrag volgt uit de fasevelden in de content en anders uit de positiebepaalde fallback. Pogingen, voortgang en inzichten zijn lokaal op één browser.
 
-## Niet-functionele eisen
-- Privacy-first opslag (minimale gegevens).
-- Deterministisch gedrag (zelfde input => zelfde evaluatie).
-- Contentvalidatie als vaste build/test stap.
-- Toegankelijk op gangbare schoolapparaten.
+## Didactische eisen
 
-## MVP acceptatie
-1. Minimaal 2 complete units beschikbaar.
-2. Misconceptietaxonomie actief gekoppeld aan feedback.
-3. Leerlingflow en docentflow beide werkend.
-4. Kernflows afgedekt met Playwright smoke tests.
+- Functie vóór spelling.
+- Betekenisvolle contrasten vóór extra itemvolume.
+- Steun wordt alleen afgebouwd op basis van relevante eerdere pogingen.
+- Een foutcode beschrijft een waarneembaar antwoordpatroon, niet automatisch de gedachte van de leerling.
+- Feedback geeft één uitvoerbare herstelhandeling en daarna een nieuwe toepassing.
+- Transfer wordt alleen als beoordeeld gepresenteerd als de beoordeling werkelijk inhoudelijk geldig is.
+
+## Technische grenzen
+
+- Next.js, TypeScript, Tailwind en statische export
+- JSON-content in versiebeheer
+- pure evaluator en Vitest-contracttests
+- localStorage voor pogingen en overrides
+- geen account, backend, database of LLM in de leerlinglus
+
+## Niet-doelen
+
+- geen Prisma/SQLite zolang er geen gegevens- en identiteitsbesluit is
+- geen klasdashboard op basis van één browser
+- geen generatieve spellingbeoordeling
+- geen gedeelde runtime met Ontleedlab zonder aantoonbaar dubbele, stabiele logica
+- geen nieuwe unit voordat de bestaande units inhoudelijk en technisch coherent zijn
+
+## Acceptatie
+
+- leerling kan iedere unit rechtstreeks openen
+- evaluator en contentcontracten zijn deterministisch
+- ongeldige unitroute faalt zichtbaar
+- feedbackregels zijn grammaticaal juist en door tests aan hun authoringcontract getoetst
+- lint, tests en productie-build slagen

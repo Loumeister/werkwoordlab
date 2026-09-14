@@ -4,6 +4,16 @@ import type { ExerciseItem } from "@/lib/content";
 import { evaluateAnswer, getExerciseMode, getClassifyOptions, getFunctionOptions } from "@/lib/evaluator";
 
 describe("domain logic", () => {
+  it("biedt iedere ondersteunde grammaticale functie aan", () => {
+    expect(getFunctionOptions()).toEqual([
+      "persoonsvorm",
+      "infinitief",
+      "voltooid-deelwoord",
+      "bijvoeglijk-deelwoord",
+      "onvoltooid-deelwoord",
+    ]);
+  });
+
   it("getUnit geeft strict de gevraagde unit terug", () => {
     const target = getUnit("unit-01-pv-tt");
     expect(target?.id).toBe("unit-01-pv-tt");

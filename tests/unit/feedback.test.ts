@@ -14,7 +14,7 @@ import {
   clearAllFeedbackOverrides,
   exportFeedbackOverrides,
 } from "@/lib/feedback/feedbackOverrides";
-import { getEffectiveFeedback } from "@/lib/feedback/feedbackLookup";
+import { getEffectiveFeedback, resolveFeedback } from "@/lib/feedback/feedbackLookup";
 
 // ---------------------------------------------------------------------------
 // LocalStorage mock — same pattern as persistence.test.ts, with removeItem added
@@ -49,7 +49,7 @@ describe("isRichFeedbackEntry", () => {
     herstelvraag: "Welk onderwerp staat er in de zin?",
     sleutelwoord: "onderwerp",
     uitleg: {
-      diagnose: "Je hebt waarschijnlijk de stam gebruikt zonder -t.",
+      diagnose: "De vorm zonder -t contrasteert hier met de derde persoon enkelvoud.",
       redenering: "Bij hij/zij/het krijgt de persoonsvorm stam+t.",
       herprobeer: "Bepaal het onderwerp. Is het hij/zij/het? Voeg dan -t toe.",
     },
@@ -150,7 +150,7 @@ describe("BUILT_IN_FEEDBACK", () => {
     }
   });
 
-  it("alle built-in entries zijn RichFeedbackEntry (v1 content keuze)", () => {
+  it("alle built-in entries zijn RichFeedbackEntry", () => {
     for (const code of codes) {
       expect(isRichFeedbackEntry(BUILT_IN_FEEDBACK[code])).toBe(true);
     }
@@ -165,6 +165,37 @@ describe("BUILT_IN_FEEDBACK", () => {
         expect(entry.uitleg.diagnose.trim()).not.toBe("");
         expect(entry.uitleg.redenering.trim()).not.toBe("");
         expect(entry.uitleg.herprobeer.trim()).not.toBe("");
+      }
+    }
+  });
+
+  it("alle rich entries voldoen aan de structureel controleerbare auteursregels", () => {
+    for (const code of codes) {
+      const entry = BUILT_IN_FEEDBACK[code];
+      if (isRichFeedbackEntry(entry)) {
+        expect(validateRichFeedback(entry)).toEqual({});
+      }
+    }
+  });
+
+  it("de infinitiefuitleg geldt ook buiten modale werkwoordgroepen", () => {
+    const entry = BUILT_IN_FEEDBACK.INF_PV_CONFUSION;
+    expect(isRichFeedbackEntry(entry)).toBe(true);
+    if (isRichFeedbackEntry(entry)) {
+      expect(entry.uitleg.redenering).toContain("gaan, blijven en laten");
+      expect(entry.uitleg.redenering).toContain("te en om te");
+    }
+  });
+
+  it("de kofschipuitleg bevat alle letters uit het regelbestand", () => {
+    for (const code of ["VD_KOFSCHIP_MISAPPLIED", "VT_DE_TE_CONFUSION"] as const) {
+      const entry = BUILT_IN_FEEDBACK[code];
+      expect(isRichFeedbackEntry(entry)).toBe(true);
+      if (isRichFeedbackEntry(entry)) {
+        expect(entry.uitleg.redenering).toContain("c, f, h, k, p, s, t of x");
+        expect(entry.uitleg.redenering).toContain("rac");
+        expect(entry.uitleg.redenering).toContain("finish");
+        expect(entry.uitleg.redenering).toContain("juich");
       }
     }
   });
@@ -192,6 +223,16 @@ describe("feedbackOverrides", () => {
   it("getFeedbackOverrides geeft leeg object bij geen opgeslagen overrides", () => {
     withStorage();
     expect(getFeedbackOverrides()).toEqual({});
+  });
+
+  it("houdt de eerste clientrender gelijk aan de serverrender", () => {
+    withStorage();
+    setFeedbackOverride("PV_STAM_T_OMISSION", "Lokale override");
+
+    expect(resolveFeedback("PV_STAM_T_OMISSION", false)).toBe(
+      BUILT_IN_FEEDBACK.PV_STAM_T_OMISSION,
+    );
+    expect(resolveFeedback("PV_STAM_T_OMISSION", true)).toBe("Lokale override");
   });
 
   it("setFeedbackOverride slaat een override op en getFeedbackOverrides leest hem terug", () => {
@@ -327,7 +368,7 @@ describe("validateRichFeedback", () => {
     herstelvraag: "Welk onderwerp staat er in de zin?",
     sleutelwoord: "onderwerp",
     uitleg: {
-      diagnose: "Je hebt waarschijnlijk de stam gebruikt zonder -t.",
+      diagnose: "Het antwoord gebruikt de stam zonder -t bij derde persoon enkelvoud.",
       redenering: "Bij hij/zij/het krijgt de persoonsvorm stam+t.",
       herprobeer: "Bepaal het onderwerp. Is het hij/zij/het? Voeg dan -t toe.",
     },
@@ -377,6 +418,14 @@ describe("validateRichFeedback", () => {
     const errors = validateRichFeedback({
       ...validEntry,
       uitleg: { ...validEntry.uitleg, diagnose: "" },
+    });
+    expect(errors.diagnose).toBeDefined();
+  });
+
+  it("weigert een aanname over niet-waargenomen denken", () => {
+    const errors = validateRichFeedback({
+      ...validEntry,
+      uitleg: { ...validEntry.uitleg, diagnose: "Je hebt waarschijnlijk de regel vergeten." },
     });
     expect(errors.diagnose).toBeDefined();
   });

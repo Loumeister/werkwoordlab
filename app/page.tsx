@@ -26,7 +26,7 @@ export default function Dashboard() {
             <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-black/70">Unit</p>
             <h2 className="mb-2 text-2xl font-semibold leading-tight">{unit.title}</h2>
             <p className="mb-5 text-lg">{unit.items.length} oefenitems + transfer</p>
-            <Link href="/oefenen" className="inline-block rounded-full border border-black/60 bg-white px-4 py-2 font-medium">
+            <Link href={`/oefenen/${unit.id}`} className="inline-block rounded-full border border-black/60 bg-white px-4 py-2 font-medium">
               Verder
             </Link>
           </article>

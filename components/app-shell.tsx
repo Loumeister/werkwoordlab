@@ -3,9 +3,9 @@ import { BookOpenText, ChartColumn, Pencil, PenLine, SquarePen, TrendingUp } fro
 
 const navItems = [
   { href: "/oefenen", label: "Oefenen", icon: PenLine },
-  { href: "/schrijven", label: "Schrijven & nakijken", icon: SquarePen },
+  { href: "/schrijven", label: "Schrijven & zelfcontrole", icon: SquarePen },
   { href: "/groei", label: "Mijn groei", icon: TrendingUp },
-  { href: "/inzichten", label: "Inzichten (docent)", icon: ChartColumn },
+  { href: "/inzichten", label: "Mijn inzichten", icon: ChartColumn },
   { href: "/content", label: "Content", icon: BookOpenText },
   { href: "/feedback-editor", label: "Feedback editor (docent)", icon: Pencil },
 ];
