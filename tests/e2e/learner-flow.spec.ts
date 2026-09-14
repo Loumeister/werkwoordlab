@@ -58,3 +58,22 @@ test("learner kan classify-item beantwoorden in unit-05 (werkwoordelijk vs bijvo
   await expect(page.getByRole("heading", { name: /diagnostische feedback/i })).toBeVisible();
   await expect(page.getByText(/misconceptiecode:/i)).toBeVisible();
 });
+
+test("schrijfroute toont criteria en rondt de zelfcontrole af", async ({ page }) => {
+  await page.goto("/schrijven");
+
+  await page.getByLabel("Jouw tekst").fill("Ik controleer mijn werkwoordsvormen zelf.");
+  await page.getByRole("button", { name: "Open zelfcontrole" }).click();
+
+  const selfCheck = page.getByRole("heading", { name: "Zelfcontrole" }).locator("..");
+  await expect(selfCheck.getByText(/kan je tekst niet inhoudelijk beoordelen/i)).toBeVisible();
+  await expect(selfCheck.getByText("Ik controleer mijn werkwoordsvormen zelf.")).toBeVisible();
+  await expect(selfCheck.getByRole("listitem").first()).toBeVisible();
+
+  await page.getByRole("button", { name: "Tekst aanpassen" }).click();
+  await expect(page.getByLabel("Jouw tekst")).toHaveValue("Ik controleer mijn werkwoordsvormen zelf.");
+  await page.getByRole("button", { name: "Open zelfcontrole" }).click();
+  await page.getByRole("button", { name: /klaar.*bekijk je resultaten/i }).click();
+  await expect(page).toHaveURL(/\/groei$/);
+  await expect(page.getByRole("heading", { level: 1, name: /mijn groei/i })).toBeVisible();
+});

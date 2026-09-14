@@ -24,6 +24,8 @@ jobs:
       - run: npm run build
         env:
           PAGES_BASE_PATH: /werkwoordlab
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
 
   grammar-core:
     name: Check grammar-core drift
@@ -33,5 +35,6 @@ jobs:
       - name: Controleer gedeelde canon
         run: |
           git clone --depth=1 https://github.com/Loumeister/grammar-core.git "$RUNNER_TEMP/grammar-core"
-          diff -qr --exclude=.git --exclude=.github --exclude=.claude-plugin \
+          # Alleen marketplace.json wijkt lokaal af: de bron is relatief aan de subtree.
+          diff -qr --exclude=.git --exclude=marketplace.json \
             "$RUNNER_TEMP/grammar-core" shared/grammar-core

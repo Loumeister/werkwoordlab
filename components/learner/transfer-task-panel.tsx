@@ -84,14 +84,31 @@ export function TransferTaskPanel({ task, unitTitle, onFinish }: Props) {
         <section className="space-y-4 rounded-3xl border border-[#f0c972] bg-[#fff9ea] p-6">
           <h2 className="text-xl font-semibold">Zelfcontrole</h2>
           <p>De app kan je tekst niet inhoudelijk beoordelen. Controleer hem met deze criteria:</p>
+          <div className="space-y-2 rounded-2xl border border-black/10 bg-white p-4">
+            <p className="font-semibold">Jouw tekst</p>
+            <p className="whitespace-pre-wrap text-lg">{text}</p>
+            {reflectie && (
+              <>
+                <p className="pt-2 font-semibold">Jouw reflectie</p>
+                <p className="whitespace-pre-wrap">{reflectie}</p>
+              </>
+            )}
+          </div>
           <ul className="list-disc space-y-2 pl-6 text-lg">
             {task.rubric.map((criterion) => <li key={criterion}>{criterion}</li>)}
           </ul>
 
           <button
             type="button"
+            onClick={() => setSubmitted(false)}
+            className="rounded-xl border border-black/30 bg-white px-5 py-3 font-semibold hover:bg-neutral-50"
+          >
+            Tekst aanpassen
+          </button>
+          <button
+            type="button"
             onClick={onFinish}
-            className="rounded-xl bg-[var(--warm-primary)] px-5 py-3 font-semibold text-white"
+            className="ml-3 rounded-xl bg-[var(--warm-primary)] px-5 py-3 font-semibold text-white"
           >
             Klaar — bekijk je resultaten
           </button>
