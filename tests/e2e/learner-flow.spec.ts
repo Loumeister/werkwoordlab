@@ -1,6 +1,12 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 
-test("learner doorloopt eerste opdracht en ziet diagnostische feedback", async ({ page }) => {
+async function finishProofStep(page: Page) {
+  const proofStep = page.getByText(/waarom klopt deze regel hier/i).locator("..");
+  await proofStep.getByRole("button").first().click();
+  await expect(page.getByRole("heading", { name: /goed geredeneerd/i })).toBeVisible();
+}
+
+test("learner doorloopt eerste opdracht en ziet herstelfeedback", async ({ page }) => {
   await page.goto("/oefenen");
 
   await expect(page.getByRole('heading', { name: 'Oefenen' })).toBeVisible();
@@ -27,13 +33,11 @@ test("learner doorloopt eerste opdracht en ziet diagnostische feedback", async (
   await expect(page.getByRole("button", { name: /toon hint/i })).toBeVisible();
 
   // First item (u1-i1) is a homophone item: vind/vindt
-  await page.getByRole("radio", { name: "vind" }).check();
+  await page.getByRole("radio", { name: "vind", exact: true }).check();
   await page.getByRole("button", { name: /controleer antwoord/i }).click();
 
-  // Diagnostic feedback shown
-  await expect(page.getByRole("heading", { name: /diagnostische feedback/i })).toBeVisible();
-  await expect(page.getByText(/misconceptiecode:/i)).toBeVisible();
-  await expect(page.getByText(/hint:/i)).toBeVisible();
+  await finishProofStep(page);
+  await expect(page.getByRole("button", { name: /meer uitleg over/i })).toBeVisible();
 });
 
 test("learner kan classify-item beantwoorden in unit-05 (werkwoordelijk vs bijvoeglijk)", async ({ page }) => {
@@ -54,9 +58,8 @@ test("learner kan classify-item beantwoorden in unit-05 (werkwoordelijk vs bijvo
   await page.getByRole("radio", { name: "bijvoeglijk" }).check();
   await page.getByRole("button", { name: /controleer antwoord/i }).click();
 
-  // Feedbacksectie verschijnt
-  await expect(page.getByRole("heading", { name: /diagnostische feedback/i })).toBeVisible();
-  await expect(page.getByText(/misconceptiecode:/i)).toBeVisible();
+  await finishProofStep(page);
+  await expect(page.getByRole("button", { name: /meer uitleg over/i })).toBeVisible();
 });
 
 test("schrijfroute toont criteria en rondt de zelfcontrole af", async ({ page }) => {
@@ -74,6 +77,6 @@ test("schrijfroute toont criteria en rondt de zelfcontrole af", async ({ page })
   await expect(page.getByLabel("Jouw tekst")).toHaveValue("Ik controleer mijn werkwoordsvormen zelf.");
   await page.getByRole("button", { name: "Open zelfcontrole" }).click();
   await page.getByRole("button", { name: /klaar.*bekijk je resultaten/i }).click();
-  await expect(page).toHaveURL(/\/groei$/);
+  await expect(page).toHaveURL(/\/groei\/?$/);
   await expect(page.getByRole("heading", { level: 1, name: /mijn groei/i })).toBeVisible();
 });

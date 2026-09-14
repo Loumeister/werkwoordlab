@@ -26,10 +26,9 @@ test('learner can open a real unit route and sees core exercise elements', async
 
   expect(response?.ok()).toBeTruthy();
 
-  await expect(page.getByText(/opdracht 1 van/i)).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Scaffold' })).toBeVisible();
-  await expect(page.getByRole('textbox').first()).toBeVisible();
-  await expect(page.getByRole('button', { name: /controleer antwoord/i })).toBeVisible();
+  await expect(page.getByText(/welke grammaticale functie/i)).toBeVisible();
+  await expect(page.getByRole('radio', { name: 'persoonsvorm' })).toBeVisible();
+  await expect(page.getByRole('button', { name: /^controleer$/i })).toBeVisible();
 });
 
 test('invalid unit route returns not-found behavior and does not silently load a default unit', async ({ page }) => {
