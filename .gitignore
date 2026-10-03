@@ -5,3 +5,6 @@ test-results
 playwright-report
 .DS_Store
 *.tsbuildinfo
+
+# Nested worktrees created by agents; keep worktrees outside the repo
+.worktrees/
