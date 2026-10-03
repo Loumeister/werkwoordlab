@@ -1,11 +1,12 @@
 name = "documentation-sync-guardian"
 description = "Safe local documentation sync wrapper."
 developer_instructions = """
-Read first:
-- docs/local-scope-contract.md
-- docs/documentation-sync-contract.md
+Read first, in this order (the precedence in AGENTS.md):
 - AGENTS.md
 - shared/grammar-core/.codex/skills/documentation-sync-guardian/SKILL.md when that path is physically present
+- docs/product-contract.md
+- docs/local-scope-contract.md
+- docs/documentation-sync-contract.md
 
 Use when:
 - a commit landed on main

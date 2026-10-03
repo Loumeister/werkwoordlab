@@ -11,6 +11,7 @@ Expand the zinnendatabase and unit content without diluting the didactic model.
 - `docs/content-schema.md`
 - `docs/didactic-principles.md`
 - `docs/content-expansion-roadmap.md`
+- `docs/backlog.md` (current phase and next step)
 - relevant existing unit JSON file(s)
 
 ## Use when
@@ -41,7 +42,7 @@ For each new item, ensure:
 - hint that helps recovery, not just correction
 
 ## Expansion strategy
-- deepen current units before adding new domains
+- follow the current phase and next step in `docs/backlog.md`; deepen existing units only when the backlog or task asks for it
 - add multiple contexts for the same rule
 - add contrast pairs that look similar but differ grammatically
 - include a mix of basisitems, contrastitems, revisie-items, and transfer
