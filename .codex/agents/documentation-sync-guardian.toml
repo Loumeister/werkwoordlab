@@ -5,7 +5,7 @@ Read first:
 - docs/local-scope-contract.md
 - docs/documentation-sync-contract.md
 - AGENTS.md
-- shared/grammar-core/.Codex/agents/documentation-sync-guardian.md when that path is physically present
+- shared/grammar-core/.codex/skills/documentation-sync-guardian/SKILL.md when that path is physically present
 
 Use when:
 - a commit landed on main
